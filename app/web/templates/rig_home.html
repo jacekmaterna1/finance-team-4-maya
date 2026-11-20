@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% from "_macros.html" import badge %}
 {% from "_thumbs.html" import thumb %}
+{% from "_mission.html" import mission %}
 {% block content %}
+{{ mission(M, P, m, live) }}
 <section class="kpis">
   <div class="card kpi kpi-wide">
     <div class="kicker">Overdue balance · headline metric</div>

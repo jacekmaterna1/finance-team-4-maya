@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Demo · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">Demo video</div><h1>Walkthrough</h1></div>
+{% if error %}<div class="alert">{{ error }}</div>{% endif %}
+{% if video %}
+<div class="video"><iframe src="{{ video }}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" frameborder="0" title="Demo video"></iframe></div>
+{% else %}
+<div class="card placeholder"><div class="kicker">Coming soon</div><h2 class="h2-tight">Loom walkthrough coming — 5–10 min</h2><p class="small muted">What we chose, why, how, the tool on real records, and where it gets things wrong.</p></div>
+{% endif %}
+<form method="post" action="/demo" class="card stack" style="margin-top:1rem;max-width:54rem">
+  <div class="kicker">Paste Loom share link</div>
+  <input class="input" name="url" value="{{ raw or '' }}" placeholder="https://www.loom.com/share/..." required>
+  <div class="small muted">Loom share or embed links work. YouTube and Google Drive links are accepted too. Saving is logged in the audit trail.</div>
+  <button class="btn btn-primary">Save video link</button>
+</form>
+{% if script_html %}
+<details class="card" {% if not video %}open{% endif %}><summary><span class="kicker">submission/VIDEO_SCRIPT.md</span> <b>Video outline</b></summary><div class="prose-sm">{{ script_html|safe }}</div></details>
+{% endif %}
+{% endblock %}

@@ -3,7 +3,9 @@
 {% from "_thumbs.html" import thumb %}
 {% from "_instr.html" import instr_list %}
 {% block title %}Team · Ledgerline RIG{% endblock %}
+{% from "_mission.html" import mission %}
 {% block content %}
+{{ mission(M, P, m, live) }}
 <div class="section-title"><div class="kicker">Roster</div><h1>The team</h1></div>
 <p class="lead">Four scoped AI agents, each owning one job (the SpaceXSI pattern), and the people who direct them. Each agent follows a written operating manual that only humans edit.</p>
 {% for a in agents %}

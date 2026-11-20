@@ -8,7 +8,12 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from app import store
 from app.web import rig_data
 from app.web import state as st
-from app.web.views import _render, _user, live_counts, needs_you, dana_decisions
+import os
+
+from app.web.views import (_render, _user, dana_decisions, demo_video_url, embed_url, live_counts, needs_you,
+                           valid_video_url)
+
+REPO_URL = "https://github.com/jacekmaterna1/finance-team-4-maya"
 
 
 def agent_stats(state, slug: str) -> Dict[str, Any]:
@@ -72,7 +77,8 @@ def build_router() -> APIRouter:
         return _render(request, "rig_home.html", {
             "m": state["metrics"], "live": live_counts(state, latest), "team": team, "items": items[:12],
             "n_items": len(items), "dana": dana_decisions(state), "maya": rig_data.latest_maya(),
-            "override": rig_data.hold_override_rate(), "golive": rig_data.GO_LIVE, "tab": "home"})
+            "override": rig_data.hold_override_rate(), "golive": rig_data.GO_LIVE, "tab": "home",
+            "M": rig_data.MISSION, "P": rig_data.PROGRESS})
 
     @r.get("/team", response_class=HTMLResponse)
     async def team(request: Request):
@@ -82,7 +88,42 @@ def build_router() -> APIRouter:
             rows.append(dict(a, stats=agent_stats(state, a["slug"]), last=decisions(state, a["name"], 5),
                              instructions=store.instructions(a["name"])))
         return _render(request, "rig_team.html", {"agents": rows, "humans": rig_data.HUMANS, "tab": "team",
-                                                  "override": rig_data.hold_override_rate()})
+                                                  "override": rig_data.hold_override_rate(),
+                                                  "M": rig_data.MISSION, "P": rig_data.PROGRESS,
+                                                  "m": state["metrics"],
+                                                  "live": live_counts(state, store.latest_by_object())})
+
+    @r.get("/docs", response_class=HTMLResponse)
+    async def docs(request: Request):
+        tdir = os.path.join(rig_data.ROOT_DIR, "submission", "ai_conversations")
+        transcripts = sorted(f for f in os.listdir(tdir) if not f.startswith(".")) if os.path.isdir(tdir) else []
+        base = os.environ.get("BASE_URL", "").rstrip("/") or str(request.base_url).rstrip("/")
+        return _render(request, "rig_docs.html", {"tab": "docs", "transcripts": transcripts, "repo_url": REPO_URL,
+                                                  "base_url": base})
+
+    def _demo_ctx(error="", raw=None):
+        url = demo_video_url()
+        script = rig_data.read_rel("submission/VIDEO_SCRIPT.md")
+        return {"tab": "demo", "video": embed_url(url) if url else None, "raw": raw if raw is not None else url,
+                "error": error, "script_html": rig_data.md(script) if script else None}
+
+    @r.get("/demo", response_class=HTMLResponse)
+    async def demo(request: Request):
+        return _render(request, "rig_demo.html", _demo_ctx())
+
+    @r.post("/demo", response_class=HTMLResponse)
+    async def demo_save(request: Request, url: str = Form("")):
+        user = _user(request)
+        url = url.strip()
+        if not valid_video_url(url):
+            return _render(request, "rig_demo.html", _demo_ctx(
+                "Paste an https link from Loom (loom.com/share/... or /embed/...), YouTube or Google Drive.", raw=url),
+                status_code=400)
+        before = store.get_setting("demo_video_url")
+        store.set_setting("demo_video_url", url, user)
+        store.record(user, "settings", "demo_video_url", "edit", "Set the demo video link",
+                     {"before": before, "after": url, "embed": embed_url(url)})
+        return RedirectResponse("/demo", status_code=303)
 
     @r.get("/architecture", response_class=HTMLResponse)
     async def architecture(request: Request):

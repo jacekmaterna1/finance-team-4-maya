@@ -44,7 +44,7 @@
 {% if user %}
 <nav class="tabs">
   <div class="tabs-inner">
-  {% set rig_tabs = [('/', 'Home'), ('/team', 'Team'), ('/architecture', 'Architecture'), ('/activity', 'Activity'), ('/maya', 'Maya'), ('/direct', 'Direct the team'), ('/buildlog', 'Build log'), ('/about', 'One pager')] %}
+  {% set rig_tabs = [('/', 'Home'), ('/team', 'Team'), ('/architecture', 'Architecture'), ('/docs', 'Documentation'), ('/activity', 'Activity'), ('/maya', 'Maya'), ('/direct', 'Direct the team'), ('/buildlog', 'Build log'), ('/about', 'One pager'), ('/demo', 'Demo')] %}
   {% set ops_tabs = [('/today', 'Today'), ('/cash', 'Cash'), ('/collections', 'Collections'), ('/customers', 'Customers'), ('/digest', 'Digest'), ('/audit', 'Audit'), ('/rules', 'Rules')] %}
   {% for href, label in rig_tabs %}<a href="{{ href }}" class="{% if (href == '/' and path == '/') or (href != '/' and (path == href or path.startswith(href + '/'))) or (href == '/team' and path.startswith('/agents')) %}active{% endif %}">{{ label }}</a>{% endfor %}
   <span class="tab-sep">|</span>

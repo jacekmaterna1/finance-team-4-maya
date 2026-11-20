@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Documentation · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">Documentation</div><h1>Who does what, where</h1></div>
+<p class="lead">The whole system on one diagram: the company and its people, the AI finance team that runs on Render, and how it was built in 24 hours. Then the four hand-ins and where to find the evidence.</p>
+
+<div class="card arch-card">
+  <div class="kicker">System diagram</div>
+  {% include "_docs_svg.html" %}
+</div>
+
+<section class="card" style="margin-top:1rem">
+  <div class="kicker">Who does what</div>
+  <table class="tbl tbl-mini">
+    <tr><th>Actor</th><th>Where</th><th>Does</th><th>Can't do / needs approval from</th></tr>
+    <tr><td><b>Maya Lindqvist</b>, COO</td><td>Maya channel (Scaleworks chat)</td><td>Sponsor. Sets guardrails, approves go-live, checks in a month whether Priya still uses it</td><td>Doesn't operate the queue. We write to her only to get a confirmation or intel</td></tr>
+    <tr><td><b>Dana Ruiz</b>, VP Finance</td><td>RIG: Rules, Decisions for Dana</td><td>Owns thresholds (auto-apply limit, write-off threshold), write-offs up to $2,000, payment plans up to 90 days, card re-run policy</td><td>Longer payment plans need the CFO role (the CEO)</td></tr>
+    <tr><td><b>Priya Nair</b>, AR Specialist</td><td>RIG daily: Today, Cash, Collections; Slack digest</td><td>Approves every match, card re-run, hold release and email; edits rules and manuals</td><td>Dispute releases need the account manager's confirmation; write-off thresholds need Dana</td></tr>
+    <tr><td><b>Account managers</b></td><td>Routed holds (route_to)</td><td>Own disputes and the relationship; confirm when a dispute is settled</td><td>Don't send collections email</td></tr>
+    <tr><td><b>Legal</b></td><td>submission/LEGAL_NOTE.md</td><td>Reviews the Bedrock data processing terms</td><td>Until they sign off, the AI layer stays off</td></tr>
+    <tr><td><b>Cash Application</b> agent</td><td>Render · /cash</td><td>Matches receipts to invoices; applies exact amount + invoice-reference matches under the auto-apply limit</td><td>Everything else is a proposal for Priya; no write-offs</td></tr>
+    <tr><td><b>Account Context</b> agent</td><td>Render · /customers</td><td>Builds the customer 360; reads tickets for disputes, cancellations, legal threats</td><td>Read-only; never acts</td></tr>
+    <tr><td><b>Controller</b> agent</td><td>Render · /collections (holds)</td><td>Holds, routes and blocks: already paid, dispute, top-50, contact, 90+ days, banned wording</td><td>Can't release its own holds; a person does</td></tr>
+    <tr><td><b>Collections</b> agent</td><td>Render · /collections, /digest</td><td>Picks stage and tone, drafts reminders and card re-run proposals</td><td>Never sends; Priya approves every send and every re-run</td></tr>
+    <tr><td><b>Jacek Materna</b>, AI Operator</td><td>Claude Code, this repo</td><td>Directed the build agents; talks to Maya; owns the submission</td><td>Doesn't approve customer actions inside Ledgerline</td></tr>
+    <tr><td><b>Build agents</b> (Claude Code)</td><td>GitHub repo, Render</td><td>test-steward (challenge, Maya channel, trail), data-analyst (evidence, discrepancies), builder (product + RIG), qa-evaluator (accuracy, red-team, failures)</td><td>Never edit the data; commits and pushes only when Jacek asks</td></tr>
+  </table>
+</section>
+
+<div class="section-title"><div class="kicker">Hand-ins</div><h2>The four things Scaleworks asked for</h2></div>
+<section class="handins">
+  <div class="card"><div class="kicker">1 · The tool</div><div class="con-title">This RIG</div>
+    <p class="small">Live: <a href="{{ base_url }}">{{ base_url }}</a><br>Repo: <a href="{{ repo_url }}" target="_blank" rel="noopener">{{ repo_url }}</a></p>
+    <div class="small muted">Run locally</div><pre>python3 -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload</pre></div>
+  <div class="card"><div class="kicker">2 · Demo video</div><div class="con-title">5–10 minute walkthrough</div><p class="small">What we chose, why, how, the tool on real records, and where it gets things wrong.</p><a class="btn" href="/demo">Watch the demo</a></div>
+  <div class="card"><div class="kicker">3 · One page</div><div class="con-title">The one-pager</div><p class="small">The process, what the tool does, what is AI and what stays with a person, and what we'd do with more time.</p><a class="btn" href="/about">Read the one-pager</a></div>
+  <div class="card"><div class="kicker">4 · Your working</div><div class="con-title">The paper trail</div><p class="small">Journal, decisions, Maya Q&amp;A, eval, failures, discrepancies, Legal note.</p><a class="btn" href="/buildlog">Open the build log</a>
+    <div class="small" style="margin-top:.6rem"><b>Full AI conversation transcripts:</b> submission/ai_conversations/
+      {% if transcripts %}<ul>{% for f in transcripts %}<li class="mono">{{ f }}</li>{% endfor %}</ul>{% else %}<div class="muted">Exported at the end of the build.</div>{% endif %}</div></div>
+</section>
+
+<section class="card" style="margin-top:1rem">
+  <div class="kicker">Grading criteria → where to look</div>
+  <table class="tbl tbl-mini">
+    <tr><th>Criterion</th><th>Where to look</th></tr>
+    <tr><td><b>A tool that changes the job</b></td><td><a href="/">Home</a> · <a href="/today">Today</a> · <a href="/collections">Collections</a> · <a href="/cash">Cash application</a></td></tr>
+    <tr><td><b>Judgment</b></td><td><a href="/architecture">Architecture</a> · Who does what (above) · <a href="/rules">Rules</a> · <a href="/buildlog#submission-legal_note-md">Legal note</a> · <a href="/maya">Maya thread</a></td></tr>
+    <tr><td><b>Evidence</b></td><td><a href="/buildlog">Build log</a>: <a href="/buildlog#analysis-eval-md">EVAL</a> · <a href="/buildlog#analysis-failures-md">FAILURES</a> · <a href="/buildlog#analysis-discrepancies-md">DISCREPANCIES</a></td></tr>
+  </table>
+</section>
+{% endblock %}
