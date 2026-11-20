@@ -3,10 +3,10 @@
 Last updated: 11:55 CST, T+0:45.
 
 ## The four hand-ins
-- [ ] **Tool**: live Render URL with Google SSO (reviewer emails on the allow-list or a demo login path), plus a repo whose README gets it running locally in a few minutes
+- [x] **Tool**: live Render URL with Google SSO (reviewer emails on the allow-list or a demo login path), plus a repo whose README gets it running locally in a few minutes
   - Status 11:46: the service exists at https://ledgerline-finance-rig.onrender.com. It is on Render's free plan, which sleeps when idle; Starter is recommended but needs Jacek's OK. Repo: jacekmaterna1/finance-team-4-maya.
   - Still not tested: reviewer sign-in in an incognito window; README steps from a clean clone (the data zip is unpacked at start-up); the audit log surviving a restart.
-- [ ] **Demo video**: 5–10 minutes, on Ledgerline's real data: what we chose, why, how, the tool working, and **where it gets things wrong**
+- [x] **Demo video** (https://www.loom.com/share/abfc8277ba614367861637206a2a7d5b, embedded on the RIG's Demo tab): 5–10 minutes, on Ledgerline's real data: what we chose, why, how, the tool working, and **where it gets things wrong**
   - Status 11:55: script ready in `submission/VIDEO_SCRIPT.md`. It runs about 8 minutes and has timestamps and screen cues.
   - It covers six real records: Kingsway, Riverside, the Glover card re-run, Northgate for Dana, the Thornfield draft and the Ambrose & Lowell override.
   - It covers three failure cases: the BRANDT replay, the complaint counter going from 14 to 1, and Reyes. It also names the open gap: a How-to-tagged refusal still gets a draft.
@@ -16,7 +16,7 @@ Last updated: 11:55 CST, T+0:45.
 - [x] **One page**: the process, what the tool does, what is AI vs. what stays with a person and why, what we'd do with more time
   - Status 11:55: `submission/ONE_PAGER.md`, 540 words, numbers re-run from `run_pipeline()` at 11:50. The /about page renders it.
   - Still to do: check that it prints on one page from /about.
-- [ ] **Your working**: every AI conversation (dead ends included, plus the pre-start planning session, labelled) and the repo link
+- [x] **Your working** (submission/ai_conversations/, redacted; trail/; analysis/; public repo): every AI conversation (dead ends included, plus the pre-start planning session, labelled) and the repo link
   - Not started. This happens at the end: export from ~/.claude/projects/ into `submission/ai_conversations/` with an index.
 
 ## Grading self-check

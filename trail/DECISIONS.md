@@ -114,3 +114,7 @@
 - Done: Jacek upgraded the instance and added the disk at /var/data. Claude Code set DB_PATH=/var/data/ledgerline.db and RULES_PATH=/var/data/rules.json.
 - Verified: wrote a test chat entry, restarted the service, and the entry was still in Activity afterwards. The Maya desk showed 6 proposed questions at 4 of 60 used.
 - The courier still mirrors every Maya exchange into trail/MAYA_QA.md for the paper trail.
+
+## D18 — No Google sign-in (Jacek, T+2:53)
+- Jacek: "revert the Google SSO, no need anymore; leave it as is."
+- Nothing to revert in code: sign-in only activates when GOOGLE_CLIENT_ID is set, which it never was. The RIG stays open (the "Auth off (demo)" chip stays), with no real data and nothing sent. ALLOWED_DOMAINS/BASE_URL stay set but are inert without credentials (no redeploy, to avoid downtime before the video).

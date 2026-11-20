@@ -1,6 +1,6 @@
 # Ledgerline AR Operator
 
-**Live RIG:** https://ledgerline-finance-rig.onrender.com · **Repo:** https://github.com/jacekmaterna1/finance-team-4-maya (public)
+**Live RIG:** https://ledgerline-finance-rig.onrender.com · **Repo:** https://github.com/jacekmaterna1/finance-team-4-maya (public) · **Demo video:** https://www.loom.com/share/abfc8277ba614367861637206a2a7d5b
 
 
 An AI order-to-cash team for Ledgerline's finance function. Four scoped agents run in a fixed order on every cycle:

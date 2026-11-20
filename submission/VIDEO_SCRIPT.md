@@ -1,99 +1,58 @@
-# Demo video: Loom talk track (target 8:00, hard range 7–9 min)
+# Demo video: Loom talk track (target 8 min, range 7–9)
 
-RIG: https://ledgerline-finance-rig.onrender.com. Data as of 2026-10-31. All numbers come from `run_pipeline()` at 11:50 CST on 2026-11-20 and from `analysis/EVAL.md`, `FAILURES.md` and `DISCREPANCIES.md`.
+RIG: https://ledgerline-finance-rig.onrender.com · Repo (public): https://github.com/jacekmaterna1/finance-team-4-maya
+Numbers: live run on the data room (as of 2026-10-31). Tabs: **One pager · Cash · Overview · Maya · Documentation · Demo · Your working**, plus **More ▾** (Today, Collections, Customers, Digest, Rules · Team, Architecture, Activity, Direct the team, Audit).
 
-**Before recording (5 min)**
-- Wake the Render service: free plan, it sleeps when idle.
-- Sign in, then press **Run** once so the queues are fresh.
-- Have a terminal open at the project root for the BRANDT replay: `.venv/bin/python analysis/scripts/eval_guardrails.py | grep 1b`.
-- Leave Maya on hold. Don't send her anything during the recording.
-- Check the subject on Ambrose & Lowell's hold: it renders as `'???'` (T880474). Fix it or pick another hold.
+**Before you hit record (2 min)**
+- Open the RIG in a clean browser window at full width. It's always on now, so there's no wake-up wait.
+- Close other tabs. Turn notifications off.
+- Everything you click is written to the audit log. That's fine, and it's part of the evidence.
 
 ---
 
-## 0:00–0:30 What we chose and why
-**Screen:** RIG **Home**.
+## 0:00–0:40 · What I chose and why — **One pager**
+> I'm Jacek. For one day I was Ledgerline's AI Operator. I picked one process and did it properly: collections, with cash application feeding it.
+> Three reasons. Overdue invoices are up year on year, and cash is the board's number-one worry. Ledgerline already tried a collections tool: Paidly was switched off after it chased a customer whose wire had already arrived. And finance can't see Zendesk, so customers with open complaints get chased too.
+> Both failures are the same mistake: the reminder goes out before anyone checks the cash and the tickets. So cash application has to run first.
 
-> I picked one process: collections, with cash application feeding it. Dana says overdue invoices have risen three quarters running, and the board lists cash collection as its number-one worry. Ledgerline already tried a collections tool. Paidly was switched off after it chased a customer whose wire had already arrived. And finance can't see Zendesk, so people with open complaints get chased too. Both are the same problem: the reminder goes out before anyone checks the cash and the tickets. So this is one process, done properly, on Ledgerline's real records.
+## 0:40–1:40 · Who does what — **Documentation** (system diagram)
+> This is the whole system on one screen. On the left is Ledgerline: Maya, Dana, Priya, the account managers, Legal, and the systems they use. In the middle are four agents running in a fixed order: Cash Application, Account Context, the Controller, then Collections. At the bottom is how it was built: me directing a team of Claude Code agents, plus GitHub and Render.
+> The rule that matters: agents propose and people decide. Nothing reaches a customer, a card or the ledger without a person approving it. Every decision lands in an audit log.
+> The AI layer, Claude through Amazon Bedrock, is switched off until Legal signs the data terms. What you're seeing runs on rules Priya can read and edit, and that's the version Maya approved for Priya on Monday.
 
-## 0:30–1:30 The system: who does what
-**Screen:** **Architecture** (diagram), then **Team**.
+## 1:40–2:30 · The headline — **Overview**
+> The ledger says $633,000 overdue across 54 invoices. The team breaks that down: $78,000 is money we've already received but haven't applied, $313,000 is disputed in support tickets finance never sees, and about $242,000 is genuinely collectable.
+> So most of Dana's problem isn't customers refusing to pay. Today it prevents 23 wrong chases, drafts 33 reminders for Priya, proposes 9 card re-runs and puts 3 decisions in front of Dana.
+> **Point at** the Monday checklist: everything Maya and Dana still have to sign off.
 
-> Four agents run in a fixed order on every cycle.
-> - **Cash Application** matches the seven unapplied receipts, $87k in total. It applies a payment automatically only when the amount is exact and the memo quotes the invoice. That's Maya's rule.
-> - **Account Context** pulls each customer's tickets, contract, contacts and renewal date into one view.
-> - **The Controller** is the safety layer. It holds anything that must not be chased and records the reason.
-> - **Collections** drafts the policy reminder, or proposes a card re-run.
->
-> **Screen:** click one agent on **Team** to show its manual.
->
-> Each agent has a plain-English manual that a person can edit. Right now it all runs on rules. The AI is switched off until Legal agrees the data terms. More on that later.
+## 2:30–3:30 · FIN-2, cash first — **Cash**
+> Seven receipts arrived without being matched: $87,335, which ties to the unapplied cash on the balance sheet to the dollar. Three were applied automatically, because the amount was exact and the memo quoted the invoice, and they're under a $10,000 cap Dana confirms.
+> The other four need Priya. **Click Approve on Brandt & Lowell, $6,324.** The payer name was in capitals and the memo just said "subscription", so it proposes and doesn't apply.
+> Kingsway is the interesting one: one $5,100 payment and two open $5,100 invoices. It won't guess. It holds both and asks Priya.
 
-## 1:30–2:00 The headline
-**Screen:** ops page **Today**.
+## 3:30–5:00 · FIN-1, collections — **More → Collections**
+> **Open Brandt & Lowell, INV-25806:** held as "Money already received". That's the Paidly failure, prevented.
+> **Open Riverside Partners, INV-25787, $60,576:** the support ticket is marked "solved", but the customer says they won't pay until the seat count is fixed. Finance couldn't see that before. The contract check shows the invoice matches the contract: 46 seats at $88 plus the $12,000 platform fee. **Click Release without ticking the account-manager box:** refused. Maya's rule is that only the account manager can release a dispute.
+> **Open Thornfield Consulting, INV-25862:** a policy reminder in Priya's voice, cc'ing the account manager, with no threats. The old 45-day "suspension" template is retired. **Edit a sentence and click Approve & send.** It's simulated, nothing really leaves. **Then try adding a Gmail address to To:** refused. It only sends to verified contacts.
 
-> The ledger shows $633k overdue across 54 invoices.
-> - $78k of that is money we've already received but haven't applied.
-> - $313k is disputed in support tickets that finance never sees.
-> - About $242k is actually collectable.
->
-> So most of Dana's overdue problem isn't customers refusing to pay. Today the tool stops 23 wrong chases, drafts 20 reminders for Priya to approve, sends 10 to a person to write, proposes 9 card re-runs, and puts 3 decisions in front of Dana.
+## 5:00–6:00 · Where it gets things wrong — **Your working**
+> I want to show the misses, because that's what decides whether Priya trusts it.
+> One: when a bank shortens the payer name, say "BRANDT", the first version would have chased money we already had. The fix holds every invoice of that amount until Priya names the payer. It over-holds, and Maya's words were "over-holding is the right way to be wrong".
+> Two: a keyword counter said there were 14 complaints about collections. Thirteen were customers asking about their own reminder emails to their clients. The agent now reads the ticket, and there's one real complaint.
+> Three: Maya caught my own arithmetic. I quoted Riverside's seats without the platform fee, she spotted it, and I corrected it before it reached the account managers. It's all in the trail.
 
-## 2:00–4:45 Live walkthrough on real records
-**2:00 Kingsway: paid but still showing overdue.** **Screen:** **Cash**, PAY-65805, then **Collections** filtered to Kingsway.
-> Kingsway Engineering paid $5,100 on 29 October with no reference. They have two $5,100 invoices open, one of them 111 days overdue. The agent proposes the older one and shows the other as an alternative, but it holds both. Paidly would have chased one of these. Priya confirms which invoice it is, and nothing goes out in the meantime.
+## 6:00–7:15 · Working with Maya — **Maya**
+> The team raises its own questions, labelled Confirmation or Intel, never status updates. I approve them here, and they go to Maya bundled, to save her message budget. We used 8 of 60.
+> Her decisions came straight back into the plan:
+> - Eastman gets a call, not a re-run.
+> - Northgate and Hollis Nair get a heads-up and then a card re-run.
+> - Dana stops the automatic write-offs.
+> - Mercer & Banerjee's ignored cancellation stops the renewal.
+> - The account managers rule on the five disputes this week.
+> **Point at** the limitation callout: today the real Maya only exists in the Scaleworks chat, so an operator carries the messages. My recommendation to Scaleworks is to expose Maya as an MCP server, so the RIG connects to her directly.
 
-**2:35 Riverside: a "solved" ticket that is still a dispute.** **Screen:** **Collections**, INV-25787, open the DISPUTE hold.
-> Riverside Partners, $60,576, 35 days overdue. In Zendesk the ticket says "solved". The text says they won't pay until the seat count is fixed. The Controller holds the invoice and routes it to the account manager, Nadia Upton. It also runs a contract check: 46 seats at $88 a month plus a $12,000 platform fee comes to exactly $60,576. So the invoice matches the contract, and the AM goes into the call with evidence. All 14 disputed invoices match their contracts. If every claim turned out to be true, the real exposure would be at most about $25k, against $309k on hold.
+## 7:15–8:00 · Direct the team, and close — **Talk to the team** chat
+> **Type "why is Kingsway held?"** The Controller explains. **Type "set writeoff_threshold to 50"**: it won't apply without Dana's name. Loosening a guardrail is Dana's call, not mine.
+> Close: one process, four agents, a person in charge of every decision, tested on the real records, and honest about where it's wrong. Next would be the account-manager dispute workflow, Claude reading tickets once Legal approves, and connecting to Maya directly. Thanks.
 
-**3:15 Card re-run.** **Screen:** **Collections**, Glover Engineering INV-25803, RETRY_CARD, then **Approve**.
-> Glover Engineering's $1,836 card payment failed, but a charge on the same card went through on 2 October. So instead of an email, the agent proposes re-running the card. It never charges a card on its own. Priya approves each one, and Dana decides if that should ever change. I'll approve this one.
-
-**3:40 Decisions for Dana.** **Screen:** **Today**, "Decisions for Dana", Northgate Creative INV-25433.
-> Northgate Creative, $799, 149 days overdue. Tomorrow the old 150-day rule writes it off automatically. Maya said Dana should decide this morning, so the tool flags it as a decision for Dana today. Two more sit next to it: Hollis Nair at $517, nine days from write-off, and Eastman Engineering at $3,264. Eastman's would break Dana's $2,000 limit. That has already happened nine times, $47k in total, with no approval on record.
-
-**4:05 Approve one draft.** **Screen:** **Collections**, Thornfield Consulting INV-25862, open the draft and **Approve/Send**.
-> This is a normal case. Thornfield, $39,456, 17 days overdue. The contact is verified, there's no ticket and no payment waiting, so the agent drafted the friendly first reminder and copied the AM. I can edit it. I approve it, and it goes to the audit log under my name.
-
-**4:25 Override a hold with a reason.** **Screen:** **Collections**, Ambrose & Lowell INV-25897, **Override hold**, type the reason, then **Audit**.
-> Some holds are over-cautious, and that's deliberate. Ambrose & Lowell is held because a high-priority ticket is open. But the ticket is a product bug, not a billing complaint. I override the hold and type "product bug, not a billing dispute, AM agrees". The audit log keeps who did it, when and why. Maya wants the override rate after a month. If it's high, the rules are too tight.
-
-## 4:45–5:50 Directing the team
-**Screen:** **Talk to the team** chat, then **Direct the team**, then **Rules**.
-
-> Priya doesn't need an engineer to change how this works.
-> - **Type:** "why is Riverside held?" The team answers with the ticket, the contract check, and who can release the hold.
-> - **Type:** "set writeoff_threshold to 50". Nothing changes yet. It shows an **Apply** button, and only my click applies it. **Click Apply.** Then go to **Rules** to show the new value and what changed on the re-run.
-> - **Type:** "from now on cc Dana on anything over $40k". That's logged as a proposed instruction. In **Direct the team** I accept it, and it goes into the Collections agent's manual. Until a person accepts it, the manual doesn't change.
-
-## 5:50–7:05 Where it gets things wrong
-**Screen:** terminal, then **Documentation** (FAILURES.md), then **Build log**.
-
-> **The BRANDT replay.** **Screen:** terminal, `eval_guardrails.py`, the 1b lines.
-> This was the worst thing we found. We took Brandt & Lowell's real $6,324 wire and shortened the payer name to "BRANDT", which is how 416 past receipts arrived. The matcher tied it to Studio Brandt, and the tool drafted a reminder to Brandt & Lowell for money already in the bank. That's the Paidly failure again. We found it, not a customer. The fix: a payment we can't tie to one customer now holds every overdue invoice of the same amount. BRANDT, JESSOP and KINGSWAY now pass. The cost is some extra holds, which Priya clears.
->
-> **The complaint counter, 14 down to 1.** **Screen:** **Build log** or FAILURES #7.
-> Maya's veto metric is complaints about collections. A keyword count said 14. We checked all 14 by hand, and 13 were customers asking about their own reminder emails, because Ledgerline is invoicing software. The real number is 1, Eastman Engineering. If we'd shipped the keyword count, the veto metric would have looked 14 times worse than it was.
->
-> **The Reyes false positive.** **Screen:** **Customers**, Reyes Consulting.
-> Reyes asked, "do I void it and raise a new one?" That was about their own client's invoice. But it held a $51k invoice as a dispute. It's fixed now: the ticket came before the invoice and quotes no Ledgerline invoice. Overall, ticket reading is 82% precise.
->
-> **What still slips through.** A refusal in a ticket tagged "How-to" with no invoice number still gets a draft. We have two red-team cases for that, and Priya checks the customer's recent tickets before approving. This is exactly the kind of reading Claude should do once Legal says yes.
-
-## 7:05–7:40 The Maya channel
-**Screen:** **Maya** tab, scroll through the exchanges and the "What we changed" notes.
-
-> I treated Maya as the COO I report to. I wrote only when I needed a decision or facts the data room couldn't give: five messages out of sixty. Every answer changed the build. Her Paidly story made cash application run first. Her card answer means Priya approves every re-run. Her Legal challenge turned the AI off by default and moved it to Bedrock. And she approved going live with the rules-only version for Priya on Monday, with every match, release and email approved by a person.
-
-## 7:40–8:10 What's next
-**Screen:** **One pager**.
-
-> With more time, I'd build four things.
-> - A dispute workflow for account managers, with a reply that quotes the contract.
-> - The Slack morning digest for Priya, switched on.
-> - Claude reading tickets through Bedrock once Legal signs off, measured against the rules.
-> - A cash-forecast agent built on the same data, plus renewal billing checks.
->
-> And in thirty days I'd sit down with Maya and look at the override rate. That number tells us whether Priya is still using this.
-
-**End:** RIG **Home**. About 1,300 words including screen cues, roughly 8 to 8.5 minutes at a normal pace. If it runs long, cut the "What still slips through" paragraph first.
+**After recording:** paste the Loom share link on the **Demo** tab (it converts to an embed and is saved on the disk). Then submit on the Scaleworks page.
