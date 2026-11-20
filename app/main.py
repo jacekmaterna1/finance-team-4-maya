@@ -11,8 +11,9 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from app import auth, store
 from app.web import chat as chat_web
+from app.web import maya as maya_web
 from app.web import rig as rig_web
-from app.web.views import STATIC_DIR, build_router, templates
+from app.web.views import STATIC_DIR, _render, _user, build_router, templates
 
 
 def create_app() -> FastAPI:
@@ -22,7 +23,8 @@ def create_app() -> FastAPI:
     @app.middleware("http")
     async def require_login(request: Request, call_next):
         path = request.url.path
-        if auth.is_public(path) or auth.current_user(request):
+        if auth.is_public(path) or auth.current_user(request) or (
+                path.startswith("/api/maya/") and maya_web.courier_ok(request)):
             return await call_next(request)
         if request.headers.get("HX-Request"):
             return PlainTextResponse("login required", status_code=401, headers={"HX-Redirect": "/login"})
@@ -45,6 +47,7 @@ def create_app() -> FastAPI:
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
     app.include_router(auth.build_router(templates))
     app.include_router(rig_web.build_router())
+    app.include_router(maya_web.build_router(_render, _user))
     app.include_router(chat_web.build_router())
     app.include_router(build_router())
 

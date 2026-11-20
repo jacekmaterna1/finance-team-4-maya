@@ -20,7 +20,7 @@
   <div class="card kpi"><div class="kicker">Chases prevented</div><div class="stat">{{ m.chases_prevented }}</div><div class="small muted">would have gone to customers who paid or dispute</div></div>
   <div class="card kpi"><div class="kicker">Drafts awaiting Priya</div><div class="stat">{{ live.drafts_pending }}</div><div class="small muted">of {{ m.drafts }} drafted · {{ live.human_pending }} to write personally</div></div>
   <div class="card kpi"><div class="kicker">Card re-runs</div><div class="stat">{{ live.card_retries_pending }}</div><div class="small muted">card works again · Priya approves each</div></div>
-  <div class="card kpi {% if dana %}kpi-alert{% endif %}"><div class="kicker">Dana decisions</div><div class="stat">{{ dana|length }}</div><div class="small muted">{% for x in dana[:2] %}{{ x.i.customer_name }} {{ x.i.amount|money }}{% if not loop.last %} · {% endif %}{% else %}none today{% endfor %}</div></div>
+  <div class="card kpi {% if dana %}kpi-alert{% endif %}"><div class="kicker">Dana decisions</div><div class="stat">{{ dana|length }}</div><div class="small muted">{% for x in dana %}{{ x.i.customer_name }} {{ x.i.amount|money }}{% if not loop.last %} · {% endif %}{% else %}none today{% endfor %}</div></div>
   <div class="card kpi kpi-veto {% if m.collections_complaints %}kpi-alert{% endif %}"><div class="kicker">Veto · complaints caused</div><div class="stat {% if not m.collections_complaints %}good{% else %}bad{% endif %}">{{ m.collections_complaints }}</div><div class="small muted">by this tool since go-live · baseline {{ m.collections_complaints_baseline if m.collections_complaints_baseline is defined else '-' }} in last 120 days</div></div>
 </section>
 
@@ -78,6 +78,16 @@
       <ul class="checklist">{% for done, item in golive %}<li class="{{ 'done' if done }}"><span class="box">{{ '&#9745;'|safe if done else '&#9744;'|safe }}</span><span>{{ item }}</span></li>{% endfor %}</ul>
       <div class="small muted" style="margin-top:.4rem">Maya approved rules-only for Priya on Monday. Read-only list.</div>
     </div>
+    <div class="section-title"><div class="kicker">COO line</div><h2>Maya desk</h2></div>
+    <a class="card con-card" href="/maya#desk">
+      <div class="desk-counts">
+        <div><div class="stat-sm">{{ desk.proposed }}</div><div class="kicker kicker-ink">Proposed</div></div>
+        <div><div class="stat-sm">{{ desk.approved }}</div><div class="kicker kicker-ink">Approved</div></div>
+        <div><div class="stat-sm">{{ desk.sent }}</div><div class="kicker kicker-ink">Waiting</div></div>
+        <div><div class="stat-sm">{{ desk.answered }}</div><div class="kicker kicker-ink">Answered</div></div>
+      </div>
+      <div class="con-foot small">Open the Maya desk &rarr;</div>
+    </a>
     <div class="section-title"><div class="kicker">COO line</div><h2>Latest from Maya</h2></div>
     {% if maya %}
     <div class="card maya-card">

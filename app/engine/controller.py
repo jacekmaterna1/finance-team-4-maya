@@ -124,5 +124,7 @@ def check_draft(draft, rules):
     """Block any draft containing banned (threatening) language. Returns list of problems."""
     if not draft:
         return []
+    import re as _re
     text = (draft.get("subject", "") + "\n" + draft.get("body", "")).lower()
-    return [p for p in rules.get("banned_phrases", []) if p.lower() in text]
+    # word-boundary match (QA: "court" must not match "courtesy")
+    return [p for p in rules.get("banned_phrases", []) if _re.search(r"\b" + _re.escape(p.lower()) + r"\b", text)]

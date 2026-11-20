@@ -364,7 +364,7 @@ T880130,2026-07-15 16:47:00,C1219,Lindqvist & Underhill Technology,Bug,normal,so
 
 Our client paid exactly what was on the invoice and then got an automated overdue reminder from your system for a balance of basically nothing. They phoned our office annoyed and I had to apologise. Please explain how a paid invoice still has money owing."
 T880131,2026-07-15 19:42:00,C1103,Corbin & Achebe Agency,Bug,low,pending,False,product_question,,False,False,,Something I noticed,"Revenue widget on the main dashboard just spins forever. Other tiles load fine. Started this morning, tried two browsers."
-T880132,2026-07-15 20:20:00,C1413,Reyes Consulting,Billing,normal,solved,True,dispute,,True,False,void it,(no subject),"Sent an invoice yesterday to the wrong contact with the wrong amount on it. Do I void it and raise a new one, or just correct it? I don't want to mess up the sequence."
+T880132,2026-07-15 20:20:00,C1413,Reyes Consulting,Billing,normal,solved,False,product_question,,False,False,,(no subject),"Sent an invoice yesterday to the wrong contact with the wrong amount on it. Do I void it and raise a new one, or just correct it? I don't want to mess up the sequence."
 T880133,2026-07-15 22:53:00,C1282,Eastman & Wexler CPAs,,normal,solved,False,product_question,,False,False,,Re:,"Hi,
 
 My colleague who monitors the shared billing inbox says we've had a steady trickle of bounce-backs for about three weeks, all from addresses at clients that I'm fairly sure we cleaned up ages ago. Not sure if this is on our side or yours."
@@ -384,7 +384,7 @@ T880140,2026-07-16 10:04:00,C1182,Nair Strategy,Bug,normal,solved,False,product_
 T880141,2026-07-16 13:01:00,C1419,Eastman Media,Bug,high,solved,False,product_question,,False,False,,Hoping you can help,"Hi team,
 
 Tried to issue a full credit note against a USD invoice and the system only lets me credit slightly less than the total shown in the invoice list. Weird?"
-T880142,2026-07-16 13:37:00,C1055,Tan Zeller Chartered Accountants,Billing,normal,solved,False,product_question,,False,False,,who handles disputes?,"Sorry if this is the wrong place to ask. Our finance director wants the correct legal entity name and registered address for Ledgerline, as she intends to send something formal about the overcharging on our retainers last quarter. Could you point me in the right direction?"
+T880142,2026-07-16 13:37:00,C1055,Tan Zeller Chartered Accountants,Billing,normal,solved,True,dispute,,True,False,overcharg\w+,who handles disputes?,"Sorry if this is the wrong place to ask. Our finance director wants the correct legal entity name and registered address for Ledgerline, as she intends to send something formal about the overcharging on our retainers last quarter. Could you point me in the right direction?"
 T880143,2026-07-16 13:47:00,C1461,Upton Zeller Chartered Accountants,,normal,solved,False,product_question,,True,False,until (?:it'?s|its) fixed,Re: Re: Re: Fwd:,"Hi team,
 
 Sent invoice has a typo in the client's company name. Tiny thing but their AP team won't process it until it's fixed. Fastest way to sort it?
@@ -1139,7 +1139,7 @@ Upgraded on the 28th, two days before renewal, and still paid a prorated fee. Fo
 T880414,2026-08-17 11:21:00,C1155,Moreau Hume Engineers,Billing,normal,solved,False,product_question,,False,False,,need advice,"Hello,
 
 Our managing partner has agreed to write off an entire disputed invoice. Full credit note, void, or mark it as bad debt? We want the cleanest audit trail possible."
-T880415,2026-08-17 12:22:00,C1493,Ashgrove Digital,Bug,normal,solved,False,product_question,,False,False,,Still waiting on a reply,"Hi there - This is the second client this quarter who has had to phone us about being overcharged. Not a good look for us at all. I need this sorted properly, not just refunded.
+T880415,2026-08-17 12:22:00,C1493,Ashgrove Digital,Bug,normal,solved,False,product_question,,True,False,overcharg\w+,Still waiting on a reply,"Hi there - This is the second client this quarter who has had to phone us about being overcharged. Not a good look for us at all. I need this sorted properly, not just refunded.
 
 Nico"
 T880416,2026-08-17 12:55:00,C1181,Calloway Accounting,,high,solved,False,product_question,,False,False,,URGENT,"Hi,
@@ -2177,7 +2177,7 @@ This is awkward to raise. A family member of someone who used to be our contact 
 
 Samuel"
 T880780,2026-09-28 07:53:00,C1442,Hume & Voss Agency,Account change,high,solved,False,product_question,,False,False,,Not working?,How do I unlock a client portal user? One of our clients tried logging in several times with the wrong password and is now stuck.
-T880781,2026-09-28 09:14:00,C1303,Studio Petrov,Bug,normal,solved,False,product_question,,False,False,,Urgent: time sensitive,Why is a late fee being added to an invoice that was paid in full ten days before the due date?? The client is now furious and thinks we're trying to overcharge them.
+T880781,2026-09-28 09:14:00,C1303,Studio Petrov,Bug,normal,solved,False,product_question,,True,False,overcharg\w+,Urgent: time sensitive,Why is a late fee being added to an invoice that was paid in full ten days before the due date?? The client is now furious and thinks we're trying to overcharge them.
 T880782,2026-09-28 11:21:00,C1499,Stonegate Technology Services,How-to,high,solved,False,collections_complaint,,False,True,,Can you check something for me,"Morning,
 
 Do clients have the ability to opt out of reminder emails themselves from the portal, or is that something we control on our side?"
@@ -2555,7 +2555,7 @@ I get an email every time anyone on the team edits a draft. Can I switch those o
 Bianca"
 T880913,2026-10-14 22:54:00,C1484,Stanhope Pemberton Engineers,Billing,high,solved,False,product_question,,False,False,,project list sort resets,the project list keeps going back to sort by date created whenever i log back in. id like it to remember alphabetical
 T880914,2026-10-15 10:07:00,C1464,Quill & Corbin LLP,Account change,normal,solved,False,product_question,,False,False,,URGENT,Hi there - Change billing contact. Old one no longer with firm.
-T880915,2026-10-15 10:13:00,C1433,Lindgren Legal,Billing,normal,solved,True,dispute,,True,False,void it,Urgent: time sensitive,"Sent an invoice yesterday to the wrong contact with the wrong amount on it. Do I void it and raise a new one, or just correct it? I don't want to mess up the sequence."
+T880915,2026-10-15 10:13:00,C1433,Lindgren Legal,Billing,normal,solved,False,product_question,,False,False,,Urgent: time sensitive,"Sent an invoice yesterday to the wrong contact with the wrong amount on it. Do I void it and raise a new one, or just correct it? I don't want to mess up the sequence."
 T880916,2026-10-15 14:12:00,C1505,Achebe + Pemberton Architects,Billing,low,solved,False,product_question,,False,False,,hi,"Hi,
 
 the invoice says paid but there's no payment attached to it when i click in. how do I find out where the payment came from??
@@ -2832,7 +2832,7 @@ Noah"
 T881023,2026-10-29 11:19:00,C1408,Studio Finch,,normal,solved,False,product_question,,False,False,,Quick one,"Hi there - Which currency does the invoice go across in when the client is billed in euros and our Xero base currency is GBP?
 
 Daniel"
-T881024,2026-10-29 11:50:00,C1075,Brandt Ashby IT,Billing,normal,pending,True,dispute,INV-25822,True,False,not (?:be )?paying|void it|we are not paying|not paying for,Billed annual renewal after moving to monthly,"We moved from annual Enterprise to monthly Team well before the renewal date, and got a confirmation screen saying so. INV-25822 is a full 12-month Enterprise renewal. Obviously we are not paying for a year of a plan we already left. Void it please."
+T881024,2026-10-29 11:50:00,C1075,Brandt Ashby IT,Billing,normal,pending,True,dispute,INV-25822,True,False,not (?:be )?paying|void it please|we are not paying|not paying for,Billed annual renewal after moving to monthly,"We moved from annual Enterprise to monthly Team well before the renewal date, and got a confirmation screen saying so. INV-25822 is a full 12-month Enterprise renewal. Obviously we are not paying for a year of a plan we already left. Void it please."
 T881025,2026-10-29 14:56:00,C1428,Upton Stanhope Engineers,How-to,low,solved,False,product_question,,False,False,,Fwd:,"Hi,
 
 Is there documentation on what syncs for each integration? A single table would be ideal, I need to brief our finance director on Thursday."

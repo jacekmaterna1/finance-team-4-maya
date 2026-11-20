@@ -1,0 +1,46 @@
+section,check,result,detail
+C,money figures on home,PASS,all 4 present
+C,money figures on today,PASS,all 4 present
+C,money figures on digest,PASS,all 4 present
+C,money figures on team,PASS,all 4 present
+C,money figures on chat status,PASS,all 4 present
+C,/collections group counts = engine,PASS,"{'HOLD': 21, 'RETRY_CARD': 9, 'HUMAN_WRITES': 4, 'DRAFT_REMINDER': 33, 'NO_ACTION': 50}"
+C,digest counts = engine,PASS,
+C,chat status counts = engine,PASS,"Overdue $633,245 across 54 invoices: $78,348 already received, $312,922 disputed, $241,975 collectable. Complaints caused: 0. Cash Application: 3 auto-applied (exact amount + reference), 4 proposals for Priya, $87,335 found in unapplied receipts. Account Context: profiled 107 customers; 16 with an o"
+C,needs-a-human count on home,PASS,Needs a human today (71
+C,needs-a-human count on today,PASS,Needs you today (71
+C,no stale numbers on home,PASS,[]
+C,no stale numbers on today,PASS,[]
+C,no stale numbers on digest,PASS,[]
+C,no stale numbers on team,PASS,[]
+C,no stale numbers on about,PASS,[]
+C,no stale numbers on docs,PASS,[]
+C,no stale numbers on architecture,PASS,[]
+C,no stale numbers on demo,PASS,[]
+D,approve payment proposal PAY-65750,PASS,
+D,undo auto-apply PAY-65806,PASS,
+D,approve draft with an edit -> 'edit' + 'send' rows,PASS,"['edit', 'send']"
+D,send with banned wording -> 400,PASS,"{""detail"":""Blocked by the Controller: the email contains banned wording: debt collector""}"
+D,send to an address NOT in contacts.csv (look-alike) -> rejected,PASS,HTTP 400 (server accepted 'to' override)
+D,send on a HOLD invoice (Jessop MONEY_RECEIVED) without lifting the hold -> rejected,PASS,HTTP 400
+D,reject draft INV-25869,PASS,
+D,override hold with reason <5 chars -> 400,PASS,
+D,override hold with a reason -> OK,PASS,
+D,release DISPUTE without AM checkbox -> 400,PASS,
+D,release DISPUTE with AM checkbox + name -> OK,PASS,
+D,OVERRIDE (not release) a DISPUTE hold without AM -> should also need AM,PASS,HTTP 400: dispute hold lifted with no AM confirmation
+D,approve card re-run INV-25803,PASS,
+D,reject card re-run INV-25793,PASS,
+D,card re-run on a non-re-run invoice -> 400,PASS,
+D,rules change via /rules form shows before/after,PASS,auto_applied 3 -> 2
+D,partial /rules POST does not switch guardrails off,PASS,after POST {fee_tolerance:25}: turned off []; banned_phrases 13 -> 13
+D,rules restored,PASS,
+D,chat 'set ... to ...' + /api/rules/apply re-runs with before/after,PASS,"auto_applied 3 -> 2; reply: ['auto applied: 3 → 2', 'held: 21 → 22', 'needs review: 4 → 5', 'Invoices: HOLD: 21 → 22', 'Invoices: NO_ACTION: 50 → 49', 'Payments: AUTO_APPLY: 3 → 2', 'Payments: PROPOSE: 4 → 5', '2 item(s) changed decision, e.g. INV-25845 NO_ACTION→HOLD, PAY-65806 AUTO_APPLY→PROPOSE']"
+D,chat 'from now on ...' -> accept in Direct -> in agent manual,PASS,"instruction 1, manuals containing it: ['collections.md'], agent=Collections"
+D,Loom share link saved and embedded,PASS,
+D,non-video link rejected,PASS,
+D,every human action in /audit,PASS,17 actions; missing []
+D,every human action in /activity,PASS,missing []
+D,every human action has a user and a reason,PASS,
+D,CSV export has every human action,PASS,159 lines
+D,approving an already-approved payment is refused,FAIL,HTTP 409 (second 'apply' row written)

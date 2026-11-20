@@ -29,14 +29,14 @@ RELEASE_NEEDS_AM = ("DISPUTE", "CANCELLATION")
 ACTION_TITLES = {
     "HOLD": "Held by the Controller",
     "RETRY_CARD": "Card re-runs to approve",
-    "HUMAN_WRITES": "A person writes these (top-50 accounts)",
+    "HUMAN_WRITES": "A person writes these (top-50, legal risk, 90+ days)",
     "DRAFT_REMINDER": "Drafts awaiting your approval",
     "NO_ACTION": "No action needed",
 }
 ACTION_HELP = {
     "HOLD": "Nothing goes out until a person releases or overrides the hold. Each hold says which agent raised it and why.",
     "RETRY_CARD": "The card on file has worked since the charge failed, so re-running it should collect the money without emailing anyone. Look at each one and approve it individually (simulated charge: nothing is billed).",
-    "HUMAN_WRITES": "Policy: nothing goes to one of the 50 largest accounts without a person reading it first. "
+    "HUMAN_WRITES": "Top-50 accounts, legal risk and 90+ days overdue: a person writes and reads every message. "
                     "Any draft below is a starting point only.",
     "DRAFT_REMINDER": "Collections drafted these under the collections policy. Edit if you like, then approve. "
                       "Approving marks it sent (simulated: no email leaves this demo).",
@@ -72,8 +72,9 @@ RULE_HELP = {
     "card_writeoff_warning_days": ("Card write-off warning (days)",
                                    "Warn before a failed card invoice reaches the automatic 150-day write-off."),
     "auto_apply_max_amount": ("Auto-apply limit ($)",
-                              "Largest payment Cash Application applies on its own. Larger ones go to Priya even on an "
-                              "exact match. Dana to confirm."),
+                              "Largest payment Cash Application applies on its own (default cap $10,000, Dana to "
+                              "confirm). Larger ones go to Priya even on an exact match. Raising it above $10,000 needs "
+                              "Dana's approval."),
     "use_claude": ("Use Claude for drafts",
                    "When on, Collections asks Claude to write the reminder text (cached). Off = policy templates only."),
 }
@@ -273,11 +274,51 @@ def _flatten_rules(rules: Dict[str, Any]) -> List[Dict[str, Any]]:
     return fields
 
 
+AUTO_APPLY_CAP = 10000.0
+
+
+def sensitive_changes(old: Dict[str, Any], new: Dict[str, Any]) -> List[str]:
+    """Rule changes that loosen a guardrail. Each needs 'Dana approved this change' + her name."""
+    out = []
+    if old.get("top50_human_only", True) and new.get("top50_human_only") is False:
+        out.append("turning off 'Top-50 accounts: a person writes'")
+    if old.get("notify_am_before_contact", True) and new.get("notify_am_before_contact") is False:
+        out.append("turning off 'Tell the account manager first'")
+    if not old.get("use_claude") and new.get("use_claude") is True:
+        out.append("turning on Claude (Legal DPA pending)")
+    try:
+        if float(new.get("writeoff_threshold") or 0) > 0 and float(new.get("writeoff_threshold") or 0) > float(old.get("writeoff_threshold") or 0):
+            out.append("raising the write-off threshold above $0")
+        if "auto_apply_max_amount" in new and float(new.get("auto_apply_max_amount") or 0) > AUTO_APPLY_CAP and \
+                float(new.get("auto_apply_max_amount") or 0) > float(old.get("auto_apply_max_amount") or 0):
+            out.append("raising the auto-apply cap above $10,000")
+    except (TypeError, ValueError):
+        pass
+    if old.get("auto_apply_exact_ref_match") is False and new.get("auto_apply_exact_ref_match") is True:
+        pass  # re-enabling the agreed default is fine
+    return out
+
+
+def check_dana(changes: List[str], approved, name: str) -> Optional[str]:
+    if not changes:
+        return None
+    if approved not in (True, "on", "true", "1", 1) or len((name or "").strip()) < 2:
+        return ("Dana must approve this change ({}). Tick 'Dana approved this change' and type her name.".format(
+            "; ".join(changes)))
+    return None
+
+
 def _parse_rules(form, current: Dict[str, Any]) -> Tuple[Dict[str, Any], List[str]]:
+    """Update only the fields present in the form. The /rules form sends a hidden __present marker for every field,
+    so an unticked checkbox means off; a script or stale tab that omits a field leaves it unchanged."""
     new = copy.deepcopy(current)
     errors = []
+    present = set(form.getlist("__present")) if hasattr(form, "getlist") else set()
+    present |= {k.split(".")[0] for k in form.keys() if not k.startswith("__")}
     for f in _flatten_rules(current):
         k, kind, old = f["key"], f["kind"], f["value"]
+        if k not in present:
+            continue
         try:
             if kind == "bool":
                 new[k] = form.get(k) in ("on", "true", "1")
@@ -294,10 +335,18 @@ def _parse_rules(form, current: Dict[str, Any]) -> Tuple[Dict[str, Any], List[st
                         d[sub] = int(raw) if isinstance(subold, int) and re.match(r"^-?\d+$", raw) else float(raw)
                 new[k] = d
             elif kind == "lines":
+                if k not in form.keys():
+                    continue
                 new[k] = [ln.strip() for ln in (form.get(k) or "").splitlines() if ln.strip()]
+                if k == "banned_phrases" and not new[k]:
+                    errors.append("The banned-phrases list cannot be empty: it is what stops threatening wording.")
             elif kind == "text":
+                if k not in form.keys():
+                    continue
                 new[k] = form.get(k, old)
             else:
+                if k not in form.keys():
+                    continue
                 new[k] = json.loads(form.get(k) or "null")
         except (ValueError, TypeError) as exc:
             errors.append("{}: {}".format(f["label"], exc))
@@ -371,6 +420,77 @@ def valid_video_url(url: str) -> bool:
     return any(host == h or host.endswith("." + h) for h in EMBED_HOSTS)
 
 
+HARD_SEND_ACTIONS = ("DRAFT_REMINDER", "HUMAN_WRITES")
+
+
+def banned_hits(phrases: List[str], text: str) -> List[str]:
+    hits = []
+    for b in phrases or []:
+        b = (b or "").strip()
+        if b and re.search(r"(?<!\w)" + re.escape(b) + r"(?!\w)", text, re.I):
+            hits.append(b)
+    return hits
+
+
+def send_blocker(state, i: Dict[str, Any]) -> Optional[str]:
+    """Server-side: may this invoice be marked sent right now?"""
+    hist = store.history("invoice", i["invoice_id"])
+    if hist and hist[-1]["action"] == "send":
+        return "Already marked sent by {} at {}.".format(hist[-1]["user_email"], cst(hist[-1]["ts"]))
+    if i["action"] in HARD_SEND_ACTIONS:
+        return None
+    if i["action"] == "HOLD":
+        codes = {h.get("code") for h in i.get("holds") or []}
+        lifted = set()
+        for a in hist:
+            if a["action"] in ("override_hold", "release_hold"):
+                lifted |= set((a.get("payload") or {}).get("holds") or [])
+        if codes and codes <= lifted:
+            return None
+        return "This invoice is held ({}). Release or override every hold before anything is sent.".format(
+            ", ".join(sorted(c for c in codes if c not in lifted)))
+    return "Nothing to send for this invoice (agent decision: {}).".format(i["action"])
+
+
+def allowed_recipients(state, i: Dict[str, Any]) -> set:
+    d = i.get("draft") or {}
+    if d.get("to"):
+        return {x.lower() for x in d["to"]}
+    c = (state.get("customers") or {}).get(i["customer_id"]) or {}
+    return {(x.get("email") or "").lower() for x in c.get("contacts") or [] if x.get("verified") and x.get("email")}
+
+
+def cc_allowed(state, i: Dict[str, Any], addr: str) -> bool:
+    addr = addr.lower()
+    if addr.endswith("@ledgerline.com"):
+        return True
+    d = i.get("draft") or {}
+    return addr in {x.lower() for x in d.get("cc") or []}
+
+
+def cst(ts) -> str:
+    """Show a timestamp in America/Chicago. '...Z' / '+00:00' values are UTC; naive engine stamps are already local."""
+    if not ts:
+        return ""
+    s = str(ts)
+    try:
+        from datetime import datetime, timedelta, timezone
+        if s.endswith("Z") or "+00:00" in s:
+            dt = datetime.strptime(s.replace("Z", "").replace("+00:00", "")[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+            try:
+                from zoneinfo import ZoneInfo
+                loc = dt.astimezone(ZoneInfo("America/Chicago"))
+            except Exception:
+                loc = dt.astimezone(timezone(timedelta(hours=-6)))
+            return loc.strftime("%Y-%m-%d %H:%M") + " CST"
+        return s.replace("T", " ")[:16] + " CST"
+    except ValueError:
+        return s
+
+
+templates.env.filters["cst"] = cst
+
+
 # ------------------------------------------------------------------------------------------------ routes
 def build_router() -> APIRouter:
     r = APIRouter()
@@ -440,9 +560,18 @@ def build_router() -> APIRouter:
                 "invoices": {i["invoice_id"]: i for i in state["invoices"]}})
         return RedirectResponse("/cash#" + pid, status_code=303)
 
+    def _payment_once(pid: str) -> None:
+        prev = store.latest_by_object().get("payment:" + pid)
+        if prev:
+            raise HTTPException(409, "{} was already handled ({} by {} at {}). Nothing changed.".format(
+                pid, prev["action"].replace("_", " "), prev["user_email"], cst(prev["ts"])))
+
     @r.post("/cash/{pid}/approve")
     async def cash_approve(request: Request, pid: str, note: str = Form("")):
         p = _find(st.get_state()["payments"], "payment_id", pid)
+        _payment_once(pid)
+        if p["decision"] not in ("PROPOSE",):
+            raise HTTPException(400, "Only a proposed match can be approved.")
         store.record(_user(request), "payment", pid, "apply",
                      note or "Approved application (simulated ledger write).",
                      {"invoice_ids": p["invoice_ids"], "amount": p["amount"], "difference": p.get("difference"),
@@ -452,6 +581,7 @@ def build_router() -> APIRouter:
     @r.post("/cash/{pid}/reject")
     async def cash_reject(request: Request, pid: str, note: str = Form("")):
         p = _find(st.get_state()["payments"], "payment_id", pid)
+        _payment_once(pid)
         store.record(_user(request), "payment", pid, "reject", note or "Rejected proposed match.",
                      {"invoice_ids": p["invoice_ids"], "agent_decision": p["decision"]})
         return _payment_response(request, pid)
@@ -459,6 +589,9 @@ def build_router() -> APIRouter:
     @r.post("/cash/{pid}/undo")
     async def cash_undo(request: Request, pid: str, note: str = Form("")):
         p = _find(st.get_state()["payments"], "payment_id", pid)
+        _payment_once(pid)
+        if p["decision"] != "AUTO_APPLY":
+            raise HTTPException(400, "Only an auto-applied payment can be undone.")
         store.record(_user(request), "payment", pid, "reject",
                      note or "Undid the agent's auto-application (simulated ledger reversal).",
                      {"undo": True, "invoice_ids": p["invoice_ids"], "agent_decision": p["decision"]})
@@ -492,18 +625,34 @@ def build_router() -> APIRouter:
 
     @r.post("/collections/{iid}/send")
     async def inv_send(request: Request, iid: str, subject: str = Form(""), body: str = Form(""),
-                       to: str = Form(""), note: str = Form("")):
+                       to: str = Form(""), cc: str = Form(None), note: str = Form("")):
         user = _user(request)
-        i = _find(st.get_state()["invoices"], "invoice_id", iid)
+        state = st.get_state()
+        i = _find(state["invoices"], "invoice_id", iid)
         d = i.get("draft") or {}
+        err = send_blocker(state, i)
+        if err:
+            raise HTTPException(400, err)
         if not body.strip():
             raise HTTPException(400, "The email body is empty.")
-        banned = [b for b in (st.get_state().get("rules") or {}).get("banned_phrases", [])
-                  if b and b.lower() in (subject + "\n" + body).lower()]
+        banned = banned_hits((state.get("rules") or {}).get("banned_phrases", []), subject + "\n" + body)
         if banned:
             raise HTTPException(400, "Blocked by the Controller: the email contains banned wording: " + ", ".join(banned))
+        allowed_to = allowed_recipients(state, i)
+        to_list = [x.strip().lower() for x in re.split(r"[,;\s]+", to) if x.strip()] or [x.lower() for x in d.get("to", [])]
+        unknown = [x for x in to_list if x not in allowed_to]
+        if unknown:
+            raise HTTPException(400, "Recipient(s) not allowed: {}. You can remove recipients, but only verified contacts "
+                                     "for {} can receive it.".format(", ".join(unknown), i["customer_name"]))
+        if not to_list:
+            raise HTTPException(400, "No verified recipient. Confirm the billing contact first.")
+        cc_list = [x.strip().lower() for x in re.split(r"[,;\s]+", cc) if x.strip()] if cc is not None else \
+            [x.lower() for x in d.get("cc", [])]
+        bad_cc = [x for x in cc_list if not cc_allowed(state, i, x)]
+        if bad_cc:
+            raise HTTPException(400, "cc may only be the account manager or @ledgerline.com addresses: " + ", ".join(bad_cc))
         edited = (subject.strip() != (d.get("subject") or "").strip()) or (body.strip() != (d.get("body") or "").strip())
-        payload = {"to": [x.strip() for x in to.split(",") if x.strip()] or d.get("to", []), "cc": d.get("cc", []),
+        payload = {"to": to_list, "cc": cc_list,
                    "subject": subject, "body": body, "template": d.get("template"), "source": d.get("source"),
                    "edited": edited, "agent_action": i["action"]}
         if edited and d:
@@ -533,10 +682,11 @@ def build_router() -> APIRouter:
         payload = {"holds": [h.get("code") for h in holds], "agent_action": i["action"],
                    "route_to": [h.get("route_to") for h in holds if h.get("route_to")]}
         needs_am = [h for h in holds if h.get("code") in RELEASE_NEEDS_AM]
-        if kind == "release_hold" and needs_am:
+        if needs_am:
             if am_confirmed not in ("on", "true", "1") or len(am_name.strip()) < 2:
-                raise HTTPException(400, "Releasing a dispute or cancellation hold needs the box 'Account manager "
-                                         "confirmed the dispute is settled' ticked and the account manager's name.")
+                raise HTTPException(400, "Lifting a dispute or cancellation hold (release or override) needs the box "
+                                         "'Account manager confirmed the dispute is settled' ticked and the account "
+                                         "manager's name.")
             payload.update({"am_confirmed": True, "am_name": am_name.strip(),
                             "release_requires": [h.get("release_requires") for h in needs_am if h.get("release_requires")]})
         store.record(_user(request), "invoice", iid, kind, reason.strip(), payload)
@@ -621,6 +771,7 @@ def build_router() -> APIRouter:
         rows = _audit_rows(state, agent, q)
         agents = sorted({a.get("agent", "") for a in state.get("audit", [])} | set(AGENTS))
         return _render(request, "audit.html", {"rows": rows[:limit], "n": len(rows), "agent": agent, "q": q,
+                                               "run_ts": state.get("run_ts"),
                                                "agents": agents + ["Human"], "limit": limit})
 
     @r.get("/audit.csv")
@@ -651,6 +802,10 @@ def build_router() -> APIRouter:
         current = st.load_rules()
         new, errors = _parse_rules(form, current)
         history = [a for a in store.all_actions() if a["object_type"] == "rules"][-10:][::-1]
+        sensitive = sensitive_changes(current, new)
+        dana_err = check_dana(sensitive, form.get("dana_approved"), form.get("dana_name") or "")
+        if dana_err:
+            errors.append(dana_err)
         if errors:
             return _render(request, "rules.html", {"fields": _flatten_rules(new), "result": None, "errors": errors,
                                                    "history": history}, status_code=400)
@@ -664,7 +819,9 @@ def build_router() -> APIRouter:
         if changed:
             note = (form.get("note") or "").strip() or "Changed " + ", ".join(sorted(changed))
             store.record(user, "rules", "rules", "edit", note,
-                         {"changed": changed, "impact": result["rows"], "moved": result["moved"][:50]})
+                         {"changed": changed, "impact": result["rows"], "moved": result["moved"][:50],
+                          "dana_approved": bool(sensitive), "dana_name": (form.get("dana_name") or "").strip() or None,
+                          "sensitive": sensitive})
             history = [a for a in store.all_actions() if a["object_type"] == "rules"][-10:][::-1]
         return _render(request, "rules.html", {"fields": _flatten_rules(st.load_rules()), "result": result,
                                                "errors": [], "history": history})

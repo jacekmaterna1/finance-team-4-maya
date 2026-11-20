@@ -164,7 +164,7 @@ pays = BASE["payments"]
 for i in pf:
     later = pays[(pays["method"] == "card") & (pays["payer_name"].map(norm_name) == norm_name(i["customer_name"])) & (pays["received_date"] > pd.Timestamp(i["issue_date"]))]
     works = len(later) > 0
-    hard = any(h["code"] in ("DISPUTE", "MONEY_RECEIVED", "CANCELLATION", "OPEN_ESCALATION", "NO_VALID_CONTACT") for h in i["holds"])
+    hard = any(h["code"] in ("DISPUTE", "MONEY_RECEIVED", "CANCELLATION", "OPEN_ESCALATION", "NO_VALID_CONTACT", "LEGAL_RISK") for h in i["holds"])
     ok = (i["action"] == "RETRY_CARD" and i["draft"] is None) if (works and not hard) else (i["action"] != "RETRY_CARD")
     check("8 failed card %s (card works=%s)" % (i["invoice_id"], works), ok, show(i))
 

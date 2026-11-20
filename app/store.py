@@ -10,7 +10,7 @@ import threading
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-ACTIONS = ("approve", "reject", "edit", "override_hold", "release_hold", "send", "apply")
+ACTIONS = ("approve", "reject", "edit", "override_hold", "release_hold", "send", "apply", "reply", "resolve")
 # object_type values in use: payment, invoice, rules, instruction, manual
 
 _lock = threading.Lock()
@@ -55,6 +55,13 @@ def init_db() -> None:
                    decided_by TEXT,
                    decided_ts TEXT,
                    source TEXT
+               )""")
+        conn.execute(
+            """CREATE TABLE IF NOT EXISTS maya_questions (
+                   id TEXT PRIMARY KEY, created_ts TEXT, purpose TEXT, owner TEXT, topic TEXT, text TEXT, why TEXT,
+                   changes TEXT, invoices_json TEXT, status TEXT NOT NULL DEFAULT 'proposed', edited_text TEXT,
+                   approved_by TEXT, approved_ts TEXT, sent_ts TEXT, sent_message TEXT, reply TEXT, reply_ts TEXT,
+                   outcome TEXT, updated_ts TEXT
                )""")
         conn.execute("CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT, ts TEXT, user TEXT)")
         conn.execute(
@@ -173,3 +180,81 @@ def set_setting(key: str, value: str, user: str) -> None:
         conn.execute("INSERT INTO settings (key, value, ts, user) VALUES (?, ?, ?, ?) "
                      "ON CONFLICT(key) DO UPDATE SET value = excluded.value, ts = excluded.ts, user = excluded.user",
                      (key, value, _now(), user))
+
+
+# ------------------------------------------------------------------ Maya desk (questions the team wants to ask the COO)
+MAYA_STATUSES = ("proposed", "approved", "sent", "answered", "dismissed", "resolved")
+
+
+def _mq(r: sqlite3.Row) -> Dict[str, Any]:
+    d = dict(r)
+    try:
+        d["invoices"] = json.loads(d.get("invoices_json") or "[]")
+    except ValueError:
+        d["invoices"] = []
+    d["final_text"] = d.get("edited_text") or d.get("text") or ""
+    return d
+
+
+def sync_maya_questions(qs: List[Dict[str, Any]]) -> Dict[str, int]:
+    """Insert new questions as proposed; refresh text of still-proposed ones; never downgrade a status.
+    A proposed question that no longer appears is marked resolved (by data)."""
+    now = _now()
+    seen = set()
+    added = resolved = 0
+    with _lock, _connect() as conn:
+        for q in qs:
+            qid = str(q.get("id"))
+            seen.add(qid)
+            row = conn.execute("SELECT status FROM maya_questions WHERE id = ?", (qid,)).fetchone()
+            vals = (q.get("purpose"), q.get("owner"), q.get("topic"), q.get("text"), q.get("why"), q.get("changes"),
+                    json.dumps(q.get("invoices") or []))
+            if row is None:
+                conn.execute("INSERT INTO maya_questions (id, created_ts, purpose, owner, topic, text, why, changes, "
+                             "invoices_json, status, updated_ts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'proposed', ?)",
+                             (qid, now) + vals + (now,))
+                added += 1
+            elif row["status"] in ("proposed", "resolved"):
+                conn.execute("UPDATE maya_questions SET purpose=?, owner=?, topic=?, text=?, why=?, changes=?, "
+                             "invoices_json=?, status='proposed', updated_ts=? WHERE id=?", vals + (now, qid))
+        for r in conn.execute("SELECT id FROM maya_questions WHERE status = 'proposed'").fetchall():
+            if r["id"] not in seen:
+                conn.execute("UPDATE maya_questions SET status='resolved', outcome=COALESCE(outcome, ?), updated_ts=? "
+                             "WHERE id=?", ("Resolved by data: the issue no longer appears in the records.", now, r["id"]))
+                resolved += 1
+    return {"added": added, "resolved": resolved}
+
+
+def maya_questions(status: Optional[str] = None) -> List[Dict[str, Any]]:
+    with _connect() as conn:
+        if status:
+            rows = conn.execute("SELECT * FROM maya_questions WHERE status = ? ORDER BY created_ts, id", (status,))
+        else:
+            rows = conn.execute("SELECT * FROM maya_questions ORDER BY created_ts, id")
+        return [_mq(r) for r in rows]
+
+
+def get_maya_question(qid: str) -> Optional[Dict[str, Any]]:
+    with _connect() as conn:
+        r = conn.execute("SELECT * FROM maya_questions WHERE id = ?", (qid,)).fetchone()
+        return _mq(r) if r else None
+
+
+def update_maya_question(qid: str, **fields) -> None:
+    allowed = {"status", "edited_text", "approved_by", "approved_ts", "sent_ts", "sent_message", "reply", "reply_ts",
+               "outcome"}
+    fields = {k: v for k, v in fields.items() if k in allowed}
+    if not fields:
+        return
+    if "status" in fields and fields["status"] not in MAYA_STATUSES:
+        raise ValueError(fields["status"])
+    sets = ", ".join("{} = ?".format(k) for k in fields) + ", updated_ts = ?"
+    with _lock, _connect() as conn:
+        conn.execute("UPDATE maya_questions SET " + sets + " WHERE id = ?", tuple(fields.values()) + (_now(), qid))
+
+
+def maya_sent_bundles() -> int:
+    with _connect() as conn:
+        r = conn.execute("SELECT COUNT(DISTINCT COALESCE(sent_message, sent_ts)) AS n FROM maya_questions "
+                         "WHERE status IN ('sent', 'answered') AND (sent_message IS NOT NULL OR sent_ts IS NOT NULL)").fetchone()
+        return int(r["n"] or 0)

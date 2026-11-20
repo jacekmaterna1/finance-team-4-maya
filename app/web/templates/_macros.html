@@ -18,7 +18,7 @@
   {% elif s.action == 'release_hold' %}Hold released by {{ s.user_email }}{% if s.payload and s.payload.am_confirmed %} &middot; account manager {{ s.payload.am_name }} confirmed the dispute is settled{% endif %}
   {% elif s.action == 'edit' %}Edited by {{ s.user_email }}
   {% else %}{{ s.action }} by {{ s.user_email }}{% endif %}
-  <span class="muted small">&middot; {{ s.ts }}</span>
+  <span class="muted small">&middot; {{ s.ts|cst }}</span>
   {% if s.note %}<div class="small">"{{ s.note }}"</div>{% endif %}
 </div>
 {% endif %}

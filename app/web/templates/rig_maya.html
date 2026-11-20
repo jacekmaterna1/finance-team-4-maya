@@ -3,10 +3,13 @@
 {% block content %}
 <div class="section-title"><div class="kicker">The team's line to the COO</div><h1>Maya</h1></div>
 <div class="card maya-strip">
-  <div><div class="kicker">Message budget</div><div class="stat-sm">{{ t.used }} of {{ t.budget }} used</div>
-    <div class="budget"><span style="width: {{ ((t.used or 0) * 100 / (t.budget or 60))|round(1) }}%"></span></div></div>
+  <div><div class="kicker">Message budget</div><div class="stat-sm">{{ d.used }} of {{ d.budget }} used</div>
+    <div class="budget"><span style="width: {{ ((d.used or 0) * 100 / (d.budget or 60))|round(1) }}%"></span></div>
+    <div class="small muted">{{ d.baseline }} from the trail + {{ d.used - d.baseline }} sent from this desk</div></div>
   <div class="note">We only write to Maya to get a confirmation or intel — never status updates.</div>
 </div>
+{% include "_maya_desk.html" %}
+<div class="section-title"><div class="kicker">History</div><h2>The thread so far</h2></div>
 {% if t.ok %}
   {% for ex in t.exchanges %}
   <section class="thread">
@@ -27,6 +30,15 @@
 {% else %}
   <div class="card prose">{{ t.raw_html|safe }}</div>
 {% endif %}
+{% for ex in d.exchanges %}
+  <section class="thread">
+    <div class="kicker thread-title">From the Maya desk · sent {{ ex.sent_ts|cst }}</div>
+    <div class="bubble-row right"><div class="bubble bubble-team"><div class="bubble-who">Jacek / team</div>{{ ex.message }}</div></div>
+    {% if ex.reply %}<div class="bubble-row left"><div class="bubble bubble-maya"><div class="bubble-who">Maya · {{ ex.reply_ts|cst }}</div>{{ ex.reply }}</div></div>
+    {% else %}<div class="small muted thread-meta">Waiting for Maya's reply.</div>{% endif %}
+    {% if ex.outcomes %}<div class="card changes"><div class="kicker">What we changed because of it</div><ul>{% for o in ex.outcomes %}<li>{{ o }}</li>{% endfor %}</ul></div>{% endif %}
+  </section>
+{% endfor %}
 <div class="section-title"><div class="kicker">Outbox</div><h2>Pending drafts <span class="muted small">(read-only; the operator sends them from the Scaleworks chat)</span></h2></div>
 {% for d in t.drafts %}
   <details class="card draft-card"><summary><b>{{ d.title }}</b>{% if d.kind %} <span class="pill {{ 'ok' if d.kind == 'Confirmation' else 'mid' }}">{{ d.kind }}</span>{% endif %}{% if d.purpose and not d.kind %} <span class="small muted">Purpose: {{ d.purpose }}</span>{% endif %}</summary><div class="small">{{ d.html|safe }}</div></details>

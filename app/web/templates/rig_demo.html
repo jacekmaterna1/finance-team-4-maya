@@ -6,7 +6,14 @@
 {% if video %}
 <div class="video"><iframe src="{{ video }}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" frameborder="0" title="Demo video"></iframe></div>
 {% else %}
-<div class="card placeholder"><div class="kicker">Coming soon</div><h2 class="h2-tight">Loom walkthrough coming — 5–10 min</h2><p class="small muted">What we chose, why, how, the tool on real records, and where it gets things wrong.</p></div>
+<div class="card placeholder"><div class="kicker">Demo video</div><h2 class="h2-tight">Loom walkthrough (5–10 min) — recorded by Jacek</h2>
+  <ol class="outline">
+    <li>Why this process</li>
+    <li>The team &amp; system diagram</li>
+    <li>FIN-2 then FIN-1 on real records</li>
+    <li>Where it gets things wrong</li>
+    <li>Maya channel &amp; what's next</li>
+  </ol></div>
 {% endif %}
 <form method="post" action="/demo" class="card stack" style="margin-top:1rem;max-width:54rem">
   <div class="kicker">Paste Loom share link</div>
@@ -14,7 +21,5 @@
   <div class="small muted">Loom share or embed links work. YouTube and Google Drive links are accepted too. Saving is logged in the audit trail.</div>
   <button class="btn btn-primary">Save video link</button>
 </form>
-{% if script_html %}
-<details class="card" {% if not video %}open{% endif %}><summary><span class="kicker">submission/VIDEO_SCRIPT.md</span> <b>Video outline</b></summary><div class="prose-sm">{{ script_html|safe }}</div></details>
-{% endif %}
+<p class="small muted">Video link is set via DEMO_VIDEO_URL so it survives redeploys.</p>
 {% endblock %}

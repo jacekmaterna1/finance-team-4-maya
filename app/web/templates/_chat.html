@@ -48,8 +48,16 @@
     (res.actions || []).forEach(function (a) {
       if (a.type !== 'apply_rule') return;
       var b = el('button', 'btn btn-primary btn-sm lj-act', a.label); b.type = 'button';
-      b.onclick = function () { b.disabled = true; b.textContent = 'Applying...';
-        fetch('/api/rules/apply', {method: 'POST', headers: {'Content-Type': 'application/json'}, credentials: 'same-origin', body: JSON.stringify({rule: a.rule, value: a.value})})
+      b.onclick = function () {
+        var payload = {rule: a.rule, value: a.value};
+        if (a.needs_dana) {
+          if (!window.confirm('This loosens a guardrail. Has Dana approved this change?')) return;
+          var n = window.prompt("Dana's name (logged with the change):", 'Dana Ruiz');
+          if (!n) return;
+          payload.dana_approved = true; payload.dana_name = n;
+        }
+        b.disabled = true; b.textContent = 'Applying...';
+        fetch('/api/rules/apply', {method: 'POST', headers: {'Content-Type': 'application/json'}, credentials: 'same-origin', body: JSON.stringify(payload)})
           .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.detail || 'failed'); return j; }); })
           .then(function (j) { b.textContent = 'Applied'; render(j); })
           .catch(function (e) { b.disabled = false; b.textContent = a.label; add('bot', 'error', e.message); });

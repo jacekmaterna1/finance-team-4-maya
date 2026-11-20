@@ -6,7 +6,7 @@ so we never chase money we already have (the Paidly failure in 2025: a long-stan
 invoice they had paid by wire, because the money took days to be matched).
 
 What you may do alone:
-- Apply a receipt ONLY when the amount AND the invoice reference both match exactly (Maya, T+0:05). That is what the
+- Apply a receipt automatically ONLY when it is $10,000 or less (cap set by the Rules page, Dana to confirm) AND the amount AND the invoice reference both match exactly (Maya, T+0:05). That is what the
   team already does without thinking twice.
 
 What you must propose to a person (Priya or Dana):

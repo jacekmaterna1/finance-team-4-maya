@@ -1,0 +1,72 @@
+{% macro qhead(q) -%}
+<div class="q-head">
+  <span class="pill {{ 'p-confirm' if q.purpose == 'Confirmation' else 'p-intel' }}">{{ q.purpose or 'Confirmation' }}</span>
+  <b>{{ q.topic }}</b> <span class="small muted">· owner {{ q.owner or 'Maya' }} · {{ q.id }}</span>
+</div>
+{%- endmacro %}
+{% macro qmeta(q) -%}
+<div class="q-meta small">
+  {% if q.why %}<div><span class="kicker kicker-ink">Why we ask</span> {{ q.why }}</div>{% endif %}
+  {% if q.changes %}<div><span class="kicker kicker-ink">What changes if answered</span> {{ q.changes }}</div>{% endif %}
+  {% if q.invoices %}<div><span class="kicker kicker-ink">Invoices</span> {% for i in q.invoices %}<a href="/collections#{{ i }}">{{ i }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
+</div>
+{%- endmacro %}
+<section id="desk">
+  <div class="section-title"><div class="kicker">Maya desk</div><h2>Team's open questions <span class="muted small">({{ d.proposed|length }} proposed)</span></h2></div>
+  {% if d.error %}<div class="alert small">Could not refresh questions from the engine: {{ d.error }}</div>{% endif %}
+  {% for q in d.proposed %}
+  <div class="card q-card">
+    {{ qhead(q) }}
+    <form method="post" action="/maya/q/{{ q.id }}/approve" class="stack">
+      <textarea name="text" class="input" rows="4">{{ q.final_text }}</textarea>
+      {{ qmeta(q) }}
+      <div class="btnrow"><button class="btn btn-primary">Approve</button></div>
+    </form>
+    <form method="post" action="/maya/q/{{ q.id }}/dismiss" class="btnrow">
+      <input name="reason" class="input" placeholder="Dismiss reason (e.g. we can answer this from the data)" style="flex:1">
+      <button class="btn btn-danger">Dismiss</button>
+    </form>
+  </div>
+  {% else %}<div class="empty">No open questions. The agents raise one when the data needs a decision only Maya (or Dana via Maya) can make.</div>{% endfor %}
+</section>
+
+<section id="approved">
+  <div class="section-title"><div class="kicker">Outbox</div><h2>Approved — next message to Maya <span class="muted small">({{ d.approved|length }})</span></h2></div>
+  {% if d.approved %}
+  <div class="card">
+    <div class="kicker kicker-ink">Exactly as it will be sent · {{ d.bundle_len }} characters</div>
+    <div class="bundle">{{ d.bundle }}</div>
+    {% if d.too_long %}<div class="alert small">Longer than {{ d.max }} characters. Trim a question or move one to the next message.</div>{% endif %}
+    <ul class="small q-list">{% for q in d.approved %}<li>{{ q.topic }} <span class="muted">· approved by {{ q.approved_by }}</span>
+      <form method="post" action="/maya/q/{{ q.id }}/unapprove" class="inline"><button class="btn btn-sm">Back to proposed</button></form></li>{% endfor %}</ul>
+    <div class="note small">Sent by the operator from the Scaleworks chat; replies appear here automatically.</div>
+  </div>
+  {% else %}<p class="small muted">Nothing approved yet. Approve questions above to build the next message.</p>{% endif %}
+</section>
+
+<section id="sent">
+  <div class="section-title"><div class="kicker">In flight</div><h2>Sent — waiting for Maya <span class="muted small">({{ d.sent|length }})</span></h2></div>
+  {% for q in d.sent %}<div class="card q-card">{{ qhead(q) }}<div class="small">{{ q.final_text }}</div><div class="small muted">Sent {{ q.sent_ts|cst }}</div></div>
+  {% else %}<p class="small muted">Nothing waiting.</p>{% endfor %}
+</section>
+
+<section id="answered">
+  <div class="section-title"><div class="kicker">Answered</div><h2>Maya's answers <span class="muted small">({{ d.answered|length }})</span></h2></div>
+  {% for q in d.answered %}
+  <div class="card q-card">
+    {{ qhead(q) }}
+    <div class="small muted">We asked: {{ q.final_text }}</div>
+    <div class="bubble bubble-maya q-reply"><div class="bubble-who">Maya · {{ q.reply_ts|cst }}</div>{{ q.reply }}</div>
+    <form method="post" action="/maya/q/{{ q.id }}/outcome" class="stack">
+      <label class="kicker kicker-ink">Outcome · what we changed</label>
+      <textarea name="outcome" class="input" rows="2" placeholder="e.g. Controller now releases product-ticket holds after 7 days">{{ q.outcome or '' }}</textarea>
+      <div class="btnrow"><button class="btn">Save outcome</button></div>
+    </form>
+    <form method="post" action="/maya/q/{{ q.id }}/instruction"><button class="btn btn-primary btn-sm">Turn into instruction</button> <span class="small muted">creates a proposed instruction for the relevant agent; a person accepts it in Direct the team</span></form>
+  </div>
+  {% else %}<p class="small muted">No answers yet.</p>{% endfor %}
+  {% if d.resolved or d.dismissed %}
+  <details class="card"><summary><b>Closed without asking</b> <span class="small muted">({{ d.resolved|length }} resolved by data, {{ d.dismissed|length }} dismissed)</span></summary>
+    <ul class="small">{% for q in d.resolved + d.dismissed %}<li><b>{{ q.topic }}</b> · {{ q.status }} · {{ q.outcome }}</li>{% endfor %}</ul></details>
+  {% endif %}
+</section>

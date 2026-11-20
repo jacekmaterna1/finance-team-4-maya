@@ -1,6 +1,6 @@
 # Maya Q&A (log word for word: "What you ask is part of what we read")
 
-Messages used: **5 of 60** (target: 12 or fewer). The count of 5 comes from the main thread at 11:42. Only 4 messages from Jacek are logged below, so one message is unaccounted for. Check it against the counter on the challenge page.
+Messages used: **4 of 60** (verified on the challenge page at T+0:50: "56 messages left"). Target: 12 or fewer.
 Rule since T+0:25 (Jacek): write to Maya only for a **Confirmation** (a decision she or Dana owns) or **Intel** (facts the data room can't give). Never a pure status update.
 
 ## Prepared questions (refine after the data-room read, ask in hour 2)

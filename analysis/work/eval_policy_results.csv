@@ -1,0 +1,13 @@
+check,result,n,bad,examples
+B1 stage matches policy (-5/+7/+21/+45/+90) using TRUE days past due,PASS,117,0,
+B2 top-50 never DRAFT_REMINDER,PASS,14,0,
+B3 no draft where PAID/MONEY_RECEIVED/DISPUTE/CANCELLATION/LEGAL_RISK/OPEN_ESCALATION,PASS,117,0,
+B4 drafts contain no banned phrase,PASS,35,0,
+"B5 recipients are verified contacts (in contacts.csv, domain match, billing/admin role)",PASS,35,0,
+B6 never a 'left the firm' contact,PASS,35,0,
+B7 account manager cc'd,PASS,35,0,
+B8 invoice id / amount / due date in body and equal to the ledger,PASS,35,0,
+B9 signed off by Priya,PASS,35,0,
+B4b no draft blocked by banned list at baseline (substring false positives),PASS,117,0,
+B10 card re-runs only with a later successful card charge and no hard hold / legal risk,PASS,9,0,
+"B11 Dana decisions = card invoices <=10 days from 150-day write-off or > $2,000",PASS,117,0,

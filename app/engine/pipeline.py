@@ -71,7 +71,8 @@ def run_pipeline(rules=None):
     for _, r in ar.sort_values("amount", ascending=False).iterrows():
         inv = {"invoice_id": r["invoice_id"], "customer_id": r["customer_id"], "customer_name": r["customer_name"],
                "amount": float(r["amount"]), "issue_date": r["issue_date"], "due_date": r["due_date"],
-               "days_past_due": int(r["days_past_due"]), "ar_status": r["status"], "bucket": r["bucket"], "plan": r["plan"]}
+               # QA pass 2: ar_aging floors days_past_due at 0, which hid the courtesy stage. Compute from the due date.
+               "days_past_due": int((AS_OF - pd.Timestamp(r["due_date"])).days), "ar_status": r["status"], "bucket": r["bucket"], "plan": r["plan"]}
         ctx = ctxs.get(r["customer_id"])
         stage = collections.stage_for(inv["days_past_due"], inv["ar_status"], rules)
         holds = controller.holds_for(inv, ctx, cash_by_invoice, cash_by_customer, rules, unidentified)
@@ -168,9 +169,12 @@ def run_pipeline(rules=None):
         "card_retries": sum(1 for i in invoices if i["action"] == "RETRY_CARD"),
         "dana_decisions": sum(1 for i in invoices if any(h.get("route_to", "").startswith("Dana") for h in i["holds"])),
     }
+    # Real run time (review T+0:50): agent decisions carry the moment this run happened, in order.
+    import datetime as _dt
+    run_ts = _dt.datetime.now().replace(microsecond=0)
     for i, row in enumerate(audit):
-        row.setdefault("ts", "2026-10-31T07:%02d:%02d" % (i // 60 % 60, i % 60))
-    return {"as_of": AS_OF.strftime("%Y-%m-%d"), "metrics": metrics, "payments": payments, "invoices": invoices,
+        row.setdefault("ts", (run_ts + _dt.timedelta(milliseconds=10 * i)).isoformat(timespec="milliseconds"))
+    return {"as_of": AS_OF.strftime("%Y-%m-%d"), "run_ts": run_ts.isoformat(), "metrics": metrics, "payments": payments, "invoices": invoices,
             "customers": ctxs, "audit": audit, "rules": rules}
 
 

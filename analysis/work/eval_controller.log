@@ -1,14 +1,15 @@
-Analyst disputed overdue invoices: 14 Pipeline flagged (DISPUTE/CANCEL/LEGAL): 15
-TP 14 FP ['INV-25973'] FN []
-precision 93.3% recall 100.0%
+Analyst disputed overdue invoices: 14 Pipeline flagged (DISPUTE/CANCEL/LEGAL): 16
+TP 14 FP ['INV-25769', 'INV-25973'] FN []
+precision 87.5% recall 100.0%
 DISPUTE code only: pred 14 TP 14 FP [] FN []
 Analyst-disputed invoices NOT in HOLD: []
 FP detail: INV-25973 Eastman Engineering 3264.0 HUMAN_WRITES [('LEGAL_RISK', 'T880519 (2026-08-30, status solved): Auto-renewed at 35% more without warning. VP Finance must handle; no automated message.')]
+FP detail: INV-25769 Drummond Consulting 658.0 HUMAN_WRITES [('LEGAL_RISK', 'T880019 (2026-07-02, status solved): DISPUTING CHARGES WITH MY BANK. VP Finance must handle; no automated message.')]
 
-All tickets: 1041 flagged about_ledgerline_invoice: 22
+All tickets: 1041 flagged about_ledgerline_invoice: 21
 kind
-dispute         16
+dispute         15
 legal_threat     4
 cancellation     2
 complaint keyword (agent field) total: 15 of which about Ledgerline invoice: 1
-not flagged but money words: 496 of 1019
+not flagged but money words: 498 of 1020

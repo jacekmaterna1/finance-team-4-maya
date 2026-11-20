@@ -419,3 +419,18 @@ a.lj-card-title { color: var(--coral-dark); }
 .arch .a-zone-k { font-size: 12px; font-weight: 700; letter-spacing: .14em; fill: var(--coral); }
 .arch .a-person { fill: var(--panel); stroke: var(--slate); stroke-width: 1.5; }
 .arch .a-build { fill: var(--panel); stroke: var(--border); stroke-dasharray: 2 0; }
+
+/* Maya desk */
+.q-card { margin: .6rem 0; }
+.q-head { margin-bottom: .45rem; }
+.q-meta > div { margin: .2rem 0; }
+.q-meta .kicker { margin-right: .35rem; }
+.pill.p-confirm { background: var(--coral); color: #fff; border-color: var(--coral); }
+.pill.p-intel { background: var(--slate); color: var(--cream); border-color: var(--slate); }
+.bundle { background: var(--surface); border-left: 4px solid var(--coral); padding: .7rem .9rem; border-radius: 0 6px 6px 0; margin: .4rem 0; font-size: .95rem; }
+.q-list li { margin: .25rem 0; }
+.q-reply { max-width: 100%; margin: .6rem 0; }
+.desk-counts { display: grid; grid-template-columns: repeat(4, 1fr); gap: .4rem; text-align: center; }
+.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--success); margin-right: .3rem; animation: pulse 1.6s infinite; vertical-align: middle; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(39,101,77,.6); } 70% { box-shadow: 0 0 0 6px rgba(39,101,77,0); } 100% { box-shadow: 0 0 0 0 rgba(39,101,77,0); } }
+.outline { text-align: left; display: inline-block; margin: .6rem auto 0; }

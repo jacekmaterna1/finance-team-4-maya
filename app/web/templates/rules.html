@@ -23,6 +23,7 @@
 {% endif %}
 <form method="post" action="/rules" class="card rules">
   {% for f in fields %}
+  <input type="hidden" name="__present" value="{{ f.key }}">
   <div class="rule">
     <div class="rule-label"><label for="r-{{ f.key }}"><b>{{ f.label }}</b></label><div class="small muted">{{ f.help }}</div><div class="small mono muted">{{ f.key }}</div></div>
     <div class="rule-input">
@@ -46,13 +47,17 @@
     <div class="rule-label"><b>Why are you changing this?</b><div class="small muted">Goes in the audit trail.</div></div>
     <div class="rule-input"><input class="input" name="note" placeholder="e.g. Dana approved a $25 bank-fee write-off threshold"></div>
   </div>
+  <div class="rule">
+    <div class="rule-label"><b>Dana approved this change</b><div class="small muted">Required to turn off the top-50 rule or "tell the AM first", turn on Claude, raise the write-off threshold above $0, or raise the auto-apply cap above $10,000. Logged with the change.</div></div>
+    <div class="rule-input"><label class="switch"><input type="checkbox" name="dana_approved"> Dana approved</label> <input class="input" name="dana_name" placeholder="Dana's name" style="margin-top:.4rem"></div>
+  </div>
   <div class="btnrow"><button class="btn btn-primary">Save and re-run agents</button></div>
 </form>
 {% if history %}
 <section>
   <h2>Recent rule changes</h2>
   <table class="tbl tbl-mini"><tr><th>When</th><th>Who</th><th>Note</th><th>Changed</th></tr>
-  {% for h in history %}<tr><td class="small nowrap">{{ h.ts }}</td><td class="small">{{ h.user_email }}</td><td class="small">{{ h.note }}</td>
+  {% for h in history %}<tr><td class="small nowrap">{{ h.ts|cst }}</td><td class="small">{{ h.user_email }}</td><td class="small">{{ h.note }}</td>
     <td class="small">{% for k, v in (h.payload.changed or {}).items() %}<div><b>{{ k }}</b>: {{ v.before }} &rarr; {{ v.after }}</div>{% endfor %}</td></tr>{% endfor %}
   </table>
 </section>

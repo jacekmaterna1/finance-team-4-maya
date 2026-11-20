@@ -276,8 +276,8 @@ def parse_rule_value(rules: Dict[str, Any], key: str, raw: str):
     return raw, old
 
 
-def apply_rule(user: str, key: str, value) -> Dict[str, Any]:
-    from app.web.views import _diff, _snapshot
+def apply_rule(user: str, key: str, value, dana_approved=False, dana_name: str = "") -> Dict[str, Any]:
+    from app.web.views import _diff, _snapshot, check_dana, sensitive_changes
     rules = st.load_rules()
     new = json.loads(json.dumps(rules))
     if "." in key:
@@ -287,13 +287,20 @@ def apply_rule(user: str, key: str, value) -> Dict[str, Any]:
     else:
         new[key] = value
         before_v = rules.get(key)
+    if key == "banned_phrases" and not value:
+        raise ValueError("The banned-phrases list cannot be empty.")
+    sens = sensitive_changes(rules, new)
+    err = check_dana(sens, dana_approved, dana_name)
+    if err:
+        raise PermissionError(err)
     before = _snapshot(st.get_state())
     st.save_rules(new)
     after_state = st.refresh()
     diff = _diff(before, _snapshot(after_state))
     store.record(user, "rules", "rules", "edit", "Changed {} from {} to {} (via Talk to the team)".format(key, before_v, value),
                  {"changed": {key: {"before": before_v, "after": value}}, "impact": diff["rows"],
-                  "moved": diff["moved"][:50], "source": "chat"})
+                  "moved": diff["moved"][:50], "source": "chat", "sensitive": sens,
+                  "dana_approved": bool(sens), "dana_name": (dana_name or "").strip() or None})
     return {"before": before_v, "after": value, "rows": diff["rows"], "moved": diff["moved"]}
 
 
@@ -350,13 +357,24 @@ def answer(state, message: str, agent: Optional[str], user: str) -> Dict[str, An
         if key in ("writeoff_threshold", "amount_tolerance", "fee_tolerance") and isinstance(value, (int, float)) and value < 0:
             out["reply"] = "{} cannot be negative.".format(key)
             return out
+        from app.web.views import sensitive_changes
+        trial = json.loads(json.dumps(rules))
+        if "." in key:
+            trial.setdefault(key.split(".")[0], {})[key.split(".", 1)[1]] = value
+        else:
+            trial[key] = value
+        sens = sensitive_changes(rules, trial)
         out["agent"] = "team"
         out["reply"] = "Change {} from {} to {}? Nothing changes until you press Apply. Then the agents re-run and I'll show " \
                        "what moved.".format(key, old, value)
+        if sens:
+            out["reply"] += " This loosens a guardrail ({}), so Dana must approve it: you'll be asked for her name.".format(
+                "; ".join(sens))
         out["cards"] = [{"title": "Proposed rule change", "lines": ["{}: {} → {}".format(key, old, value),
                                                                     "Logged in the audit trail with your name."],
                          "link": "/rules"}]
-        out["actions"] = [{"type": "apply_rule", "label": "Apply: {} → {}".format(key, value), "rule": key, "value": value}]
+        out["actions"] = [{"type": "apply_rule", "label": "Apply: {} → {}".format(key, value), "rule": key, "value": value,
+                           "needs_dana": bool(sens)}]
         return out
 
     if re.match(r"^(re-?run|run( the)?( agents| team)?|refresh)\b", low):
@@ -470,7 +488,12 @@ def build_router() -> APIRouter:
                 value, _old = parse_rule_value(rules, key, str(raw))
         except (ValueError, IndexError) as exc:
             raise HTTPException(400, str(exc))
-        res = apply_rule(user, key, value)
+        try:
+            res = apply_rule(user, key, value, body.get("dana_approved"), str(body.get("dana_name") or ""))
+        except PermissionError as exc:
+            raise HTTPException(400, str(exc))
+        except ValueError as exc:
+            raise HTTPException(400, str(exc))
         lines = ["{}: {} → {}".format(x["name"], x["before"], x["after"]) for x in res["rows"]] or ["No counts moved."]
         if res["moved"]:
             lines.append("{} item(s) changed decision, e.g. {}".format(

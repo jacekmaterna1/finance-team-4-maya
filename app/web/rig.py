@@ -13,6 +13,8 @@ import os
 from app.web.views import (_render, _user, dana_decisions, demo_video_url, embed_url, live_counts, needs_you,
                            valid_video_url)
 
+from app.web.maya import desk_counts as maya_desk_counts
+
 REPO_URL = "https://github.com/jacekmaterna1/finance-team-4-maya"
 
 
@@ -78,7 +80,7 @@ def build_router() -> APIRouter:
             "m": state["metrics"], "live": live_counts(state, latest), "team": team, "items": items[:12],
             "n_items": len(items), "dana": dana_decisions(state), "maya": rig_data.latest_maya(),
             "override": rig_data.hold_override_rate(), "golive": rig_data.GO_LIVE, "tab": "home",
-            "M": rig_data.MISSION, "P": rig_data.PROGRESS})
+            "M": rig_data.MISSION, "P": rig_data.PROGRESS, "desk": maya_desk_counts()})
 
     @r.get("/team", response_class=HTMLResponse)
     async def team(request: Request):
@@ -103,9 +105,9 @@ def build_router() -> APIRouter:
 
     def _demo_ctx(error="", raw=None):
         url = demo_video_url()
-        script = rig_data.read_rel("submission/VIDEO_SCRIPT.md")
+        # VIDEO_SCRIPT.md holds internal prep notes, so it is deliberately not rendered here.
         return {"tab": "demo", "video": embed_url(url) if url else None, "raw": raw if raw is not None else url,
-                "error": error, "script_html": rig_data.md(script) if script else None}
+                "error": error}
 
     @r.get("/demo", response_class=HTMLResponse)
     async def demo(request: Request):
@@ -136,10 +138,6 @@ def build_router() -> APIRouter:
         chips = [a["name"] for a in rig_data.AGENTS] + ["Humans"]
         return _render(request, "rig_activity.html", {"rows": rows, "who": who, "q": q, "chips": chips,
                                                       "tab": "activity"})
-
-    @r.get("/maya", response_class=HTMLResponse)
-    async def maya(request: Request):
-        return _render(request, "rig_maya.html", {"t": rig_data.parse_maya(), "tab": "maya"})
 
     @r.get("/direct", response_class=HTMLResponse)
     async def direct(request: Request, saved: str = ""):

@@ -1,0 +1,15 @@
+[FAIL] B1 stage matches policy (-5/+7/+21/+45/+90) using TRUE days past due (117 checked, 61 bad) INV-26019 due 2026-11-18 true_dpd=-18 stage=wait expected=not_due; INV-25950 due 2026-11-04 true_dpd=-4 stage=wait expected=courtesy; INV-26009 due 2026-11-16 true_dpd=-16 stage=wait expected=not_due; INV-26038 due 2026-11-24 true_dpd=-24 stage=wait expected=not_due; INV-26021 due 2026-11-18 true_dpd=-18 stage=wait expected=not_due; INV-25933 due 2026-11-01 true_dpd=-1 stage=wait expected=courtesy; INV-25959 due 2026-11-06 true_dpd=-6 stage=wait expected=not_due; INV-26058 due 2026-11-26 true_dpd=-26 stage=wait expected=not_due
+[PASS] B2 top-50 never DRAFT_REMINDER (14 checked, 0 bad) 
+[PASS] B3 no draft where PAID/MONEY_RECEIVED/DISPUTE/CANCELLATION/LEGAL_RISK/OPEN_ESCALATION (117 checked, 0 bad) 
+drafts: 21 total (20 DRAFT_REMINDER, 1 HUMAN_WRITES)
+[PASS] B4 drafts contain no banned phrase (21 checked, 0 bad) 
+[PASS] B5 recipients are verified contacts (in contacts.csv, domain match, billing/admin role) (21 checked, 0 bad) 
+[PASS] B6 never a 'left the firm' contact (21 checked, 0 bad) 
+[PASS] B7 account manager cc'd (21 checked, 0 bad) 
+[PASS] B8 invoice id / amount / due date in body and equal to the ledger (21 checked, 0 bad) 
+[PASS] B9 signed off by Priya (21 checked, 0 bad) 
+[PASS] B4b no draft blocked by banned list at baseline (substring false positives) (117 checked, 0 bad) 
+[PASS] B10 card re-runs only with a later successful card charge and no hard hold / legal risk (9 checked, 0 bad) 
+[PASS] B11 Dana decisions = card invoices <=10 days from 150-day write-off or > $2,000 (117 checked, 0 bad) 
+Dana list: [('INV-25973', 'Eastman Engineering', 3264.0, 23), ('INV-25433', 'Northgate Creative', 799.0, 149), ('INV-25470', 'Hollis Nair Engineers', 517.0, 141)]
+Invoices due in the next 1-5 days (policy: courtesy note): [('INV-25950', 'Achebe + Pemberton Architects', -4, 'wait', 'NO_ACTION'), ('INV-25933', 'Whitlock Design Partnership', -1, 'wait', 'NO_ACTION'), ('INV-25932', 'Ambrose & Petrov LLP', -1, 'wait', 'NO_ACTION'), ('INV-25947', 'Jessop Strategy', -4, 'wait', 'NO_ACTION'), ('INV-25956', 'Stanhope Consulting', -5, 'wait', 'NO_ACTION'), ('INV-25943', 'Upton Strategy', -3, 'wait', 'NO_ACTION'), ('INV-25953', 'Hartwell Legal', -5, 'wait', 'NO_ACTION'), ('INV-25951', 'Achebe + Pemberton Architects', -4, 'wait', 'HOLD'), ('INV-25948', 'Hartwell Engineering', -4, 'wait', 'NO_ACTION'), ('INV-25952', 'Birch Petrov Engineers', -5, 'wait', 'NO_ACTION'), ('INV-25935', 'Clearwater Consulting Group', -1, 'wait', 'NO_ACTION'), ('INV-25958', 'Tan & Brandt Technology', -5, 'wait', 'NO_ACTION'), ('INV-25944', 'Ambrose Strategy', -3, 'wait', 'NO_ACTION'), ('INV-25945', 'Wexler Media', -3, 'wait', 'NO_ACTION'), ('INV-25941', 'Mbeki Strategy', -3, 'wait', 'NO_ACTION'), ('INV-25937', 'Studio Zeller', -2, 'wait', 'NO_ACTION')]

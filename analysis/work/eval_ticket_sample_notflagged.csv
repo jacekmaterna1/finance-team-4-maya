@@ -1,81 +1,93 @@
 ticket_id,created_at,customer_id,customer_name,category,priority,status,about,kind,invoice_ids,refuses,complaint_kw,signals,subject,body,sample
+T880380,2026-08-12 21:25:00,C1370,Ellery & Bramwell CPAs,Account change,urgent,solved,False,product_question,,False,False,,Re:,"Hello,
+
+Do payments collected through the client portal create a bank deposit in QuickBooks, or just mark the invoice paid? Trying to understand how reconciliation will work on our end.
+
+Sofia",not_flagged_money_words
 T880493,2026-08-26 16:00:00,C1187,Sinclair Strategy,Account change,normal,solved,False,product_question,,False,False,,Change request,"Hi there - Our partners voted to standardise everyone on Ledgerline, so we need 30 additional seats across the firm. Can you apply them in one go and send a single prorated invoice rather than 30 separate charges?
 
 Ravi",not_flagged_money_words
-T880124,2026-07-15 09:41:00,C1367,"Novak, Okafor & Co",,normal,solved,False,product_question,,False,False,,Re: Follow up,Where do I put our VAT registration number so it shows on every invoice? Is there a setting or do I type it in each time?,not_flagged_money_words
-T880436,2026-08-19 16:05:00,C1463,Redfern Architecture,How-to,normal,solved,False,product_question,,False,False,,Request,"One of our clients emailed this morning saying they'd been charged for March twice. I looked and there are two separate invoices, different numbers, same amount. We did increase their monthly hours back in mid-February, if that's relevant.
-
-Noah",not_flagged_money_words
-T880321,2026-08-05 17:16:00,C1449,Whitlock Consulting,How-to,normal,solved,False,product_question,,False,False,,Clarification needed,"If an invoice has multiple recipients, do all of them get the reminder or only the primary contact?",not_flagged_money_words
-T880104,2026-07-13 12:36:00,C1441,Sterling Ingram Law,How-to,normal,solved,False,product_question,,False,False,,Request,"Hi there - Slack instead of email for payment alerts?
-
-Elena",not_flagged_money_words
-T880391,2026-08-14 03:07:00,C1307,Eastman + Radcliffe Architects,,normal,solved,False,product_question,,False,False,,Problem,"Morning,
-
-Something is off with recurring billing for one of our architecture clients. The numbers look wrong but I honestly can't pin down what.
-
-Bianca",not_flagged_money_words
-T880985,2026-10-25 13:54:00,C1226,Fairview Partners,How-to,normal,solved,False,product_question,,False,False,,Can you check something for me,"Hi there - hey, our HQ moved across town. new address needs to go on the account plus on the invoices we send out. same phone number",not_flagged_money_words
-T880695,2026-09-16 21:45:00,C1229,Ingram Strategy,Billing,high,solved,False,product_question,,False,False,,Issue,"Client says they paid via the portal, they have a confirmation screen, but the invoice is still open on our end. Do payments take time to update or did theirs not complete?",not_flagged_money_words
-T880033,2026-07-04 19:50:00,C1283,Calloway Engineering,Bug,urgent,pending,False,product_question,,False,False,,invoice pdfs blank,"Hi,
-
-pdfs downloading as blank white pages, tried 3 browsers. we have a tender submission that needs invoice copies attached by 5 today",not_flagged_money_words
-T880964,2026-10-22 09:17:00,C1366,Kessler Consulting,,low,solved,False,product_question,,False,False,,Second attempt,"Mobile app crashes the moment I tap an invoice. Every time.
-
-Amara",not_flagged_money_words
-T880529,2026-08-31 17:03:00,C1462,Mercer & Ellery CPAs,,normal,solved,False,product_question,,False,False,,Re: Re:,"Hi team,
-
-A client just forwarded us one of our own invoices with a note saying the person it was addressed to left their company back in the spring and could we please stop. We updated that account months ago. How is this still going out to her?
-
-Ivy",not_flagged_money_words
-T880133,2026-07-15 22:53:00,C1282,Eastman & Wexler CPAs,,normal,solved,False,product_question,,False,False,,Re:,"Hi,
-
-My colleague who monitors the shared billing inbox says we've had a steady trickle of bounce-backs for about three weeks, all from addresses at clients that I'm fairly sure we cleaned up ages ago. Not sure if this is on our side or yours.",not_flagged_money_words
-T880655,2026-09-14 06:11:00,C1054,Hale IT Partners,How-to,normal,solved,False,product_question,,False,False,,Enquiry,"Can we choose which income account Ledgerline invoices post to in QuickBooks? Retainer fees and project fees need to land in different accounts for our reporting.
-
-Odette",not_flagged_money_words
-T880157,2026-07-17 12:52:00,C1262,Prior Ambrose Chartered Accountants,Billing,low,solved,False,product_question,,False,False,,hi,"Hi there - VAT return prep: on a euro invoice, net plus VAT doesn't equal the gross figure printed. 0.01 difference. Our accountant needs this sorted before we file.",not_flagged_money_words
-T880921,2026-10-15 20:31:00,C1404,Underhill Farrow Law,Billing,normal,solved,False,product_question,,False,False,,Question re: our subscription,"Hi,
-
-If I void an invoice, is that number gone for good or does it get reused?",not_flagged_money_words
-T880489,2026-08-26 13:06:00,C1189,Orwell Calloway Law,Bug,normal,solved,False,product_question,,False,False,,ticket,"Hello,
-
-identical bills went out to the same client today. why",not_flagged_money_words
-T880625,2026-09-10 17:11:00,C1100,Oyelaran Devlin Engineers,Billing,low,solved,False,product_question,,False,False,,Question about our account,"Mismatch between the invoice header and the dashboard. Which one is right?
-
-Theo",not_flagged_money_words
-T880074,2026-07-09 13:31:00,C1367,"Novak, Okafor & Co",,high,solved,False,product_question,,False,False,,Broken help centre link,"Hi team,
-
-The 'Setting up milestone billing' article link on the help centre goes to a 404.",not_flagged_money_words
-T880506,2026-08-28 13:49:00,C1134,Greystone Digital,How-to,normal,pending,False,product_question,,False,False,,Re: Fw: Re:,"Morning,
-
-We issue zero-value invoices for pro bono matters and the automatic receipt confuses people. Any way to suppress receipts for those?",not_flagged_money_words
-T880486,2026-08-26 01:09:00,C1442,Hume & Voss Agency,,normal,solved,False,product_question,,False,False,,Question re: our subscription,"Hi,
-
-Can a refund for an overpayment be sent as a credit against our next invoice instead of back to the card? That would make our bookkeeping simpler.
-
-Maria",not_flagged_money_words
-T881034,2026-10-30 15:26:00,C1322,Hume & Ambrose LLP,Account change,normal,solved,False,product_question,,False,False,,Clarification needed,"Moving from annual back to monthly at renewal please. Cash flow reasons, we'd rather not pay the whole year in one go this time.",not_flagged_money_words
-T880659,2026-09-14 12:47:00,C1348,Ellery Legal,How-to,normal,solved,False,product_question,,False,False,,Support,"Hi there - how do i add a second contact at a client so both people get the invoice email
-
-Greta",not_flagged_money_words
-T880715,2026-09-19 05:43:00,C1237,Fairview Engineering Group,Billing,normal,solved,False,product_question,,False,False,,For the attention of support,"Morning,
-
-A client accidentally paid an invoice that belongs to a different client of ours, same amount, similar reference. The wrong invoice now shows as Paid. What's the right way to unpick this and get the money to where it should be?",not_flagged_money_words
-T880624,2026-09-10 17:06:00,C1431,Castellano Langford Chartered Accountants,Billing,normal,solved,False,product_question,,False,False,,"sorry, another one","Hi there - A colleague upgraded our plan without telling anyone and now there's an unexpected charge on the company card. I'm not disputing it exactly, I just need to understand what we paid for and whether reverting the change today gets any of it back.",not_flagged_money_words
-T880604,2026-09-09 09:21:00,C1389,Okafor Farrow Chartered Accountants,Billing,high,solved,False,product_question,,False,False,,Admin question,the invoice says paid but there's no payment attached to it when i click in. how do I find out where the payment came from??,not_flagged_money_words
-T880966,2026-10-22 10:03:00,C1464,Quill & Corbin LLP,Billing,normal,solved,False,product_question,,False,False,,Quick favour,"I removed two users who left the firm on the 9th, but the invoice still bills us for the full seat count for the month. Do removals not get prorated the same way additions do? That seems a bit one-sided.
-
-Ethan",not_flagged_money_words
-T880287,2026-08-01 11:46:00,C1317,Lindqvist & Hume Advisory,,normal,solved,False,product_question,,False,False,,help me understand,"The credit from our downgrade shows as an account balance instead of a refund to our card. We're closing that cost centre at quarter end, so a balance sitting on the account doesn't really help us. Is a refund to the original payment method possible?
-
-Aisha",not_flagged_money_words
 T880487,2026-08-26 08:27:00,C1035,Gallagher Media,,normal,solved,False,product_question,,False,False,,please advise,"Morning,
 
 Account credit from our downgrade says it expires. Does it? We won't be able to use it all before the next renewal.
 
 Anika",not_flagged_money_words
-T880219,2026-07-23 14:00:00,C1238,Langford Legal,,low,solved,False,product_question,,False,False,,Not working?,"Hi,
+T880754,2026-09-24 09:57:00,C1296,Mott Strategy,,normal,solved,False,product_question,,False,False,,Hoping you can help,"Our year-end audit is next week and the auditors spotted that an invoice paid in December shows a paid date in January in Ledgerline. Is the paid date taken from when the client paid or when the funds settled? We need to know which to rely on.
 
-Adding a new office in Calgary. Same company, same tax registration, but they want their own invoice numbering prefix and their own logo variant on the client portal. Can that be configured as a branch under us?",not_flagged_money_words
-T880956,2026-10-21 09:59:00,C1387,Langford & Iyer Agency,Account change,normal,solved,False,product_question,,False,False,,Quick one,Hi there - Searching invoices takes 30-40 seconds now. It used to be instant. Same with client search.,not_flagged_money_words
+Nico",not_flagged_money_words
+T880104,2026-07-13 12:36:00,C1441,Sterling Ingram Law,How-to,normal,solved,False,product_question,,False,False,,Request,"Hi there - Slack instead of email for payment alerts?
+
+Elena",not_flagged_money_words
+T880497,2026-08-27 09:48:00,C1388,Lowell Design Partnership,How-to,urgent,solved,False,product_question,,False,False,,Question about our account,Is it normal for the system to create a fresh invoice after I update a plan? There's an old one and a new one sitting there for next month and I'm not sure which to delete.,not_flagged_money_words
+T880985,2026-10-25 13:54:00,C1226,Fairview Partners,How-to,normal,solved,False,product_question,,False,False,,Can you check something for me,"Hi there - hey, our HQ moved across town. new address needs to go on the account plus on the invoices we send out. same phone number",not_flagged_money_words
+T880425,2026-08-18 09:16:00,C1403,Clearwater Creative,,normal,solved,False,product_question,,False,False,,Hello?,"Imported our time entries and the hours are wrong. 1:30 came through as 1.3 hours instead of 1.5, so every entry with minutes is under-billed. Caught it before sending but this needs fixing.",not_flagged_money_words
+T880033,2026-07-04 19:50:00,C1283,Calloway Engineering,Bug,urgent,pending,False,product_question,,False,False,,invoice pdfs blank,"Hi,
+
+pdfs downloading as blank white pages, tried 3 browsers. we have a tender submission that needs invoice copies attached by 5 today",not_flagged_money_words
+T880463,2026-08-22 13:45:00,C1272,Oakfield Engineering Group,Account change,low,solved,False,product_question,,False,False,,Assistance required,"Hello,
+
+Hello, apologies for the long message. Our company has been through a restructure and the billing entity changed from the UK holding company to the UK operating subsidiary. Contracts, bank account and VAT number all moved across. We'd like the Ledgerline subscription itself to be billed to the subsidiary from the next renewal, and the old entity name removed. Please let me know what documents you need from us.
+
+Ian",not_flagged_money_words
+T880638,2026-09-11 16:13:00,C1161,"Delacroix, Jessop & Co",Billing,normal,solved,False,product_question,,False,False,,Couple of things,"Hi,
+
+Payment status on a milestone invoice reads Paid, but the amount received is about 300 less than billed. I'm guessing it's card processing fees being netted off? If so, how do I show the invoice as fully settled without it looking like the client underpaid?
+
+Yasmin",not_flagged_money_words
+T880286,2026-08-01 09:27:00,C1197,Northgate Engineering Group,Bug,urgent,solved,False,product_question,,False,False,,Milestone invoices generating with zero totals,"Hi,
+
+Every milestone invoice created today has a total of 0.00, even though the milestone values are set correctly on the projects. Three of these went out automatically to clients before anyone noticed. Can someone switch off auto-send on our account, or tell me how to do it, and then work out what broke?
+
+Omar",not_flagged_money_words
+T880612,2026-09-09 15:29:00,C1471,Tan & Brandt Technology,Billing,low,solved,False,product_question,,False,False,,need some help pls,What's the actual difference between voiding and deleting a sent invoice?,not_flagged_money_words
+T880465,2026-08-23 16:45:00,C1275,Oakfield Digital,Billing,low,solved,False,product_question,,False,False,,Couple of things,"Is there a fee for refunding a client's duplicate payment, or does it come back in full? The amount is fairly large and I'd like to know before I process anything.",not_flagged_money_words
+T880413,2026-08-17 01:10:00,C1462,Mercer & Ellery CPAs,Billing,normal,solved,False,product_question,,False,False,,Question re: our subscription,"Hi,
+
+Upgraded on the 28th, two days before renewal, and still paid a prorated fee. For two days? Honestly feels like nickel-and-diming. I'd like it credited please.",not_flagged_money_words
+T880829,2026-10-02 22:27:00,C1273,Jessop & Orwell Agency,Account change,normal,solved,False,product_question,,False,False,,ASAP please,Small request: our company name has an ampersand that shows up garbled on some invoices. Could you change it to the word 'and' on the account so it displays cleanly everywhere?,not_flagged_money_words
+T880627,2026-09-10 17:49:00,C1358,Thackeray Media,Billing,normal,solved,False,product_question,,False,False,,Quick one,"Bulk send keeps timing out. I selected 140 invoices and got 'request failed' after about a minute. No idea which ones went out and which didn't.
+
+Signe",not_flagged_money_words
+T880074,2026-07-09 13:31:00,C1367,"Novak, Okafor & Co",,high,solved,False,product_question,,False,False,,Broken help centre link,"Hi team,
+
+The 'Setting up milestone billing' article link on the help centre goes to a 404.",not_flagged_money_words
+T880893,2026-10-13 11:22:00,C1243,Glover & Drummond Advisory,Billing,normal,solved,False,product_question,,False,False,,Still waiting on a reply,"Hi,
+
+Our agency has two billing contacts and one approved an upgrade while the other approved a seat increase, a few days apart. The combined partial charges came to more than we budgeted, and I'm trying to work out whether the seat proration was calculated on the old plan price or the new one. If it used the new price for days before the upgrade happened, that looks wrong to me.",not_flagged_money_words
+T880522,2026-08-31 05:58:00,C1413,Reyes Consulting,How-to,low,solved,False,product_question,,False,False,,Help with our account,"Morning,
+
+Do milestone invoices sync as a single invoice or one per milestone? Our accountant wants to know what she'll see on her side.
+
+Elena",not_flagged_money_words
+T881034,2026-10-30 15:26:00,C1322,Hume & Ambrose LLP,Account change,normal,solved,False,product_question,,False,False,,Clarification needed,"Moving from annual back to monthly at renewal please. Cash flow reasons, we'd rather not pay the whole year in one go this time.",not_flagged_money_words
+T880484,2026-08-25 15:42:00,C1160,Eastman Strategy,How-to,high,solved,False,product_question,,False,False,,Bulk edit tax code,"Hi team,
+
+We need to change the tax code on about 80 draft invoices after a rule change. Is there a bulk edit option or is it one by one?",not_flagged_money_words
+T880961,2026-10-22 04:52:00,C1424,Thackeray IT Partners,Billing,normal,solved,False,product_question,,False,False,,Query regarding our setup,"VAT rate changed for one of our service lines this month. Do invoices that already went out need reissuing?
+
+Joel",not_flagged_money_words
+T880592,2026-09-08 11:24:00,C1253,Redfern Engineering Group,Billing,high,solved,False,product_question,,False,False,,???,"Hi team,
+
+What happens to a card payment that's already been collected if I void the invoice it was against?
+
+Jonas",not_flagged_money_words
+T880606,2026-09-09 10:17:00,C1103,Corbin & Achebe Agency,Bug,high,solved,False,product_question,,False,False,,Admin question,"Hi team,
+
+Milestone 3 on a residential project, I set payment for the Friday. Client says their portal showed Thursday and their AP team rushed it through, which messed up their own cashflow for the week. They are not thrilled with us.",not_flagged_money_words
+T880659,2026-09-14 12:47:00,C1348,Ellery Legal,How-to,normal,solved,False,product_question,,False,False,,Support,"Hi there - how do i add a second contact at a client so both people get the invoice email
+
+Greta",not_flagged_money_words
+T880226,2026-07-24 03:15:00,C1437,Harbor Engineering Group,Billing,normal,solved,False,product_question,,False,False,,Enquiry,"Hi team,
+
+Apologies if this is a silly one. I clicked pay, the page hung, so I clicked again. Now my bank shows two pending amounts from Ledgerline. Is that a genuine second charge or will one just drop off?",not_flagged_money_words
+T880192,2026-07-21 12:16:00,C1179,Greystone Engineering Group,,low,solved,False,product_question,,False,False,,Re: Your support request,"Hi there - Requesting a billing address change for our annual subscription invoice only. We have a new accounts payable address that differs from our office.
+
+Bianca",not_flagged_money_words
+T880643,2026-09-12 14:46:00,C1022,Studio Marsh,,normal,pending,False,product_question,,False,False,,Support,"Morning,
+
+my colleague noticed the invoice email says due the 14th, i definitely typed 15th. retyped it, saved, same thing in the email preview
+
+Rhys",not_flagged_money_words
+T880721,2026-09-20 23:15:00,C1166,Thornfield Creative,Billing,low,solved,False,product_question,,False,False,,Quick question,"Hello,
+
+Trial converted to paid on the 17th and we were charged a partial month. Then the full month came out on the 1st. Is that how it normally works? Just want to make sure we weren't charged for overlapping days.",not_flagged_money_words

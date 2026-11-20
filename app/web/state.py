@@ -51,9 +51,20 @@ def refresh() -> Dict[str, Any]:
                 state = fake_state.run_pipeline(rules=fake_state.load_rules())
             else:
                 raise
-        _cache.update(state=state, source=source, error=err, ran_at=time.strftime("%Y-%m-%d %H:%M:%S"),
+        _cache.update(state=state, source=source, error=err, ran_at=_now_cst(),
                       seconds=round(time.time() - t0, 2))
+        sync_maya(state)
         return state
+
+
+def sync_maya(state: Dict[str, Any]) -> None:
+    """Upsert the team's open questions for Maya (engine: app.engine.questions). Never breaks a run."""
+    try:
+        from app.engine.questions import build_open_questions
+        from app import store
+        store.sync_maya_questions(build_open_questions(state))
+    except Exception as exc:
+        _cache["maya_error"] = "{}: {}".format(type(exc).__name__, exc)
 
 
 def get_state() -> Dict[str, Any]:
@@ -64,3 +75,13 @@ def get_state() -> Dict[str, Any]:
 
 def info() -> Dict[str, Optional[Any]]:
     return {k: _cache[k] for k in ("source", "error", "ran_at", "seconds")}
+
+
+def _now_cst() -> str:
+    from datetime import datetime, timedelta, timezone
+    try:
+        from zoneinfo import ZoneInfo
+        tz = ZoneInfo("America/Chicago")
+    except Exception:
+        tz = timezone(timedelta(hours=-6))
+    return datetime.now(timezone.utc).astimezone(tz).strftime("%Y-%m-%d %H:%M:%S")

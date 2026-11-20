@@ -1,6 +1,6 @@
 # Maya outbox — drafts written by the test-steward, sent by the main thread
 
-Messages used: **5 of 60** (count from the main thread at 11:42, after Exchange 4. Only 4 messages from Jacek are logged in MAYA_QA.md, so check this against the challenge page.) Target: 12 or fewer.
+Messages used: 4 of 60 (verified on the challenge page at T+0:50: "56 messages left")
 
 Rule since T+0:25 (Jacek): a draft goes to Maya only for a **Confirmation** (a decision she or Dana owns) or **Intel** (facts the data room can't give). No pure status updates. Every draft starts with a `Purpose:` line. Drafts 1 to 3 predate the rule, so their Purpose lines were added afterwards.
 

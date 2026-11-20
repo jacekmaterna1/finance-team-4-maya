@@ -43,7 +43,7 @@
             <div class="am-confirm small">
               <label><input type="checkbox" name="am_confirmed"> Account manager confirmed the dispute is settled</label>
               <label>Account manager's name <input name="am_name" class="input" value="{{ am_holds[0].route_to or i.account_manager or '' }}"></label>
-              <div class="muted">Needed to <b>Release</b> a dispute or cancellation hold. Not needed to Override.</div>
+              <div class="muted">Needed to <b>Release</b> or <b>Override</b> a dispute or cancellation hold: the account manager owns it.</div>
             </div>
             {% endif %}
             <textarea name="reason" class="input" rows="2" required minlength="5" placeholder="Reason (required), e.g. 'Nadia confirmed the complaint is resolved'"></textarea>
@@ -58,7 +58,8 @@
             {% if i.draft %}<p class="small muted">Draft from {{ d.source or 'agent' }}{% if d.template %} &middot; template {{ d.template }}{% endif %}{% if d.cc %} &middot; cc {{ d.cc|join(', ') }}{% endif %}</p>
             {% if 'data_sent_to_ai' in d %}<p class="small ai-line">Sent to AI: {{ d.data_sent_to_ai if d.data_sent_to_ai else 'nothing (written from a policy template, no customer data left Ledgerline)' }}</p>{% endif %}{% endif %}
             <form method="post" action="/collections/{{ i.invoice_id }}/send" hx-post="/collections/{{ i.invoice_id }}/send" hx-target="closest details" hx-swap="outerHTML" class="draft">
-              <label class="small">To <input name="to" class="input" value="{{ (d.to or [])|join(', ') }}"></label>
+              <label class="small">To <input name="to" class="input" value="{{ (d.to or [])|join(', ') }}" title="Verified contacts only. You can remove recipients but not add new ones."></label>
+              <label class="small">Cc <input name="cc" class="input" value="{{ (d.cc or [])|join(', ') }}" title="Only the account manager or @ledgerline.com addresses"></label>
               <label class="small">Subject <input name="subject" class="input" value="{{ d.subject or ('Invoice ' ~ i.invoice_id) }}"></label>
               <textarea name="body" class="input mono" rows="11">{{ d.body or '' }}</textarea>
               <div class="btnrow">

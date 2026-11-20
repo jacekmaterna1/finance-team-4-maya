@@ -1,7 +1,7 @@
 === REAL ===
-real: all                    n=246 | auto  81 (prec 100.0%) | propose 153 (top1 98.0%) | exception  12 (5%) | end-to-end correct 93.9% | customer correct 95.1%
+real: all                    n=246 | auto  59 (prec 100.0%) | propose 175 (top1 98.3%) | exception  12 (5%) | end-to-end correct 93.9% | customer correct 95.1%
 real: trivial                n= 20 | auto  20 (prec 100.0%) | propose   0 (top1 n/a) | exception   0 (0%) | end-to-end correct 100.0% | customer correct 100.0%
-real: easy                   n= 63 | auto  61 (prec 100.0%) | propose   2 (top1 100.0%) | exception   0 (0%) | end-to-end correct 100.0% | customer correct 100.0%
+real: easy                   n= 63 | auto  39 (prec 100.0%) | propose  24 (top1 100.0%) | exception   0 (0%) | end-to-end correct 100.0% | customer correct 100.0%
 real: medium                 n= 83 | auto   0 (prec n/a) | propose  83 (top1 100.0%) | exception   0 (0%) | end-to-end correct 100.0% | customer correct 100.0%
 real: hard                   n= 80 | auto   0 (prec n/a) | propose  68 (top1 95.6%) | exception  12 (15%) | end-to-end correct 81.2% | customer correct 85.0%
 === SYNTHETIC ===
@@ -29,7 +29,7 @@ EXCEPTIONS:
 10   PAY-60319         False       hard                                 OYELARAN  Ledgerline subscription   5400.00            INV-20297          None         C1148                              Cannot identify the customer. Priya should check the bank detail
 12   PAY-60371         False       hard                                  ROSALES          Rosales payment   1950.00            INV-20314          None         C1233                              Cannot identify the customer. Priya should check the bank detail
 14   PAY-60611         False       hard                                     HUME  Ledgerline subscription   4875.00            INV-20604          None         C1210                              Cannot identify the customer. Priya should check the bank detail
-19   PAY-61064         False       hard                                PEMBERTON  Ledgerline subscription   8000.00            INV-21043         C1235         C1337                                       Memo 'Ledgerline subscription' has no invoice reference
+19   PAY-61064         False       hard                                PEMBERTON  Ledgerline subscription   8000.00            INV-21043          None         C1337                              Cannot identify the customer. Priya should check the bank detail
 27   PAY-61447         False       hard                                    ASHBY  Ledgerline subscription  46680.00            INV-21458          None         C1145                              Cannot identify the customer. Priya should check the bank detail
 54   PAY-63559         False       hard                                    CRANE            Crane payment  56352.00            INV-23576          None         C1380                              Cannot identify the customer. Priya should check the bank detail
 62   PAY-64181         False       hard                                 OYELARAN  Ledgerline subscription   5640.00            INV-24224          None         C1148                              Cannot identify the customer. Priya should check the bank detail

@@ -15,11 +15,11 @@
   <span class="small muted">{{ n }} rows{% if n > rows|length %}, showing {{ rows|length }} (<a href="/audit?agent={{ agent|urlencode }}&q={{ q|urlencode }}&limit=100000">all</a>){% endif %}</span>
 </form>
 <table class="tbl">
-  <thead><tr><th>When</th><th>Who</th><th>Object</th><th>Decision</th><th>Conf.</th><th>Reason</th></tr></thead>
+  <thead><tr><th>When <span class="muted">(agents: run)</span></th><th>Who</th><th>Object</th><th>Decision</th><th>Conf.</th><th>Reason</th></tr></thead>
   <tbody>
   {% for x in rows %}
   <tr class="{% if x.kind == 'human' %}human{% endif %}">
-    <td class="small nowrap">{{ x.ts }}</td>
+    <td class="small nowrap">{% if x.kind == 'agent' and run_ts %}run {{ run_ts|cst }}{% else %}{{ x.ts|cst }}{% endif %}</td>
     <td class="small">{% if x.kind == 'human' %}<b>{{ x.who }}</b>{% else %}{{ x.who }}{% endif %}</td>
     <td class="small nowrap">{{ x.object_type }} {% if x.object_type == 'invoice' %}<a href="/collections#{{ x.object_id }}">{{ x.object_id }}</a>{% elif x.object_type == 'payment' %}<a href="/cash#{{ x.object_id }}">{{ x.object_id }}</a>{% elif x.object_type == 'customer' %}<a href="/customers/{{ x.object_id }}">{{ x.object_id }}</a>{% else %}{{ x.object_id }}{% endif %}</td>
     <td>{{ badge(x.decision) }}</td>

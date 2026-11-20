@@ -23,8 +23,10 @@ AGENTS: List[Dict[str, Any]] = [
         "inputs": ["Bank + Stripe receipts (payer, amount, memo)", "Open invoices and AR aging", "Customer names"],
         "outputs": ["AUTO_APPLY (exact amount + invoice reference)", "PROPOSE with reasons", "EXCEPTION (cannot identify)",
                     "'Money already received' hold for the Controller"],
-        "alone": ["Apply a receipt when amount AND invoice reference both match exactly"],
-        "ask": ["Any match without a reference", "Ambiguous matches (same amount, several invoices)",
+        "alone": ["Apply a receipt when amount AND invoice reference both match exactly, up to the auto-apply cap "
+                  "($10,000, Dana to confirm)"],
+        "ask": ["Any match without a reference", "Exact matches above the $10,000 auto-apply cap",
+                "Ambiguous matches (same amount, several invoices)",
                 "Short payments, bank fees, write-offs (threshold $0 until Dana sets it)"],
     },
     {
@@ -235,8 +237,9 @@ def latest_maya() -> Optional[Dict[str, Any]]:
 # ------------------------------------------------------------------ activity feed
 def activity(state: Dict[str, Any], who: str = "", q: str = "", limit: int = 300) -> List[Dict[str, Any]]:
     rows: List[Dict[str, Any]] = []
+    run_ts = state.get("run_ts")
     for a in state.get("audit", []):
-        rows.append({"ts": a.get("ts", ""), "who": a.get("agent", ""), "kind": "agent", "title": "{} {} → {}".format(
+        rows.append({"ts": a.get("ts", ""), "run_ts": run_ts, "who": a.get("agent", ""), "kind": "agent", "title": "{} {} → {}".format(
             a.get("object_type", ""), a.get("object_id", ""), a.get("decision", "")),
             "text": a.get("reason", ""), "confidence": a.get("confidence"), "object_id": a.get("object_id", ""),
             "object_type": a.get("object_type", "")})
@@ -261,5 +264,5 @@ def activity(state: Dict[str, Any], who: str = "", q: str = "", limit: int = 300
     if q:
         ql = q.lower()
         rows = [r for r in rows if ql in (r["title"] + " " + r["text"] + " " + r["who"]).lower()]
-    rows.sort(key=lambda r: str(r["ts"]), reverse=True)
+    rows.sort(key=lambda r: (str(r.get("run_ts") or r["ts"])[:19], str(r["ts"])), reverse=True)
     return rows[:limit]
