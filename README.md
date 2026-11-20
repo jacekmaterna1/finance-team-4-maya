@@ -77,6 +77,14 @@ With no `GOOGLE_CLIENT_ID` set the app runs in **dev mode**: you are signed in a
    (add `http://localhost:8000/auth/callback` too if you want to test real sign-in locally).
 4. Put the client id and secret in Render's environment, never in the repo.
 
+## Known limitation
+
+During the challenge, Maya only exists in the Scaleworks web chat, so an operator (Jacek's Claude Code session driving
+his browser) carries approved questions to her and posts her replies back to the RIG (via `/api/maya/*`). When the
+challenge closes, the Maya desk keeps working for proposing and approving questions, but nothing reaches Maya without
+that operator. **Recommendation to Scaleworks:** expose Maya as an MCP server (or webhook) so the RIG can connect to
+her directly, with no operator.
+
 ## Simulated vs real
 
 | Real | Simulated |

@@ -44,21 +44,42 @@
 {% if user %}
 <nav class="tabs">
   <div class="tabs-inner">
-  {% set rig_tabs = [('/', 'Home'), ('/team', 'Team'), ('/architecture', 'Architecture'), ('/docs', 'Documentation'), ('/activity', 'Activity'), ('/maya', 'Maya'), ('/direct', 'Direct the team'), ('/buildlog', 'Build log'), ('/about', 'One pager'), ('/demo', 'Demo')] %}
-  {% set ops_tabs = [('/today', 'Today'), ('/cash', 'Cash'), ('/collections', 'Collections'), ('/customers', 'Customers'), ('/digest', 'Digest'), ('/audit', 'Audit'), ('/rules', 'Rules')] %}
-  {% for href, label in rig_tabs %}<a href="{{ href }}" class="{% if (href == '/' and path == '/') or (href != '/' and (path == href or path.startswith(href + '/'))) or (href == '/team' and path.startswith('/agents')) %}active{% endif %}">{{ label }}</a>{% endfor %}
-  <span class="tab-sep">|</span>
-  {% for href, label in ops_tabs %}<a href="{{ href }}" class="{% if path == href or path.startswith(href + '/') %}active{% endif %}">{{ label }}</a>{% endfor %}
-  <form method="post" action="/run" class="inline tab-run"><button class="btn btn-run" title="Re-run all four agents on the data room">Run agents</button></form>
+  {% macro is_on(href) -%}{{ 'active' if (href == '/' and path == '/') or (href != '/' and (path == href or path.startswith(href + '/'))) or (href == '/team' and path.startswith('/agents')) else '' }}{%- endmacro %}
+  {% set main_tabs = [('/about', 'One pager'), ('/cash', 'Cash'), ('/', 'Overview'), ('/maya', 'Maya'), ('/docs', 'Documentation'), ('/demo', 'Demo'), ('/buildlog', 'Your working')] %}
+  {% set more_groups = [('Operate', [('/today', 'Today'), ('/collections', 'Collections'), ('/customers', 'Customers'), ('/digest', 'Digest'), ('/rules', 'Rules')]), ('The team', [('/team', 'Team'), ('/architecture', 'Architecture'), ('/activity', 'Activity'), ('/direct', 'Direct the team'), ('/audit', 'Audit')])] %}
+  {% set ns = namespace(more_on=false) %}
+  {% for g, items in more_groups %}{% for href, label in items %}{% if is_on(href) %}{% set ns.more_on = true %}{% endif %}{% endfor %}{% endfor %}
+  {% for href, label in main_tabs %}<a href="{{ href }}" class="{{ is_on(href) }}"{% if is_on(href) %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
+  <details class="more" id="nav-more">
+    <summary class="{{ 'active' if ns.more_on }}" aria-haspopup="true">More <span aria-hidden="true">&#9662;</span></summary>
+    <div class="more-menu" role="menu">
+      {% for g, items in more_groups %}
+      <div class="more-group"><div class="more-head">{{ g }}</div>
+        {% for href, label in items %}<a href="{{ href }}" role="menuitem" class="{{ is_on(href) }}"{% if is_on(href) %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </details>
+  <form method="post" action="/run" class="inline tab-run"><button class="btn btn-run" title="Re-runs the four agents on the latest data (Cash Application → Account Context → Controller → Collections). Nothing is sent; results and the audit log update.">Re-run agents</button></form>
   </div>
 </nav>
 {% endif %}
 <main>
+{% if flash %}<div class="note note-ok flash">{{ flash }}</div>{% endif %}
 {% block content %}{% endblock %}
 </main>
 <footer class="small muted">Agents propose; a person approves anything that touches a customer or the ledger. Every decision and every human action is in the <a href="/activity">activity feed</a> and <a href="/audit">audit trail</a>. Simulated: no email is sent and no ledger is written from this demo.</footer>
 {% if user %}{% include "_chat.html" %}{% endif %}
 <script>
+(function () {
+  var more = document.getElementById('nav-more');
+  if (!more) return;
+  document.addEventListener('click', function (e) { if (more.open && !more.contains(e.target)) more.open = false; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && more.open) { more.open = false; more.querySelector('summary').focus(); }
+  });
+  more.addEventListener('toggle', function () { if (more.open) { var a = more.querySelector('.more-menu a'); if (a) a.focus(); } });
+})();
 document.body.addEventListener('htmx:responseError', function (e) {
   alert((e.detail.xhr.responseText || 'Request failed').replace(/^\{"detail":"|"\}$/g, ''));
 });

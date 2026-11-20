@@ -4,6 +4,7 @@
 {% from "_mission.html" import mission %}
 {% block content %}
 {{ mission(M, P, m, live) }}
+<p class="small muted rerun-note"><b>Re-run agents</b> (top right): re-runs the four agents on the latest data (Cash Application → Account Context → Controller → Collections). Nothing is sent; results and the audit log update.</p>
 <section class="kpis">
   <div class="card kpi kpi-wide">
     <div class="kicker">Overdue balance · headline metric</div>

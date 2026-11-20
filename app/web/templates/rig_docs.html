@@ -4,6 +4,13 @@
 <div class="section-title"><div class="kicker">Documentation</div><h1>Who does what, where</h1></div>
 <p class="lead">The whole system on one diagram: the company and its people, the AI finance team that runs on Render, and how it was built in 24 hours. Then the four hand-ins and where to find the evidence.</p>
 
+<section class="note note-limit" id="limitation">
+  <div class="kicker">Limitation &amp; recommendation</div>
+  <h2 class="h2-tight">Recommendation: expose Maya as an MCP server</h2>
+  <p>During the challenge, Maya only exists in the Scaleworks web chat, so an operator (Jacek's Claude Code session driving his browser) carries approved questions to her and posts her replies back here. When the challenge closes, the desk keeps working for proposing and approving questions, but nothing reaches Maya without that operator.</p>
+  <p><b>Recommendation to Scaleworks:</b> expose Maya as an MCP server (or webhook) so the RIG can connect to her directly, with no operator.</p>
+</section>
+
 <div class="card arch-card">
   <div class="kicker">System diagram</div>
   {% include "_docs_svg.html" %}

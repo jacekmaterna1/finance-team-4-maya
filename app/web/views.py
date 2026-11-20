@@ -117,10 +117,18 @@ def _render(request: Request, name: str, ctx: Dict[str, Any], status_code: int =
         "as_of": st.get_state().get("as_of"),
         "ai_on": ai_on(st.get_state()),
         "clock": rig_data.build_clock(),
+        "flash": _pop_flash(request),
         "agents_meta": rig_data.AGENTS,
     }
     base.update(ctx)
     return templates.TemplateResponse(request, name, base, status_code=status_code)
+
+
+def _pop_flash(request: Request) -> str:
+    try:
+        return request.session.pop("flash", "") or ""
+    except (AssertionError, AttributeError):
+        return ""
 
 
 def _is_htmx(request: Request) -> bool:
@@ -533,7 +541,12 @@ def build_router() -> APIRouter:
     @r.post("/run")
     async def run_agents(request: Request):
         _user(request)
-        st.refresh()
+        state = st.refresh()
+        try:
+            request.session["flash"] = "Agents re-ran at {} CST: {} decisions".format(
+                (st.info().get("ran_at") or "")[11:16], len(state.get("audit") or []))
+        except AssertionError:
+            pass
         return RedirectResponse(_safe_back(request), status_code=303)
 
     # ---------------- Cash application

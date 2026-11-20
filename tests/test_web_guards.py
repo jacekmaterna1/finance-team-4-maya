@@ -230,3 +230,38 @@ def test_every_route_200():
               "/api/maya/queue"] + ["/agents/" + s for s in ("cash", "context", "controller", "collections")]
     bad = [(p, client.get(p).status_code) for p in routes if client.get(p).status_code != 200]
     assert not bad
+
+
+
+# ---------------------------------------------------------------- nav, re-run, Maya limitation
+def test_nav_order_and_more_menu():
+    html = client.get("/").text
+    nav = html[html.index('class="tabs"'):html.index("</nav>")]
+    main = ["One pager", "Cash", "Overview", "Maya", "Documentation", "Demo", "Your working", "More"]
+    pos = [nav.index(">" + label) for label in main]
+    assert pos == sorted(pos)
+    menu = nav[nav.index('class="more-menu"'):]
+    for label in ["Today", "Collections", "Customers", "Digest", "Rules", "Team", "Architecture", "Activity",
+                  "Direct the team", "Audit"]:
+        assert ">" + label + "</a>" in menu
+    assert ">Operate<" in menu and ">The team<" in menu
+    assert "Re-run agents" in nav and "Nothing is sent" in nav
+    assert "re-runs the four agents on the latest data" in html
+    more = client.get("/rules").text
+    assert '<summary class="active"' in more  # More shows active when the page lives inside it
+    assert '<summary class="active"' not in html
+
+
+def test_rerun_flashes_once():
+    r = client.post("/run", headers={"referer": "http://testserver/"}, follow_redirects=True)
+    assert r.status_code == 200 and "Agents re-ran at" in r.text and "CST:" in r.text and "decisions" in r.text
+    assert "Agents re-ran at" not in client.get("/").text
+
+
+def test_maya_limitation_callouts():
+    assert "How the team reaches Maya" in client.get("/maya").text
+    assert "Recommendation: expose Maya as an MCP server" in client.get("/docs").text
+
+
+def test_no_mcp_endpoints_shipped():
+    assert client.post("/mcp", json={"jsonrpc": "2.0", "id": 1, "method": "initialize"}).status_code in (404, 405)

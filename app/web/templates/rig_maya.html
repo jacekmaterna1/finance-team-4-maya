@@ -2,6 +2,11 @@
 {% block title %}Maya · Ledgerline RIG{% endblock %}
 {% block content %}
 <div class="section-title"><div class="kicker">The team's line to the COO</div><h1>Maya</h1></div>
+<div class="note note-limit" id="how">
+  <div class="kicker">How the team reaches Maya</div>
+  <p>During the challenge, Maya only exists in the Scaleworks web chat, so an operator (Jacek's Claude Code session driving his browser) carries approved questions to her and posts her replies back here. When the challenge closes, the desk keeps working for proposing and approving questions, but nothing reaches Maya without that operator.</p>
+  <p><b>Recommendation to Scaleworks:</b> expose Maya as an MCP server (or webhook) so the RIG can connect to her directly, with no operator.</p>
+</div>
 <div class="card maya-strip">
   <div><div class="kicker">Message budget</div><div class="stat-sm">{{ d.used }} of {{ d.budget }} used</div>
     <div class="budget"><span style="width: {{ ((d.used or 0) * 100 / (d.budget or 60))|round(1) }}%"></span></div>

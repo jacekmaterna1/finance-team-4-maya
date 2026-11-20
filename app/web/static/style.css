@@ -434,3 +434,26 @@ a.lj-card-title { color: var(--coral-dark); }
 .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--success); margin-right: .3rem; animation: pulse 1.6s infinite; vertical-align: middle; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(39,101,77,.6); } 70% { box-shadow: 0 0 0 6px rgba(39,101,77,0); } 100% { box-shadow: 0 0 0 0 rgba(39,101,77,0); } }
 .outline { text-align: left; display: inline-block; margin: .6rem auto 0; }
+
+.flash { margin-top: 0; }
+.rerun-note { margin: -.4rem 0 1rem; }
+
+.note-limit { border-left-width: 6px; margin-bottom: 1rem; }
+.note-limit p { margin: .35rem 0; max-width: 62rem; }
+
+/* More dropdown */
+.more { position: relative; }
+.more > summary { list-style: none; cursor: pointer; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text); padding: .8rem .6rem .7rem; border-bottom: 3px solid transparent; user-select: none; }
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary:hover { color: var(--coral-dark); }
+.more > summary.active { border-bottom-color: var(--coral); color: var(--head); }
+.more > summary:focus-visible { outline: 2px solid var(--coral); outline-offset: -2px; }
+.more-menu { position: absolute; top: 100%; left: 0; z-index: 30; background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 10px 28px var(--shadow); padding: .6rem; display: grid; grid-template-columns: repeat(2, minmax(11rem, 1fr)); gap: .4rem 1rem; }
+.more-head { font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); padding: .2rem .5rem; }
+.more-menu a { display: block; padding: .4rem .5rem; border-radius: 4px; border-bottom: none; font-size: .78rem; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.more-menu a:hover, .more-menu a:focus { background: var(--surface); text-decoration: none; outline: none; }
+.more-menu a.active { background: var(--coral-soft); color: var(--coral-dark); }
+@media (max-width: 700px) { .more-menu { grid-template-columns: 1fr; left: 0; right: auto; min-width: 14rem; } }
+.more-menu { max-width: calc(100vw - 2rem); }
