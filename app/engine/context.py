@@ -17,6 +17,9 @@ REFUSAL = [r"will not (?:be )?pay", r"refus\w* to pay", r"overcharg\w+", r"won'?
            r"void it please", r"cancel and reissue", r"issue a revised invoice", r"remove it and resend", r"we are not paying",
            r"payment (?:is )?on hold", r"pending a corrected invoice", r"not paying for", r"not before", r"we'?ll pay once",
            r"put the whole th", r"reissue it"]
+# Unambiguous refusals count in any ticket category (QA T+0:45: "refuse to pay" in a How-to ticket was missed).
+STRONG_REFUSAL = [r"will not (?:be )?pay", r"refus\w* to pay", r"won'?t (?:be )?pay", r"wont (?:be )?pay", r"not (?:be )?paying",
+                  r"we are not paying", r"not authori[sz]ing payment"]
 LEGAL = [r"chargeback", r"contest(?:ing)? the charge", r"consumer affairs", r"lawyer", r"attorney", r"legal action", r"small claims", r"solicitor"]
 CANCEL = [r"discontinu\w+ ledgerline", r"termination of services", r"notice of termination", r"cancel(?:l)?ing (?:our )?(?:ledgerline|subscription|account)",
           r"no further direct debits"]
@@ -42,9 +45,9 @@ def heuristic_read(t, own_invoices):
         # A customer quoting one of their own open Ledgerline invoice numbers is almost always raising a problem with it,
         # whatever category the agent tagged (data shows disputes tagged How-to or untagged).
         kind = "dispute"
-    elif refusal and str(t.get("category")) in ("Billing", "Account change"):
+    elif _any(STRONG_REFUSAL, text) or (refusal and str(t.get("category")) in ("Billing", "Account change")):
         kind = "dispute"
-    about = bool(own_refs or legal or cancel or (refusal and str(t.get("category")) in ("Billing", "Account change")))
+    about = bool(own_refs or legal or cancel or _any(STRONG_REFUSAL, text) or (refusal and str(t.get("category")) in ("Billing", "Account change")))
     return {
         "about_ledgerline_invoice": about,
         "invoice_ids": own_refs,
