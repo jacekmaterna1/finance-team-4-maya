@@ -1,6 +1,6 @@
 # Maya Q&A (log word for word: "What you ask is part of what we read")
 
-Messages used: **4 of 60** (verified on the challenge page at T+0:50: "56 messages left"). Target: 12 or fewer.
+Messages used: **8 of 60** (verified on the challenge page at T+0:50: "56 messages left"). Target: 12 or fewer.
 Rule since T+0:25 (Jacek): write to Maya only for a **Confirmation** (a decision she or Dana owns) or **Intel** (facts the data room can't give). Never a pure status update.
 
 ## Prepared questions (refine after the data-room read, ask in hour 2)
@@ -94,3 +94,52 @@ Purpose: Confirmation. Written and sent by the main thread from Jacek's Chrome t
 3. Monday checklist card added to the RIG. (a) Dana sees the Northgate $799 decision and the auto-apply rule and threshold. (b) 30-minute walkthrough with Priya: why it held Reyes, and how she corrects it herself. (c) Fill in the AWS region. (d) Legal's residual risk: ticket text can still name people.
 4. `submission/LEGAL_NOTE.md`: the region line now reads "[Engineering to confirm the production AWS region]" instead of assuming us-east-1. The residual risk about names in ticket text was moved up into its own section.
 5. Still open: how the Northgate and auto-apply decisions reach Dana. Draft 6 in MAYA_OUTBOX.md (READY, 11:46) asks Maya.
+
+
+### Exchange 5 — ~13:47 CST, T+2:37 (Purpose: Confirmation; sent from the Maya desk/courier after Jacek's approval)
+**Jacek:** Purpose: Confirmation. (1) Dana's call on card write-offs: Eastman Engineering $3,264 would auto-write-off above her $2,000 limit (they also threatened a chargeback); Northgate Creative $799 writes off tomorrow although their card has since worked; Hollis Nair Engineers $517 writes off in 9 days although their card has since worked. Re-run the card, call the customer, or let it write off? (2) Policy says don't chase during an open escalation, so we're holding Ambrose & Lowell Advisory (2 invoices, $1,316) because each has an open high-priority product ticket, not a billing complaint. Should these stay held until support closes the ticket, or can Priya chase them? (3) For Dana before Monday: the agent applies a payment by itself only when the amount and invoice number match exactly and it's under $10,000; everything else goes to Priya. Write-offs stay at $0, meaning never automatic. Does Dana confirm both numbers? (4) Mercer & Banerjee LLP gave written notice to cancel (their ticket in August), but nothing in billing reflects it and their renewal date is 2026-11-12. Should finance stop the renewal and agree a final balance instead of chasing $3,876?
+
+**Maya:** I can give you my view, but Dana has to confirm the finance calls herself. Eastman shouldn't be re-run or written off automatically. With a chargeback threat and an amount above her limit, the account manager should call them, and Dana decides what happens after that conversation. For Northgate and Hollis Nair, my instinct is a short heads-up email and then a re-run Priya approves, rather than writing off money from customers whose cards now work. Dana should stop both automatic write-offs today so the clock doesn't make the decision for her.
+
+Keep Ambrose & Lowell held. Chasing a customer about $1,316 while their high-priority product issue is still open is exactly how we get a complaint. Do tell their account manager, and have the hold come up for review if the ticket sits open for more than a couple of weeks.
+
+The exact-match-under-$10,000 rule and the $0 write-off threshold sound right to me, but get Dana's yes in writing. Also confirm the existing automatic write-off is actually switched off, because $0 means nothing if Northgate still goes tomorrow.
+
+On Mercer & Banerjee, yes. Finance should stop the renewal invoice and the account manager should confirm the cancellation with them. After that, agree the $3,876 as a final balance, and only chase it if they dispute something they used. Billing them for a renewal after written notice would turn a quiet churn into an angry one. Please flag it to the Head of Customer Success as well, because a cancellation finance never heard about is a gap we need to close.
+
+**What we changed because of it**
+- Eastman: no re-run, no write-off; AM calls, Dana decides. Northgate and Hollis Nair: heads-up email, then a card re-run Priya approves. Dana stops both automatic write-offs today (Monday checklist).
+- Ambrose & Lowell stay held; AM told; review if the ticket stays open more than about two weeks.
+- $10k exact-match cap and $0 write-offs: Maya agrees; Dana's written yes and confirmation that the automatic card write-off is switched off are on the Monday checklist.
+- Mercer & Banerjee: stop the renewal invoice; AM confirms the cancellation; $3,876 becomes a final balance; flag to the Head of Customer Success.
+
+
+### Exchange 6 — ~13:49 CST, T+2:39 (Purpose: Intel; sent from the Maya desk/courier after Jacek's approval)
+**Jacek:** Purpose: Intel. (1) Our invoice records carry one total per invoice, with no line items, tax or credit notes, so we can't see fees like Westbrook's implementation charge. Could someone send the PDF of INV-25730, so we can check that what customers see matches the ledger? (2) All 14 disputed invoices match their contracts, but 5 need a person to decide: Riverside Partners; Okafor & Nakamura; Thackeray Accounting; Ellery Consulting; Brandt Ashby IT. Can you get the account managers (and whoever owns tax) to rule on these this week, so Priya can release or credit them?
+
+**Maya:** I'll ask Priya to send you the PDF of INV-25730 today, and if the line items live in Stripe rather than QuickBooks, she'll know where to pull them. Yes, I'll get the account managers to rule on the five this week. Send me one line per account with the amount, what the customer says and what the contract says, so they can decide in a few minutes. Tax sits with Dana as far as I know, so copy her on anything that turns on tax. Keep in mind that matching the contract only tells us our side, and Riverside clearly thinks the seat count is wrong. I want the AMs to hear the customer out before Priya releases or credits anything.
+
+**What we changed because of it**
+- Priya sends the INV-25730 PDF (line items may live in Stripe).
+- AMs rule on the five this week; tax items go to Dana. Maya asked for one line per account (sent in exchange 7).
+
+
+### Exchange 7 — ~13:51 CST, T+2:41 (Purpose: Intel (requested by Maya); sent from the Maya desk/courier after Jacek's approval)
+**Jacek:** Purpose: Intel, as you asked, one line per account for the AMs. (1) Riverside Partners, INV-25787, $60,576: customer says the workspace merge double-counted seats (62 billed, 38 people); our invoice bills 46 seats at $88 from the 27 Aug renewal, up from 39 in July, with 38 to 43 active users, so up to $8,448 if they're right. (2) Okafor & Nakamura, INV-25765, $46,848: customer says their AM offered 50% off for three months for a second office; the contract has 33 seats unchanged since 2023 and no discount, so up to $5,856. (3) Brandt Ashby IT, INV-25822, $26,112: customer says they moved from annual to monthly before renewal; the contract renewed annual on 7 Sep at 32 seats, so it's cash timing only, re-bill as 12 x $2,176 if proven. (4) Thackeray Accounting, INV-25750, $7,896: customer says VAT should be reverse charge; our customer record says United States, so it's a tax call for Dana. (5) Ellery Consulting, INV-25757, $13,056: customer says sales tax used their old address; the subscription amount matches the contract, so it's a tax call for Dana. All five stay held until the AM confirms.
+
+**Maya:** This is what I needed, and I'll send it to the AMs today, with Thackeray and Ellery going to Dana. Before I do, check Riverside. 46 seats at $88 for a year is $48,576, not $60,576, and the customer says 62 were billed. So the invoice may not say what our records say, and that PDF matters more than INV-25730. On Thackeray, a customer asking about VAT reverse charge is probably UK-based, so our "United States" record may be the actual error. That's the kind of thing OPS-2 keeps producing, and Dana should know before she rules.
+
+**What we changed because of it**
+- Maya spotted that 46 x $88 x 12 is $48,576, not $60,576. Our line had omitted the $12,000 Enterprise platform fee. Correction sent in exchange 8.
+- Thackeray's country record may itself be wrong (OPS-2); flag to Dana before she rules.
+
+
+### Exchange 8 — ~13:53 CST, T+2:43 (Purpose: Confirmation (correction); sent from the Maya desk/courier after Jacek's approval)
+**Jacek:** Purpose: Confirmation, and a correction to my Riverside line before it goes to the AMs. I left out the Enterprise platform fee: 46 seats x $88 x 12 is $48,576, plus the $12,000 platform fee, gives $60,576. So the invoice amount is consistent with 46 seats, while 62 seats would have been $77,472. The customer's 62 may come from their own user count after the merge rather than from the invoice. The PDF will settle what they actually see, so Riverside goes first. On Thackeray, agreed: the United States record may be the error, and we'll flag it to Dana as a customer-record problem (OPS-2) before she rules.
+
+**Maya:** Thanks, that adds up. I'll send the corrected Riverside line to the AMs today. That changes what Riverside's AM needs to settle. It's no longer whether the invoice is wrong. It's whether 46 seats was right at the August renewal when they had 38 to 43 active users. The answer is probably in how the merge was handled, and the AM should hear that from the customer before anyone credits the $8,448. Please also check that the $12,000 platform fee shows as its own line on the PDF, because a customer who can't see it will assume they're paying for more seats than they are.
+
+**What we changed because of it**
+- Riverside's question for the AM is now whether 46 seats was right at the August renewal (38 to 43 active users); no $8,448 credit until the AM hears the customer.
+- Check the $12,000 platform fee shows as its own line on the Riverside PDF (pulled first).
+- Lesson for our own outputs: always state the platform fee when quoting Enterprise seat maths.

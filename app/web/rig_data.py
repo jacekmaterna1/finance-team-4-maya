@@ -96,14 +96,20 @@ PROGRESS = [
     ("done", "Four agents live on real records", "T+0:12"),
     ("done", "Maya approved rules-only go-live with Priya on Monday", "T+0:32"),
     ("done", "Data-room QA: AR ties out, 14 disputes verified against contracts", "T+0:36"),
-    ("current", "RIG live on Render for review", "now"),
+    ("done", "RIG live on Render; FIN-1/FIN-2 passed three QA rounds", "T+1:17"),
+    ("done", "Maya answered all 6 team questions via the desk (8 of 60 messages)", "T+2:43"),
+    ("current", "Final review, video walkthrough, hand-in", "now"),
     ("next", "Monday: Priya walkthrough, Dana decisions, Legal reviews Bedrock note", "Mon"),
     ("next", "+30 days: hold-override rate back to Maya", "+30d"),
 ]
 
 GO_LIVE = [
-    (False, "Dana reviews the Northgate decision ($799, automatic write-off)"),
-    (False, "Dana confirms the auto-apply rule (exact amount + invoice reference) and the write-off threshold ($0)"),
+    (False, "Dana stops the automatic card write-offs today (Northgate $799 tomorrow, Hollis Nair $517) and confirms the 150-day auto write-off is switched off"),
+    (False, "Dana confirms in writing: auto-apply only exact amount + invoice reference under $10,000; write-off threshold $0"),
+    (False, "Eastman Engineering: AM calls (chargeback threat, $3,264 over Dana's limit); Dana decides after the call"),
+    (False, "Mercer & Banerjee: stop the renewal invoice, AM confirms cancellation, $3,876 final balance; flag to Head of Customer Success"),
+    (False, "AMs rule on the 5 open disputes this week (Riverside first: was 46 seats right at the August renewal?); Thackeray and Ellery to Dana (tax; Thackeray's country record may be wrong)"),
+    (False, "Priya pulls the Riverside and INV-25730 PDFs (check the $12,000 platform fee shows as its own line)"),
     (False, "30-minute walkthrough with Priya (why Reyes was held; how to override or release a hold)"),
     (False, "Engineering fills in the AWS region in the Legal note"),
     (False, "Legal reviews the Bedrock note (ticket text can still name people)"),

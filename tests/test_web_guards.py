@@ -213,8 +213,8 @@ def test_demo_hides_video_script_and_shows_outline():
         assert "recorded by Jacek" in html and "Where it gets things wrong" in html
 
 
-def test_docs_repo_marked_private():
-    assert "private — access on request" in client.get("/docs").text
+def test_docs_repo_marked_public():
+    assert "(public: code, paper trail, evaluation)" in client.get("/docs").text
 
 
 def test_times_shown_in_cst():

@@ -1,6 +1,6 @@
 # Ledgerline Order-to-Cash team: one page
 
-**Live:** https://ledgerline-finance-rig.onrender.com · Data as of 2026-10-31
+**Live:** https://ledgerline-finance-rig.onrender.com · **Repo (public):** https://github.com/jacekmaterna1/finance-team-4-maya · Data as of 2026-10-31
 
 ## Which process
 **FIN-1 Collections, with FIN-2 Cash Application as its feeder.** Overdue invoices are up year on year, and cash is the board's #1 worry. Paidly was switched off in 2025 after chasing a customer whose wire had already arrived. Finance can't see Zendesk, so customers with open complaints get chased too. Collections only works if cash application runs first.
