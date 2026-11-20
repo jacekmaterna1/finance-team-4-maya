@@ -109,6 +109,10 @@ def decide(inv, holds, stage):
         return "NO_ACTION"
     if codes & HARD_HOLDS:
         return "HOLD"
+    # Review T+0:48: a top-50 invoice that isn't due yet needs no message at all, so it shouldn't sit in Priya's
+    # "write it yourself" queue. Legal risk and card write-off decisions still surface whatever the stage.
+    if stage in ("not_due", "wait") and not (codes & {"LEGAL_RISK", "CARD_WRITEOFF_SOON", "ESCALATE_90"}):
+        return "NO_ACTION"
     if codes & HUMAN_CODES:
         return "HUMAN_WRITES"
     if stage == "not_due" or stage == "wait":
