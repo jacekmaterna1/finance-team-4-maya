@@ -103,3 +103,8 @@
 - Choice: (b). Every draft starts with `Purpose: Confirmation` or `Purpose: Intel`, and adds only as much context as the ask needs.
 - Why: Maya has 60 messages for the day and acts as a real COO. Status updates use up her attention and give the reviewers nothing. What we ask her is part of what gets graded.
 - Effect: Draft 4 (an "app is live" update) was put on hold at T+0:32. Exchange 4 was a pure Confirmation and got the go-live decision. Messages used: 5 of 60, target 12 or fewer.
+
+## D16 — Stay on Render's free plan (Jacek, T+1:18)
+- Options: Starter + 1 GB disk (~$7.25/month, state persists) vs free (state wiped on restart or after 15 idle minutes).
+- Choice: free.
+- Mitigation: the courier writes every message sent to Maya and her verbatim reply into trail/MAYA_QA.md and pushes, so the RIG's Maya thread (rendered from the trail) stays durable. Desk approvals are ephemeral, so Jacek approves right before the courier collects the queue, and nothing is deployed between approval and send.
