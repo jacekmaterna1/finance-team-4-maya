@@ -108,3 +108,9 @@
 - Options: Starter + 1 GB disk (~$7.25/month, state persists) vs free (state wiped on restart or after 15 idle minutes).
 - Choice: free.
 - Mitigation: the courier writes every message sent to Maya and her verbatim reply into trail/MAYA_QA.md and pushes, so the RIG's Maya thread (rendered from the trail) stays durable. Desk approvals are ephemeral, so Jacek approves right before the courier collects the queue, and nothing is deployed between approval and send.
+
+## D17 — Upgraded Render to a paid instance with a 1 GB disk (Jacek, ~T+2:15; supersedes D16)
+- Why: the free plan slept after 15 idle minutes ("the app is down"), and every deploy wiped the Maya desk's state.
+- Done: Jacek upgraded the instance and added the disk at /var/data. Claude Code set DB_PATH=/var/data/ledgerline.db and RULES_PATH=/var/data/rules.json.
+- Verified: wrote a test chat entry, restarted the service, and the entry was still in Activity afterwards. The Maya desk showed 6 proposed questions at 4 of 60 used.
+- The courier still mirrors every Maya exchange into trail/MAYA_QA.md for the paper trail.

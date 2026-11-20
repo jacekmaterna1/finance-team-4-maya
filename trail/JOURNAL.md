@@ -52,3 +52,4 @@ Timer started: **2026-11-20 ~11:10 CST** (the page showed 23h57m left at 11:13).
 | 12:24 | T+1:14 | builder + Claude Code | Closed all sev-2/sev-3 defects with 23 regression tests; engine: courtesy stage from due_date (13 new courtesy drafts), word-boundary banned phrases; Maya desk built (team proposes questions → CEO approves → courier sends bundled → replies land in RIG); real run timestamps; TZ=America/Chicago on Render | Ready-for-Maya criteria |
 | 12:25 | T+1:15 | Claude Code | QA pass 3 re-test: all suites pass in substance (analysis/QA_PASS_3.md) | Verification before deploy |
 | 12:35 | T+1:18 | Jacek | Stay on Render free plan; courier mirrors every Maya exchange into the trail so history survives restarts | Cost vs durability |
+| 13:32 | T+2:22 | Jacek + Claude Code | Upgraded Render (paid instance + 1 GB disk); DB/rules moved to disk; persistence verified across a restart | Desk state and no sleeping for Maya interactions |
