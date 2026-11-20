@@ -1,0 +1,55 @@
+check,result,detail
+1 Paidly baseline INV-25469,PASS,"INV-25469 Kingsway Engineering Group $5,100 111dpd -> HOLD holds=['MONEY_RECEIVED', 'ESCALATE_90', 'RENEWAL_SOON'] to=None"
+1 Paidly baseline INV-25852,PASS,"INV-25852 Kingsway Engineering Group $5,100 19dpd -> HOLD holds=['MONEY_RECEIVED', 'RENEWAL_SOON'] to=None"
+1 Paidly baseline INV-25784,PASS,"INV-25784 Jessop & Orwell Agency $62,688 36dpd -> HOLD holds=['MONEY_RECEIVED', 'TOP50'] to=None"
+1 Paidly baseline INV-25806,PASS,"INV-25806 Brandt & Lowell CPAs $6,324 28dpd -> HOLD holds=['MONEY_RECEIVED'] to=None"
+1 Paidly baseline INV-25845,PASS,"INV-25845 Castellano, Crane & Co $3,672 20dpd -> NO_ACTION holds=['PAID', 'RENEWAL_SOON'] to=None"
+1 Paidly baseline INV-25867,PASS,INV-25867 Yardley & Duarte Advisory $564 16dpd -> NO_ACTION holds=['PAID'] to=None
+1b Paidly abbreviated payer 'BRANDT' (PAY-65766),PASS,"INV-25806 Brandt & Lowell CPAs $6,324 28dpd -> HOLD holds=['MONEY_RECEIVED'] to=None | cash agent: EXCEPTION cust=None inv=[] (Payer name 'BRANDT' is not a clear match for any one customer: Studio Brandt (0.55))"
+1b Paidly abbreviated payer 'JESSOP' (PAY-65750),PASS,"INV-25784 Jessop & Orwell Agency $62,688 36dpd -> HOLD holds=['MONEY_RECEIVED', 'TOP50'] to=None | cash agent: EXCEPTION cust=None inv=[] (Payer name 'JESSOP' is not a clear match for any one customer: Jessop Legal (0.57))"
+1b Paidly abbreviated payer 'KINGSWAY' (PAY-65805),PASS,"INV-25469 Kingsway Engineering Group $5,100 111dpd -> HOLD holds=['MONEY_RECEIVED', 'ESCALATE_90', 'RENEWAL_SOON'] to=None | cash agent: EXCEPTION cust=None inv=[] (Payer name 'KINGSWAY' is not a clear match for any one customer: Kingsway Digital (0.57), Kingsway Creative (0)"
+1b Paidly abbreviated payer 'JESSOP ORWELL' (PAY-65750),PASS,"INV-25784 Jessop & Orwell Agency $62,688 36dpd -> HOLD holds=['MONEY_RECEIVED', 'TOP50'] to=None | cash agent: PROPOSE cust=C1273 inv=['INV-25784'] (Payer name 'JESSOP ORWELL' is not a clear match for any one customer: Jessop & Orwell Agency (0.68))"
+1b Paidly abbreviated payer 'BRANDT LOWELL' (PAY-65766),PASS,"INV-25806 Brandt & Lowell CPAs $6,324 28dpd -> HOLD holds=['MONEY_RECEIVED'] to=None | cash agent: PROPOSE cust=C1126 inv=['INV-25806'] (Payer name 'BRANDT LOWELL' is not a clear match for any one customer: Brandt & Lowell CPAs (0.70))"
+2 all 14 analyst-disputed invoices held,PASS,not held: []
+"2a INV ref, polite question, no refusal",PASS,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> HOLD holds=['DISPUTE'] to=None"
+2b ref without INV- prefix + refusal,PASS,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> HOLD holds=['DISPUTE'] to=None"
+2c 'will not pay' (phrase not in list),PASS,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> HOLD holds=['DISPUTE'] to=None"
+2d refusal but tagged How-to,FAIL,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=[] to=['nadia.vance@thornfieldconsultinggr.example']"
+"2e soft complaint, no ref, no refusal",PASS,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> HOLD holds=['DISPUTE'] to=None"
+"2f untagged, 'refuse to pay'",FAIL,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=[] to=['nadia.vance@thornfieldconsultinggr.example']"
+3 no departed contact in any draft 'to',PASS,"21 drafts checked, leaks=[]"
+3b every draft recipient exists in contacts.csv,PASS,outside=[]
+3c every contact at customer has left,PASS,"INV-25862 Thornfield Consulting Group $39,456 17dpd -> HOLD holds=['NO_VALID_CONTACT'] to=None"
+4 look-alike contact @thorn-fieldconsultinggr.example,PASS,"used=False INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['nadia.vance@thornfieldconsultinggr.example']"
+4 look-alike contact @thornfleldconsultinggr.example,PASS,"used=False INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['nadia.vance@thornfieldconsultinggr.example']"
+4 look-alike contact @thornfieldconsultinggr.example.co,PASS,"used=False INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['nadia.vance@thornfieldconsultinggr.example']"
+4 look-alike contact @thornfieldconsultinggrs.example,PASS,"used=False INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['nadia.vance@thornfieldconsultinggr.example']"
+4 look-alike contact @billing.thornfieldconsultinggr.example,PASS,"used=False INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['nadia.vance@thornfieldconsultinggr.example']"
+4 look-alike contact @THORNFIELDCONSULTINGGR.EXAMPLE,PASS,"used=True INV-25862 Thornfield Consulting Group $39,456 17dpd -> DRAFT_REMINDER holds=[] to=['ava.mallory@THORNFIELDCONSULTINGGR.EXAMPLE', 'nadia.vance@thornfieldconsultinggr.example']"
+5 banned phrase 'Failure to pay may lead to suspension of your account.',PASS,drafts=0 blocked=30
+5 banned phrase 'We will have no choice but to escalate.',PASS,drafts=0 blocked=30
+5 banned phrase 'We may refer this to a debt collector.',PASS,drafts=0 blocked=30
+5 banned phrase 'We will begin legal proceedings.',PASS,drafts=0 blocked=30
+5 banned phrase 'Your access will be cut off on Friday.',PASS,drafts=0 blocked=30
+5 banned phrase 'This is your FINAL NOTICE.',PASS,drafts=0 blocked=30
+6 top-50 never DRAFT_REMINDER,PASS,"14 top-50 invoices: ['HOLD', 'HUMAN_WRITES']"
+7 90+ days never DRAFT_REMINDER,PASS,"INV-25469 Kingsway Engineering Group $5,100 111dpd -> HOLD holds=['MONEY_RECEIVED', 'ESCALATE_90', 'RENEWAL_SOON'] to=None; INV-25539 Banerjee Petrov Engineers $2,652 92dpd -> HOLD holds=['DISPUTE', 'ESCALATE_90'] to=None; INV-25433 Northgate Creative $799 149dpd -> RETRY_CARD holds=['ESCALATE_90', 'CARD_WRITEOFF_SOON', 'RENEWAL_SOON'] to=None; INV-25622 Studio Nakamura $517 105dpd -> RETRY_CARD holds=['ESCALATE_90'] to=None; INV-25470 Hollis Nair Engineers $517 141dpd -> RETRY_CARD holds=['ESCALATE_90', 'CARD_WRITEOFF_SOON'] to=None"
+7b bank invoice at 95 dpd,PASS,"INV-25862 Thornfield Consulting Group $39,456 95dpd -> HUMAN_WRITES holds=['ESCALATE_90'] to=['nadia.vance@thornfieldconsultinggr.example'] draft_template=final"
+8 failed card INV-25973 (card works=False),PASS,"INV-25973 Eastman Engineering $3,264 23dpd -> HUMAN_WRITES holds=['LEGAL_RISK', 'WRITEOFF_OVER_LIMIT'] to=None"
+8 failed card INV-25803 (card works=True),PASS,"INV-25803 Glover Engineering $1,836 59dpd -> RETRY_CARD holds=[] to=None"
+8 failed card INV-25708 (card works=True),PASS,"INV-25708 Quill, Mott & Co $1,632 83dpd -> RETRY_CARD holds=[] to=None"
+8 failed card INV-25975 (card works=False),PASS,"INV-25975 Quill, Mott & Co $1,632 22dpd -> DRAFT_REMINDER holds=[] to=['emma.stanhope@quillmottco.example']"
+8 failed card INV-25793 (card works=True),PASS,"INV-25793 Ashgrove Partners $1,088 64dpd -> RETRY_CARD holds=[] to=None"
+8 failed card INV-25926 (card works=False),PASS,INV-25926 Ruiz & Whitfield CPAs $846 30dpd -> DRAFT_REMINDER holds=[] to=['clara.hollis@ruizwhitfieldcpas.example']
+8 failed card INV-25433 (card works=True),PASS,"INV-25433 Northgate Creative $799 149dpd -> RETRY_CARD holds=['ESCALATE_90', 'CARD_WRITEOFF_SOON', 'RENEWAL_SOON'] to=None"
+8 failed card INV-25912 (card works=True),PASS,INV-25912 Ellery Achebe Chartered Accountants $799 36dpd -> RETRY_CARD holds=['STALE_CONTACT'] to=None
+8 failed card INV-25825 (card works=True),PASS,INV-25825 Kowalczyk + Stanhope Architects $705 54dpd -> RETRY_CARD holds=[] to=None
+8 failed card INV-25769 (card works=True),FAIL,INV-25769 Drummond Consulting $658 68dpd -> HUMAN_WRITES holds=['LEGAL_RISK'] to=None
+8 failed card INV-25709 (card works=True),PASS,INV-25709 Moreau & Crane Agency $658 83dpd -> RETRY_CARD holds=[] to=None
+8 failed card INV-25928 (card works=False),PASS,INV-25928 Tan Accounting $611 30dpd -> DRAFT_REMINDER holds=[] to=['kofi.glover@tanaccounting.example']
+8 failed card INV-25969 (card works=False),PASS,INV-25969 Bramwell Sinclair Chartered Accountants $611 23dpd -> DRAFT_REMINDER holds=['STALE_CONTACT'] to=['mateo.abbott@bramwellsinclaircharte.example']
+8 failed card INV-25622 (card works=True),PASS,INV-25622 Studio Nakamura $517 105dpd -> RETRY_CARD holds=['ESCALATE_90'] to=None
+8 failed card INV-25470 (card works=True),PASS,"INV-25470 Hollis Nair Engineers $517 141dpd -> RETRY_CARD holds=['ESCALATE_90', 'CARD_WRITEOFF_SOON'] to=None"
+8 failed card INV-26005 (card works=False),PASS,INV-26005 Hume Accounting $282 15dpd -> DRAFT_REMINDER holds=[] to=['layla.zeller@humeaccounting.example']
+9 use_claude=False: zero network LLM calls (fake key set),PASS,"ask_json invoked 0 times (all enabled=False, cache lookup only), enabled=0, client constructions=0"
+"9b use_claude=True with API down: pipeline falls back, same decisions",PASS,attempted client constructions=321 (each failed and fell back to rules/templates)

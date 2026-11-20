@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge %}
+{% block content %}
+<h1>Today</h1>
+<p class="lead">Good morning. Here is what the agents did overnight and what needs a person.</p>
+
+<section class="metrics">
+  <div class="metric metric-big">
+    <div class="m-label">Overdue balance</div>
+    <div class="m-value">{{ m.overdue_balance|money }}</div>
+    <div class="m-sub">{{ m.overdue_count }} overdue invoices &middot; open AR {{ m.open_ar|money }}</div>
+    {% if m.overdue_collectable is defined %}
+    <div class="decomp">
+      <span>Already received <b>{{ m.overdue_already_paid|money }}</b></span>
+      <span>Disputed <b>{{ m.overdue_disputed|money }}</b></span>
+      <span>Collectable <b>{{ m.overdue_collectable|money }}</b></span>
+    </div>
+    {% endif %}
+  </div>
+  <div class="metric">
+    <div class="m-label">Cash found</div>
+    <div class="m-value good">{{ m.cash_found|money }}</div>
+    <div class="m-sub">unapplied receipts matched to invoices that looked unpaid</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Chases prevented</div>
+    <div class="m-value good">{{ m.chases_prevented }}</div>
+    <div class="m-sub">reminders that would have gone to customers who already paid or are in dispute</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Drafts awaiting approval</div>
+    <div class="m-value">{{ live.drafts_pending }}</div>
+    <div class="m-sub">of {{ m.drafts }} drafted &middot; {{ live.human_pending }} for you to write</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Card re-runs</div>
+    <div class="m-value">{{ live.card_retries_pending }}</div>
+    <div class="m-sub">of {{ m.card_retries or 0 }} failed card charges where the card works again; approve each one</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Holds</div>
+    <div class="m-value warn">{{ live.holds_open }}</div>
+    <div class="m-sub">of {{ m.held }} held by the Controller still unreviewed</div>
+  </div>
+  <div class="metric metric-veto {% if m.collections_complaints %}veto-hit{% else %}veto-ok{% endif %}">
+    <div class="m-label">Collections complaints <span class="tag">veto</span></div>
+    <div class="m-value {% if not m.collections_complaints %}good{% endif %}">{{ m.collections_complaints }}</div>
+    <div class="m-sub">caused by this tool since go-live. Above zero = stop and review.</div>
+    <div class="m-sub">Existing in last 120 days: {{ m.collections_complaints_baseline if m.collections_complaints_baseline is defined else '-' }} (read by agent) &middot; a keyword count said {{ m.complaint_keyword_hits if m.complaint_keyword_hits is defined else '-' }}</div>
+  </div>
+</section>
+
+{% if dana %}
+<section class="card dana">
+  <h2>Decisions for Dana today <span class="muted">({{ dana|length }})</span></h2>
+  <table class="tbl tbl-mini">
+    {% for x in dana %}
+    <tr>
+      <td class="nowrap"><a href="/collections#{{ x.i.invoice_id }}">{{ x.i.invoice_id }}</a></td>
+      <td><a href="/customers/{{ x.i.customer_id }}">{{ x.i.customer_name }}</a></td>
+      <td class="num strong">{{ x.i.amount|money2 }}</td>
+      <td>{% for h in x.holds %}<div><b>{{ h.label or h.code }}</b>{% if h.detail %} <span class="small muted">{{ h.detail }}</span>{% endif %}</div>{% endfor %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
+
+<section>
+  <div class="section-head">
+    <h2>Needs you today <span class="muted">({{ n_items }} items, {{ items_total|money }})</span></h2>
+    <span class="small muted">Largest first. Nothing here goes out or touches the ledger until you approve it.</span>
+  </div>
+  {% if items %}
+  <table class="tbl">
+    <thead><tr><th class="num">Amount</th><th>Customer</th><th>Item</th><th>Agent says</th><th>What you do</th></tr></thead>
+    <tbody>
+    {% for x in items %}
+      <tr>
+        <td class="num strong">{{ x.amount|money }}</td>
+        <td>{% if x.customer_id %}<a href="/customers/{{ x.customer_id }}">{{ x.customer }}</a>{% else %}{{ x.customer }}{% endif %}</td>
+        <td class="nowrap"><a href="{{ x.link }}">{{ x.id }}</a> {{ badge(x.badge) }}{% if x.dpd is defined and x.dpd is not none and x.dpd > 0 %}<div class="small muted">{{ x.dpd }} days past due</div>{% endif %}</td>
+        <td class="reason">{{ x.reason|truncate(170) }}</td>
+        <td><a class="btn btn-sm" href="{{ x.link }}">{{ x.what }}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if n_items > items|length %}<p class="small muted">Showing the {{ items|length }} largest. See <a href="/cash">Cash application</a> and <a href="/collections">Collections</a> for the rest.</p>{% endif %}
+  {% else %}
+  <div class="empty">Nothing waiting. Every proposal and draft has been handled.</div>
+  {% endif %}
+</section>
+
+<section>
+  <h2>The team, in the order it runs</h2>
+  <div class="agents">
+    {% for a in strip %}
+    <div class="agent">
+      <div class="agent-step">{{ loop.index }}</div>
+      <div class="agent-name">{{ a.name }}</div>
+      <div class="small">{{ a.does }}</div>
+      <ul class="agent-counts">{% for c in a.counts %}<li>{{ c }}</li>{% endfor %}</ul>
+    </div>
+    {% if not loop.last %}<div class="arrow">&rarr;</div>{% endif %}
+    {% endfor %}
+  </div>
+  <p class="small muted">Cash Application runs before Collections on every cycle, so a receipt that plausibly pays an invoice blocks any chase on it. Each agent follows a written operating manual that only people edit.</p>
+</section>
+{% endblock %}

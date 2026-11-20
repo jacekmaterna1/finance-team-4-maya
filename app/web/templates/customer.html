@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, conf, human_status, hold_list %}
+{% block title %}{{ c.name }} · Ledgerline{% endblock %}
+{% block content %}
+<p class="small"><a href="/customers">&larr; Customers</a></p>
+<div class="cust-head">
+  <div>
+    <h1>{{ c.name }} <span class="muted small">{{ c.customer_id }}</span>{% if c.top50 %} <span class="tag tag-top">top 50</span>{% endif %}</h1>
+    <div class="kv">
+      <span><b>Plan</b> {{ c.plan or '-' }}</span>
+      <span><b>ARR</b> {{ c.current_arr|money }}</span>
+      <span><b>Rank</b> {{ ('#' ~ c.rank) if c.rank else '-' }}</span>
+      <span><b>Account manager</b> {{ c.account_manager or '-' }}</span>
+      <span><b>Renewal</b> {{ c.renewal_date or '-' }}</span>
+      <span><b>Pays by</b> {{ (c.payment_method or '-')|upper }}</span>
+      <span><b>Last NPS</b> {{ c.nps_last if c.nps_last is not none else '-' }}</span>
+      <span><b>Usage</b> {{ c.usage_trend or '-' }}</span>
+    </div>
+  </div>
+</div>
+{% if c.flags %}<div class="flags">{% for f in c.flags %}<span class="flag flag-lg">{{ f }}</span>{% endfor %}</div>{% endif %}
+
+<div class="grid2">
+<section class="card">
+  <h2>Open invoices</h2>
+  {% set open_ids = c.open_invoices or [] %}
+  <table class="tbl tbl-mini">
+    <tr><th>Invoice</th><th class="num">Amount</th><th>Due</th><th>Agent decision</th><th>Your action</th></tr>
+    {% for i in invoices if i.invoice_id in open_ids or i.action != 'NO_ACTION' %}{% set s = latest.get('invoice:' ~ i.invoice_id) %}
+    <tr>
+      <td><a href="/collections#{{ i.invoice_id }}">{{ i.invoice_id }}</a></td>
+      <td class="num">{{ i.amount|money2 }}</td>
+      <td class="small">{{ i.due_date }}{% if i.days_past_due > 0 %}<br><b class="warn">{{ i.days_past_due }}d late</b>{% endif %}</td>
+      <td>{{ badge(i.action) }}{% for h in i.holds %}<div class="small">{{ h.label or h.code }}</div>{% endfor %}</td>
+      <td class="small">{{ s.action|replace('_',' ') if s else '-' }}</td>
+    </tr>
+    {% else %}<tr><td colspan="5" class="muted">No open invoices.</td></tr>{% endfor %}
+  </table>
+</section>
+
+<section class="card">
+  <h2>Payments received</h2>
+  <table class="tbl tbl-mini">
+    <tr><th>Payment</th><th>Received</th><th class="num">Amount</th><th>Decision</th><th>Invoices</th></tr>
+    {% for p in payments %}
+    <tr>
+      <td><a href="/cash#{{ p.payment_id }}">{{ p.payment_id }}</a>{% if p.payment_id in (c.unapplied_payments or []) %} <span class="tag">unapplied</span>{% endif %}</td>
+      <td class="small">{{ p.received_date }} {{ p.method|upper }}</td>
+      <td class="num">{{ p.amount|money2 }}</td>
+      <td>{{ badge(p.decision) }} {{ conf(p.confidence) }}</td>
+      <td class="small">{{ p.invoice_ids|join(', ') or '-' }}</td>
+    </tr>
+    {% else %}<tr><td colspan="5" class="muted">No unapplied receipts.</td></tr>{% endfor %}
+  </table>
+</section>
+
+<section class="card">
+  <h2>Support tickets</h2>
+  {% set tickets = c.open_tickets or [] %}
+  {% if tickets %}<h4>Open</h4>{% endif %}
+  {% for t in tickets %}
+    <div class="ticket ticket-open"><b>{{ t.ticket_id }}</b> <span class="tag">{{ t.category }}</span> <span class="tag p-{{ t.priority }}">{{ t.priority }}</span> <span class="muted small">{{ t.status }} &middot; {{ t.created_at }}</span>
+      <div>{{ t.subject }}</div>{% if t.summary %}<div class="small muted">{{ t.summary }}</div>{% endif %}</div>
+  {% endfor %}
+  {% set open_tids = tickets|map(attribute='ticket_id')|list %}
+  {% set recent = (c.recent_tickets or [])|rejectattr('ticket_id', 'in', open_tids)|list %}
+  {% if recent %}<h4>Recent</h4>
+  {% for t in recent[:8] %}
+    <div class="ticket"><b>{{ t.ticket_id }}</b> <span class="tag">{{ t.category }}</span> <span class="muted small">{{ t.status }} &middot; {{ t.created_at }}</span><div class="small">{{ t.subject }}</div></div>
+  {% endfor %}{% endif %}
+  {% if not tickets and not recent %}<p class="muted">No tickets.</p>{% endif %}
+  <p class="small muted">Billing complaint open: <b>{{ 'yes' if c.billing_complaint else 'no' }}</b></p>
+</section>
+
+<section class="card">
+  <h2>Contacts</h2>
+  <table class="tbl tbl-mini">
+    <tr><th>Name</th><th>Email</th><th>Role</th><th>Check</th></tr>
+    {% for p in c.contacts or [] %}
+    <tr>
+      <td>{{ p.name }}</td><td class="small">{{ p.email }}</td><td class="small">{{ p.role }}</td>
+      <td>{% if p.verified %}<span class="badge b-verified">verified</span>{% else %}<span class="badge b-unverified">not verified</span>{% endif %}{% if p.issue %}<div class="small warn">{{ p.issue }}</div>{% endif %}</td>
+    </tr>
+    {% else %}<tr><td colspan="4" class="muted">No contacts on file.</td></tr>{% endfor %}
+  </table>
+</section>
+</div>
+
+<section>
+  <h2>Agent decisions for this customer</h2>
+  <table class="tbl tbl-mini">
+    <tr><th>When</th><th>Agent</th><th>Object</th><th>Decision</th><th>Conf.</th><th>Reason</th></tr>
+    {% for a in audit|reverse %}
+    <tr><td class="small nowrap">{{ a.ts }}</td><td class="small">{{ a.agent }}</td><td class="small">{{ a.object_id }}</td><td>{{ badge(a.decision) }}</td><td>{{ conf(a.confidence) }}</td><td class="small">{{ a.reason }}</td></tr>
+    {% else %}<tr><td colspan="6" class="muted">None.</td></tr>{% endfor %}
+  </table>
+</section>
+{% endblock %}

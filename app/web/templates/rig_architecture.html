@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}Architecture · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">How it fits together</div><h1>Architecture</h1></div>
+<div class="card arch-card">
+<svg class="arch" viewBox="0 0 1100 610" role="img" aria-label="Architecture: data sources feed four agents in order; a human queue gates every output; everything is written to the audit log">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="a-head"/></marker></defs>
+<text x="20" y="14" class="a-k">DATA SOURCES (READ-ONLY EXPORTS IN THE DATA ROOM)</text>
+<rect x="20" y="22" width="190" height="54" rx="6" class="a-src"/>
+<text x="115" y="45" class="a-t" text-anchor="middle">QuickBooks</text>
+<text x="115" y="63" class="a-t-sm" text-anchor="middle">invoices · AR aging</text>
+<path d="M115 76 V100" class="a-line"/>
+<rect x="232" y="22" width="190" height="54" rx="6" class="a-src"/>
+<text x="327" y="45" class="a-t" text-anchor="middle">Bank + Stripe</text>
+<text x="327" y="63" class="a-t-sm" text-anchor="middle">receipts · card charges</text>
+<path d="M327 76 V100" class="a-line"/>
+<rect x="444" y="22" width="190" height="54" rx="6" class="a-src"/>
+<text x="539" y="45" class="a-t" text-anchor="middle">Zendesk</text>
+<text x="539" y="63" class="a-t-sm" text-anchor="middle">support tickets</text>
+<path d="M539 76 V100" class="a-line"/>
+<rect x="656" y="22" width="190" height="54" rx="6" class="a-src"/>
+<text x="751" y="45" class="a-t" text-anchor="middle">HubSpot</text>
+<text x="751" y="63" class="a-t-sm" text-anchor="middle">customers · contacts</text>
+<path d="M751 76 V100" class="a-line"/>
+<rect x="868" y="22" width="190" height="54" rx="6" class="a-src"/>
+<text x="963" y="45" class="a-t" text-anchor="middle">Product</text>
+<text x="963" y="63" class="a-t-sm" text-anchor="middle">usage · NPS · contracts</text>
+<path d="M963 76 V100" class="a-line"/>
+<path d="M115 100 H963" class="a-line"/>
+<path d="M145 100 V128" class="a-line" marker-end="url(#ah)"/>
+<path d="M415 100 V128" class="a-line" marker-end="url(#ah)"/>
+<path d="M685 100 V128" class="a-line" marker-end="url(#ah)"/>
+<path d="M955 100 V128" class="a-line" marker-end="url(#ah)"/>
+<text x="20" y="124" class="a-k">AGENTS · RUN IN THIS ORDER EVERY CYCLE</text>
+<rect x="30" y="130" width="230" height="80" rx="6" class="a-agent"/>
+<circle cx="52" cy="152" r="11" class="a-num"/><text x="52" y="156.5" class="a-num-t" text-anchor="middle">1</text>
+<text x="72" y="157" class="a-t-inv">Cash Application</text>
+<text x="46" y="186" class="a-t-inv-sm">match receipts first</text>
+<rect x="300" y="130" width="230" height="80" rx="6" class="a-agent"/>
+<circle cx="322" cy="152" r="11" class="a-num"/><text x="322" y="156.5" class="a-num-t" text-anchor="middle">2</text>
+<text x="342" y="157" class="a-t-inv">Account Context</text>
+<text x="316" y="186" class="a-t-inv-sm">customer 360, reads tickets</text>
+<rect x="570" y="130" width="230" height="80" rx="6" class="a-agent"/>
+<circle cx="592" cy="152" r="11" class="a-num"/><text x="592" y="156.5" class="a-num-t" text-anchor="middle">3</text>
+<text x="612" y="157" class="a-t-inv">Controller</text>
+<text x="586" y="186" class="a-t-inv-sm">holds · routes · blocks</text>
+<rect x="840" y="130" width="230" height="80" rx="6" class="a-agent"/>
+<circle cx="862" cy="152" r="11" class="a-num"/><text x="862" y="156.5" class="a-num-t" text-anchor="middle">4</text>
+<text x="882" y="157" class="a-t-inv">Collections</text>
+<text x="856" y="186" class="a-t-inv-sm">stage · tone · drafts</text>
+<path d="M260 170 H298" class="a-line" marker-end="url(#ah)"/>
+<path d="M530 170 H568" class="a-line" marker-end="url(#ah)"/>
+<path d="M800 170 H838" class="a-line" marker-end="url(#ah)"/>
+<path d="M145 210 V240" class="a-line"/>
+<path d="M415 210 V240" class="a-line"/>
+<path d="M685 210 V240" class="a-line"/>
+<path d="M955 210 V240" class="a-line"/>
+<path d="M145 240 H955" class="a-line"/>
+<path d="M700 240 V348" class="a-line" marker-end="url(#ah)"/>
+<text x="708" y="300" class="a-t-sm">proposals, holds, drafts</text>
+<rect x="170" y="262" width="320" height="58" rx="6" class="a-ai"/>
+<text x="330" y="285" class="a-t" text-anchor="middle">AI layer: Claude via Amazon Bedrock</text>
+<text x="330" y="305" class="a-t-sm a-coral" text-anchor="middle">OFF, pending Legal DPA · rules-only mode</text>
+<path d="M415 210 V262" class="a-dash"/>
+<path d="M490 300 H520 V330 H1010 V210" class="a-dash" fill="none"/>
+<text x="1016" y="250" class="a-t-sm">drafts</text><text x="422" y="226" class="a-t-sm">ticket text</text>
+<rect x="520" y="350" width="360" height="62" rx="6" class="a-queue"/>
+<text x="700" y="376" class="a-t" text-anchor="middle">Priya's queue · approve · edit · reject</text>
+<text x="700" y="396" class="a-t-sm" text-anchor="middle">Dana and the account managers for their decisions</text>
+<path d="M700 412 V436" class="a-line"/><path d="M115 436 H963" class="a-line"/>
+<path d="M115 436 V472" class="a-line" marker-end="url(#ah)"/>
+<polygon points="115,444 124,453 115,462 106,453" class="a-gate"/>
+<rect x="20" y="474" width="190" height="50" rx="6" class="a-out"/>
+<text x="115" y="495" class="a-t" text-anchor="middle">Reminder email</text>
+<text x="115" y="513" class="a-t-sm" text-anchor="middle">simulated send</text>
+<path d="M327 436 V472" class="a-line" marker-end="url(#ah)"/>
+<polygon points="327,444 336,453 327,462 318,453" class="a-gate"/>
+<rect x="232" y="474" width="190" height="50" rx="6" class="a-out"/>
+<text x="327" y="495" class="a-t" text-anchor="middle">Ledger application</text>
+<text x="327" y="513" class="a-t-sm" text-anchor="middle">simulated write</text>
+<path d="M539 436 V472" class="a-line" marker-end="url(#ah)"/>
+<polygon points="539,444 548,453 539,462 530,453" class="a-gate"/>
+<rect x="444" y="474" width="190" height="50" rx="6" class="a-out"/>
+<text x="539" y="495" class="a-t" text-anchor="middle">Card re-run</text>
+<text x="539" y="513" class="a-t-sm" text-anchor="middle">simulated charge</text>
+<path d="M751 436 V472" class="a-line" marker-end="url(#ah)"/>
+<polygon points="751,444 760,453 751,462 742,453" class="a-gate"/>
+<rect x="656" y="474" width="190" height="50" rx="6" class="a-out"/>
+<text x="751" y="495" class="a-t" text-anchor="middle">Dispute → AM</text>
+<text x="751" y="513" class="a-t-sm" text-anchor="middle">release on AM confirm</text>
+<path d="M963 436 V472" class="a-line" marker-end="url(#ah)"/>
+<polygon points="963,444 972,453 963,462 954,453" class="a-gate"/>
+<rect x="868" y="474" width="190" height="50" rx="6" class="a-out"/>
+<text x="963" y="495" class="a-t" text-anchor="middle">Decision → Dana</text>
+<text x="963" y="513" class="a-t-sm" text-anchor="middle">write-offs · plans</text>
+<rect x="20" y="546" width="1060" height="34" rx="6" class="a-audit"/>
+<text x="550" y="568" class="a-t-inv" text-anchor="middle">Append-only audit log · every agent decision (confidence + reason) and every human action</text>
+<polygon points="30,598 37,593 44,598 37,603" class="a-gate"/><text x="50" y="602" class="a-t-sm">human approval gate</text>
+<path d="M190 598 H226" class="a-dash"/><text x="232" y="602" class="a-t-sm">AI connection (off)</text>
+</svg>
+</div>
+<div class="grid2" style="margin-top:1rem">
+<section class="card">
+  <div class="kicker">Who does what</div>
+  <h2 class="h2-tight">What is AI, what is rules, what stays with a person</h2>
+  <table class="tbl tbl-mini">
+    <tr><th>Rules (deterministic code)</th><th>AI (Claude, when Legal allows)</th><th>A person</th></tr>
+    <tr><td>Arithmetic, joins, exact matching of amount + invoice reference; ageing and policy stages; holds and routing; banned-wording block</td>
+        <td>Reading ticket text for disputes, cancellations and legal threats; personalising reminder wording; plain-English explanations</td>
+        <td>Every customer email, every ledger application other than exact matches, every card re-run, every hold release, write-offs, payment plans, thresholds</td></tr>
+    <tr><td class="small muted">Works today: rules-only mode</td><td class="small muted">Off until the Bedrock DPA is reviewed. Falls back to Ledgerline's own templates.</td><td class="small muted">Priya runs it; Dana owns thresholds; AMs own disputes</td></tr>
+  </table>
+</section>
+<section class="card">
+  <div class="kicker">Run order</div>
+  <h2 class="h2-tight">Cash first, so we never chase money we have</h2>
+  <ol>
+    <li><b>Cash Application</b> runs before anything else. In 2025 Paidly chased a long-standing customer who had already paid by wire, because the money took days to be matched. A receipt that plausibly pays an invoice is now a hard block on chasing it.</li>
+    <li><b>Account Context</b> reads what support knows (finance can't see Zendesk): disputes hiding in "solved" tickets, cancellations, legal threats, stale contacts.</li>
+    <li><b>Controller</b> turns that into holds with a reason and a route: the AM, Priya or Dana.</li>
+    <li><b>Collections</b> drafts only what is left, in Ledgerline's own voice, with no threatening wording. Nothing is sent without Priya.</li>
+  </ol>
+</section>
+</div>
+{% endblock %}

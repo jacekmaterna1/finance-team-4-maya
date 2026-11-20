@@ -1,0 +1,17 @@
+{% macro instr_list(items, show_agent=false, actions=true) -%}
+{% if items %}
+<ul class="instr">
+{% for i in items %}
+  <li class="instr-{{ i.status }}">
+    <span class="pill {{ 'ok' if i.status == 'accepted' else ('bad' if i.status == 'rejected' else 'mid') }}">{{ i.status }}</span>
+    {% if show_agent %}<b class="rose">{{ i.agent }}</b> · {% endif %}{{ i.text }}
+    <div class="small muted">#{{ i.id }} · {{ i.user }} · {{ i.ts }}{% if i.source %} · via {{ i.source }}{% endif %}{% if i.decided_by %} · {{ i.status }} by {{ i.decided_by }}{% endif %}</div>
+    {% if actions and i.status == 'proposed' %}
+    <form method="post" action="/direct/instructions/{{ i.id }}/accept" class="inline"><button class="btn btn-sm btn-primary" title="Appends it to the agent's manual under 'Standing instructions from humans'">Accept → add to manual</button></form>
+    <form method="post" action="/direct/instructions/{{ i.id }}/reject" class="inline"><button class="btn btn-sm btn-danger">Reject</button></form>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% else %}<p class="small muted">No instructions from humans yet.</p>{% endif %}
+{%- endmacro %}

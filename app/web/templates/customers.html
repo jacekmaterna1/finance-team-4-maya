@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Customers · Ledgerline{% endblock %}
+{% block content %}
+<h1>Customers</h1>
+<p class="lead">{% if all %}All customers{% else %}Customers with open AR{% endif %}, largest balance first. Built by the Account Context agent.</p>
+<form class="filters" method="get" action="/customers">
+  <input class="input" type="search" name="q" value="{{ q }}" placeholder="Search by name or id"
+         hx-get="/customers" hx-trigger="keyup changed delay:250ms, search" hx-target="#cust-rows" hx-swap="outerHTML" hx-include="[name=all]">
+  <input type="hidden" name="all" value="{{ all }}">
+  <button class="btn btn-sm">Search</button>
+  {% if all %}<a class="small" href="/customers">only open AR</a>{% else %}<a class="small" href="/customers?all=1">show all customers</a>{% endif %}
+</form>
+<table class="tbl">
+  <thead><tr><th>Customer</th><th>Plan</th><th class="num">ARR</th><th>AM</th><th class="num">Open AR</th><th class="num">Overdue</th><th class="num">Max days late</th><th class="num">Held</th><th>Flags</th></tr></thead>
+  {% include "_customer_rows.html" %}
+</table>
+{% endblock %}

@@ -1,0 +1,17 @@
+<tbody id="cust-rows">
+{% for r in rows %}{% set c = r.c %}
+<tr>
+  <td><a href="/customers/{{ c.customer_id }}" class="strong">{{ c.name }}</a> <span class="muted small">{{ c.customer_id }}</span>{% if c.top50 %} <span class="tag tag-top">top 50</span>{% endif %}</td>
+  <td>{{ c.plan }}</td>
+  <td class="num">{{ c.current_arr|money }}</td>
+  <td>{{ c.account_manager }}</td>
+  <td class="num strong">{{ r.open_ar|money }}</td>
+  <td class="num">{{ r.overdue|money }}</td>
+  <td class="num">{{ r.max_dpd if r.max_dpd > 0 else '-' }}</td>
+  <td class="num">{{ r.held or '' }}</td>
+  <td class="small">{% for f in c.flags %}<span class="flag">{{ f }}</span>{% endfor %}</td>
+</tr>
+{% else %}
+<tr><td colspan="9" class="empty">No customers match.</td></tr>
+{% endfor %}
+</tbody>

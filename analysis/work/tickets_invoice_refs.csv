@@ -1,0 +1,31 @@
+ticket_id,created_at,customer_id,customer_name,category,priority,status,invoice_id,status_inv,amount,due_date,subject,body
+T880432,2026-08-19 09:34,C1439,Banerjee Petrov Engineers,,normal,solved,INV-25539,overdue,2652.00,2026-07-31,Client portal cancellation ignored,"We switched off the client portal in August because, frankly, our clients weren't logging into it. Your team confirmed the cancellation by email. INV-25539 not only still charges the monthly portal fee, it seems to have the setup line on it again?? Two partners signed off on dropping this module and neither of them is going to sign off on paying for it. Please correct and resend."
+T880582,2026-09-07 15:42,C1254,Upton & Bell Advisory,Billing,normal,solved,INV-25662,overdue,44064.00,2026-08-26,Late fee should not be there,"The card charge failed last month because of an outage on your payment side, not ours. Your support agent told us at the time the late fee would be waived. It's on INV-25662 anyway. I'm not authorising payment while that fee is included.
+
+Noah"
+T880648,2026-09-13 12:39,C1030,Mercer & Banerjee LLP,Billing,normal,solved,INV-25718,overdue,3876.00,2026-09-11,Still being charged for time tracking,"We cancelled the time tracking module at the end of last quarter. The cancellation confirmation is literally sitting in our admin settings. Yet here it is again on INV-25718. This is the second time I've had to chase something like this. Remove it. We are not paying for a module we switched off months ago.
+
+Caleb"
+T880667,2026-09-14 16:22,C1100,Oyelaran Devlin Engineers,Billing,normal,solved,INV-25711,overdue,2820.00,2026-09-09,Migration fee,Data migration fee on INV-25711 was waived in writing. Remove it and resend.
+T880738,2026-09-22 15:05,C1152,Ellery Consulting,Billing,low,solved,INV-25757,overdue,13056.00,2026-09-20,Sales tax using old address,"Morning,
+
+We moved offices in January and updated the billing address in the portal the same week. The sales tax on INV-25757 is still calculated for our old location, which is a higher rate. Payment is on hold until the tax is recalculated for the correct address."
+T880739,2026-09-22 16:25,C1264,Westbrook Engineering Group,Billing,normal,pending,INV-25730,overdue,47904.00,2026-09-13,Implementation fee was meant to be waived,"Hi team,
+
+Hi again, so on our call back in March your sales rep was really clear that the implementation fee would be waived since we were signing for two years. I even have it in my notes from that call! But INV-25730 has the full fee sitting right there as its own line. Our finance team has put the whole thing on hold until a corrected version comes through, so the sooner the better honestly.
+
+Leo"
+T880757,2026-09-24 15:46,C1261,Wexler & Hume Advisory,How-to,low,solved,INV-25712,overdue,4080.00,2026-09-09,Seat count is wrong,"INV-25712 bills us for 24 users. We have 17. Reissue it with the right number and we'll pay, not before."
+T880816,2026-10-01 12:41,C1154,Okafor & Nakamura LLP,Billing,high,solved,INV-25765,overdue,46848.00,2026-09-22,Second office discount missing,"Hi,
+
+Your account manager offered us 50% off for three months if we moved our second office onto Ledgerline. We did that in good faith. There's no sign of it on INV-25765. We'll settle once the discount shows up."
+T880849,2026-10-06 14:48,C1045,Castell Engineering,Billing,normal,solved,INV-25764,overdue,6324.00,2026-09-22,charged pro after we downgraded,"Hi team,
+
+we downgraded to standard on the 3rd. INV-25764 is for the full month at pro. not sure how that happened but we wont be paying the difference, or anything really, until its fixed"
+T880856,2026-10-07 14:42,C1266,Thackeray Accounting,Billing,normal,solved,INV-25750,overdue,7896.00,2026-09-17,VAT added incorrectly,"We're VAT registered and gave you our number at signup, so this should be reverse charge. INV-25750 adds 20% VAT on top. Our AP team won't pay an invoice with incorrect tax on it, so please cancel and reissue.
+
+Elena"
+T880886,2026-10-12 12:57,C1073,Riverside Partners,Billing,normal,solved,INV-25787,overdue,60576.00,2026-09-26,Users double counted after workspace merge,"Hi there - Following the merge of our two workspaces last month, it looks like everyone who had access to both is now being billed twice. INV-25787 shows 62 seats against 38 actual people. We've paused payment pending a corrected invoice. Happy to send a user export if that helps you reconcile."
+T880957,2026-10-21 15:13,C1409,Wexler Media,Account change,normal,pending,INV-25811,overdue,1224.00,2026-10-04,Renewal discount not reflected,"Hi there - As agreed at renewal, our annual plan includes a 15% multi-year discount. Invoice INV-25811 reflects list pricing with no reduction applied. Kindly issue a revised invoice. We are unable to process payment against the current document."
+T881024,2026-10-29 11:50,C1075,Brandt Ashby IT,Billing,normal,pending,INV-25822,overdue,26112.00,2026-10-07,Billed annual renewal after moving to monthly,"We moved from annual Enterprise to monthly Team well before the renewal date, and got a confirmation screen saying so. INV-25822 is a full 12-month Enterprise renewal. Obviously we are not paying for a year of a plan we already left. Void it please."
+T881039,2026-10-31 09:04,C1161,"Delacroix, Jessop & Co",How-to,normal,solved,INV-25834,overdue,41568.00,2026-10-09,Question about latest invoice,"Sorry if I'm misreading this. INV-25834 seems to include 3 seats for people who left the practice in the spring. I'm fairly sure I deactivated them at the time, but I'm not the most technical. I'll hold off paying until someone can confirm, hope that's ok."

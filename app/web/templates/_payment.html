@@ -1,0 +1,61 @@
+{% from "_macros.html" import badge, conf, human_status %}
+{% set s = latest.get('payment:' ~ p.payment_id) %}
+<details class="item {% if s %}done{% endif %}" id="{{ p.payment_id }}" {% if open %}open{% endif %}>
+  <summary class="row row-pay">
+    <span class="c-id strong">{{ p.payment_id }}</span>
+    <span>{{ badge(p.decision) }}</span>
+    <span class="c-date small">{{ p.received_date }}<br><span class="muted">{{ p.method|upper }}</span></span>
+    <span class="num strong">{{ p.amount|money2 }}</span>
+    <span class="c-payer">{{ p.payer_name }}{% if p.memo %}<div class="small muted">memo: "{{ p.memo }}"</div>{% endif %}</span>
+    <span>{% for iid in p.invoice_ids %}<a href="/collections#{{ iid }}">{{ iid }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">no match</span>{% endfor %}
+      {% if p.customer_id %}<div class="small"><a href="/customers/{{ p.customer_id }}">{{ p.customer_name }}</a></div>{% endif %}</span>
+    <span class="num {% if p.difference and p.difference|abs > 0.005 %}warn{% endif %}">{% if p.invoice_ids %}{{ p.difference|money2 }}{% else %}-{% endif %}</span>
+    <span>{{ conf(p.confidence) }}</span>
+    <span class="c-status">{% if s %}<span class="tick">&#10003;</span> {{ s.action|replace('_',' ') }}{% elif p.decision == 'AUTO_APPLY' %}<span class="small muted">applied by agent</span>{% else %}<span class="small warn">needs you</span>{% endif %}</span>
+  </summary>
+  <div class="item-body">
+    <div class="cols">
+      <div>
+        <h4>Why ({{ p.agent or 'Cash Application' }})</h4>
+        <ul class="reasons">{% for r in p.reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+        {% if p.invoice_ids %}
+        <table class="tbl tbl-mini">
+          <tr><th>Invoice</th><th class="num">Invoice amount</th><th>Due</th><th>Status</th></tr>
+          {% for iid in p.invoice_ids %}{% set inv = invoices.get(iid) %}
+          <tr><td>{{ iid }}</td><td class="num">{% if inv %}{{ inv.amount|money2 }}{% endif %}</td><td>{% if inv %}{{ inv.due_date }}{% if inv.days_past_due > 0 %} <span class="muted small">({{ inv.days_past_due }}d late)</span>{% endif %}{% endif %}</td><td>{% if inv %}{{ inv.ar_status }}{% endif %}</td></tr>
+          {% endfor %}
+          <tr><td class="muted">Matched total</td><td class="num">{{ p.matched_amount|money2 }}</td><td colspan="2" class="small muted">difference {{ p.difference|money2 }}</td></tr>
+        </table>
+        {% endif %}
+      </div>
+      <div class="actions">
+        {{ human_status(s) }}
+        {% if not s %}
+          {% if p.decision == 'AUTO_APPLY' %}
+            <p class="small">Applied by agent (exact amount + invoice reference). This is the only thing Cash Application does on its own.</p>
+            <form method="post" action="/cash/{{ p.payment_id }}/undo" hx-post="/cash/{{ p.payment_id }}/undo" hx-target="closest details" hx-swap="outerHTML">
+              <input name="note" placeholder="Why undo? (optional)" class="input">
+              <button class="btn btn-secondary">Undo application</button>
+            </form>
+          {% elif p.decision == 'PROPOSE' %}
+            <p class="small">The agent proposes this match. Approving records the application (simulated ledger write) and lifts the "money already received" hold on the invoice.</p>
+            <form method="post" action="/cash/{{ p.payment_id }}/approve" hx-post="/cash/{{ p.payment_id }}/approve" hx-target="closest details" hx-swap="outerHTML">
+              <input name="note" placeholder="Note (optional)" class="input">
+              <button class="btn btn-primary">Approve application</button>
+            </form>
+            <form method="post" action="/cash/{{ p.payment_id }}/reject" hx-post="/cash/{{ p.payment_id }}/reject" hx-target="closest details" hx-swap="outerHTML">
+              <input name="note" placeholder="Why reject? (optional)" class="input">
+              <button class="btn btn-danger">Reject</button>
+            </form>
+          {% else %}
+            <p class="small">Exception: the agent could not find a safe match. Identify the payer in the bank portal, then record what you did.</p>
+            <form method="post" action="/cash/{{ p.payment_id }}/reject" hx-post="/cash/{{ p.payment_id }}/reject" hx-target="closest details" hx-swap="outerHTML">
+              <input name="note" placeholder="What you found / did" class="input">
+              <button class="btn btn-secondary">Mark handled</button>
+            </form>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</details>

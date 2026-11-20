@@ -1,0 +1,39 @@
+{% macro badge(code) -%}
+<span class="badge b-{{ code|lower }}">{{ code|replace('_', ' ') }}</span>
+{%- endmacro %}
+
+{% macro conf(v) -%}
+{% if v is not none %}{% set p = (v * 100)|round|int %}<span class="conf {% if p >= 90 %}hi{% elif p >= 70 %}mid{% else %}lo{% endif %}" title="Agent confidence">{{ p }}%</span>{% else %}<span class="muted">-</span>{% endif %}
+{%- endmacro %}
+
+{% macro human_status(s) -%}
+{% if s %}
+<div class="hstatus hs-{{ s.action }}">
+  {% if s.payload and s.payload.kind == 'card_retry' %}{% if s.action == 'approve' %}Card re-run approved by {{ s.user_email }} (simulated charge: nothing billed){% else %}Card re-run rejected by {{ s.user_email }}{% endif %}
+  {% elif s.action == 'apply' %}Application approved by {{ s.user_email }} (simulated ledger write)
+  {% elif s.action == 'reject' and s.payload and s.payload.undo %}Auto-application undone by {{ s.user_email }} (simulated reversal)
+  {% elif s.action == 'reject' %}Rejected by {{ s.user_email }}
+  {% elif s.action == 'send' %}Approved &amp; marked sent by {{ s.user_email }} (simulated: no email left this demo)
+  {% elif s.action == 'override_hold' %}Hold overridden by {{ s.user_email }}
+  {% elif s.action == 'release_hold' %}Hold released by {{ s.user_email }}{% if s.payload and s.payload.am_confirmed %} &middot; account manager {{ s.payload.am_name }} confirmed the dispute is settled{% endif %}
+  {% elif s.action == 'edit' %}Edited by {{ s.user_email }}
+  {% else %}{{ s.action }} by {{ s.user_email }}{% endif %}
+  <span class="muted small">&middot; {{ s.ts }}</span>
+  {% if s.note %}<div class="small">"{{ s.note }}"</div>{% endif %}
+</div>
+{% endif %}
+{%- endmacro %}
+
+{% macro hold_list(holds) -%}
+<ul class="holds">
+{% for h in holds %}
+  <li><span class="hold-label">{{ h.label or h.code }}</span> <span class="muted small">raised by {{ h.agent or 'Controller' }} &middot; {{ h.code }}</span>
+  <div>{{ h.detail }}</div>
+  {% if h.route_to %}<div class="small route">Routed to: <b>{{ h.route_to }}</b></div>{% endif %}
+  {% if h.contract_check %}{% set cc = h.contract_check %}<div class="small contract">Contract check:
+    {% if cc.matches is sameas true %}<span class="pill ok">Invoice matches contract</span>{% elif cc.matches is sameas false %}<span class="pill bad">Doesn't match contract — likely our error</span>{% else %}<span class="pill">No contract found</span>{% endif %}
+    {% if cc.expected %}<span class="muted">expected {{ cc.expected|money2 }}</span>{% endif %} {{ cc.text }}</div>{% endif %}
+  {% if h.release_requires %}<div class="small muted">To release: {{ h.release_requires }}</div>{% endif %}</li>
+{% endfor %}
+</ul>
+{%- endmacro %}

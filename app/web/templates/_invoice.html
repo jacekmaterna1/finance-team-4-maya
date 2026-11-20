@@ -1,0 +1,82 @@
+{% from "_macros.html" import badge, human_status, hold_list %}
+{% set s = latest.get('invoice:' ~ i.invoice_id) %}
+{% set c = customers.get(i.customer_id) %}
+{% set lifted = s and s.action in ('override_hold', 'release_hold') %}
+{% set closed = s and s.action in ('send', 'reject') %}
+<details class="item {% if closed %}done{% endif %}" id="{{ i.invoice_id }}" {% if open %}open{% endif %}>
+  <summary class="row row-inv">
+    <span class="c-id strong">{{ i.invoice_id }}</span>
+    <span><a href="/customers/{{ i.customer_id }}">{{ i.customer_name }}</a>{% if i.top50 %} <span class="tag tag-top">top 50</span>{% endif %}<div class="small muted">AM {{ i.account_manager or '-' }}</div></span>
+    <span class="num strong">{{ i.amount|money2 }}</span>
+    <span class="small">due {{ i.due_date }}<br>{% if i.days_past_due > 0 %}<b class="{% if i.days_past_due > 45 %}bad{% else %}warn{% endif %}">{{ i.days_past_due }} days late</b>{% else %}<span class="muted">{{ -i.days_past_due }} days to due</span>{% endif %}</span>
+    <span class="small">{{ i.stage|stage }}</span>
+    <span class="reason small">{% if i.action == 'RETRY_CARD' and i.retry %}{{ (i.retry.evidence or '')|truncate(110) }}{% elif i.holds %}{% for h in i.holds %}<span class="hold-chip">{{ h.label or h.code }}</span>{% endfor %}{% else %}{{ (i.reasons or [])|join(' ')|truncate(110) }}{% endif %}</span>
+    <span class="c-status">{% if s and s.payload and s.payload.kind == 'card_retry' %}<span class="tick">&#10003;</span> re-run {{ 'approved' if s.action == 'approve' else 'rejected' }}{% elif s %}<span class="tick">&#10003;</span> {{ s.action|replace('_',' ') }}{% elif i.action == 'NO_ACTION' %}<span class="small muted">-</span>{% else %}<span class="small warn">needs you</span>{% endif %}</span>
+  </summary>
+  <div class="item-body">
+    <div class="cols">
+      <div>
+        <h4>Why</h4>
+        <ul class="reasons">{% for r in i.reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+        {% if i.holds %}<h4>Holds</h4>{{ hold_list(i.holds) }}{% endif %}
+        {% if c and c.flags %}<h4>Account context</h4><ul class="reasons">{% for f in c.flags %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+        <p class="small"><a href="/customers/{{ i.customer_id }}">Open the customer 360 &rarr;</a> &middot; <a href="/audit?q={{ i.invoice_id }}">Audit for {{ i.invoice_id }}</a></p>
+      </div>
+      <div class="actions">
+        {{ human_status(s) }}
+        {% if i.action == 'RETRY_CARD' and not s %}
+          {% set rt = i.retry or {} %}
+          <div class="retry"><b>{{ 'Card works again' if rt.card_works else 'Card status unclear' }}.</b> {{ rt.evidence or '' }}{% if rt.needs %}<div class="small muted">{{ rt.needs }}</div>{% endif %}</div>
+          <form method="post" action="/collections/{{ i.invoice_id }}/card_retry" hx-post="/collections/{{ i.invoice_id }}/card_retry" hx-target="closest details" hx-swap="outerHTML">
+            <input name="note" class="input" placeholder="Note (optional)">
+            <div class="btnrow">
+              <button class="btn btn-primary" name="decision" value="approve">Approve re-run (simulated charge)</button>
+              <button class="btn btn-danger" name="decision" value="reject">Reject</button>
+            </div>
+          </form>
+          <p class="small muted">One at a time on purpose: a person looks at each card re-run. Nothing is charged from this demo.</p>
+        {% elif i.action == 'HOLD' and not s %}
+          {% set am_holds = (i.holds or [])|selectattr('code', 'in', ['DISPUTE', 'CANCELLATION'])|list %}
+          <p class="small">Held: nothing will be drafted or sent. To lift it, type why. Use <b>Release</b> when the reason is resolved (e.g. the AM said go ahead) and <b>Override</b> when the agent got it wrong.</p>
+          <form method="post" action="/collections/{{ i.invoice_id }}/hold" hx-post="/collections/{{ i.invoice_id }}/hold" hx-target="closest details" hx-swap="outerHTML">
+            {% if am_holds %}
+            <div class="am-confirm small">
+              <label><input type="checkbox" name="am_confirmed"> Account manager confirmed the dispute is settled</label>
+              <label>Account manager's name <input name="am_name" class="input" value="{{ am_holds[0].route_to or i.account_manager or '' }}"></label>
+              <div class="muted">Needed to <b>Release</b> a dispute or cancellation hold. Not needed to Override.</div>
+            </div>
+            {% endif %}
+            <textarea name="reason" class="input" rows="2" required minlength="5" placeholder="Reason (required), e.g. 'Nadia confirmed the complaint is resolved'"></textarea>
+            <button class="btn btn-secondary" name="kind" value="release_hold">Release hold</button>
+            <button class="btn btn-danger" name="kind" value="override_hold">Override hold</button>
+          </form>
+        {% elif i.action in ('DRAFT_REMINDER', 'HUMAN_WRITES') or lifted %}
+          {% if not closed %}
+            {% set d = i.draft or {} %}
+            {% if i.action == 'HUMAN_WRITES' %}<p class="small"><b>A person writes this one.</b> Top-50 account: {% if i.draft %}the text below is a starting point only; rewrite it in your own words.{% else %}write the message yourself.{% endif %}</p>{% endif %}
+            {% if lifted and not i.draft %}<p class="small">The hold is lifted, but the agent drafted nothing while it was held. Write the message yourself.</p>{% endif %}
+            {% if i.draft %}<p class="small muted">Draft from {{ d.source or 'agent' }}{% if d.template %} &middot; template {{ d.template }}{% endif %}{% if d.cc %} &middot; cc {{ d.cc|join(', ') }}{% endif %}</p>
+            {% if 'data_sent_to_ai' in d %}<p class="small ai-line">Sent to AI: {{ d.data_sent_to_ai if d.data_sent_to_ai else 'nothing (written from a policy template, no customer data left Ledgerline)' }}</p>{% endif %}{% endif %}
+            <form method="post" action="/collections/{{ i.invoice_id }}/send" hx-post="/collections/{{ i.invoice_id }}/send" hx-target="closest details" hx-swap="outerHTML" class="draft">
+              <label class="small">To <input name="to" class="input" value="{{ (d.to or [])|join(', ') }}"></label>
+              <label class="small">Subject <input name="subject" class="input" value="{{ d.subject or ('Invoice ' ~ i.invoice_id) }}"></label>
+              <textarea name="body" class="input mono" rows="11">{{ d.body or '' }}</textarea>
+              <div class="btnrow">
+                <button class="btn btn-primary">Approve &amp; send (simulated)</button>
+              </div>
+            </form>
+            <form method="post" action="/collections/{{ i.invoice_id }}/reject" hx-post="/collections/{{ i.invoice_id }}/reject" hx-target="closest details" hx-swap="outerHTML" class="btnrow">
+              <input name="note" class="input" placeholder="Why reject? (optional)">
+              <button class="btn btn-danger">Reject draft</button>
+            </form>
+            <p class="small muted">Approving records the email as sent. No email leaves this demo. The Controller blocks banned wording even after your edits.</p>
+          {% elif s.action == 'send' and s.payload %}
+            <div class="sent"><div class="small muted">To {{ (s.payload.to or [])|join(', ') }} &middot; {{ s.payload.subject }}{% if s.payload.edited %} &middot; edited by a person{% endif %}</div><pre>{{ s.payload.body }}</pre></div>
+          {% endif %}
+        {% else %}
+          <p class="small muted">No action this cycle.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</details>

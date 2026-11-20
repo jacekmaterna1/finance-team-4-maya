@@ -1,0 +1,1042 @@
+ticket_id,created_at,customer_id,customer_name,category,priority,status,inv_refs,rounding_cent,proration,due_date_tz,card_retry,credit_note_version,settings_moved
+T880001,2026-07-01 01:39,C1329,"Tavish, Brandt & Co",,low,solved,,False,False,True,False,False,False
+T880002,2026-07-01 07:50,C1078,"Yates, Oyelaran & Co",How-to,normal,pending,,False,False,False,False,False,False
+T880003,2026-07-01 09:00,C1490,Drummond Engineering,Account change,normal,solved,,False,False,False,False,False,False
+T880004,2026-07-01 09:23,C1467,Ruiz Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T880005,2026-07-01 10:24,C1132,Holloway Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880006,2026-07-01 13:26,C1393,Clearwater Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880007,2026-07-01 13:39,C1196,Hale Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880008,2026-07-01 14:12,C1160,Eastman Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880009,2026-07-01 14:47,C1012,Iyer Whitlock Engineers,Account change,normal,solved,,False,False,False,False,False,False
+T880010,2026-07-01 19:40,C1132,Holloway Strategy,Billing,high,solved,,False,False,False,False,False,False
+T880011,2026-07-02 00:32,C1346,Yardley & Duarte Advisory,How-to,high,solved,,False,False,False,False,False,False
+T880012,2026-07-02 06:31,C1445,Underhill Birch Law,Bug,urgent,solved,,False,False,False,False,False,False
+T880013,2026-07-02 06:50,C1331,Fairbanks Media,How-to,normal,solved,,False,False,False,False,False,False
+T880014,2026-07-02 09:39,C1239,Bell Design Partnership,,normal,solved,,False,False,False,False,False,False
+T880015,2026-07-02 10:11,C1243,Glover & Drummond Advisory,,normal,solved,,False,False,False,False,False,False
+T880016,2026-07-02 10:42,C1329,"Tavish, Brandt & Co",Bug,normal,solved,,False,False,False,False,False,False
+T880017,2026-07-02 14:45,C1152,Ellery Consulting,Bug,high,solved,,False,False,False,False,False,False
+T880018,2026-07-02 15:59,C1132,Holloway Strategy,Account change,low,solved,,False,False,False,False,False,False
+T880019,2026-07-02 16:28,C1492,Drummond Consulting,Billing,low,solved,,False,False,False,False,False,False
+T880020,2026-07-02 16:46,C1369,Hume Marsh Law,Billing,high,solved,,False,True,False,False,False,False
+T880021,2026-07-02 17:03,C1441,Sterling Ingram Law,How-to,normal,solved,,False,False,False,False,False,False
+T880022,2026-07-02 19:55,C1281,Thorne Engineering,How-to,low,solved,,False,False,False,False,False,False
+T880023,2026-07-03 11:44,C1174,Ashby & Castellano Agency,Bug,normal,solved,,True,False,False,False,False,False
+T880024,2026-07-03 11:46,C1183,Summit Creative,How-to,normal,solved,,False,False,False,False,False,False
+T880025,2026-07-03 11:48,C1438,Farrow & Finch Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880026,2026-07-03 17:34,C1084,Greystone Creative,Account change,normal,solved,,False,False,False,False,False,False
+T880027,2026-07-03 17:51,C1403,Clearwater Creative,,high,solved,,False,False,False,False,False,False
+T880028,2026-07-03 18:38,C1143,Moreau & Whitfield Advisory,How-to,high,solved,,False,False,False,False,False,False
+T880029,2026-07-03 23:01,C1370,Ellery & Bramwell CPAs,Billing,normal,solved,,False,False,False,False,False,False
+T880030,2026-07-04 03:00,C1112,Fairview Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880031,2026-07-04 13:47,C1161,"Delacroix, Jessop & Co",How-to,low,solved,,False,False,False,False,False,False
+T880032,2026-07-04 14:15,C1166,Thornfield Creative,Billing,normal,solved,,False,False,False,False,False,False
+T880033,2026-07-04 19:50,C1283,Calloway Engineering,Bug,urgent,pending,,False,False,False,False,False,False
+T880034,2026-07-04 23:38,C1179,Greystone Engineering Group,Bug,urgent,solved,,False,False,False,False,False,False
+T880035,2026-07-05 00:52,C1464,Quill & Corbin LLP,Billing,low,solved,,False,False,False,False,False,False
+T880036,2026-07-05 11:46,C1218,Stanhope & Wexler CPAs,Bug,low,solved,,False,False,False,False,False,False
+T880037,2026-07-05 12:53,C1195,Hartwell Engineering,Account change,normal,solved,,False,False,False,False,False,True
+T880038,2026-07-05 13:57,C1356,Drummond & Iyer Agency,Billing,high,solved,,False,False,False,False,False,False
+T880039,2026-07-05 16:44,C1072,Brandt Banerjee Law,How-to,normal,solved,,False,False,False,False,False,False
+T880040,2026-07-06 01:40,C1430,Prior Media,Account change,normal,solved,,False,False,False,False,False,False
+T880041,2026-07-06 04:20,C1118,Petrov Design Partnership,How-to,low,solved,,False,False,False,False,False,True
+T880042,2026-07-06 06:14,C1261,Wexler & Hume Advisory,,normal,solved,,False,False,False,False,False,False
+T880043,2026-07-06 08:03,C1336,Studio Moreau,Bug,urgent,solved,,False,False,False,False,False,False
+T880044,2026-07-06 11:19,C1009,Haddad Strategy,,low,solved,,False,False,False,False,False,False
+T880045,2026-07-06 11:59,C1411,Voss & Kowalczyk Agency,,low,solved,,False,False,False,False,False,False
+T880046,2026-07-06 13:35,C1041,Hollis Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880047,2026-07-06 15:02,C1193,Nakamura Consulting,Billing,low,solved,,False,False,False,False,False,False
+T880048,2026-07-06 16:35,C1283,Calloway Engineering,Billing,normal,solved,,False,False,False,False,False,False
+T880049,2026-07-06 17:14,C1193,Nakamura Consulting,Billing,high,solved,,False,True,False,False,False,False
+T880050,2026-07-06 17:17,C1199,Millbrook Architecture,Bug,normal,solved,,False,False,False,False,False,False
+T880051,2026-07-06 18:07,C1180,Whitfield & Sterling CPAs,Account change,normal,solved,,False,False,False,False,False,False
+T880052,2026-07-07 08:33,C1284,Sinclair & Vance LLP,How-to,low,solved,,False,False,False,False,False,False
+T880053,2026-07-07 08:51,C1272,Oakfield Engineering Group,Bug,high,solved,,False,False,False,False,False,False
+T880054,2026-07-07 09:31,C1299,Hollis & Calloway Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880055,2026-07-07 10:00,C1086,Okafor Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T880056,2026-07-07 10:41,C1022,Studio Marsh,,normal,solved,,False,False,False,False,False,False
+T880057,2026-07-07 12:17,C1478,Crane & Tavish CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880058,2026-07-07 14:03,C1063,Crane IT Partners,,normal,pending,,False,False,False,False,True,False
+T880059,2026-07-07 19:56,C1173,Calloway Brandt Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880060,2026-07-07 22:28,C1127,Mbeki Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880061,2026-07-08 09:05,C1076,Abbott Oyelaran Law,How-to,normal,solved,,False,False,False,False,False,False
+T880062,2026-07-08 11:28,C1136,Finch Design Partnership,,normal,solved,,False,False,False,False,False,False
+T880063,2026-07-08 11:49,C1304,Ashgrove Consulting Group,How-to,high,solved,,False,False,False,False,False,False
+T880064,2026-07-08 15:22,C1114,Quill & Achebe CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880065,2026-07-08 17:14,C1473,Thackeray Consulting,,normal,solved,,False,False,False,False,False,False
+T880066,2026-07-08 19:22,C1023,Oakfield Partners,How-to,urgent,solved,,False,False,False,False,False,False
+T880067,2026-07-08 23:38,C1252,Zeller Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880068,2026-07-09 00:39,C1360,Nakamura Hume Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880069,2026-07-09 08:07,C1443,Fairbanks & Castell Advisory,Account change,normal,solved,,False,False,False,False,False,False
+T880070,2026-07-09 10:52,C1049,Summit Consulting Group,,high,solved,,False,False,False,False,False,False
+T880071,2026-07-09 11:01,C1066,Quill & Okafor Agency,,low,solved,,False,False,False,False,False,False
+T880072,2026-07-09 11:44,C1462,Mercer & Ellery CPAs,Bug,low,solved,,False,False,False,False,False,False
+T880073,2026-07-09 12:27,C1397,Kowalczyk Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880074,2026-07-09 13:31,C1367,"Novak, Okafor & Co",,high,solved,,False,False,False,False,False,False
+T880075,2026-07-09 16:14,C1166,Thornfield Creative,Bug,low,solved,,False,False,False,False,False,False
+T880076,2026-07-09 17:07,C1187,Sinclair Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880077,2026-07-09 17:15,C1314,Reyes Wexler Law,Billing,high,solved,,False,False,False,False,False,False
+T880078,2026-07-09 23:32,C1469,Kingsway Engineering Group,Billing,low,solved,,False,False,False,False,False,False
+T880079,2026-07-09 23:34,C1100,Oyelaran Devlin Engineers,Account change,high,solved,,False,False,False,False,False,False
+T880080,2026-07-10 01:04,C1048,Hollis & Petrov LLP,Account change,normal,solved,,False,False,False,False,False,False
+T880081,2026-07-10 05:20,C1255,Ashgrove Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880082,2026-07-10 08:49,C1273,Jessop & Orwell Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880083,2026-07-10 10:03,C1387,Langford & Iyer Agency,,normal,solved,,False,False,False,False,False,False
+T880084,2026-07-10 11:42,C1434,Radcliffe Consulting,Billing,normal,solved,,False,False,False,False,True,False
+T880085,2026-07-10 11:46,C1393,Clearwater Partners,How-to,urgent,solved,,False,False,False,False,False,False
+T880086,2026-07-10 13:39,C1080,Birch Media,Billing,low,solved,,False,False,False,False,False,False
+T880087,2026-07-10 14:50,C1467,Ruiz Engineering,Bug,low,solved,,False,False,False,False,False,False
+T880088,2026-07-10 15:17,C1459,Abara + Brandt Architects,Billing,low,solved,,False,False,False,False,False,False
+T880089,2026-07-10 17:07,C1020,Redfern Digital,,normal,solved,,False,False,False,False,False,False
+T880090,2026-07-11 02:10,C1370,Ellery & Bramwell CPAs,Bug,normal,solved,,False,False,False,False,False,False
+T880091,2026-07-11 12:26,C1479,Delacroix Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880092,2026-07-11 19:35,C1282,Eastman & Wexler CPAs,Bug,normal,solved,,False,False,False,False,False,False
+T880093,2026-07-12 07:26,C1233,Rosales Consulting,Account change,high,solved,,False,False,False,False,False,False
+T880094,2026-07-12 09:20,C1046,Castell Design Partnership,Billing,normal,solved,,True,False,False,False,False,False
+T880095,2026-07-12 10:44,C1309,Hale & Thackeray Agency,Billing,high,solved,,False,False,False,False,False,False
+T880096,2026-07-12 14:06,C1355,Abara Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880097,2026-07-12 16:47,C1434,Radcliffe Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880098,2026-07-13 09:47,C1289,Upton Strategy,,normal,solved,,False,False,False,False,False,False
+T880099,2026-07-13 09:56,C1233,Rosales Consulting,How-to,normal,pending,,False,False,False,False,False,False
+T880100,2026-07-13 10:51,C1169,Ambrose & Petrov LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880101,2026-07-13 11:24,C1187,Sinclair Strategy,How-to,low,solved,,False,False,False,False,False,False
+T880102,2026-07-13 11:30,C1442,Hume & Voss Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880103,2026-07-13 12:07,C1237,Fairview Engineering Group,How-to,low,solved,,False,False,False,False,False,False
+T880104,2026-07-13 12:36,C1441,Sterling Ingram Law,How-to,normal,solved,,False,False,False,False,False,False
+T880105,2026-07-13 16:23,C1002,Quill + Ingram Architects,,normal,solved,,False,False,False,False,False,False
+T880106,2026-07-13 16:34,C1139,Northgate Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880107,2026-07-13 23:08,C1196,Hale Legal,Bug,urgent,solved,,False,False,False,False,True,False
+T880108,2026-07-14 09:18,C1184,Quill Design Partnership,Billing,urgent,solved,,False,True,False,False,False,True
+T880109,2026-07-14 09:51,C1418,Moreau & Glover Advisory,,low,solved,,False,False,False,False,False,False
+T880110,2026-07-14 12:03,C1104,Lakeshore Consulting Group,Billing,normal,solved,,False,True,False,False,False,False
+T880111,2026-07-14 12:58,C1098,Okafor Consulting,Bug,low,solved,,False,False,False,False,False,False
+T880112,2026-07-14 14:37,C1466,Crane & Hale Advisory,Account change,normal,solved,,False,False,False,False,False,False
+T880113,2026-07-14 15:01,C1369,Hume Marsh Law,How-to,urgent,solved,,False,False,False,False,False,False
+T880114,2026-07-14 15:01,C1041,Hollis Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880115,2026-07-14 15:11,C1043,Marsh & Whitlock LLP,Bug,high,solved,,False,False,False,False,False,False
+T880116,2026-07-14 15:36,C1144,Haddad Media,How-to,normal,solved,,False,False,False,False,False,False
+T880117,2026-07-14 18:44,C1184,Quill Design Partnership,Billing,normal,solved,,False,False,False,False,False,True
+T880118,2026-07-14 21:06,C1152,Ellery Consulting,How-to,high,solved,,False,False,False,False,False,False
+T880119,2026-07-14 21:40,C1375,Glover Engineering,Account change,normal,solved,,False,False,False,False,False,False
+T880120,2026-07-14 21:56,C1060,Summit Architecture,Billing,normal,solved,,False,False,False,False,False,False
+T880121,2026-07-15 05:51,C1004,Quill & Voss Advisory,Account change,normal,solved,,False,False,False,False,False,False
+T880122,2026-07-15 08:35,C1157,Okafor & Bell Agency,How-to,normal,solved,,True,False,False,False,False,False
+T880123,2026-07-15 09:27,C1004,Quill & Voss Advisory,,normal,pending,,False,False,False,False,False,False
+T880124,2026-07-15 09:41,C1367,"Novak, Okafor & Co",,normal,solved,,False,False,False,False,False,False
+T880125,2026-07-15 12:06,C1032,Ashgrove Architecture,How-to,normal,solved,,False,False,False,False,False,False
+T880126,2026-07-15 13:07,C1377,Moreau & Quill Technology,Billing,normal,solved,,False,False,False,False,True,False
+T880127,2026-07-15 13:15,C1148,Oyelaran Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880128,2026-07-15 13:44,C1397,Kowalczyk Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880129,2026-07-15 15:12,C1482,Radcliffe Strategy,How-to,low,solved,,False,False,False,False,False,False
+T880130,2026-07-15 16:47,C1219,Lindqvist & Underhill Technology,Bug,normal,solved,,False,False,False,False,False,False
+T880131,2026-07-15 19:42,C1103,Corbin & Achebe Agency,Bug,low,pending,,False,False,False,False,False,False
+T880132,2026-07-15 20:20,C1413,Reyes Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880133,2026-07-15 22:53,C1282,Eastman & Wexler CPAs,,normal,solved,,False,False,False,False,False,False
+T880134,2026-07-16 08:01,C1080,Birch Media,,normal,solved,,False,False,False,False,False,False
+T880135,2026-07-16 08:13,C1449,Whitlock Consulting,How-to,low,pending,,False,False,False,False,False,False
+T880136,2026-07-16 08:31,C1161,"Delacroix, Jessop & Co",,normal,solved,,False,False,False,False,True,False
+T880137,2026-07-16 08:34,C1247,Hartwell Legal,How-to,low,solved,,False,False,False,False,False,False
+T880138,2026-07-16 09:38,C1476,Whitfield Media,,normal,solved,,False,False,False,False,False,False
+T880139,2026-07-16 09:51,C1264,Westbrook Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880140,2026-07-16 10:04,C1182,Nair Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880141,2026-07-16 13:01,C1419,Eastman Media,Bug,high,solved,,False,False,False,False,True,False
+T880142,2026-07-16 13:37,C1055,Tan Zeller Chartered Accountants,Billing,normal,solved,,False,False,False,False,False,False
+T880143,2026-07-16 13:47,C1461,Upton Zeller Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880144,2026-07-16 15:28,C1236,Petrov Thackeray Chartered Accountants,Billing,low,solved,,False,False,False,False,False,False
+T880145,2026-07-16 15:52,C1465,Westbrook Creative,Bug,normal,solved,,True,False,False,False,False,False
+T880146,2026-07-16 16:29,C1199,Millbrook Architecture,,normal,solved,,False,False,False,False,False,False
+T880147,2026-07-16 20:05,C1278,Kowalczyk + Stanhope Architects,Billing,normal,solved,,False,False,False,False,False,False
+T880148,2026-07-16 21:26,C1160,Eastman Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880149,2026-07-16 22:22,C1264,Westbrook Engineering Group,Billing,normal,solved,,True,False,False,False,False,False
+T880150,2026-07-17 01:31,C1303,Studio Petrov,Account change,low,solved,,False,False,False,False,False,False
+T880151,2026-07-17 06:41,C1260,Ruiz & Finch Advisory,Account change,normal,solved,,False,False,False,False,False,False
+T880152,2026-07-17 09:16,C1407,Ambrose & Lowell Advisory,,normal,pending,,False,False,False,False,False,False
+T880153,2026-07-17 10:13,C1364,Stanhope Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880154,2026-07-17 10:36,C1466,Crane & Hale Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880155,2026-07-17 12:25,C1054,Hale IT Partners,,high,solved,,False,False,False,False,False,False
+T880156,2026-07-17 12:26,C1322,Hume & Ambrose LLP,Billing,normal,solved,,False,True,False,False,False,False
+T880157,2026-07-17 12:52,C1262,Prior Ambrose Chartered Accountants,Billing,low,solved,,False,False,False,False,False,False
+T880158,2026-07-17 12:54,C1335,Hume Brandt IT,How-to,normal,solved,,False,False,False,False,False,False
+T880159,2026-07-17 13:04,C1380,Crane Consulting,Bug,high,solved,,False,False,False,False,False,False
+T880160,2026-07-17 13:17,C1131,Moreau & Radcliffe Advisory,,normal,solved,,False,False,False,False,False,False
+T880161,2026-07-17 15:20,C1075,Brandt Ashby IT,Account change,normal,solved,,False,False,False,False,False,False
+T880162,2026-07-17 16:26,C1362,Tan Kowalczyk Engineers,Billing,high,solved,,False,False,False,False,False,False
+T880163,2026-07-17 16:46,C1290,Gallagher Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880164,2026-07-17 18:55,C1394,Northgate Technology Services,Billing,low,solved,,False,True,False,False,False,True
+T880165,2026-07-18 10:22,C1472,Petrov & Whitfield LLP,Bug,high,solved,,True,False,False,False,False,False
+T880166,2026-07-18 15:28,C1077,Riverside Consulting Group,,normal,solved,,False,False,False,False,False,False
+T880167,2026-07-18 17:16,C1002,Quill + Ingram Architects,Bug,low,solved,,False,False,False,False,False,False
+T880168,2026-07-18 23:28,C1485,Radcliffe & Hale Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880169,2026-07-19 08:27,C1183,Summit Creative,How-to,low,solved,,False,False,False,False,False,False
+T880170,2026-07-19 09:02,C1382,Delacroix & Vance CPAs,Account change,high,solved,,False,False,False,False,False,False
+T880171,2026-07-19 10:47,C1466,Crane & Hale Advisory,,high,solved,,False,False,False,False,False,False
+T880172,2026-07-19 10:47,C1255,Ashgrove Partners,,high,solved,,True,False,False,False,False,False
+T880173,2026-07-20 03:30,C1456,Ellery Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880174,2026-07-20 05:36,C1443,Fairbanks & Castell Advisory,Billing,normal,solved,,False,True,False,False,False,False
+T880175,2026-07-20 07:13,C1364,Stanhope Consulting,Billing,high,solved,,True,False,False,False,False,False
+T880176,2026-07-20 08:04,C1026,Greystone Technology Services,How-to,low,solved,,False,False,False,False,False,False
+T880177,2026-07-20 10:55,C1244,Stonegate Partners,,normal,solved,,False,False,False,False,False,False
+T880178,2026-07-20 11:31,C1125,Nair & Banerjee Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880179,2026-07-20 12:28,C1494,Zeller & Whitfield Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880180,2026-07-20 16:10,C1264,Westbrook Engineering Group,Billing,high,pending,,True,False,False,False,False,False
+T880181,2026-07-20 16:22,C1110,Bramwell Sinclair Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880182,2026-07-20 17:57,C1016,Highmoor Architecture,,normal,solved,,False,False,False,False,False,False
+T880183,2026-07-20 19:29,C1428,Upton Stanhope Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880184,2026-07-20 20:13,C1469,Kingsway Engineering Group,,normal,pending,,True,False,False,False,False,False
+T880185,2026-07-20 21:52,C1478,Crane & Tavish CPAs,Account change,low,solved,,False,False,False,False,False,False
+T880186,2026-07-21 08:06,C1313,Ruiz Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880187,2026-07-21 09:50,C1202,Bridgewater Creative,Billing,normal,solved,,False,False,False,False,False,False
+T880188,2026-07-21 10:06,C1353,Ellery Achebe Chartered Accountants,Bug,high,solved,,False,False,False,False,False,False
+T880189,2026-07-21 10:06,C1333,Zeller + Finch Architects,,normal,solved,,False,False,False,False,True,False
+T880190,2026-07-21 10:29,C1152,Ellery Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880191,2026-07-21 10:35,C1200,Kowalczyk & Brandt CPAs,Billing,high,solved,,True,False,False,False,False,False
+T880192,2026-07-21 12:16,C1179,Greystone Engineering Group,,low,solved,,False,False,False,False,False,False
+T880193,2026-07-21 13:43,C1355,Abara Consulting,,normal,solved,,False,False,False,False,False,False
+T880194,2026-07-21 14:17,C1437,Harbor Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880195,2026-07-21 14:32,C1179,Greystone Engineering Group,Billing,normal,solved,,False,False,False,False,False,False
+T880196,2026-07-21 15:27,C1162,Langford Strategy,How-to,low,solved,,False,False,False,False,False,False
+T880197,2026-07-21 17:44,C1060,Summit Architecture,Billing,normal,solved,,False,True,False,False,False,False
+T880198,2026-07-21 18:19,C1329,"Tavish, Brandt & Co",Bug,low,pending,,False,False,False,False,False,False
+T880199,2026-07-21 20:05,C1465,Westbrook Creative,Bug,normal,solved,,True,False,False,False,False,False
+T880200,2026-07-22 00:16,C1196,Hale Legal,Bug,normal,solved,,True,False,False,False,False,False
+T880201,2026-07-22 00:39,C1161,"Delacroix, Jessop & Co",How-to,high,pending,,False,False,True,False,False,False
+T880202,2026-07-22 06:05,C1305,Sinclair Consulting,,normal,solved,,False,False,False,False,False,False
+T880203,2026-07-22 09:36,C1165,Petrov & Upton Agency,Billing,high,solved,,False,False,False,False,False,False
+T880204,2026-07-22 12:20,C1141,Studio Calloway,,normal,solved,,False,False,False,False,False,False
+T880205,2026-07-22 13:05,C1104,Lakeshore Consulting Group,Account change,normal,solved,,False,False,False,False,False,False
+T880206,2026-07-22 13:35,C1399,Ambrose Strategy,Account change,normal,solved,,False,False,False,False,False,False
+T880207,2026-07-22 13:56,C1314,Reyes Wexler Law,,low,solved,,False,False,False,False,False,False
+T880208,2026-07-22 15:27,C1122,Zeller Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880209,2026-07-22 16:22,C1085,Lakeshore Technology Services,,low,solved,,False,False,False,False,False,False
+T880210,2026-07-22 18:00,C1056,Malhotra Petrov Law,,normal,solved,,False,False,False,False,True,False
+T880211,2026-07-22 22:04,C1331,Fairbanks Media,,normal,solved,,False,False,False,False,False,False
+T880212,2026-07-23 08:45,C1034,Moreau Design Partnership,Bug,normal,solved,,False,False,False,False,False,False
+T880213,2026-07-23 09:32,C1054,Hale IT Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880214,2026-07-23 09:37,C1075,Brandt Ashby IT,How-to,high,solved,,False,False,False,False,False,False
+T880215,2026-07-23 10:08,C1145,Ashby Consulting,,normal,solved,,False,False,False,False,False,False
+T880216,2026-07-23 10:08,C1043,Marsh & Whitlock LLP,Account change,normal,pending,,False,False,False,False,False,False
+T880217,2026-07-23 12:59,C1450,Achebe Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T880218,2026-07-23 13:47,C1186,Greystone Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880219,2026-07-23 14:00,C1238,Langford Legal,,low,solved,,False,False,False,False,False,False
+T880220,2026-07-23 14:14,C1253,Redfern Engineering Group,Account change,normal,solved,,False,False,False,False,False,False
+T880221,2026-07-23 14:34,C1143,Moreau & Whitfield Advisory,,high,solved,,False,False,False,False,False,False
+T880222,2026-07-23 16:48,C1303,Studio Petrov,Bug,urgent,solved,,False,False,False,False,False,False
+T880223,2026-07-23 17:53,C1405,Millbrook Consulting Group,How-to,low,solved,,False,False,False,False,False,False
+T880224,2026-07-23 19:21,C1370,Ellery & Bramwell CPAs,How-to,high,solved,,False,False,False,False,False,False
+T880225,2026-07-24 01:50,C1423,Studio Ruiz,Billing,high,solved,,False,False,False,False,False,False
+T880226,2026-07-24 03:15,C1437,Harbor Engineering Group,Billing,normal,solved,,False,False,False,False,False,False
+T880227,2026-07-24 09:34,C1281,Thorne Engineering,Account change,normal,solved,,False,False,False,False,False,False
+T880228,2026-07-24 10:06,C1076,Abbott Oyelaran Law,Account change,normal,solved,,False,False,False,False,False,False
+T880229,2026-07-24 11:42,C1437,Harbor Engineering Group,How-to,normal,pending,,False,False,False,False,False,False
+T880230,2026-07-24 12:07,C1381,Mbeki Design Partnership,Billing,normal,solved,,False,False,False,False,False,False
+T880231,2026-07-24 13:29,C1197,Northgate Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880232,2026-07-24 16:52,C1404,Underhill Farrow Law,Bug,normal,solved,,False,False,False,False,False,False
+T880233,2026-07-24 18:00,C1391,Ruiz Media,Account change,normal,solved,,False,False,False,False,False,False
+T880234,2026-07-25 10:31,C1169,Ambrose & Petrov LLP,Account change,low,solved,,False,False,False,False,False,False
+T880235,2026-07-25 14:20,C1369,Hume Marsh Law,Bug,normal,solved,,False,False,False,False,False,False
+T880236,2026-07-26 03:53,C1237,Fairview Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880237,2026-07-26 12:45,C1468,Kingsway Digital,Account change,low,solved,,False,False,False,False,False,False
+T880238,2026-07-26 12:57,C1104,Lakeshore Consulting Group,Billing,normal,solved,,False,False,False,False,False,False
+T880239,2026-07-27 07:49,C1237,Fairview Engineering Group,,low,solved,,False,False,False,True,False,False
+T880240,2026-07-27 08:50,C1243,Glover & Drummond Advisory,Bug,low,solved,,False,False,False,False,False,False
+T880241,2026-07-27 09:24,C1100,Oyelaran Devlin Engineers,Account change,normal,solved,,False,False,False,False,False,False
+T880242,2026-07-27 09:54,C1309,Hale & Thackeray Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880243,2026-07-27 09:58,C1054,Hale IT Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880244,2026-07-27 12:51,C1455,Okafor Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880245,2026-07-27 16:22,C1118,Petrov Design Partnership,Bug,normal,solved,,False,False,False,False,False,False
+T880246,2026-07-27 19:04,C1013,Nakamura Engineering,,normal,solved,,False,False,False,False,False,False
+T880247,2026-07-27 20:58,C1348,Ellery Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880248,2026-07-28 02:27,C1313,Ruiz Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880249,2026-07-28 05:35,C1408,Studio Finch,,low,solved,,False,True,False,False,False,False
+T880250,2026-07-28 06:16,C1311,Upton & Delacroix LLP,,normal,solved,,False,False,False,False,False,False
+T880251,2026-07-28 09:52,C1154,Okafor & Nakamura LLP,Account change,normal,solved,,False,False,False,False,False,False
+T880252,2026-07-28 11:43,C1419,Eastman Media,How-to,normal,pending,,False,False,False,False,False,False
+T880253,2026-07-28 12:01,C1493,Ashgrove Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880254,2026-07-28 12:10,C1060,Summit Architecture,Account change,normal,solved,,False,True,False,False,False,False
+T880255,2026-07-28 16:01,C1342,Moreau & Crane Agency,,normal,solved,,False,False,False,False,False,False
+T880256,2026-07-28 17:09,C1431,Castellano Langford Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880257,2026-07-29 02:42,C1377,Moreau & Quill Technology,Billing,high,solved,,False,False,False,False,False,False
+T880258,2026-07-29 07:04,C1487,Summit Technology Services,How-to,high,solved,,False,False,False,False,False,False
+T880259,2026-07-29 07:44,C1077,Riverside Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T880260,2026-07-29 11:36,C1314,Reyes Wexler Law,How-to,normal,solved,,False,False,False,False,False,False
+T880261,2026-07-29 12:35,C1449,Whitlock Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880262,2026-07-29 14:57,C1471,Tan & Brandt Technology,Account change,normal,solved,,False,False,False,False,False,False
+T880263,2026-07-29 15:30,C1460,Lindqvist Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880264,2026-07-29 17:56,C1111,Fairview Architecture,Account change,normal,solved,,False,False,False,False,False,False
+T880265,2026-07-29 22:39,C1081,"Kowalczyk, Moreau & Co",,low,solved,,False,False,False,False,False,False
+T880266,2026-07-30 03:53,C1490,Drummond Engineering,How-to,low,solved,,False,False,False,False,False,False
+T880267,2026-07-30 07:29,C1271,Lowell IT Partners,,low,solved,,False,False,False,False,True,False
+T880268,2026-07-30 08:29,C1313,Ruiz Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880269,2026-07-30 08:47,C1071,Nakamura & Marsh Agency,,low,solved,,False,False,False,False,False,False
+T880270,2026-07-30 10:50,C1241,Nair Zeller Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880271,2026-07-30 11:00,C1244,Stonegate Partners,,high,solved,,False,False,False,False,False,False
+T880272,2026-07-30 12:10,C1494,Zeller & Whitfield Agency,Billing,normal,solved,,False,True,False,False,True,False
+T880273,2026-07-30 13:06,C1431,Castellano Langford Chartered Accountants,Account change,normal,solved,,False,False,False,False,False,False
+T880274,2026-07-30 13:22,C1372,Ambrose & Sinclair Advisory,,low,pending,,False,False,False,False,False,True
+T880275,2026-07-30 13:26,C1187,Sinclair Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880276,2026-07-30 16:32,C1412,Banerjee Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880277,2026-07-31 02:54,C1050,Hartwell Strategy,,normal,solved,,False,False,False,False,True,False
+T880278,2026-07-31 04:21,C1237,Fairview Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880279,2026-07-31 08:00,C1452,Abbott Consulting,Bug,normal,solved,,False,False,False,False,False,False
+T880280,2026-07-31 10:07,C1087,Reyes Kessler Engineers,,normal,solved,,False,False,True,False,False,False
+T880281,2026-07-31 14:48,C1030,Mercer & Banerjee LLP,Bug,low,solved,,True,False,False,False,False,False
+T880282,2026-07-31 15:17,C1241,Nair Zeller Chartered Accountants,How-to,high,solved,,False,False,False,False,False,False
+T880283,2026-07-31 16:20,C1282,Eastman & Wexler CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880284,2026-07-31 19:36,C1469,Kingsway Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880285,2026-07-31 21:48,C1410,Whitlock Ambrose IT,Bug,normal,solved,,False,False,False,False,False,False
+T880286,2026-08-01 09:27,C1197,Northgate Engineering Group,Bug,urgent,solved,,False,False,False,False,False,False
+T880287,2026-08-01 11:46,C1317,Lindqvist & Hume Advisory,,normal,solved,,False,False,False,False,False,False
+T880288,2026-08-01 14:21,C1327,Wexler Whitfield Chartered Accountants,Account change,normal,solved,,False,False,False,False,False,False
+T880289,2026-08-02 14:54,C1457,Hollis & Stanhope Advisory,,high,solved,,False,False,False,False,False,False
+T880290,2026-08-02 15:01,C1175,Holloway IT Partners,,low,solved,,False,False,False,False,False,False
+T880291,2026-08-02 17:29,C1297,Highmoor Engineering Group,How-to,low,solved,,False,False,False,False,False,False
+T880292,2026-08-02 22:08,C1142,Jessop Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880293,2026-08-03 09:42,C1108,Redfern Creative,Account change,normal,solved,,False,False,False,False,False,False
+T880294,2026-08-03 09:44,C1057,Novak Pemberton Law,Bug,normal,solved,,False,False,False,False,False,False
+T880295,2026-08-03 10:00,C1026,Greystone Technology Services,Bug,normal,solved,,False,False,False,False,False,False
+T880296,2026-08-03 10:10,C1061,Yardley Thorne Law,How-to,normal,solved,,False,False,False,False,True,False
+T880297,2026-08-03 10:16,C1243,Glover & Drummond Advisory,,normal,solved,,False,False,False,False,False,False
+T880298,2026-08-03 10:49,C1391,Ruiz Media,,high,solved,,False,False,False,False,False,False
+T880299,2026-08-03 10:57,C1048,Hollis & Petrov LLP,Account change,low,solved,,False,False,False,False,False,True
+T880300,2026-08-03 13:11,C1300,Westbrook Technology Services,,normal,solved,,False,False,False,False,False,False
+T880301,2026-08-03 15:38,C1406,Hartwell & Kowalczyk Agency,Bug,high,solved,,False,False,False,False,False,False
+T880302,2026-08-03 16:54,C1170,Whitlock Design Partnership,,normal,pending,,False,False,False,False,False,False
+T880303,2026-08-04 04:12,C1466,Crane & Hale Advisory,Billing,normal,solved,,False,False,False,False,False,False
+T880304,2026-08-04 08:15,C1412,Banerjee Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880305,2026-08-04 09:46,C1231,Studio Rosales,Bug,urgent,solved,,False,False,False,False,False,False
+T880306,2026-08-04 09:50,C1201,Lakeshore Partners,Account change,normal,solved,,False,True,False,False,False,False
+T880307,2026-08-04 11:25,C1457,Hollis & Stanhope Advisory,,normal,solved,,False,False,False,False,False,False
+T880308,2026-08-04 11:39,C1209,Greystone Consulting Group,Account change,normal,solved,,False,False,False,False,False,False
+T880309,2026-08-04 12:39,C1021,Hollis & Iyer Advisory,Billing,low,solved,,False,False,False,True,False,False
+T880310,2026-08-04 15:22,C1080,Birch Media,How-to,normal,solved,,False,False,False,False,False,False
+T880311,2026-08-04 16:30,C1408,Studio Finch,How-to,normal,solved,,False,False,False,False,False,False
+T880312,2026-08-04 19:17,C1484,Stanhope Pemberton Engineers,Bug,low,solved,,False,False,False,False,False,False
+T880313,2026-08-05 10:56,C1105,Banerjee Media,How-to,normal,solved,,False,False,False,False,False,False
+T880314,2026-08-05 11:50,C1422,Sterling & Devlin Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880315,2026-08-05 12:38,C1491,Jessop & Fairbanks Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880316,2026-08-05 15:06,C1022,Studio Marsh,How-to,high,solved,,False,False,False,False,False,False
+T880317,2026-08-05 16:06,C1327,Wexler Whitfield Chartered Accountants,,normal,solved,,False,False,False,True,False,False
+T880318,2026-08-05 16:24,C1388,Lowell Design Partnership,Account change,low,solved,,False,False,False,False,False,True
+T880319,2026-08-05 16:47,C1476,Whitfield Media,How-to,normal,solved,,False,False,False,False,False,False
+T880320,2026-08-05 17:08,C1274,Harbor Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880321,2026-08-05 17:16,C1449,Whitlock Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880322,2026-08-05 18:38,C1203,Moreau Legal,,low,solved,,False,False,False,False,False,False
+T880323,2026-08-05 20:20,C1054,Hale IT Partners,Bug,normal,solved,,False,False,False,False,False,False
+T880324,2026-08-06 07:15,C1381,Mbeki Design Partnership,Billing,high,solved,,False,False,False,False,False,False
+T880325,2026-08-06 07:42,C1120,Novak Media,Account change,normal,solved,,False,False,False,False,False,False
+T880326,2026-08-06 08:26,C1096,Duarte Strategy,Bug,high,solved,,False,False,False,False,False,False
+T880327,2026-08-06 09:15,C1087,Reyes Kessler Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880328,2026-08-06 09:44,C1253,Redfern Engineering Group,,low,solved,,False,False,False,False,False,False
+T880329,2026-08-06 10:39,C1020,Redfern Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880330,2026-08-06 12:17,C1336,Studio Moreau,Bug,normal,pending,,False,False,False,False,False,False
+T880331,2026-08-06 12:40,C1408,Studio Finch,Account change,normal,solved,,False,False,False,False,False,False
+T880332,2026-08-06 16:01,C1063,Crane IT Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880333,2026-08-06 22:27,C1384,Yardley Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880334,2026-08-06 23:16,C1349,Yates Accounting,Billing,normal,solved,,False,False,False,False,False,False
+T880335,2026-08-06 23:21,C1485,Radcliffe & Hale Advisory,,normal,solved,,False,False,False,False,False,False
+T880336,2026-08-07 06:03,C1203,Moreau Legal,Account change,high,solved,,False,False,False,False,False,False
+T880337,2026-08-07 09:16,C1299,Hollis & Calloway Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880338,2026-08-07 09:43,C1152,Ellery Consulting,,normal,solved,,False,False,False,False,False,False
+T880339,2026-08-07 10:42,C1055,Tan Zeller Chartered Accountants,,high,solved,,False,False,False,False,False,False
+T880340,2026-08-07 11:19,C1129,Bell Drummond IT,How-to,normal,solved,,False,False,False,False,False,False
+T880341,2026-08-07 11:51,C1174,Ashby & Castellano Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880342,2026-08-07 14:12,C1413,Reyes Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880343,2026-08-07 15:32,C1476,Whitfield Media,How-to,normal,pending,,False,False,False,False,False,False
+T880344,2026-08-07 16:25,C1222,Devlin Whitlock Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880345,2026-08-08 11:18,C1380,Crane Consulting,How-to,normal,pending,,False,False,False,False,False,False
+T880346,2026-08-08 17:08,C1233,Rosales Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880347,2026-08-08 21:35,C1104,Lakeshore Consulting Group,How-to,high,solved,,False,False,False,False,False,False
+T880348,2026-08-09 04:16,C1230,Sterling Legal,,normal,solved,,False,False,False,False,False,False
+T880349,2026-08-10 08:09,C1046,Castell Design Partnership,Billing,normal,solved,,False,False,False,False,False,False
+T880350,2026-08-10 08:41,C1273,Jessop & Orwell Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880351,2026-08-10 10:02,C1008,Rosales Iyer Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880352,2026-08-10 10:47,C1329,"Tavish, Brandt & Co",How-to,normal,solved,,False,False,False,False,False,False
+T880353,2026-08-10 13:21,C1368,Riverside Technology Services,,normal,solved,,False,False,False,False,False,False
+T880354,2026-08-10 14:32,C1169,Ambrose & Petrov LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880355,2026-08-10 17:19,C1088,Whitfield Consulting,Bug,low,solved,,False,False,False,False,False,False
+T880356,2026-08-10 20:22,C1096,Duarte Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880357,2026-08-10 22:36,C1299,Hollis & Calloway Agency,,normal,solved,,False,False,False,False,False,False
+T880358,2026-08-10 23:10,C1305,Sinclair Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880359,2026-08-11 04:24,C1495,Nair Mott IT,Account change,low,solved,,False,False,False,False,False,False
+T880360,2026-08-11 05:14,C1026,Greystone Technology Services,Account change,normal,solved,,False,False,False,False,False,False
+T880361,2026-08-11 09:06,C1129,Bell Drummond IT,,normal,solved,,False,False,False,False,False,False
+T880362,2026-08-11 10:05,C1041,Hollis Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880363,2026-08-11 10:13,C1011,Corbin Strategy,,normal,solved,,False,False,False,False,False,False
+T880364,2026-08-11 12:08,C1330,Calloway Legal,,normal,solved,,False,False,False,False,False,False
+T880365,2026-08-11 12:21,C1361,Thornfield Consulting Group,Account change,normal,solved,,False,True,False,False,False,False
+T880366,2026-08-11 14:21,C1203,Moreau Legal,,normal,solved,,False,False,False,False,False,False
+T880367,2026-08-11 15:22,C1392,Hume Lindqvist Engineers,How-to,low,solved,,False,False,False,False,False,False
+T880368,2026-08-11 15:23,C1423,Studio Ruiz,Billing,high,solved,,False,False,False,False,True,False
+T880369,2026-08-12 00:41,C1362,Tan Kowalczyk Engineers,Bug,normal,pending,,False,False,False,False,False,False
+T880370,2026-08-12 02:02,C1409,Wexler Media,Bug,normal,solved,,False,False,False,False,False,False
+T880371,2026-08-12 02:47,C1375,Glover Engineering,,normal,solved,,False,False,False,False,False,False
+T880372,2026-08-12 05:47,C1154,Okafor & Nakamura LLP,Bug,normal,solved,,False,False,False,False,False,False
+T880373,2026-08-12 07:52,C1297,Highmoor Engineering Group,Billing,high,solved,,False,False,False,False,False,False
+T880374,2026-08-12 09:39,C1358,Thackeray Media,How-to,normal,solved,,False,False,False,False,False,False
+T880375,2026-08-12 10:55,C1022,Studio Marsh,Billing,normal,solved,,False,True,False,False,False,False
+T880376,2026-08-12 11:32,C1203,Moreau Legal,,high,solved,,False,False,False,False,False,False
+T880377,2026-08-12 13:39,C1140,Stanhope + Tan Architects,How-to,normal,solved,,False,False,False,False,False,False
+T880378,2026-08-12 14:24,C1456,Ellery Design Partnership,,normal,solved,,False,False,False,False,False,False
+T880379,2026-08-12 14:46,C1129,Bell Drummond IT,Account change,normal,solved,,False,False,False,False,False,False
+T880380,2026-08-12 21:25,C1370,Ellery & Bramwell CPAs,Account change,urgent,solved,,False,False,False,False,False,False
+T880381,2026-08-13 04:00,C1464,Quill & Corbin LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880382,2026-08-13 09:05,C1256,Bramwell & Petrov Agency,Account change,normal,solved,,False,False,False,False,False,True
+T880383,2026-08-13 10:45,C1222,Devlin Whitlock Engineers,How-to,high,solved,,False,False,False,False,False,False
+T880384,2026-08-13 11:21,C1391,Ruiz Media,,normal,solved,,False,False,False,False,False,False
+T880385,2026-08-13 14:10,C1024,Lindqvist Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880386,2026-08-13 14:21,C1330,Calloway Legal,Billing,normal,solved,,False,False,False,True,False,False
+T880387,2026-08-13 14:56,C1129,Bell Drummond IT,How-to,normal,solved,,False,False,False,False,False,False
+T880388,2026-08-13 19:10,C1484,Stanhope Pemberton Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880389,2026-08-13 22:40,C1436,Devlin & Prior Advisory,Billing,normal,pending,,False,False,False,False,False,False
+T880390,2026-08-13 22:58,C1378,Marsh & Moreau Advisory,How-to,low,solved,,False,False,False,False,False,False
+T880391,2026-08-14 03:07,C1307,Eastman + Radcliffe Architects,,normal,solved,,False,False,False,False,False,False
+T880392,2026-08-14 04:27,C1067,Bramwell Legal,How-to,low,solved,,False,False,False,False,False,False
+T880393,2026-08-14 08:25,C1009,Haddad Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880394,2026-08-14 08:52,C1049,Summit Consulting Group,How-to,high,solved,,False,False,False,False,False,False
+T880395,2026-08-14 11:44,C1228,"Tan, Lindqvist & Co",Billing,urgent,solved,,False,False,False,False,True,False
+T880396,2026-08-14 12:24,C1090,Bell & Wexler Agency,,normal,solved,,False,False,False,False,False,False
+T880397,2026-08-14 13:01,C1125,Nair & Banerjee Agency,How-to,high,solved,,False,False,False,False,False,False
+T880398,2026-08-14 13:14,C1478,Crane & Tavish CPAs,,normal,solved,,False,False,False,False,False,False
+T880399,2026-08-14 16:02,C1073,Riverside Partners,Billing,normal,solved,,False,False,False,False,False,False
+T880400,2026-08-14 17:20,C1131,Moreau & Radcliffe Advisory,Billing,normal,solved,,False,False,False,True,False,False
+T880401,2026-08-14 23:03,C1309,Hale & Thackeray Agency,,normal,solved,,False,False,False,False,False,False
+T880402,2026-08-15 12:17,C1050,Hartwell Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880403,2026-08-15 16:13,C1288,Fairview Technology Services,How-to,normal,solved,,False,False,False,False,False,False
+T880404,2026-08-15 20:19,C1085,Lakeshore Technology Services,Billing,normal,solved,,False,True,False,True,False,False
+T880405,2026-08-15 23:48,C1026,Greystone Technology Services,Bug,high,solved,,False,False,False,False,False,False
+T880406,2026-08-16 05:59,C1228,"Tan, Lindqvist & Co",,normal,solved,,False,False,False,False,False,False
+T880407,2026-08-16 06:18,C1087,Reyes Kessler Engineers,,high,solved,,False,False,False,False,False,False
+T880408,2026-08-16 10:01,C1077,Riverside Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T880409,2026-08-16 11:43,C1424,Thackeray IT Partners,Billing,low,pending,,False,False,False,False,False,False
+T880410,2026-08-16 11:58,C1348,Ellery Legal,Billing,normal,solved,,False,False,False,False,False,False
+T880411,2026-08-16 15:17,C1070,Bell Systems,How-to,high,solved,,False,False,False,False,False,False
+T880412,2026-08-16 21:30,C1458,Sinclair & Novak LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880413,2026-08-17 01:10,C1462,Mercer & Ellery CPAs,Billing,normal,solved,,False,True,False,False,False,False
+T880414,2026-08-17 11:21,C1155,Moreau Hume Engineers,Billing,normal,solved,,False,False,False,False,True,False
+T880415,2026-08-17 12:22,C1493,Ashgrove Digital,Bug,normal,solved,,False,False,False,False,False,False
+T880416,2026-08-17 12:55,C1181,Calloway Accounting,,high,solved,,False,False,False,False,False,False
+T880417,2026-08-17 13:33,C1126,Brandt & Lowell CPAs,How-to,high,solved,,False,False,False,False,False,False
+T880418,2026-08-17 13:54,C1450,Achebe Engineering,Billing,high,solved,,False,False,False,False,False,False
+T880419,2026-08-17 16:55,C1393,Clearwater Partners,Billing,high,solved,,False,False,False,False,False,False
+T880420,2026-08-17 17:04,C1455,Okafor Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880421,2026-08-17 22:06,C1141,Studio Calloway,How-to,normal,solved,,False,False,False,False,False,False
+T880422,2026-08-17 22:48,C1075,Brandt Ashby IT,Bug,normal,solved,,False,False,False,False,False,False
+T880423,2026-08-18 04:46,C1450,Achebe Engineering,Account change,high,solved,,False,False,False,False,False,False
+T880424,2026-08-18 08:26,C1252,Zeller Strategy,Bug,low,solved,,False,False,False,False,False,False
+T880425,2026-08-18 09:16,C1403,Clearwater Creative,,normal,solved,,False,False,False,False,False,False
+T880426,2026-08-18 10:15,C1009,Haddad Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880427,2026-08-18 10:25,C1248,Westbrook Architecture,,normal,solved,,False,False,False,False,True,True
+T880428,2026-08-18 14:39,C1180,Whitfield & Sterling CPAs,,normal,solved,,False,False,False,False,False,False
+T880429,2026-08-18 15:37,C1050,Hartwell Strategy,How-to,low,solved,,False,False,False,False,False,False
+T880430,2026-08-18 15:40,C1442,Hume & Voss Agency,How-to,high,solved,,False,False,False,False,False,False
+T880431,2026-08-18 17:20,C1409,Wexler Media,Bug,normal,solved,,False,False,False,False,False,False
+T880432,2026-08-19 09:34,C1439,Banerjee Petrov Engineers,,normal,solved,INV-25539,False,False,False,False,False,False
+T880433,2026-08-19 11:21,C1329,"Tavish, Brandt & Co",,normal,solved,,False,False,False,False,False,False
+T880434,2026-08-19 14:28,C1369,Hume Marsh Law,Bug,normal,solved,,False,False,False,False,False,False
+T880435,2026-08-19 15:08,C1019,Pemberton & Yardley Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880436,2026-08-19 16:05,C1463,Redfern Architecture,How-to,normal,solved,,False,False,False,False,False,False
+T880437,2026-08-19 16:49,C1111,Fairview Architecture,How-to,normal,solved,,False,False,False,False,False,False
+T880438,2026-08-19 17:01,C1008,Rosales Iyer Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880439,2026-08-19 17:04,C1304,Ashgrove Consulting Group,,normal,solved,,True,True,False,False,False,False
+T880440,2026-08-19 17:15,C1468,Kingsway Digital,,normal,solved,,False,False,False,False,False,False
+T880441,2026-08-19 17:18,C1391,Ruiz Media,Bug,high,solved,,False,False,False,False,False,False
+T880442,2026-08-19 17:54,C1387,Langford & Iyer Agency,How-to,high,pending,,False,False,False,False,False,False
+T880443,2026-08-20 02:04,C1122,Zeller Legal,Billing,low,solved,,False,False,False,False,True,False
+T880444,2026-08-20 05:24,C1415,Moreau Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880445,2026-08-20 08:20,C1336,Studio Moreau,,normal,solved,,False,False,False,False,False,False
+T880446,2026-08-20 08:20,C1162,Langford Strategy,,high,solved,,False,False,False,False,False,False
+T880447,2026-08-20 09:47,C1049,Summit Consulting Group,Account change,normal,pending,,False,False,False,False,False,False
+T880448,2026-08-20 13:02,C1219,Lindqvist & Underhill Technology,How-to,low,solved,,False,False,False,False,False,False
+T880449,2026-08-20 14:56,C1290,Gallagher Consulting,,normal,solved,,False,False,False,False,False,False
+T880450,2026-08-20 15:02,C1472,Petrov & Whitfield LLP,Account change,normal,solved,,False,False,False,False,False,False
+T880451,2026-08-20 15:10,C1244,Stonegate Partners,How-to,high,solved,,False,False,False,False,False,False
+T880452,2026-08-20 16:35,C1484,Stanhope Pemberton Engineers,Account change,high,solved,,False,False,False,False,False,False
+T880453,2026-08-21 09:05,C1266,Thackeray Accounting,How-to,normal,pending,,False,False,False,False,False,False
+T880454,2026-08-21 10:09,C1172,Jessop Strategy,,urgent,solved,,False,False,False,False,False,False
+T880455,2026-08-21 12:18,C1445,Underhill Birch Law,Billing,urgent,solved,,False,False,False,False,False,False
+T880456,2026-08-21 12:52,C1217,Corbin Media,Account change,normal,solved,,False,False,False,False,False,False
+T880457,2026-08-21 14:22,C1196,Hale Legal,Billing,normal,solved,,False,False,False,False,False,False
+T880458,2026-08-21 15:10,C1478,Crane & Tavish CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880459,2026-08-21 15:46,C1159,Highmoor Creative,,normal,solved,,False,False,False,False,False,False
+T880460,2026-08-21 15:52,C1170,Whitlock Design Partnership,Account change,low,solved,,False,False,False,False,False,False
+T880461,2026-08-21 21:43,C1114,Quill & Achebe CPAs,,normal,solved,,False,False,False,False,False,False
+T880462,2026-08-22 11:00,C1135,Birch Petrov Engineers,,normal,solved,,False,False,False,False,False,False
+T880463,2026-08-22 13:45,C1272,Oakfield Engineering Group,Account change,low,solved,,False,False,False,False,False,True
+T880464,2026-08-23 13:01,C1085,Lakeshore Technology Services,Account change,high,solved,,False,False,False,False,False,False
+T880465,2026-08-23 16:45,C1275,Oakfield Digital,Billing,low,solved,,False,False,False,False,False,False
+T880466,2026-08-23 16:59,C1404,Underhill Farrow Law,How-to,normal,solved,,False,False,False,False,False,False
+T880467,2026-08-24 10:26,C1219,Lindqvist & Underhill Technology,How-to,normal,solved,,False,False,False,False,False,False
+T880468,2026-08-24 10:32,C1367,"Novak, Okafor & Co",,high,solved,,False,False,False,False,False,False
+T880469,2026-08-24 11:40,C1187,Sinclair Strategy,Bug,high,solved,,False,True,False,False,False,False
+T880470,2026-08-24 11:50,C1054,Hale IT Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880471,2026-08-24 12:37,C1075,Brandt Ashby IT,How-to,normal,solved,,False,False,False,False,False,False
+T880472,2026-08-24 13:44,C1236,Petrov Thackeray Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880473,2026-08-24 14:45,C1087,Reyes Kessler Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880474,2026-08-24 16:10,C1407,Ambrose & Lowell Advisory,Bug,high,pending,,False,False,False,False,False,False
+T880475,2026-08-24 21:19,C1244,Stonegate Partners,Billing,normal,solved,,False,False,False,False,False,False
+T880476,2026-08-25 09:31,C1002,Quill + Ingram Architects,Bug,normal,solved,,False,False,False,False,False,False
+T880477,2026-08-25 10:09,C1490,Drummond Engineering,Account change,normal,solved,,False,False,False,False,False,False
+T880478,2026-08-25 10:14,C1144,Haddad Media,Bug,low,solved,,False,False,False,False,False,False
+T880479,2026-08-25 13:23,C1223,Studio Zeller,Account change,normal,solved,,False,False,False,False,False,False
+T880480,2026-08-25 13:25,C1448,"Pemberton, Iyer & Co",Bug,normal,solved,,False,False,False,False,False,False
+T880481,2026-08-25 13:32,C1145,Ashby Consulting,Bug,normal,solved,,False,False,False,False,False,False
+T880482,2026-08-25 14:33,C1251,Fairbanks & Abbott CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880483,2026-08-25 15:01,C1160,Eastman Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880484,2026-08-25 15:42,C1160,Eastman Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880485,2026-08-25 17:55,C1135,Birch Petrov Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880486,2026-08-26 01:09,C1442,Hume & Voss Agency,,normal,solved,,False,False,False,False,False,False
+T880487,2026-08-26 08:27,C1035,Gallagher Media,,normal,solved,,False,False,False,False,False,False
+T880488,2026-08-26 08:37,C1113,Studio Holloway,Bug,normal,solved,,False,False,False,False,False,False
+T880489,2026-08-26 13:06,C1189,Orwell Calloway Law,Bug,normal,solved,,False,False,False,False,False,False
+T880490,2026-08-26 14:31,C1215,Petrov Consulting,Bug,high,solved,,False,False,False,False,False,False
+T880491,2026-08-26 15:28,C1226,Fairview Partners,Account change,normal,solved,,False,False,False,False,False,False
+T880492,2026-08-26 15:38,C1066,Quill & Okafor Agency,Billing,normal,solved,,False,False,False,False,False,False
+T880493,2026-08-26 16:00,C1187,Sinclair Strategy,Account change,normal,solved,,False,True,False,False,False,False
+T880494,2026-08-26 16:04,C1161,"Delacroix, Jessop & Co",,low,solved,,False,False,False,False,False,False
+T880495,2026-08-26 16:47,C1016,Highmoor Architecture,Account change,normal,solved,,False,False,False,False,False,True
+T880496,2026-08-27 03:32,C1329,"Tavish, Brandt & Co",Billing,high,solved,,False,False,False,False,False,False
+T880497,2026-08-27 09:48,C1388,Lowell Design Partnership,How-to,urgent,solved,,False,False,False,False,False,False
+T880498,2026-08-27 13:53,C1002,Quill + Ingram Architects,Bug,low,solved,,False,False,False,False,False,False
+T880499,2026-08-27 14:14,C1012,Iyer Whitlock Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880500,2026-08-27 14:25,C1472,Petrov & Whitfield LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880501,2026-08-27 15:06,C1367,"Novak, Okafor & Co",Billing,normal,solved,,False,False,False,False,True,False
+T880502,2026-08-27 15:23,C1050,Hartwell Strategy,Billing,urgent,solved,,False,False,False,False,False,False
+T880503,2026-08-27 19:23,C1179,Greystone Engineering Group,Account change,normal,solved,,False,False,False,False,False,False
+T880504,2026-08-27 21:56,C1060,Summit Architecture,Billing,normal,solved,,False,False,False,False,False,False
+T880505,2026-08-28 12:45,C1445,Underhill Birch Law,How-to,normal,solved,,False,False,False,False,False,False
+T880506,2026-08-28 13:49,C1134,Greystone Digital,How-to,normal,pending,,False,False,False,False,False,False
+T880507,2026-08-28 14:36,C1400,"Bell, Fairbanks & Co",Bug,normal,solved,,False,False,False,False,False,False
+T880508,2026-08-28 14:36,C1229,Ingram Strategy,How-to,normal,solved,,False,False,False,False,False,True
+T880509,2026-08-28 17:46,C1098,Okafor Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880510,2026-08-28 17:54,C1345,Orwell Media,Billing,normal,solved,,False,False,False,True,False,False
+T880511,2026-08-28 20:16,C1485,Radcliffe & Hale Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880512,2026-08-28 21:40,C1054,Hale IT Partners,Bug,normal,solved,,False,False,False,False,False,False
+T880513,2026-08-29 09:15,C1135,Birch Petrov Engineers,Billing,high,solved,,False,False,False,False,False,False
+T880514,2026-08-29 11:12,C1030,Mercer & Banerjee LLP,Billing,normal,solved,,False,False,False,False,False,False
+T880515,2026-08-29 23:27,C1406,Hartwell & Kowalczyk Agency,Bug,high,solved,,False,False,False,False,False,False
+T880516,2026-08-30 09:00,C1422,Sterling & Devlin Advisory,Billing,normal,solved,,False,False,False,False,False,False
+T880517,2026-08-30 14:14,C1195,Hartwell Engineering,,normal,solved,,False,False,False,False,False,False
+T880518,2026-08-30 18:10,C1464,Quill & Corbin LLP,How-to,urgent,solved,,False,False,False,False,False,False
+T880519,2026-08-30 23:22,C1426,Eastman Engineering,Billing,normal,solved,,False,False,False,False,False,False
+T880520,2026-08-31 04:04,C1105,Banerjee Media,Billing,normal,solved,,False,False,False,True,False,False
+T880521,2026-08-31 05:13,C1264,Westbrook Engineering Group,Bug,normal,solved,,False,False,False,False,False,False
+T880522,2026-08-31 05:58,C1413,Reyes Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880523,2026-08-31 08:11,C1296,Mott Strategy,,normal,solved,,False,False,False,False,False,False
+T880524,2026-08-31 08:47,C1169,Ambrose & Petrov LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880525,2026-08-31 11:37,C1049,Summit Consulting Group,Billing,normal,solved,,False,True,False,False,False,True
+T880526,2026-08-31 12:14,C1394,Northgate Technology Services,How-to,normal,solved,,False,False,False,False,False,False
+T880527,2026-08-31 13:34,C1391,Ruiz Media,Account change,low,solved,,False,False,False,False,False,False
+T880528,2026-08-31 14:49,C1356,Drummond & Iyer Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880529,2026-08-31 17:03,C1462,Mercer & Ellery CPAs,,normal,solved,,False,False,False,False,False,False
+T880530,2026-08-31 21:49,C1364,Stanhope Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880531,2026-09-01 02:58,C1370,Ellery & Bramwell CPAs,,normal,solved,,False,False,False,False,False,False
+T880532,2026-09-01 03:30,C1181,Calloway Accounting,How-to,low,solved,,False,False,False,False,False,False
+T880533,2026-09-01 12:34,C1132,Holloway Strategy,Account change,low,pending,,False,False,False,False,False,False
+T880534,2026-09-01 13:01,C1143,Moreau & Whitfield Advisory,Billing,normal,solved,,False,False,False,False,False,False
+T880535,2026-09-01 15:01,C1209,Greystone Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T880536,2026-09-01 15:32,C1304,Ashgrove Consulting Group,Billing,normal,solved,,False,False,False,False,True,False
+T880537,2026-09-01 16:04,C1052,Duarte Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880538,2026-09-01 16:10,C1059,Ruiz Legal,,high,solved,,False,False,False,False,False,False
+T880539,2026-09-01 17:59,C1488,Prior & Quill LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880540,2026-09-02 02:43,C1423,Studio Ruiz,How-to,normal,solved,,False,False,False,False,False,False
+T880541,2026-09-02 04:42,C1306,Haddad Thorne Law,,normal,solved,,False,False,False,False,True,False
+T880542,2026-09-02 05:02,C1470,Abbott Design Partnership,Account change,normal,solved,,False,False,False,False,False,False
+T880543,2026-09-02 08:16,C1479,Delacroix Strategy,How-to,normal,solved,,False,False,False,False,False,True
+T880544,2026-09-02 12:10,C1358,Thackeray Media,Account change,normal,solved,,False,False,False,False,True,False
+T880545,2026-09-02 14:41,C1027,Voss Accounting,Bug,normal,solved,,False,False,False,False,False,False
+T880546,2026-09-02 15:46,C1305,Sinclair Consulting,How-to,low,solved,,False,False,True,False,False,False
+T880547,2026-09-02 16:18,C1026,Greystone Technology Services,How-to,normal,solved,,False,False,False,False,False,False
+T880548,2026-09-02 17:09,C1145,Ashby Consulting,,normal,solved,,False,False,False,False,False,False
+T880549,2026-09-02 17:54,C1314,Reyes Wexler Law,,normal,solved,,False,False,False,False,False,False
+T880550,2026-09-02 18:51,C1332,Corbin Upton Engineers,,low,solved,,False,False,False,False,False,False
+T880551,2026-09-03 09:43,C1252,Zeller Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880552,2026-09-03 11:02,C1141,Studio Calloway,,urgent,solved,,False,False,False,False,False,False
+T880553,2026-09-03 11:41,C1296,Mott Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880554,2026-09-03 12:08,C1412,Banerjee Design Partnership,Bug,low,solved,,False,False,False,False,False,False
+T880555,2026-09-03 16:07,C1301,Kingsway Consulting Group,Account change,normal,solved,,False,False,False,False,False,False
+T880556,2026-09-03 18:06,C1222,Devlin Whitlock Engineers,,normal,solved,,False,False,False,False,False,False
+T880557,2026-09-03 20:46,C1367,"Novak, Okafor & Co",Billing,normal,solved,,False,True,False,False,False,False
+T880558,2026-09-03 22:25,C1299,Hollis & Calloway Agency,How-to,low,pending,,False,False,False,False,False,False
+T880559,2026-09-03 22:35,C1142,Jessop Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880560,2026-09-03 22:51,C1327,Wexler Whitfield Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880561,2026-09-04 03:53,C1456,Ellery Design Partnership,Billing,normal,solved,,False,False,False,False,False,True
+T880562,2026-09-04 06:37,C1356,Drummond & Iyer Agency,,normal,solved,,False,False,False,False,False,False
+T880563,2026-09-04 11:12,C1397,Kowalczyk Consulting,Account change,normal,solved,,False,False,False,False,False,False
+T880564,2026-09-04 11:23,C1369,Hume Marsh Law,How-to,normal,solved,,False,False,False,False,False,False
+T880565,2026-09-04 12:39,C1327,Wexler Whitfield Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880566,2026-09-04 14:36,C1350,Clearwater Consulting Group,Billing,urgent,solved,,False,False,False,True,False,False
+T880567,2026-09-04 15:03,C1369,Hume Marsh Law,Account change,low,solved,,False,False,False,False,False,False
+T880568,2026-09-04 15:17,C1445,Underhill Birch Law,Bug,normal,pending,,False,False,False,False,False,False
+T880569,2026-09-04 23:56,C1459,Abara + Brandt Architects,,high,solved,,False,False,False,False,False,False
+T880570,2026-09-05 04:07,C1023,Oakfield Partners,,low,solved,,False,False,False,False,False,False
+T880571,2026-09-05 17:43,C1451,Ellery Kowalczyk Law,Account change,normal,solved,,False,False,False,False,False,False
+T880572,2026-09-06 05:03,C1367,"Novak, Okafor & Co",How-to,normal,solved,,False,False,False,False,False,False
+T880573,2026-09-06 21:21,C1251,Fairbanks & Abbott CPAs,Billing,normal,solved,,False,False,True,False,False,True
+T880574,2026-09-07 01:31,C1290,Gallagher Consulting,,normal,solved,,False,False,False,False,False,False
+T880575,2026-09-07 01:49,C1201,Lakeshore Partners,,high,solved,,False,True,False,False,False,False
+T880576,2026-09-07 08:23,C1027,Voss Accounting,How-to,low,solved,,False,False,False,False,False,False
+T880577,2026-09-07 08:47,C1414,Lindqvist Strategy,Account change,high,solved,,False,False,False,False,False,False
+T880578,2026-09-07 09:20,C1120,Novak Media,How-to,high,solved,,False,False,False,False,False,False
+T880579,2026-09-07 09:56,C1002,Quill + Ingram Architects,Billing,normal,solved,,False,False,False,False,False,False
+T880580,2026-09-07 10:01,C1390,Upton & Tavish Advisory,,low,solved,,False,False,False,False,False,False
+T880581,2026-09-07 15:39,C1353,Ellery Achebe Chartered Accountants,Account change,normal,solved,,False,False,False,False,False,False
+T880582,2026-09-07 15:42,C1254,Upton & Bell Advisory,Billing,normal,solved,INV-25662,False,False,False,False,False,False
+T880583,2026-09-07 16:31,C1412,Banerjee Design Partnership,How-to,normal,solved,,False,False,False,False,False,True
+T880584,2026-09-07 18:16,C1144,Haddad Media,Billing,normal,solved,,False,False,False,False,False,False
+T880585,2026-09-07 20:38,C1090,Bell & Wexler Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880586,2026-09-07 23:22,C1067,Bramwell Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880587,2026-09-08 04:02,C1254,Upton & Bell Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880588,2026-09-08 08:14,C1136,Finch Design Partnership,Billing,normal,solved,,False,False,False,False,False,False
+T880589,2026-09-08 09:12,C1036,Delacroix Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T880590,2026-09-08 09:32,C1008,Rosales Iyer Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880591,2026-09-08 09:55,C1490,Drummond Engineering,Billing,high,solved,,False,True,False,False,True,False
+T880592,2026-09-08 11:24,C1253,Redfern Engineering Group,Billing,high,solved,,False,False,False,False,False,False
+T880593,2026-09-08 11:49,C1432,Gallagher Engineering,,low,solved,,False,False,False,False,False,False
+T880594,2026-09-08 13:14,C1043,Marsh & Whitlock LLP,,low,solved,,False,False,False,False,False,False
+T880595,2026-09-08 16:17,C1319,Hume Accounting,Bug,high,solved,,False,False,False,False,False,False
+T880596,2026-09-08 17:27,C1173,Calloway Brandt Engineers,How-to,normal,solved,,False,False,False,False,False,True
+T880597,2026-09-08 17:32,C1466,Crane & Hale Advisory,Bug,normal,solved,,False,True,False,False,False,False
+T880598,2026-09-08 17:51,C1419,Eastman Media,,normal,solved,,False,False,False,False,False,False
+T880599,2026-09-08 20:58,C1080,Birch Media,Account change,normal,solved,,False,False,False,False,False,False
+T880600,2026-09-08 22:46,C1060,Summit Architecture,Bug,normal,solved,,False,False,False,False,False,False
+T880601,2026-09-09 00:52,C1244,Stonegate Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880602,2026-09-09 08:17,C1152,Ellery Consulting,Account change,low,solved,,False,False,False,False,False,False
+T880603,2026-09-09 08:56,C1095,Greystone Architecture,Account change,normal,solved,,False,False,False,False,False,False
+T880604,2026-09-09 09:21,C1389,Okafor Farrow Chartered Accountants,Billing,high,solved,,False,False,False,False,False,False
+T880605,2026-09-09 09:42,C1205,Ashby & Rosales LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880606,2026-09-09 10:17,C1103,Corbin & Achebe Agency,Bug,high,solved,,False,False,False,False,False,False
+T880607,2026-09-09 11:31,C1445,Underhill Birch Law,How-to,high,solved,,False,False,False,False,False,False
+T880608,2026-09-09 12:05,C1169,Ambrose & Petrov LLP,Billing,normal,solved,,False,False,False,False,False,False
+T880609,2026-09-09 13:36,C1344,Whitfield Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880610,2026-09-09 14:10,C1373,Eastwick Partners,Bug,urgent,solved,,False,False,False,False,False,False
+T880611,2026-09-09 14:40,C1413,Reyes Consulting,Account change,high,solved,,False,False,False,False,False,False
+T880612,2026-09-09 15:29,C1471,Tan & Brandt Technology,Billing,low,solved,,False,False,False,False,False,False
+T880613,2026-09-09 16:04,C1158,"Whitfield, Petrov & Co",,normal,solved,,False,False,False,False,False,False
+T880614,2026-09-09 17:29,C1070,Bell Systems,Bug,high,solved,,False,False,False,False,False,False
+T880615,2026-09-09 22:51,C1043,Marsh & Whitlock LLP,,high,solved,,False,False,False,False,False,False
+T880616,2026-09-10 09:28,C1431,Castellano Langford Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880617,2026-09-10 09:46,C1414,Lindqvist Strategy,,urgent,solved,,False,False,False,True,False,False
+T880618,2026-09-10 09:59,C1200,Kowalczyk & Brandt CPAs,Bug,normal,solved,,False,False,False,False,False,False
+T880619,2026-09-10 10:29,C1145,Ashby Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880620,2026-09-10 11:17,C1112,Fairview Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880621,2026-09-10 13:16,C1223,Studio Zeller,How-to,low,solved,,False,False,False,False,False,False
+T880622,2026-09-10 14:16,C1430,Prior Media,How-to,normal,solved,,False,False,False,False,False,True
+T880623,2026-09-10 15:54,C1132,Holloway Strategy,Bug,normal,solved,,False,False,False,False,False,False
+T880624,2026-09-10 17:06,C1431,Castellano Langford Chartered Accountants,Billing,normal,solved,,False,False,False,False,False,False
+T880625,2026-09-10 17:11,C1100,Oyelaran Devlin Engineers,Billing,low,solved,,False,False,False,False,False,False
+T880626,2026-09-10 17:42,C1035,Gallagher Media,,normal,solved,,False,False,False,False,False,False
+T880627,2026-09-10 17:49,C1358,Thackeray Media,Billing,normal,solved,,False,False,False,False,False,False
+T880628,2026-09-11 01:08,C1426,Eastman Engineering,Bug,normal,solved,,False,False,False,False,False,False
+T880629,2026-09-11 02:14,C1457,Hollis & Stanhope Advisory,,normal,solved,,False,False,False,False,False,False
+T880630,2026-09-11 08:43,C1414,Lindqvist Strategy,How-to,high,solved,,False,False,False,False,False,False
+T880631,2026-09-11 09:50,C1077,Riverside Consulting Group,,normal,solved,,False,False,False,False,False,False
+T880632,2026-09-11 10:44,C1120,Novak Media,How-to,normal,solved,,False,False,False,False,False,False
+T880633,2026-09-11 10:45,C1255,Ashgrove Partners,Bug,high,solved,,True,False,False,False,False,False
+T880634,2026-09-11 10:49,C1291,Garrick Consulting,How-to,low,solved,,False,False,False,False,False,False
+T880635,2026-09-11 13:37,C1055,Tan Zeller Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880636,2026-09-11 14:52,C1453,Mott & Hume Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880637,2026-09-11 15:38,C1159,Highmoor Creative,How-to,low,solved,,False,False,False,False,False,False
+T880638,2026-09-11 16:13,C1161,"Delacroix, Jessop & Co",Billing,normal,solved,,False,False,False,False,False,False
+T880639,2026-09-11 18:18,C1002,Quill + Ingram Architects,Bug,urgent,solved,,False,False,False,False,False,False
+T880640,2026-09-12 08:30,C1368,Riverside Technology Services,How-to,high,solved,,False,False,False,False,False,False
+T880641,2026-09-12 09:11,C1110,Bramwell Sinclair Chartered Accountants,Bug,normal,solved,,False,False,False,False,False,False
+T880642,2026-09-12 11:27,C1462,Mercer & Ellery CPAs,,normal,solved,,False,False,False,False,False,False
+T880643,2026-09-12 14:46,C1022,Studio Marsh,,normal,pending,,False,False,True,False,False,False
+T880644,2026-09-12 15:21,C1296,Mott Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880645,2026-09-12 17:49,C1049,Summit Consulting Group,Billing,normal,solved,,False,False,False,False,False,False
+T880646,2026-09-12 21:23,C1296,Mott Strategy,How-to,normal,solved,,False,False,True,False,False,False
+T880647,2026-09-13 06:09,C1237,Fairview Engineering Group,Billing,normal,solved,,False,False,False,False,False,False
+T880648,2026-09-13 12:39,C1030,Mercer & Banerjee LLP,Billing,normal,solved,INV-25718,False,False,False,False,False,False
+T880649,2026-09-13 13:56,C1451,Ellery Kowalczyk Law,Bug,normal,solved,,False,False,False,False,False,False
+T880650,2026-09-13 19:52,C1389,Okafor Farrow Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880651,2026-09-13 20:14,C1090,Bell & Wexler Agency,,low,solved,,False,False,False,False,False,False
+T880652,2026-09-13 21:34,C1214,Harbor Consulting Group,Bug,low,solved,,False,False,False,False,False,False
+T880653,2026-09-14 00:09,C1200,Kowalczyk & Brandt CPAs,Account change,low,solved,,False,False,False,False,False,False
+T880654,2026-09-14 01:38,C1443,Fairbanks & Castell Advisory,How-to,low,solved,,False,False,False,False,False,False
+T880655,2026-09-14 06:11,C1054,Hale IT Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880656,2026-09-14 11:04,C1095,Greystone Architecture,How-to,normal,solved,,False,False,False,False,False,False
+T880657,2026-09-14 12:08,C1296,Mott Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880658,2026-09-14 12:23,C1369,Hume Marsh Law,Billing,normal,solved,,False,True,False,False,False,True
+T880659,2026-09-14 12:47,C1348,Ellery Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880660,2026-09-14 13:01,C1402,Jessop Legal,Account change,normal,solved,,False,False,False,False,False,False
+T880661,2026-09-14 13:06,C1088,Whitfield Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880662,2026-09-14 14:03,C1378,Marsh & Moreau Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880663,2026-09-14 14:18,C1482,Radcliffe Strategy,,normal,solved,,False,False,False,False,False,False
+T880664,2026-09-14 14:50,C1023,Oakfield Partners,How-to,low,solved,,False,False,False,False,True,False
+T880665,2026-09-14 15:14,C1129,Bell Drummond IT,,normal,solved,,False,False,False,False,True,False
+T880666,2026-09-14 16:11,C1182,Nair Strategy,Account change,normal,solved,,False,False,False,False,False,False
+T880667,2026-09-14 16:22,C1100,Oyelaran Devlin Engineers,Billing,normal,solved,INV-25711,False,False,False,False,False,False
+T880668,2026-09-14 16:57,C1436,Devlin & Prior Advisory,,low,solved,,False,False,False,False,False,False
+T880669,2026-09-14 17:01,C1428,Upton Stanhope Engineers,Bug,low,solved,,False,False,False,False,False,False
+T880670,2026-09-15 00:09,C1230,Sterling Legal,Bug,normal,solved,,False,False,False,False,False,False
+T880671,2026-09-15 03:11,C1227,Fairbanks Consulting,,normal,solved,,False,False,False,False,False,False
+T880672,2026-09-15 10:14,C1186,Greystone Partners,How-to,low,solved,,False,False,False,False,False,False
+T880673,2026-09-15 14:15,C1277,Birch Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880674,2026-09-15 14:23,C1337,Pemberton Consulting,Account change,normal,solved,,False,False,False,False,False,False
+T880675,2026-09-15 15:14,C1179,Greystone Engineering Group,Billing,high,solved,,False,False,False,False,False,False
+T880676,2026-09-15 16:12,C1345,Orwell Media,How-to,high,pending,,False,False,False,False,False,False
+T880677,2026-09-15 16:17,C1179,Greystone Engineering Group,How-to,normal,solved,,False,False,False,False,False,False
+T880678,2026-09-15 17:03,C1404,Underhill Farrow Law,Account change,low,solved,,False,False,False,False,False,False
+T880679,2026-09-15 18:45,C1336,Studio Moreau,How-to,normal,solved,,False,False,False,False,False,False
+T880680,2026-09-15 21:04,C1471,Tan & Brandt Technology,How-to,normal,solved,,False,False,False,False,False,False
+T880681,2026-09-15 23:55,C1071,Nakamura & Marsh Agency,,high,solved,,False,False,False,False,False,False
+T880682,2026-09-16 06:48,C1126,Brandt & Lowell CPAs,How-to,high,solved,,False,False,False,False,False,False
+T880683,2026-09-16 08:20,C1004,Quill & Voss Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880684,2026-09-16 08:29,C1442,Hume & Voss Agency,Billing,normal,solved,,False,False,False,False,True,False
+T880685,2026-09-16 10:31,C1145,Ashby Consulting,Billing,normal,solved,,False,False,False,False,False,False
+T880686,2026-09-16 11:43,C1020,Redfern Digital,Account change,normal,solved,,False,False,False,False,False,False
+T880687,2026-09-16 11:47,C1112,Fairview Digital,,normal,solved,,False,False,False,False,False,False
+T880688,2026-09-16 12:00,C1060,Summit Architecture,Bug,normal,solved,,False,False,False,False,False,True
+T880689,2026-09-16 14:42,C1372,Ambrose & Sinclair Advisory,,normal,solved,,False,False,True,False,False,False
+T880690,2026-09-16 15:42,C1140,Stanhope + Tan Architects,Bug,normal,solved,,False,False,False,False,False,False
+T880691,2026-09-16 15:44,C1217,Corbin Media,Billing,normal,solved,,False,False,False,False,True,False
+T880692,2026-09-16 16:40,C1069,Whitlock & Achebe Advisory,Bug,low,solved,,False,False,False,False,False,False
+T880693,2026-09-16 17:24,C1162,Langford Strategy,,low,solved,,False,False,False,False,False,False
+T880694,2026-09-16 17:42,C1253,Redfern Engineering Group,,normal,pending,,False,False,False,False,False,False
+T880695,2026-09-16 21:45,C1229,Ingram Strategy,Billing,high,solved,,False,False,False,False,False,False
+T880696,2026-09-17 09:58,C1447,Crane Media,Account change,low,solved,,False,False,False,False,False,False
+T880697,2026-09-17 11:56,C1162,Langford Strategy,Bug,normal,solved,,False,False,False,False,False,True
+T880698,2026-09-17 12:10,C1487,Summit Technology Services,,normal,solved,,False,False,False,False,False,False
+T880699,2026-09-17 15:42,C1349,Yates Accounting,How-to,normal,solved,,False,False,False,False,False,True
+T880700,2026-09-17 16:06,C1325,Hartwell Tan Engineers,Bug,low,solved,,False,False,False,False,False,False
+T880701,2026-09-17 16:12,C1182,Nair Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880702,2026-09-17 16:18,C1065,Yates Consulting,Bug,normal,solved,,False,False,False,False,False,False
+T880703,2026-09-17 16:25,C1036,Delacroix Engineering,Bug,normal,solved,,False,False,False,False,False,False
+T880704,2026-09-17 16:36,C1430,Prior Media,Bug,high,solved,,False,False,False,False,False,False
+T880705,2026-09-17 17:27,C1160,Eastman Strategy,Bug,low,solved,,False,False,False,False,False,False
+T880706,2026-09-18 03:17,C1284,Sinclair & Vance LLP,How-to,low,solved,,False,False,False,False,False,False
+T880707,2026-09-18 06:48,C1229,Ingram Strategy,,normal,solved,,False,False,False,False,False,False
+T880708,2026-09-18 08:12,C1440,Duarte + Sterling Architects,Billing,normal,solved,,False,False,False,True,False,False
+T880709,2026-09-18 08:40,C1126,Brandt & Lowell CPAs,How-to,low,solved,,False,False,False,False,False,False
+T880710,2026-09-18 11:52,C1166,Thornfield Creative,Bug,low,solved,,False,False,False,False,False,False
+T880711,2026-09-18 13:57,C1496,Abara Strategy,,high,solved,,False,False,False,False,False,False
+T880712,2026-09-18 15:23,C1143,Moreau & Whitfield Advisory,Billing,high,solved,,False,False,False,False,False,False
+T880713,2026-09-18 17:59,C1480,Thackeray & Devlin LLP,,urgent,solved,,False,False,False,False,False,True
+T880714,2026-09-18 23:57,C1077,Riverside Consulting Group,Bug,normal,solved,,False,False,False,False,False,False
+T880715,2026-09-19 05:43,C1237,Fairview Engineering Group,Billing,normal,solved,,False,False,False,False,False,False
+T880716,2026-09-19 20:36,C1497,Studio Achebe,Account change,normal,solved,,False,False,False,False,False,False
+T880717,2026-09-20 06:31,C1256,Bramwell & Petrov Agency,Billing,low,solved,,False,False,False,False,True,False
+T880718,2026-09-20 11:32,C1087,Reyes Kessler Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880719,2026-09-20 11:56,C1445,Underhill Birch Law,,normal,solved,,False,False,False,False,False,False
+T880720,2026-09-20 15:55,C1483,Jessop Lindgren Law,,high,solved,,False,False,False,False,False,False
+T880721,2026-09-20 23:15,C1166,Thornfield Creative,Billing,low,solved,,False,True,False,False,False,False
+T880722,2026-09-21 00:11,C1289,Upton Strategy,How-to,normal,solved,,False,False,False,False,False,True
+T880723,2026-09-21 07:12,C1033,Highmoor Consulting Group,Account change,normal,solved,,False,False,False,False,False,False
+T880724,2026-09-21 13:01,C1389,Okafor Farrow Chartered Accountants,Billing,normal,solved,,False,False,False,False,True,False
+T880725,2026-09-21 13:23,C1195,Hartwell Engineering,Bug,normal,solved,,False,False,False,False,False,False
+T880726,2026-09-21 14:31,C1329,"Tavish, Brandt & Co",Billing,normal,solved,,False,False,False,False,False,False
+T880727,2026-09-21 15:52,C1212,Yates & Sterling Agency,,normal,solved,,False,False,False,False,False,False
+T880728,2026-09-21 19:03,C1456,Ellery Design Partnership,Billing,low,solved,,False,False,False,False,False,False
+T880729,2026-09-21 19:20,C1370,Ellery & Bramwell CPAs,Account change,normal,solved,,False,False,False,False,False,False
+T880730,2026-09-21 22:56,C1364,Stanhope Consulting,,normal,solved,,False,False,False,False,False,False
+T880731,2026-09-22 09:39,C1341,"Quill, Mott & Co",Bug,normal,solved,,False,False,False,False,False,False
+T880732,2026-09-22 09:52,C1253,Redfern Engineering Group,How-to,low,solved,,False,False,False,False,False,False
+T880733,2026-09-22 11:26,C1380,Crane Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880734,2026-09-22 12:06,C1023,Oakfield Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880735,2026-09-22 12:33,C1432,Gallagher Engineering,,normal,solved,,False,False,False,False,False,True
+T880736,2026-09-22 12:55,C1375,Glover Engineering,Account change,normal,solved,,False,False,False,False,False,False
+T880737,2026-09-22 14:22,C1233,Rosales Consulting,Account change,low,solved,,False,False,False,False,False,False
+T880738,2026-09-22 15:05,C1152,Ellery Consulting,Billing,low,solved,INV-25757,False,False,False,False,False,True
+T880739,2026-09-22 16:25,C1264,Westbrook Engineering Group,Billing,normal,pending,INV-25730,False,False,False,False,False,False
+T880740,2026-09-22 17:57,C1049,Summit Consulting Group,Billing,normal,solved,,False,False,False,False,True,False
+T880741,2026-09-22 22:05,C1394,Northgate Technology Services,Account change,normal,solved,,False,False,False,False,False,False
+T880742,2026-09-23 08:38,C1162,Langford Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880743,2026-09-23 08:47,C1370,Ellery & Bramwell CPAs,,normal,solved,,False,False,False,True,False,False
+T880744,2026-09-23 09:32,C1485,Radcliffe & Hale Advisory,Account change,low,solved,,False,False,False,False,False,False
+T880745,2026-09-23 12:20,C1363,Gallagher Legal,,normal,solved,,False,False,False,False,False,False
+T880746,2026-09-23 13:02,C1184,Quill Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880747,2026-09-23 13:24,C1296,Mott Strategy,,low,solved,,False,False,False,False,False,False
+T880748,2026-09-23 16:44,C1050,Hartwell Strategy,Account change,high,solved,,False,False,False,False,False,False
+T880749,2026-09-23 17:57,C1170,Whitlock Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880750,2026-09-23 22:41,C1007,Bramwell & Hume Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880751,2026-09-24 06:55,C1052,Duarte Consulting,Account change,normal,solved,,False,False,False,False,False,False
+T880752,2026-09-24 08:15,C1457,Hollis & Stanhope Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880753,2026-09-24 09:26,C1289,Upton Strategy,Bug,normal,pending,,False,False,False,False,False,False
+T880754,2026-09-24 09:57,C1296,Mott Strategy,,normal,solved,,False,False,False,False,False,False
+T880755,2026-09-24 11:35,C1345,Orwell Media,How-to,normal,solved,,False,False,False,False,False,False
+T880756,2026-09-24 14:34,C1402,Jessop Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880757,2026-09-24 15:46,C1261,Wexler & Hume Advisory,How-to,low,solved,INV-25712,False,False,False,False,False,False
+T880758,2026-09-24 17:36,C1438,Farrow & Finch Agency,How-to,high,solved,,False,False,False,False,False,False
+T880759,2026-09-24 17:46,C1100,Oyelaran Devlin Engineers,How-to,normal,pending,,False,False,False,False,False,False
+T880760,2026-09-24 18:20,C1379,Ruiz & Whitfield CPAs,,low,solved,,False,False,False,False,False,False
+T880761,2026-09-25 08:48,C1268,"Castell, Hume & Co",,normal,solved,,False,False,False,False,False,False
+T880762,2026-09-25 09:32,C1299,Hollis & Calloway Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880763,2026-09-25 10:42,C1403,Clearwater Creative,Bug,normal,solved,,False,False,False,False,False,True
+T880764,2026-09-25 10:47,C1055,Tan Zeller Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880765,2026-09-25 12:11,C1330,Calloway Legal,Bug,normal,solved,,False,False,False,False,False,False
+T880766,2026-09-25 15:13,C1179,Greystone Engineering Group,,normal,solved,,False,False,False,False,False,False
+T880767,2026-09-25 15:23,C1199,Millbrook Architecture,,low,solved,,False,False,False,False,False,False
+T880768,2026-09-25 16:18,C1430,Prior Media,How-to,high,solved,,False,False,False,False,False,False
+T880769,2026-09-25 17:43,C1112,Fairview Digital,How-to,low,solved,,False,False,False,False,False,False
+T880770,2026-09-25 20:06,C1086,Okafor Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T880771,2026-09-26 03:23,C1497,Studio Achebe,Billing,high,solved,,False,False,False,False,False,False
+T880772,2026-09-26 11:55,C1042,Malhotra Accounting,,normal,solved,,False,False,False,False,False,False
+T880773,2026-09-26 15:33,C1096,Duarte Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880774,2026-09-27 09:22,C1275,Oakfield Digital,Bug,normal,solved,,False,False,False,False,False,False
+T880775,2026-09-27 13:51,C1016,Highmoor Architecture,How-to,low,solved,,False,False,False,False,False,False
+T880776,2026-09-27 14:50,C1026,Greystone Technology Services,Billing,low,solved,,False,False,False,False,False,False
+T880777,2026-09-27 15:12,C1079,Bridgewater Digital,How-to,normal,solved,,False,False,False,False,False,True
+T880778,2026-09-27 17:05,C1394,Northgate Technology Services,Billing,low,solved,,False,False,False,False,False,False
+T880779,2026-09-28 07:39,C1076,Abbott Oyelaran Law,,normal,solved,,False,False,False,False,False,False
+T880780,2026-09-28 07:53,C1442,Hume & Voss Agency,Account change,high,solved,,False,False,False,False,False,False
+T880781,2026-09-28 09:14,C1303,Studio Petrov,Bug,normal,solved,,False,False,True,False,False,False
+T880782,2026-09-28 11:21,C1499,Stonegate Technology Services,How-to,high,solved,,False,False,False,False,False,False
+T880783,2026-09-28 12:54,C1366,Kessler Consulting,,high,solved,,False,False,False,False,False,False
+T880784,2026-09-28 15:23,C1195,Hartwell Engineering,How-to,low,solved,,False,False,False,False,False,False
+T880785,2026-09-28 17:40,C1387,Langford & Iyer Agency,,high,pending,,False,False,False,False,False,False
+T880786,2026-09-28 17:42,C1016,Highmoor Architecture,Bug,normal,pending,,False,False,False,False,False,False
+T880787,2026-09-28 19:21,C1290,Gallagher Consulting,Billing,normal,solved,,False,False,False,False,True,False
+T880788,2026-09-29 03:32,C1337,Pemberton Consulting,Bug,normal,pending,,False,False,False,False,False,False
+T880789,2026-09-29 08:48,C1381,Mbeki Design Partnership,Bug,normal,solved,,False,False,False,False,False,False
+T880790,2026-09-29 08:52,C1478,Crane & Tavish CPAs,How-to,urgent,solved,,False,False,False,False,False,False
+T880791,2026-09-29 09:04,C1120,Novak Media,Billing,normal,solved,,False,False,False,False,False,True
+T880792,2026-09-29 13:24,C1489,Sterling Oyelaran Law,,urgent,solved,,False,False,False,False,False,False
+T880793,2026-09-29 13:25,C1041,Hollis Consulting,,normal,solved,,False,False,False,False,False,False
+T880794,2026-09-29 14:48,C1387,Langford & Iyer Agency,,low,pending,,False,False,False,False,False,False
+T880795,2026-09-29 16:17,C1037,Reyes & Ingram CPAs,,normal,solved,,False,True,False,False,False,False
+T880796,2026-09-29 16:41,C1435,Eastwick Engineering Group,Account change,normal,solved,,False,False,False,False,False,False
+T880797,2026-09-29 17:36,C1362,Tan Kowalczyk Engineers,Bug,normal,solved,,False,False,False,False,False,False
+T880798,2026-09-29 17:54,C1049,Summit Consulting Group,Bug,normal,solved,,False,False,False,False,False,False
+T880799,2026-09-30 01:32,C1373,Eastwick Partners,,low,pending,,False,False,False,False,False,False
+T880800,2026-09-30 09:59,C1060,Summit Architecture,Billing,normal,solved,,False,False,False,False,False,False
+T880801,2026-09-30 10:11,C1262,Prior Ambrose Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880802,2026-09-30 10:48,C1127,Mbeki Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880803,2026-09-30 11:39,C1008,Rosales Iyer Engineers,Billing,low,solved,,False,False,False,False,False,False
+T880804,2026-09-30 11:47,C1380,Crane Consulting,How-to,high,solved,,False,False,False,False,False,False
+T880805,2026-09-30 12:59,C1021,Hollis & Iyer Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880806,2026-09-30 14:06,C1050,Hartwell Strategy,How-to,high,solved,,False,False,True,False,False,False
+T880807,2026-09-30 14:09,C1397,Kowalczyk Consulting,Bug,normal,solved,,False,False,False,False,False,False
+T880808,2026-09-30 15:48,C1086,Okafor Engineering,Billing,high,solved,,False,False,False,False,False,False
+T880809,2026-09-30 16:02,C1234,Birch Engineering,Billing,normal,solved,,False,True,False,False,False,False
+T880810,2026-10-01 07:54,C1436,Devlin & Prior Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880811,2026-10-01 09:02,C1484,Stanhope Pemberton Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880812,2026-10-01 09:17,C1314,Reyes Wexler Law,,normal,solved,,False,False,False,False,False,False
+T880813,2026-10-01 09:31,C1379,Ruiz & Whitfield CPAs,,high,solved,,False,False,False,False,False,False
+T880814,2026-10-01 10:02,C1491,Jessop & Fairbanks Advisory,Billing,low,solved,,False,False,False,False,False,False
+T880815,2026-10-01 10:03,C1404,Underhill Farrow Law,Bug,normal,solved,,False,False,False,False,False,False
+T880816,2026-10-01 12:41,C1154,Okafor & Nakamura LLP,Billing,high,solved,INV-25765,False,False,False,False,False,True
+T880817,2026-10-01 13:25,C1410,Whitlock Ambrose IT,How-to,normal,solved,,False,False,False,False,False,False
+T880818,2026-10-01 14:33,C1203,Moreau Legal,Billing,normal,pending,,False,False,False,False,False,False
+T880819,2026-10-01 17:07,C1382,Delacroix & Vance CPAs,How-to,low,pending,,False,False,False,False,False,False
+T880820,2026-10-01 21:27,C1107,Northgate Digital,How-to,urgent,solved,,False,True,False,False,False,False
+T880821,2026-10-02 08:43,C1120,Novak Media,Bug,high,solved,,False,False,False,False,False,False
+T880822,2026-10-02 11:47,C1055,Tan Zeller Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880823,2026-10-02 14:01,C1411,Voss & Kowalczyk Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880824,2026-10-02 14:14,C1113,Studio Holloway,How-to,normal,solved,,False,False,False,False,False,False
+T880825,2026-10-02 14:36,C1350,Clearwater Consulting Group,,high,solved,,False,False,False,False,False,False
+T880826,2026-10-02 14:48,C1466,Crane & Hale Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880827,2026-10-02 14:59,C1007,Bramwell & Hume Agency,Billing,normal,solved,,False,False,False,True,False,False
+T880828,2026-10-02 16:24,C1142,Jessop Consulting,Bug,high,pending,,False,False,False,False,False,False
+T880829,2026-10-02 22:27,C1273,Jessop & Orwell Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880830,2026-10-03 02:58,C1255,Ashgrove Partners,Billing,normal,solved,,False,False,False,False,False,False
+T880831,2026-10-03 11:45,C1154,Okafor & Nakamura LLP,How-to,normal,solved,,False,False,False,False,False,False
+T880832,2026-10-04 08:22,C1135,Birch Petrov Engineers,,normal,solved,,False,False,False,False,False,False
+T880833,2026-10-04 12:08,C1139,Northgate Partners,How-to,normal,solved,,False,False,False,False,False,False
+T880834,2026-10-05 06:50,C1379,Ruiz & Whitfield CPAs,,normal,solved,,False,False,False,False,False,False
+T880835,2026-10-05 09:18,C1205,Ashby & Rosales LLP,Account change,low,solved,,False,False,False,False,False,False
+T880836,2026-10-05 10:01,C1159,Highmoor Creative,Account change,normal,solved,,False,False,False,False,False,False
+T880837,2026-10-05 10:38,C1166,Thornfield Creative,Bug,normal,pending,,False,False,False,False,False,False
+T880838,2026-10-05 10:57,C1166,Thornfield Creative,,high,solved,,False,False,False,False,False,False
+T880839,2026-10-05 12:19,C1169,Ambrose & Petrov LLP,,normal,solved,,False,False,False,False,False,True
+T880840,2026-10-05 12:48,C1252,Zeller Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880841,2026-10-05 16:00,C1226,Fairview Partners,,normal,solved,,False,False,False,False,False,False
+T880842,2026-10-05 17:26,C1174,Ashby & Castellano Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880843,2026-10-06 01:54,C1325,Hartwell Tan Engineers,How-to,low,solved,,False,False,False,False,False,False
+T880844,2026-10-06 03:35,C1239,Bell Design Partnership,,normal,solved,,False,False,False,False,False,False
+T880845,2026-10-06 06:59,C1069,Whitlock & Achebe Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880846,2026-10-06 11:28,C1317,Lindqvist & Hume Advisory,Bug,low,solved,,False,True,False,False,False,False
+T880847,2026-10-06 12:12,C1487,Summit Technology Services,How-to,normal,solved,,False,False,False,False,False,False
+T880848,2026-10-06 13:37,C1159,Highmoor Creative,How-to,high,solved,,False,False,False,False,False,False
+T880849,2026-10-06 14:48,C1045,Castell Engineering,Billing,normal,solved,INV-25764,False,False,False,False,False,False
+T880850,2026-10-06 19:21,C1441,Sterling Ingram Law,How-to,low,solved,,False,False,False,False,False,False
+T880851,2026-10-07 03:04,C1262,Prior Ambrose Chartered Accountants,Bug,normal,solved,,False,False,False,False,False,False
+T880852,2026-10-07 08:04,C1433,Lindgren Legal,,normal,solved,,False,False,False,False,False,False
+T880853,2026-10-07 08:06,C1454,Tan Accounting,How-to,high,solved,,False,False,False,False,False,False
+T880854,2026-10-07 08:38,C1042,Malhotra Accounting,How-to,normal,solved,,False,False,False,False,False,False
+T880855,2026-10-07 10:35,C1162,Langford Strategy,,normal,solved,,False,False,False,False,False,False
+T880856,2026-10-07 14:42,C1266,Thackeray Accounting,Billing,normal,solved,INV-25750,False,False,False,False,False,False
+T880857,2026-10-07 17:25,C1361,Thornfield Consulting Group,,normal,solved,,False,False,False,False,False,False
+T880858,2026-10-07 20:09,C1203,Moreau Legal,,low,solved,,False,False,True,False,False,False
+T880859,2026-10-07 20:10,C1078,"Yates, Oyelaran & Co",Bug,normal,solved,,False,False,False,False,False,False
+T880860,2026-10-07 23:55,C1348,Ellery Legal,,normal,solved,,False,False,True,False,False,True
+T880861,2026-10-08 00:21,C1067,Bramwell Legal,Billing,low,solved,,False,False,False,False,True,False
+T880862,2026-10-08 01:50,C1007,Bramwell & Hume Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880863,2026-10-08 03:11,C1505,Achebe + Pemberton Architects,Bug,high,solved,,False,False,False,False,False,False
+T880864,2026-10-08 08:24,C1155,Moreau Hume Engineers,Account change,normal,solved,,False,False,False,False,False,False
+T880865,2026-10-08 09:02,C1445,Underhill Birch Law,Billing,normal,solved,,False,False,False,False,True,False
+T880866,2026-10-08 15:03,C1358,Thackeray Media,How-to,normal,solved,,False,False,False,False,False,False
+T880867,2026-10-08 15:13,C1162,Langford Strategy,,normal,solved,,False,False,False,False,False,False
+T880868,2026-10-08 17:31,C1321,Riverside Digital,,low,solved,,False,False,False,False,True,False
+T880869,2026-10-09 07:10,C1388,Lowell Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880870,2026-10-09 08:56,C1299,Hollis & Calloway Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880871,2026-10-09 09:38,C1075,Brandt Ashby IT,How-to,normal,solved,,False,False,False,False,False,False
+T880872,2026-10-09 11:38,C1090,Bell & Wexler Agency,Billing,normal,solved,,False,False,False,False,False,False
+T880873,2026-10-09 12:26,C1231,Studio Rosales,How-to,normal,solved,,False,False,False,False,False,False
+T880874,2026-10-09 16:31,C1271,Lowell IT Partners,Bug,normal,solved,,False,False,False,False,False,False
+T880875,2026-10-09 16:56,C1271,Lowell IT Partners,Billing,high,solved,,False,False,False,False,False,False
+T880876,2026-10-09 18:59,C1445,Underhill Birch Law,,normal,pending,,False,False,False,False,False,False
+T880877,2026-10-09 20:52,C1223,Studio Zeller,Billing,high,solved,,False,False,False,False,False,True
+T880878,2026-10-10 00:44,C1305,Sinclair Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880879,2026-10-10 15:43,C1112,Fairview Digital,,high,solved,,False,True,False,False,False,False
+T880880,2026-10-11 08:02,C1262,Prior Ambrose Chartered Accountants,,normal,solved,,False,False,False,False,False,False
+T880881,2026-10-11 12:06,C1104,Lakeshore Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T880882,2026-10-12 02:22,C1107,Northgate Digital,How-to,normal,solved,,False,False,False,False,False,False
+T880883,2026-10-12 03:10,C1042,Malhotra Accounting,,low,solved,,False,True,False,False,False,False
+T880884,2026-10-12 09:19,C1438,Farrow & Finch Agency,Account change,high,solved,,False,False,False,False,False,False
+T880885,2026-10-12 10:41,C1424,Thackeray IT Partners,Account change,high,solved,,False,False,False,False,False,False
+T880886,2026-10-12 12:57,C1073,Riverside Partners,Billing,normal,solved,INV-25787,False,False,False,False,True,False
+T880887,2026-10-12 14:24,C1327,Wexler Whitfield Chartered Accountants,,low,solved,,False,False,False,False,False,False
+T880888,2026-10-12 14:59,C1078,"Yates, Oyelaran & Co",Bug,normal,pending,,False,False,False,False,False,False
+T880889,2026-10-12 15:51,C1458,Sinclair & Novak LLP,How-to,low,solved,,False,False,False,False,False,False
+T880890,2026-10-12 17:41,C1311,Upton & Delacroix LLP,,low,solved,,False,False,False,False,False,False
+T880891,2026-10-12 19:07,C1159,Highmoor Creative,,normal,solved,,False,False,False,False,False,False
+T880892,2026-10-13 06:30,C1259,Fairbanks Legal,Bug,urgent,solved,,False,False,False,False,False,False
+T880893,2026-10-13 11:22,C1243,Glover & Drummond Advisory,Billing,normal,solved,,False,True,False,False,False,False
+T880894,2026-10-13 11:29,C1465,Westbrook Creative,,low,pending,,False,False,False,False,True,False
+T880895,2026-10-13 12:13,C1313,Ruiz Consulting,Bug,normal,solved,,False,False,False,False,False,False
+T880896,2026-10-13 13:25,C1454,Tan Accounting,Account change,normal,solved,,False,False,False,False,False,False
+T880897,2026-10-13 13:35,C1317,Lindqvist & Hume Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880898,2026-10-13 16:54,C1042,Malhotra Accounting,,normal,solved,,False,False,False,False,False,False
+T880899,2026-10-13 17:06,C1476,Whitfield Media,Account change,normal,solved,,False,False,False,False,False,False
+T880900,2026-10-13 19:53,C1337,Pemberton Consulting,Account change,normal,solved,,False,False,False,False,False,False
+T880901,2026-10-13 21:34,C1331,Fairbanks Media,Account change,normal,solved,,False,False,False,False,False,False
+T880902,2026-10-14 07:17,C1226,Fairview Partners,Bug,normal,solved,,False,False,False,False,False,False
+T880903,2026-10-14 09:48,C1243,Glover & Drummond Advisory,Billing,high,solved,,False,False,False,False,False,False
+T880904,2026-10-14 11:50,C1299,Hollis & Calloway Agency,Bug,normal,solved,,False,False,False,False,False,False
+T880905,2026-10-14 13:21,C1496,Abara Strategy,,normal,solved,,False,False,False,False,False,False
+T880906,2026-10-14 14:40,C1103,Corbin & Achebe Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880907,2026-10-14 14:40,C1222,Devlin Whitlock Engineers,Account change,normal,solved,,False,False,False,False,False,False
+T880908,2026-10-14 15:18,C1445,Underhill Birch Law,Billing,high,pending,,False,False,False,False,True,False
+T880909,2026-10-14 16:03,C1453,Mott & Hume Agency,,normal,solved,,False,False,False,False,False,True
+T880910,2026-10-14 16:58,C1188,"Castellano, Crane & Co",How-to,normal,solved,,False,False,False,False,False,False
+T880911,2026-10-14 17:56,C1370,Ellery & Bramwell CPAs,Bug,urgent,solved,,False,False,False,False,False,False
+T880912,2026-10-14 20:02,C1189,Orwell Calloway Law,How-to,normal,solved,,False,False,False,False,False,False
+T880913,2026-10-14 22:54,C1484,Stanhope Pemberton Engineers,Billing,high,solved,,False,False,False,False,False,False
+T880914,2026-10-15 10:07,C1464,Quill & Corbin LLP,Account change,normal,solved,,False,False,False,False,False,False
+T880915,2026-10-15 10:13,C1433,Lindgren Legal,Billing,normal,solved,,False,False,False,False,False,False
+T880916,2026-10-15 14:12,C1505,Achebe + Pemberton Architects,Billing,low,solved,,False,False,False,False,False,False
+T880917,2026-10-15 14:23,C1368,Riverside Technology Services,,low,solved,,False,False,False,False,False,False
+T880918,2026-10-15 15:40,C1327,Wexler Whitfield Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T880919,2026-10-15 15:49,C1143,Moreau & Whitfield Advisory,,urgent,solved,,False,False,False,False,False,False
+T880920,2026-10-15 18:08,C1384,Yardley Legal,,normal,solved,,False,False,False,False,False,False
+T880921,2026-10-15 20:31,C1404,Underhill Farrow Law,Billing,normal,solved,,False,False,False,False,False,False
+T880922,2026-10-15 23:05,C1059,Ruiz Legal,How-to,normal,solved,,False,False,False,False,False,False
+T880923,2026-10-16 03:32,C1293,Ashby & Wexler LLP,How-to,high,solved,,False,False,False,False,False,False
+T880924,2026-10-16 07:34,C1259,Fairbanks Legal,Bug,high,solved,,False,False,False,False,False,False
+T880925,2026-10-16 09:01,C1252,Zeller Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880926,2026-10-16 09:43,C1422,Sterling & Devlin Advisory,How-to,low,solved,,False,False,False,False,False,False
+T880927,2026-10-16 11:17,C1450,Achebe Engineering,Billing,low,solved,,False,True,False,False,False,False
+T880928,2026-10-16 11:25,C1304,Ashgrove Consulting Group,,normal,solved,,False,False,False,False,False,False
+T880929,2026-10-16 14:11,C1472,Petrov & Whitfield LLP,Billing,normal,solved,,False,False,False,False,False,False
+T880930,2026-10-16 22:26,C1032,Ashgrove Architecture,Billing,high,solved,,False,False,False,False,False,False
+T880931,2026-10-17 09:25,C1197,Northgate Engineering Group,,low,solved,,False,False,False,False,False,False
+T880932,2026-10-17 16:51,C1483,Jessop Lindgren Law,How-to,normal,solved,,False,False,False,False,False,False
+T880933,2026-10-18 13:56,C1348,Ellery Legal,Bug,normal,solved,,False,False,False,False,False,False
+T880934,2026-10-18 17:31,C1346,Yardley & Duarte Advisory,,normal,solved,,False,False,False,False,False,False
+T880935,2026-10-18 19:58,C1414,Lindqvist Strategy,Billing,low,solved,,False,False,False,False,False,False
+T880936,2026-10-19 07:17,C1088,Whitfield Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T880937,2026-10-19 09:06,C1459,Abara + Brandt Architects,How-to,low,solved,,False,False,False,False,False,False
+T880938,2026-10-19 09:51,C1195,Hartwell Engineering,Account change,low,solved,,False,False,False,False,False,False
+T880939,2026-10-19 12:10,C1333,Zeller + Finch Architects,Account change,normal,solved,,False,False,False,False,False,False
+T880940,2026-10-19 15:51,C1173,Calloway Brandt Engineers,How-to,high,solved,,False,False,False,False,False,False
+T880941,2026-10-19 16:42,C1281,Thorne Engineering,Bug,normal,solved,,False,False,False,False,False,False
+T880942,2026-10-19 17:15,C1413,Reyes Consulting,,normal,solved,,False,False,False,False,False,False
+T880943,2026-10-19 19:38,C1271,Lowell IT Partners,,normal,solved,,False,False,False,False,False,False
+T880944,2026-10-20 00:49,C1029,Northgate Creative,Account change,high,solved,,False,False,False,False,False,False
+T880945,2026-10-20 02:09,C1476,Whitfield Media,Account change,low,solved,,False,False,False,False,False,False
+T880946,2026-10-20 09:00,C1261,Wexler & Hume Advisory,Billing,normal,solved,,False,False,False,False,True,False
+T880947,2026-10-20 09:17,C1087,Reyes Kessler Engineers,Billing,low,solved,,False,False,False,False,False,False
+T880948,2026-10-20 09:54,C1420,Orwell & Bramwell CPAs,How-to,normal,solved,,False,False,False,False,False,False
+T880949,2026-10-20 10:35,C1254,Upton & Bell Advisory,Bug,normal,solved,,False,False,False,False,False,False
+T880950,2026-10-20 12:49,C1239,Bell Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880951,2026-10-20 12:57,C1095,Greystone Architecture,,normal,solved,,False,False,False,False,False,False
+T880952,2026-10-20 16:13,C1049,Summit Consulting Group,Bug,normal,solved,,True,False,False,False,False,False
+T880953,2026-10-21 01:07,C1230,Sterling Legal,Bug,normal,solved,,False,False,False,False,False,False
+T880954,2026-10-21 04:06,C1301,Kingsway Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T880955,2026-10-21 08:59,C1321,Riverside Digital,Billing,normal,solved,,False,False,False,False,False,False
+T880956,2026-10-21 09:59,C1387,Langford & Iyer Agency,Account change,normal,solved,,False,False,False,False,False,False
+T880957,2026-10-21 15:13,C1409,Wexler Media,Account change,normal,pending,INV-25811,False,False,False,False,False,False
+T880958,2026-10-21 15:56,C1170,Whitlock Design Partnership,Bug,normal,solved,,False,False,False,False,False,False
+T880959,2026-10-21 17:25,C1335,Hume Brandt IT,How-to,normal,solved,,False,False,False,False,False,False
+T880960,2026-10-21 22:08,C1379,Ruiz & Whitfield CPAs,Account change,low,solved,,False,False,False,False,False,True
+T880961,2026-10-22 04:52,C1424,Thackeray IT Partners,Billing,normal,solved,,False,False,False,False,False,False
+T880962,2026-10-22 06:51,C1428,Upton Stanhope Engineers,How-to,normal,solved,,False,False,False,False,False,False
+T880963,2026-10-22 07:17,C1278,Kowalczyk + Stanhope Architects,How-to,low,solved,,False,False,False,False,False,False
+T880964,2026-10-22 09:17,C1366,Kessler Consulting,,low,solved,,False,False,False,False,False,False
+T880965,2026-10-22 09:26,C1356,Drummond & Iyer Agency,Billing,normal,solved,,False,False,False,False,False,False
+T880966,2026-10-22 10:03,C1464,Quill & Corbin LLP,Billing,normal,solved,,False,True,False,False,False,True
+T880967,2026-10-22 11:10,C1244,Stonegate Partners,Billing,normal,solved,,False,False,False,False,False,False
+T880968,2026-10-22 11:53,C1474,Stanhope Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T880969,2026-10-22 12:11,C1497,Studio Achebe,,low,solved,,False,False,False,False,False,False
+T880970,2026-10-22 16:59,C1296,Mott Strategy,Account change,normal,solved,,False,False,False,False,False,False
+T880971,2026-10-23 01:53,C1324,Radcliffe Media,,urgent,solved,,False,False,False,False,False,False
+T880972,2026-10-23 08:10,C1159,Highmoor Creative,Billing,normal,solved,,False,False,False,False,False,False
+T880973,2026-10-23 08:10,C1491,Jessop & Fairbanks Advisory,,high,solved,,False,False,False,False,False,False
+T880974,2026-10-23 10:07,C1157,Okafor & Bell Agency,How-to,normal,solved,,False,False,False,False,False,False
+T880975,2026-10-23 10:15,C1430,Prior Media,,normal,solved,,False,False,False,False,False,True
+T880976,2026-10-23 10:24,C1420,Orwell & Bramwell CPAs,,normal,solved,,False,False,False,False,False,False
+T880977,2026-10-23 11:44,C1498,Lindqvist Media,How-to,high,solved,,False,False,False,False,False,False
+T880978,2026-10-23 13:15,C1404,Underhill Farrow Law,,normal,solved,,False,False,False,False,False,False
+T880979,2026-10-23 15:09,C1080,Birch Media,How-to,normal,solved,,False,False,False,False,False,False
+T880980,2026-10-23 21:10,C1170,Whitlock Design Partnership,How-to,normal,solved,,False,False,False,False,False,False
+T880981,2026-10-24 03:22,C1259,Fairbanks Legal,How-to,normal,pending,,False,False,False,False,False,False
+T880982,2026-10-24 11:09,C1289,Upton Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880983,2026-10-24 14:28,C1081,"Kowalczyk, Moreau & Co",How-to,low,solved,,False,False,False,False,False,False
+T880984,2026-10-24 15:20,C1393,Clearwater Partners,,normal,solved,,False,False,False,False,False,True
+T880985,2026-10-25 13:54,C1226,Fairview Partners,How-to,normal,solved,,False,False,False,False,False,True
+T880986,2026-10-25 15:07,C1008,Rosales Iyer Engineers,Bug,high,solved,,False,False,False,False,False,False
+T880987,2026-10-25 15:07,C1448,"Pemberton, Iyer & Co",,low,pending,,False,False,False,False,False,False
+T880988,2026-10-26 00:30,C1316,Glover Strategy,How-to,normal,solved,,False,False,False,False,False,False
+T880989,2026-10-26 08:16,C1045,Castell Engineering,,normal,solved,,False,False,False,False,False,False
+T880990,2026-10-26 08:43,C1102,Ashgrove Creative,Bug,low,solved,,False,False,False,False,False,False
+T880991,2026-10-26 09:54,C1485,Radcliffe & Hale Advisory,Bug,low,solved,,False,False,False,False,False,False
+T880992,2026-10-26 10:55,C1487,Summit Technology Services,Account change,high,solved,,False,False,False,False,False,True
+T880993,2026-10-26 12:07,C1382,Delacroix & Vance CPAs,,normal,solved,,False,False,False,False,False,False
+T880994,2026-10-26 15:07,C1251,Fairbanks & Abbott CPAs,,normal,solved,,False,False,False,False,False,False
+T880995,2026-10-26 21:48,C1008,Rosales Iyer Engineers,,low,solved,,False,False,False,False,False,False
+T880996,2026-10-27 08:52,C1161,"Delacroix, Jessop & Co",Bug,normal,pending,,False,False,False,False,False,False
+T880997,2026-10-27 09:28,C1023,Oakfield Partners,How-to,high,solved,,False,False,False,False,False,False
+T880998,2026-10-27 10:38,C1317,Lindqvist & Hume Advisory,How-to,normal,solved,,False,False,False,False,False,False
+T880999,2026-10-27 10:40,C1488,Prior & Quill LLP,,normal,open,,False,False,False,False,False,False
+T881000,2026-10-27 11:04,C1009,Haddad Strategy,Billing,normal,solved,,False,False,False,False,False,False
+T881001,2026-10-27 13:19,C1358,Thackeray Media,Account change,high,pending,,False,False,False,False,False,False
+T881002,2026-10-27 13:50,C1278,Kowalczyk + Stanhope Architects,How-to,normal,solved,,False,False,False,False,False,False
+T881003,2026-10-27 14:30,C1114,Quill & Achebe CPAs,,normal,solved,,False,False,False,False,False,False
+T881004,2026-10-27 15:03,C1364,Stanhope Consulting,How-to,low,solved,,False,False,False,False,False,False
+T881005,2026-10-27 15:07,C1379,Ruiz & Whitfield CPAs,How-to,low,solved,,False,False,False,False,False,False
+T881006,2026-10-27 16:16,C1332,Corbin Upton Engineers,Billing,normal,solved,,False,True,False,False,False,False
+T881007,2026-10-27 17:13,C1127,Mbeki Strategy,How-to,high,solved,,False,False,False,False,False,False
+T881008,2026-10-28 00:22,C1106,Ironbridge Partners,Billing,low,solved,,False,False,False,False,False,False
+T881009,2026-10-28 02:18,C1196,Hale Legal,Billing,normal,solved,,False,False,False,False,False,False
+T881010,2026-10-28 04:35,C1050,Hartwell Strategy,How-to,high,open,,False,False,False,False,False,False
+T881011,2026-10-28 07:32,C1264,Westbrook Engineering Group,Bug,normal,solved,,False,False,False,False,False,False
+T881012,2026-10-28 08:45,C1369,Hume Marsh Law,How-to,normal,solved,,False,False,False,False,False,False
+T881013,2026-10-28 10:56,C1487,Summit Technology Services,Account change,normal,open,,False,False,False,False,False,False
+T881014,2026-10-28 11:29,C1086,Okafor Engineering,How-to,normal,solved,,False,False,False,False,False,False
+T881015,2026-10-28 11:51,C1327,Wexler Whitfield Chartered Accountants,How-to,normal,solved,,False,False,False,False,False,False
+T881016,2026-10-28 13:37,C1282,Eastman & Wexler CPAs,Bug,normal,open,,False,False,False,False,False,False
+T881017,2026-10-28 17:50,C1021,Hollis & Iyer Advisory,Billing,normal,solved,,False,False,False,False,True,False
+T881018,2026-10-28 17:54,C1405,Millbrook Consulting Group,How-to,normal,solved,,False,False,False,False,False,False
+T881019,2026-10-29 06:51,C1460,Lindqvist Consulting,Account change,normal,solved,,False,False,False,False,False,False
+T881020,2026-10-29 09:10,C1325,Hartwell Tan Engineers,How-to,normal,solved,,False,False,True,False,False,False
+T881021,2026-10-29 10:10,C1022,Studio Marsh,,normal,solved,,False,False,False,False,False,False
+T881022,2026-10-29 11:16,C1348,Ellery Legal,Account change,normal,solved,,False,False,False,False,False,False
+T881023,2026-10-29 11:19,C1408,Studio Finch,,normal,solved,,False,False,False,False,False,False
+T881024,2026-10-29 11:50,C1075,Brandt Ashby IT,Billing,normal,pending,INV-25822,False,False,False,False,False,True
+T881025,2026-10-29 14:56,C1428,Upton Stanhope Engineers,How-to,low,solved,,False,False,False,False,False,False
+T881026,2026-10-29 15:08,C1087,Reyes Kessler Engineers,How-to,low,open,,False,False,False,False,False,False
+T881027,2026-10-29 17:51,C1445,Underhill Birch Law,Billing,normal,open,,False,False,False,False,False,False
+T881028,2026-10-30 01:45,C1337,Pemberton Consulting,How-to,normal,solved,,False,False,False,False,False,False
+T881029,2026-10-30 03:59,C1323,Abara & Marsh CPAs,,normal,open,,False,False,False,False,False,False
+T881030,2026-10-30 05:54,C1337,Pemberton Consulting,Bug,normal,pending,,False,False,False,False,False,False
+T881031,2026-10-30 08:02,C1007,Bramwell & Hume Agency,How-to,normal,solved,,False,False,False,False,False,False
+T881032,2026-10-30 08:34,C1185,Oakfield Creative,How-to,high,open,,False,False,False,False,False,False
+T881033,2026-10-30 09:47,C1081,"Kowalczyk, Moreau & Co",Billing,normal,pending,,False,False,False,False,False,False
+T881034,2026-10-30 15:26,C1322,Hume & Ambrose LLP,Account change,normal,solved,,False,False,False,False,False,False
+T881035,2026-10-30 16:39,C1400,"Bell, Fairbanks & Co",How-to,normal,open,,False,False,False,False,False,False
+T881036,2026-10-30 17:24,C1421,Castellano Design Partnership,How-to,high,open,,False,False,False,False,False,False
+T881037,2026-10-31 06:26,C1145,Ashby Consulting,,normal,open,,False,False,False,False,False,False
+T881038,2026-10-31 08:23,C1055,Tan Zeller Chartered Accountants,How-to,normal,open,,False,False,False,False,False,False
+T881039,2026-10-31 09:04,C1161,"Delacroix, Jessop & Co",How-to,normal,solved,INV-25834,False,False,False,False,False,False
+T881040,2026-10-31 11:39,C1290,Gallagher Consulting,How-to,normal,pending,,False,False,False,False,False,False
+T881041,2026-10-31 15:13,C1113,Studio Holloway,,normal,solved,,False,False,False,False,False,False

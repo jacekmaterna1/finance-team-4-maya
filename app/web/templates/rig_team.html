@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, conf %}
+{% from "_thumbs.html" import thumb %}
+{% from "_instr.html" import instr_list %}
+{% block title %}Team · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">Roster</div><h1>The team</h1></div>
+<p class="lead">Four scoped AI agents, each owning one job (the SpaceXSI pattern), and the people who direct them. Each agent follows a written operating manual that only humans edit.</p>
+{% for a in agents %}
+<section class="card roster" id="{{ a.slug }}">
+  <div class="roster-head">
+    {{ thumb(a.slug) }}
+    <div>
+      <div class="kicker">{{ a.kicker }}</div>
+      <h2 class="roster-title"><a href="/agents/{{ a.slug }}">{{ a.step }}. {{ a.name }}</a></h2>
+      <div class="muted">{{ a.desc }}</div>
+    </div>
+    <div class="roster-counts">{% for label, v in a.stats.counts %}<div><div class="stat-sm">{{ v }}</div><div class="kicker kicker-ink">{{ label }}</div></div>{% endfor %}</div>
+  </div>
+  <div class="roster-grid">
+    <div><div class="kicker">Owns</div><p>{{ a.owns }}</p>
+      <div class="kicker">Inputs</div><ul>{% for x in a.inputs %}<li>{{ x }}</li>{% endfor %}</ul>
+      <div class="kicker">Outputs</div><ul>{% for x in a.outputs %}<li>{{ x }}</li>{% endfor %}</ul></div>
+    <div><div class="kicker">Can do alone</div><ul class="can">{% for x in a.alone %}<li>{{ x }}</li>{% endfor %}</ul>
+      <div class="kicker">Must ask a human</div><ul class="ask">{% for x in a.ask %}<li>{{ x }}</li>{% endfor %}</ul>
+      <div class="kicker">Instructions from humans</div>{{ instr_list(a.instructions[:4], actions=false) }}</div>
+    <div><div class="kicker">Last 5 decisions</div>
+      {% for d in a.last %}<div class="lg-item lg-tight"><div class="lg-meta">{{ d.object_id }} {{ badge(d.decision) }} {{ conf(d.confidence) }}</div><div class="small">{{ d.reason|truncate(150) }}</div></div>{% else %}<p class="small muted">None this run.</p>{% endfor %}
+      {% if a.slug == 'controller' %}<div class="note small"><b>Hold override rate: {{ override.label }}</b> ({{ override.detail }}). Maya will check this in a month — over-holding is the right way to be wrong.</div>{% endif %}
+      <p class="small"><a href="/agents/{{ a.slug }}">Agent page, manual and queue &rarr;</a> · <a href="#" data-chat-open="{{ a.slug }}">Talk to @{{ a.slug }}</a></p></div>
+  </div>
+</section>
+{% endfor %}
+<div class="section-title"><div class="kicker">Humans in the loop</div><h2>Who decides</h2></div>
+<section class="humans">
+  {% for h in humans %}<div class="card human-card"><div class="kicker">{{ h.role }}</div><div class="con-title">{{ h.name }}</div><div class="small">{{ h.does }}</div></div>{% endfor %}
+</section>
+{% endblock %}

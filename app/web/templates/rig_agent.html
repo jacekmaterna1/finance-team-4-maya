@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, conf %}
+{% from "_thumbs.html" import thumb %}
+{% from "_instr.html" import instr_list %}
+{% block title %}{{ a.name }} · Ledgerline RIG{% endblock %}
+{% block content %}
+<p class="small"><a href="/team">&larr; Team</a></p>
+<section class="card roster">
+  <div class="roster-head">
+    {{ thumb(a.slug) }}
+    <div><div class="kicker">{{ a.kicker }}</div><h1 class="roster-title">{{ a.step }}. {{ a.name }}</h1><div class="muted">{{ a.desc }}</div></div>
+    <div class="roster-counts">{% for label, v in stats.counts %}<div><div class="stat-sm">{{ v }}</div><div class="kicker kicker-ink">{{ label }}</div></div>{% endfor %}</div>
+  </div>
+  <div class="roster-grid roster-grid-2">
+    <div><div class="kicker">Can do alone</div><ul class="can">{% for x in a.alone %}<li>{{ x }}</li>{% endfor %}</ul></div>
+    <div><div class="kicker">Must ask a human</div><ul class="ask">{% for x in a.ask %}<li>{{ x }}</li>{% endfor %}</ul></div>
+  </div>
+  <p><button class="btn btn-primary" data-chat-open="{{ a.slug }}">Talk to @{{ a.slug }}</button> <a class="btn" href="/direct#manual-{{ a.slug }}">Edit manual / give instruction</a> <a class="btn" href="/rules">Rules (thresholds)</a></p>
+</section>
+<div class="grid2">
+  <section class="card"><div class="kicker">Operating manual · app/engine/manuals/{{ a.manual }}.md</div><div class="prose-sm">{{ manual_html|safe }}</div>
+    <div class="note small">Agents re-read their manuals on every run. Only humans edit them (SpaceXSI pattern).</div></section>
+  <section>
+    <div class="card" id="instructions"><div class="kicker">Standing instructions from humans</div>{{ instr_list(instructions) }}</div>
+    <div class="card" style="margin-top:1rem"><div class="kicker">Live queue for this agent ({{ queue|length }})</div>
+      {% for q in queue %}<div class="lg-item lg-tight"><div class="lg-meta"><a href="{{ q.link }}">{{ q.id }}</a>{% if q.amount %} · {{ q.amount|money }}{% endif %} · {{ q.who }}</div><div class="small muted">{{ q.what|truncate(140) }}</div></div>{% else %}<p class="small muted">Nothing waiting.</p>{% endfor %}
+    </div>
+  </section>
+</div>
+<section class="card" style="margin-top:1rem">
+  <div class="kicker">Last 20 decisions</div>
+  <table class="tbl tbl-mini"><tr><th>When</th><th>Object</th><th>Decision</th><th>Conf.</th><th>Reason</th></tr>
+  {% for d in last %}<tr><td class="small nowrap">{{ d.ts }}</td><td class="small nowrap">{{ d.object_id }}</td><td>{{ badge(d.decision) }}</td><td>{{ conf(d.confidence) }}</td><td class="small">{{ d.reason }}</td></tr>{% else %}<tr><td colspan="5" class="muted">None this run.</td></tr>{% endfor %}
+  </table>
+</section>
+{% endblock %}

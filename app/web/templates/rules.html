@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Rules · Ledgerline{% endblock %}
+{% block content %}
+<h1>Rules</h1>
+<p class="lead">The thresholds the agents work to. Change them here, no engineer needed. Saving re-runs all four agents and shows what changed. Every change is logged.</p>
+{% if errors %}<div class="alert">{% for e in errors %}<div>{{ e }}</div>{% endfor %}</div>{% endif %}
+{% if result %}
+<div class="card result">
+  <h2>What changed</h2>
+  {% if result.changed %}
+    <ul>{% for k, v in result.changed.items() %}<li><b>{{ k }}</b>: {{ v.before }} &rarr; {{ v.after }}</li>{% endfor %}</ul>
+  {% else %}<p>No rule values changed. Agents re-ran anyway.</p>{% endif %}
+  {% if result.rows %}
+  <table class="tbl tbl-mini"><tr><th>Measure</th><th class="num">Before</th><th class="num">After</th></tr>
+  {% for r in result.rows %}<tr><td>{{ r.name }}</td><td class="num">{{ r.before|round(2) if r.before is number else r.before }}</td><td class="num">{{ r.after|round(2) if r.after is number else r.after }}</td></tr>{% endfor %}
+  </table>
+  {% else %}<p class="small muted">No counts moved.</p>{% endif %}
+  {% if result.moved %}
+  <h4>{{ result.moved|length }} item(s) changed decision</h4>
+  <ul class="small">{% for m in result.moved[:30] %}<li><a href="/{{ 'collections' if m.kind == 'invoice' else 'cash' }}#{{ m.id }}">{{ m.id }}</a>: {{ m.before }} &rarr; {{ m.after }}</li>{% endfor %}</ul>
+  {% endif %}
+</div>
+{% endif %}
+<form method="post" action="/rules" class="card rules">
+  {% for f in fields %}
+  <div class="rule">
+    <div class="rule-label"><label for="r-{{ f.key }}"><b>{{ f.label }}</b></label><div class="small muted">{{ f.help }}</div><div class="small mono muted">{{ f.key }}</div></div>
+    <div class="rule-input">
+      {% if f.kind == 'bool' %}
+        <label class="switch"><input type="checkbox" id="r-{{ f.key }}" name="{{ f.key }}" {% if f.value %}checked{% endif %}> on</label>
+      {% elif f.kind == 'number' %}
+        <input class="input" type="number" step="any" id="r-{{ f.key }}" name="{{ f.key }}" value="{{ f.value }}">
+      {% elif f.kind == 'numdict' %}
+        <div class="numdict">{% for sk, sv in f.value.items() %}<label class="small">{{ sk }}<input class="input" type="number" step="any" name="{{ f.key }}.{{ sk }}" value="{{ sv }}"></label>{% endfor %}</div>
+      {% elif f.kind == 'lines' %}
+        <textarea class="input mono" rows="5" id="r-{{ f.key }}" name="{{ f.key }}">{{ f.value|join('\n') }}</textarea>
+      {% elif f.kind == 'text' %}
+        <input class="input" id="r-{{ f.key }}" name="{{ f.key }}" value="{{ f.value }}">
+      {% else %}
+        <textarea class="input mono" rows="5" id="r-{{ f.key }}" name="{{ f.key }}">{{ f.json }}</textarea>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  <div class="rule">
+    <div class="rule-label"><b>Why are you changing this?</b><div class="small muted">Goes in the audit trail.</div></div>
+    <div class="rule-input"><input class="input" name="note" placeholder="e.g. Dana approved a $25 bank-fee write-off threshold"></div>
+  </div>
+  <div class="btnrow"><button class="btn btn-primary">Save and re-run agents</button></div>
+</form>
+{% if history %}
+<section>
+  <h2>Recent rule changes</h2>
+  <table class="tbl tbl-mini"><tr><th>When</th><th>Who</th><th>Note</th><th>Changed</th></tr>
+  {% for h in history %}<tr><td class="small nowrap">{{ h.ts }}</td><td class="small">{{ h.user_email }}</td><td class="small">{{ h.note }}</td>
+    <td class="small">{% for k, v in (h.payload.changed or {}).items() %}<div><b>{{ k }}</b>: {{ v.before }} &rarr; {{ v.after }}</div>{% endfor %}</td></tr>{% endfor %}
+  </table>
+</section>
+{% endif %}
+{% endblock %}

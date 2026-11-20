@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Build log · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">How we worked</div><h1>Build log</h1></div>
+<p class="lead">The 24-hour paper trail, rendered live from the repo: every step, every decision, every word to and from Maya, and where it gets things wrong.</p>
+{% for d in docs %}
+<details class="card doc" id="{{ d.rel|replace('/', '-')|replace('.', '-')|lower }}" {% if d.open %}open{% endif %}>
+  <summary><span class="kicker">{{ d.rel }}</span> <b>{{ d.title }}</b>{% if not d.html %} <span class="pill mid">not written yet</span>{% endif %}</summary>
+  {% if d.html %}<div class="prose-sm">{{ d.html|safe }}</div>{% else %}<p class="small muted">Coming soon.</p>{% endif %}
+</details>
+{% endfor %}
+<script>
+(function () { var h = location.hash.slice(1); if (!h) return; var d = document.getElementById(h); if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); } })();
+</script>
+{% endblock %}

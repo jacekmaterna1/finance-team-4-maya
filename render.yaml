@@ -1,0 +1,37 @@
+# Render blueprint: one web service. Secrets are sync:false (set them in the Render dashboard, never in the repo).
+services:
+  - type: web
+    name: ledgerline-ar-operator
+    runtime: python
+    plan: starter   # the persistent disk below needs a paid instance; on the free plan remove `disk` (state is then ephemeral)
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips="*"
+    healthCheckPath: /healthz
+    autoDeploy: true
+    disk:
+      name: ledgerline-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ALLOWED_DOMAINS
+        value: scaleworks.com
+      - key: ALLOWED_EMAILS
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: BASE_URL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DB_PATH
+        value: /var/data/ledgerline.db
+      - key: RULES_PATH
+        value: /var/data/rules.json
+      - key: DEMO_VIDEO_URL
+        sync: false

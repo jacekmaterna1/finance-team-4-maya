@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "_instr.html" import instr_list %}
+{% block title %}Direct the team · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">Command</div><h1>Direct the team</h1></div>
+<div class="note">Agents re-read their manuals on every run. Only humans edit them (SpaceXSI pattern). An instruction starts as <b>proposed</b>; when a person accepts it, it is appended to the agent's manual under "Standing instructions from humans". Thresholds live on the <a href="/rules">Rules page</a>.</div>
+{% if saved %}<div class="note note-ok">Saved the {{ saved }} manual. Logged in the audit trail. It takes effect on the next run.</div>{% endif %}
+
+<section class="console console-3">
+  <div class="card">
+    <div class="kicker">(a) Give an instruction</div>
+    <form method="post" action="/direct/instructions" class="stack">
+      <select name="agent" class="input">{% for a in agents %}<option value="{{ a.slug }}">{{ a.name }}</option>{% endfor %}</select>
+      <textarea name="text" class="input" rows="3" required minlength="5" placeholder="e.g. From now on cc Dana on any reminder over $40k"></textarea>
+      <button class="btn btn-primary">Propose instruction</button>
+    </form>
+    <p class="small muted">You can also type it in Talk to the team: start with "from now on", "always", "never" or "instruction:".</p>
+  </div>
+  <div class="card">
+    <div class="kicker">(b) Operating manuals</div>
+    <ul>{% for a in agents %}<li><a href="#manual-{{ a.slug }}">{{ a.name }}</a> <span class="small muted">{{ a.manual }}.md · {{ a.manual|length if false else '' }}{{ a.instructions|selectattr('status', 'equalto', 'accepted')|list|length }} accepted instruction(s)</span></li>{% endfor %}</ul>
+  </div>
+  <div class="card">
+    <div class="kicker">(c) Thresholds</div>
+    <p class="small">Auto-apply, write-off threshold, tolerances, reminder schedule, top-50 rule, banned phrases, AI on/off.</p>
+    <a class="btn" href="/rules">Open Rules</a> <button class="btn" data-chat-open="team">Change by chat</button>
+  </div>
+</section>
+
+<section class="card" id="instructions">
+  <div class="kicker">All instructions</div>
+  {{ instr_list(all_instr, show_agent=true) }}
+</section>
+
+{% for a in agents %}
+<details class="card manual-card" id="manual-{{ a.slug }}" {% if saved == a.slug %}open{% endif %}>
+  <summary><span class="kicker">Manual</span> <b>{{ a.name }}</b> <span class="small muted">app/engine/manuals/{{ a.manual }}.md</span></summary>
+  <form method="post" action="/agents/{{ a.slug }}/manual" class="stack">
+    <textarea name="text" class="input mono" rows="18">{{ a.manual }}</textarea>
+    <input name="note" class="input" placeholder="Why are you changing it? (goes in the audit trail)">
+    <button class="btn btn-primary">Save manual</button>
+  </form>
+</details>
+{% endfor %}
+{% endblock %}

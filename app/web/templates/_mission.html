@@ -1,0 +1,22 @@
+{% macro mission(M, P, m, live) -%}
+<section class="card mission">
+  <div class="mission-grid">
+    <div>
+      <div class="kicker">Mission · why this team exists</div>
+      <h2 class="mission-title">{{ M.title }}</h2>
+      <p class="mission-body">{{ M.body }}</p>
+      <div class="kicker kicker-ink">Our promise</div>
+      <div class="promises">{% for p in M.promises %}<span class="promise">{{ p }}</span>{% endfor %}</div>
+    </div>
+    <div>
+      <div class="kicker">Where we are</div>
+      <ol class="track">
+        {% for st, label, when in P %}
+        <li class="tk tk-{{ st }}"><span class="tk-dot"></span><span class="tk-when">{{ when }}</span><span class="tk-label">{{ label }}</span></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  <div class="mission-today">Today: <b>{{ (m.overdue_already_paid or 0)|money }}</b> already received would have been chased · <b>{{ (m.overdue_disputed or 0)|money }}</b> held in disputes · <b>{{ live.drafts_pending }}</b> drafts waiting for Priya</div>
+</section>
+{%- endmacro %}

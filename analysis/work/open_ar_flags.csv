@@ -1,0 +1,118 @@
+invoice_id,customer_id,customer_name,type,issue_date,due_date,service_period_months,amount,currency,status,paid_date,payment_method,amt,dpd,top50,arr,account_manager,unapplied_cash_pid,t_n,t_open,t_billing,t_urgent,t_dispute,t_paid,t_escal,t_ids,all_billing,all_dispute,stale_billing_contact,active_billing_contacts
+INV-25433,C1029,Northgate Creative,subscription,2026-06-04,2026-06-04,1,799.00,USD,payment_failed,,card,799.0,149,False,9588.0,Hannah Drummond,,1,0,0,1,0,0,0,T880944,0.0,0.0,False,1
+INV-25469,C1469,Kingsway Engineering Group,subscription,2026-06-12,2026-07-12,3,5100.00,USD,overdue,,ach,5100.0,111,False,20400.0,Nadia Sinclair,PAY-65805,1,1,0,0,0,0,0,T880184,1.0,0.0,False,1
+INV-25470,C1477,Hollis Nair Engineers,subscription,2026-06-12,2026-06-12,1,517.00,USD,payment_failed,,card,517.0,141,False,6204.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25539,C1439,Banerjee Petrov Engineers,subscription,2026-07-01,2026-07-31,3,2652.00,USD,overdue,,ach,2652.0,92,False,10608.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25622,C1486,Studio Nakamura,subscription,2026-07-18,2026-07-18,1,517.00,USD,payment_failed,,card,517.0,105,False,6204.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25662,C1254,Upton & Bell Advisory,subscription,2026-07-27,2026-08-26,12,44064.00,USD,overdue,,wire,44064.0,66,True,44064.0,Hannah Drummond,,1,0,0,0,0,0,0,T880949,1.0,0.0,False,1
+INV-25708,C1341,"Quill, Mott & Co",subscription,2026-08-09,2026-08-09,1,1632.00,USD,payment_failed,,card,1632.0,83,False,19584.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25709,C1342,Moreau & Crane Agency,subscription,2026-08-09,2026-08-09,1,658.00,USD,payment_failed,,card,658.0,83,False,7896.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25711,C1100,Oyelaran Devlin Engineers,subscription,2026-08-10,2026-09-09,3,2820.00,USD,overdue,,ach,2820.0,52,False,11280.0,Maria Yardley,,1,1,0,0,0,0,0,T880759,2.0,0.0,False,1
+INV-25712,C1261,Wexler & Hume Advisory,subscription,2026-08-10,2026-09-09,3,4080.00,USD,overdue,,wire,4080.0,52,False,16320.0,Nadia Upton,,1,0,1,0,1,0,1,T880946,1.0,1.0,True,1
+INV-25718,C1030,Mercer & Banerjee LLP,subscription,2026-08-12,2026-09-11,3,3876.00,USD,overdue,,wire,3876.0,50,False,15504.0,Nadia Upton,,0,0,0,0,0,0,0,,2.0,0.0,True,1
+INV-25730,C1264,Westbrook Engineering Group,subscription,2026-08-14,2026-09-13,12,47904.00,USD,overdue,,ach,47904.0,48,True,47904.0,Nadia Upton,,3,2,2,1,0,0,0,"T880180,T880739,T881011",3.0,0.0,False,1
+INV-25750,C1266,Thackeray Accounting,subscription,2026-08-18,2026-09-17,12,7896.00,USD,overdue,,ach,7896.0,44,False,7896.0,Nadia Upton,,2,1,1,0,1,0,1,"T880453,T880856",1.0,1.0,False,1
+INV-25757,C1152,Ellery Consulting,subscription,2026-08-21,2026-09-20,12,13056.00,USD,overdue,,wire,13056.0,41,False,13056.0,Maria Yardley,,0,0,0,0,0,0,0,,2.0,0.0,False,1
+INV-25764,C1045,Castell Engineering,subscription,2026-08-23,2026-09-22,3,6324.00,USD,overdue,,ach,6324.0,39,False,25296.0,Hannah Drummond,,2,0,1,0,0,0,1,"T880849,T880989",1.0,0.0,False,1
+INV-25765,C1154,Okafor & Nakamura LLP,subscription,2026-08-23,2026-09-22,12,46848.00,USD,overdue,,wire,46848.0,39,True,46848.0,Nadia Sinclair,,2,0,1,1,0,0,1,"T880816,T880831",1.0,0.0,False,1
+INV-25769,C1492,Drummond Consulting,subscription,2026-08-24,2026-08-24,1,658.00,USD,payment_failed,,card,658.0,68,False,7896.0,Hannah Drummond,,0,0,0,0,0,0,0,,1.0,1.0,False,1
+INV-25784,C1273,Jessop & Orwell Agency,subscription,2026-08-26,2026-09-25,12,62688.00,USD,overdue,,ach,62688.0,36,True,62688.0,Nadia Sinclair,PAY-65750,1,0,0,0,0,0,0,T880829,0.0,0.0,False,1
+INV-25787,C1073,Riverside Partners,subscription,2026-08-27,2026-09-26,12,60576.00,USD,overdue,,wire,60576.0,35,True,60576.0,Nadia Upton,,1,0,1,0,0,0,0,T880886,2.0,0.0,False,1
+INV-25793,C1255,Ashgrove Partners,subscription,2026-08-28,2026-08-28,1,1088.00,USD,payment_failed,,card,1088.0,64,False,13056.0,Hannah Drummond,,1,0,1,0,0,0,0,T880830,1.0,0.0,False,1
+INV-25803,C1375,Glover Engineering,subscription,2026-09-02,2026-09-02,1,1836.00,USD,payment_failed,,card,1836.0,59,False,22032.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25806,C1126,Brandt & Lowell CPAs,subscription,2026-09-03,2026-10-03,3,6324.00,USD,overdue,,ach,6324.0,28,False,25296.0,Nadia Sinclair,PAY-65766,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25811,C1409,Wexler Media,subscription,2026-09-04,2026-10-04,1,1224.00,USD,overdue,,ach,1224.0,27,False,14688.0,Hannah Drummond,,1,1,0,0,0,0,0,T880957,0.0,0.0,False,1
+INV-25822,C1075,Brandt Ashby IT,subscription,2026-09-07,2026-10-07,12,26112.00,USD,overdue,,wire,26112.0,24,False,26112.0,Hannah Drummond,,2,1,1,0,0,0,0,"T880871,T881024",1.0,0.0,False,1
+INV-25825,C1278,Kowalczyk + Stanhope Architects,subscription,2026-09-07,2026-09-07,1,705.00,USD,payment_failed,,card,705.0,54,False,8460.0,Maria Yardley,,2,0,0,0,0,0,0,"T880963,T881002",1.0,1.0,False,1
+INV-25834,C1161,"Delacroix, Jessop & Co",subscription,2026-09-09,2026-10-09,12,41568.00,USD,overdue,,check,41568.0,22,False,41568.0,Maria Yardley,,3,2,0,1,0,0,0,"T880201,T880996,T881039",1.0,1.0,False,1
+INV-25845,C1188,"Castellano, Crane & Co",subscription,2026-09-11,2026-10-11,3,3672.00,USD,overdue,,wire,3672.0,20,False,14688.0,Maria Yardley,PAY-65806,1,0,0,0,0,0,0,T880910,0.0,0.0,False,1
+INV-25848,C1455,Okafor Legal,subscription,2026-09-11,2026-10-11,12,19584.00,USD,overdue,,ach,19584.0,20,False,19584.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25852,C1469,Kingsway Engineering Group,subscription,2026-09-12,2026-10-12,3,5100.00,USD,overdue,,ach,5100.0,19,False,20400.0,Nadia Sinclair,PAY-65805,1,1,0,0,0,0,0,T880184,1.0,0.0,False,1
+INV-25854,C1022,Studio Marsh,subscription,2026-09-13,2026-10-13,3,1410.00,USD,overdue,,ach,1410.0,18,False,5640.0,Nadia Sinclair,,2,1,0,0,1,0,1,"T880643,T881021",1.0,1.0,False,1
+INV-25858,C1316,Glover Strategy,subscription,2026-09-13,2026-10-13,3,9600.00,USD,overdue,,wire,9600.0,18,False,38400.0,Maria Yardley,,1,0,0,0,0,0,0,T880988,0.0,0.0,False,1
+INV-25859,C1411,Voss & Kowalczyk Agency,subscription,2026-09-13,2026-10-13,12,13056.00,USD,overdue,,ach,13056.0,18,False,13056.0,Nadia Sinclair,,1,0,0,0,0,0,0,T880823,0.0,0.0,False,1
+INV-25862,C1361,Thornfield Consulting Group,subscription,2026-09-14,2026-10-14,12,39456.00,USD,overdue,,ach,39456.0,17,False,39456.0,Nadia Upton,,1,0,0,0,0,0,0,T880857,0.0,0.0,False,1
+INV-25863,C1412,Banerjee Design Partnership,subscription,2026-09-14,2026-10-14,3,5100.00,USD,overdue,,ach,5100.0,17,False,20400.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25867,C1346,Yardley & Duarte Advisory,subscription,2026-09-15,2026-10-15,1,564.00,USD,overdue,,ach,564.0,16,False,6768.0,Maria Yardley,PAY-65808,1,0,0,0,0,0,0,T880934,0.0,0.0,False,1
+INV-25869,C1457,Hollis & Stanhope Advisory,subscription,2026-09-15,2026-10-15,12,22848.00,USD,overdue,,wire,22848.0,16,False,22848.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25873,C1282,Eastman & Wexler CPAs,subscription,2026-09-16,2026-10-16,12,43680.00,USD,overdue,,ach,43680.0,15,True,43680.0,Nadia Sinclair,,1,1,0,0,0,0,0,T881016,0.0,0.0,False,1
+INV-25881,C1217,Corbin Media,subscription,2026-09-18,2026-10-18,3,2397.00,USD,overdue,,ach,2397.0,13,False,9588.0,Hannah Drummond,,0,0,0,0,0,0,0,,1.0,1.0,False,1
+INV-25883,C1284,Sinclair & Vance LLP,subscription,2026-09-18,2026-10-18,12,16320.00,USD,overdue,,ach,16320.0,13,False,16320.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,1.0,False,1
+INV-25885,C1077,Riverside Consulting Group,subscription,2026-09-19,2026-10-19,12,17136.00,USD,overdue,,ach,17136.0,12,False,17136.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25890,C1446,Oyelaran Strategy,subscription,2026-09-19,2026-10-19,3,4692.00,USD,overdue,,ach,4692.0,12,False,18768.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,True,1
+INV-25897,C1407,Ambrose & Lowell Advisory,subscription,2026-09-21,2026-10-21,1,658.00,USD,overdue,,ach,658.0,10,False,7896.0,Maria Yardley,,2,2,0,1,0,0,0,"T880152,T880474",0.0,0.0,False,1
+INV-25898,C1437,Harbor Engineering Group,subscription,2026-09-21,2026-10-21,3,1833.00,USD,overdue,,ach,1833.0,10,False,7332.0,Nadia Sinclair,,1,1,0,0,0,0,0,T880229,1.0,0.0,False,1
+INV-25902,C1063,Crane IT Partners,subscription,2026-09-24,2026-10-24,3,3060.00,USD,overdue,,ach,3060.0,7,False,12240.0,Maria Yardley,,1,1,0,0,0,0,0,T880058,0.0,0.0,False,1
+INV-25906,C1504,Rosales Engineering,subscription,2026-09-24,2026-10-24,12,16320.00,USD,overdue,,wire,16320.0,7,False,16320.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25907,C1504,Rosales Engineering,implementation,2026-09-24,2026-10-24,1,2500.00,USD,overdue,,wire,2500.0,7,False,16320.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25912,C1353,Ellery Achebe Chartered Accountants,subscription,2026-09-25,2026-09-25,1,799.00,USD,payment_failed,,card,799.0,36,False,9588.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,True,1
+INV-25923,C1470,Abbott Design Partnership,subscription,2026-09-27,2026-10-27,3,4692.00,USD,overdue,,wire,4692.0,4,False,18768.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25926,C1379,Ruiz & Whitfield CPAs,subscription,2026-10-01,2026-10-01,1,846.00,USD,payment_failed,,card,846.0,30,False,10152.0,Nadia Upton,,4,0,0,1,0,0,1,"T880813,T880834,T880960,T881005",0.0,0.0,False,1
+INV-25927,C1439,Banerjee Petrov Engineers,subscription,2026-10-01,2026-10-31,3,2652.00,USD,open,,ach,2652.0,0,False,10608.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25928,C1454,Tan Accounting,subscription,2026-10-01,2026-10-01,1,611.00,USD,payment_failed,,card,611.0,30,False,7332.0,Maria Yardley,,2,0,0,1,0,0,0,"T880853,T880896",0.0,0.0,False,1
+INV-25929,C1459,Abara + Brandt Architects,subscription,2026-10-01,2026-10-31,3,5712.00,USD,open,,ach,5712.0,0,False,22848.0,Nadia Upton,,1,0,0,0,0,0,0,T880937,1.0,0.0,False,1
+INV-25932,C1169,Ambrose & Petrov LLP,subscription,2026-10-02,2026-11-01,12,21216.00,USD,open,,wire,21216.0,-1,False,21216.0,Nadia Sinclair,,1,0,0,0,0,0,0,T880839,1.0,1.0,False,1
+INV-25933,C1170,Whitlock Design Partnership,subscription,2026-10-02,2026-11-01,12,31824.00,USD,open,,check,31824.0,-1,False,31824.0,Hannah Drummond,,3,1,0,0,0,0,0,"T880302,T880958,T880980",0.0,0.0,False,1
+INV-25935,C1350,Clearwater Consulting Group,subscription,2026-10-02,2026-11-01,3,2856.00,USD,open,,ach,2856.0,-1,False,11424.0,Nadia Sinclair,,1,0,0,1,0,0,1,T880825,1.0,0.0,False,1
+INV-25937,C1223,Studio Zeller,subscription,2026-10-03,2026-11-02,1,987.00,USD,open,,ach,987.0,-2,False,11844.0,Maria Yardley,PAY-65807,1,0,1,1,0,0,0,T880877,1.0,0.0,True,1
+INV-25941,C1127,Mbeki Strategy,subscription,2026-10-04,2026-11-03,1,1128.00,USD,open,,ach,1128.0,-3,False,13536.0,Nadia Upton,,1,0,0,1,0,0,0,T881007,0.0,0.0,False,1
+INV-25943,C1289,Upton Strategy,subscription,2026-10-04,2026-11-03,12,19584.00,USD,open,,check,19584.0,-3,False,19584.0,Nadia Sinclair,,2,1,0,0,0,0,0,"T880753,T880982",0.0,0.0,False,1
+INV-25944,C1399,Ambrose Strategy,subscription,2026-10-04,2026-11-03,3,2115.00,USD,open,,ach,2115.0,-3,False,8460.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25945,C1409,Wexler Media,subscription,2026-10-04,2026-11-03,1,1224.00,USD,open,,ach,1224.0,-3,False,14688.0,Hannah Drummond,,1,1,0,0,0,0,0,T880957,0.0,0.0,False,1
+INV-25947,C1172,Jessop Strategy,subscription,2026-10-05,2026-11-04,12,21216.00,USD,open,,ach,21216.0,-4,False,21216.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25948,C1195,Hartwell Engineering,subscription,2026-10-05,2026-11-04,3,4080.00,USD,open,,ach,4080.0,-4,False,16320.0,Nadia Upton,,1,0,0,0,0,0,0,T880938,0.0,0.0,False,1
+INV-25950,C1505,Achebe + Pemberton Architects,subscription,2026-10-05,2026-11-04,12,67968.00,USD,open,,wire,67968.0,-4,True,67968.0,Nadia Upton,,2,0,1,1,0,0,0,"T880863,T880916",1.0,0.0,False,1
+INV-25951,C1505,Achebe + Pemberton Architects,implementation,2026-10-05,2026-11-04,1,8000.00,USD,open,,wire,8000.0,-4,True,67968.0,Nadia Upton,PAY-65796,2,0,1,1,0,0,0,"T880863,T880916",1.0,0.0,False,1
+INV-25952,C1135,Birch Petrov Engineers,subscription,2026-10-06,2026-11-05,3,3876.00,USD,open,,wire,3876.0,-5,False,15504.0,Hannah Drummond,,1,0,0,0,1,1,0,T880832,1.0,2.0,False,1
+INV-25953,C1247,Hartwell Legal,subscription,2026-10-06,2026-11-05,3,9384.00,USD,open,,ach,9384.0,-5,False,37536.0,Nadia Upton,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25956,C1364,Stanhope Consulting,subscription,2026-10-06,2026-11-05,12,21216.00,USD,open,,wire,21216.0,-5,False,21216.0,Nadia Sinclair,,1,0,0,0,0,0,0,T881004,1.0,0.0,False,1
+INV-25958,C1471,Tan & Brandt Technology,subscription,2026-10-06,2026-11-05,3,2397.00,USD,open,,ach,2397.0,-5,False,9588.0,Hannah Drummond,,0,0,0,0,0,0,0,,1.0,0.0,False,1
+INV-25959,C1023,Oakfield Partners,subscription,2026-10-07,2026-11-06,12,31008.00,USD,open,,wire,31008.0,-6,False,31008.0,Maria Yardley,,1,0,0,1,0,0,0,T880997,0.0,1.0,False,1
+INV-25961,C1094,Clearwater Digital,subscription,2026-10-07,2026-11-06,1,2856.00,USD,open,,ach,2856.0,-6,False,34272.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25964,C1460,Lindqvist Consulting,subscription,2026-10-07,2026-11-06,12,23664.00,USD,open,,wire,23664.0,-6,False,23664.0,Hannah Drummond,,1,0,0,0,0,0,0,T881019,1.0,0.0,False,1
+INV-25966,C1024,Lindqvist Design Partnership,subscription,2026-10-08,2026-11-07,12,7332.00,USD,open,,wire,7332.0,-7,False,7332.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25967,C1025,Ambrose Ashby Law,subscription,2026-10-08,2026-11-07,12,10608.00,USD,open,,wire,10608.0,-7,False,10608.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,True,1
+INV-25969,C1110,Bramwell Sinclair Chartered Accountants,subscription,2026-10-08,2026-10-08,1,611.00,USD,payment_failed,,card,611.0,23,False,7332.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,True,1
+INV-25970,C1199,Millbrook Architecture,subscription,2026-10-08,2026-11-07,3,5916.00,USD,open,,ach,5916.0,-7,False,23664.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25971,C1233,Rosales Consulting,subscription,2026-10-08,2026-11-07,1,2448.00,USD,open,,ach,2448.0,-7,False,29376.0,Hannah Drummond,,1,1,0,0,0,0,0,T880099,1.0,0.0,False,1
+INV-25972,C1376,Reyes Strategy,subscription,2026-10-08,2026-11-07,1,329.00,USD,open,,ach,329.0,-7,False,3948.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25973,C1426,Eastman Engineering,subscription,2026-10-08,2026-10-08,3,3264.00,USD,payment_failed,,card,3264.0,23,False,13056.0,Hannah Drummond,,0,0,0,0,0,0,0,,1.0,0.0,False,1
+INV-25975,C1341,"Quill, Mott & Co",subscription,2026-10-09,2026-10-09,1,1632.00,USD,payment_failed,,card,1632.0,22,False,19584.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25979,C1463,Redfern Architecture,subscription,2026-10-10,2026-11-09,1,564.00,USD,open,,ach,564.0,-9,False,6768.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25981,C1473,Thackeray Consulting,subscription,2026-10-10,2026-11-09,3,2652.00,USD,open,,ach,2652.0,-9,False,10608.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25982,C1173,Calloway Brandt Engineers,subscription,2026-10-11,2026-11-10,12,9792.00,USD,open,,ach,9792.0,-10,False,9792.0,Nadia Sinclair,,1,0,0,1,0,0,0,T880940,0.0,0.0,False,1
+INV-25984,C1448,"Pemberton, Iyer & Co",subscription,2026-10-11,2026-11-10,3,2397.00,USD,open,,ach,2397.0,-10,False,9588.0,Hannah Drummond,,1,1,0,0,0,0,0,T880987,0.0,0.0,False,1
+INV-25985,C1078,"Yates, Oyelaran & Co",subscription,2026-10-12,2026-11-11,3,19368.00,USD,open,,ach,19368.0,-11,True,77472.0,Maria Yardley,,3,2,0,0,0,0,0,"T880002,T880859,T880888",0.0,0.0,False,1
+INV-25989,C1292,Thornfield Digital,subscription,2026-10-12,2026-11-11,12,19584.00,USD,open,,ach,19584.0,-11,False,19584.0,Nadia Upton,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-25991,C1026,Greystone Technology Services,subscription,2026-10-13,2026-11-12,12,18768.00,USD,open,,ach,18768.0,-12,False,18768.0,Nadia Sinclair,,0,0,0,0,0,0,0,,1.0,0.0,False,1
+INV-25994,C1293,Ashby & Wexler LLP,subscription,2026-10-13,2026-11-12,3,1692.00,USD,open,,ach,1692.0,-12,False,6768.0,Maria Yardley,,1,0,0,1,0,0,0,T880923,0.0,0.0,False,1
+INV-25996,C1325,Hartwell Tan Engineers,subscription,2026-10-14,2026-11-13,3,4896.00,USD,open,,ach,4896.0,-13,False,19584.0,Maria Yardley,,2,0,0,0,0,1,0,"T880843,T881020",0.0,0.0,False,1
+INV-25999,C1139,Northgate Partners,subscription,2026-10-15,2026-11-14,3,4080.00,USD,open,,wire,4080.0,-14,False,16320.0,Hannah Drummond,,1,0,0,0,0,0,0,T880833,0.0,0.0,False,1
+INV-26000,C1346,Yardley & Duarte Advisory,subscription,2026-10-15,2026-11-14,1,564.00,USD,open,,ach,564.0,-14,False,6768.0,Maria Yardley,,1,0,0,0,0,0,0,T880934,0.0,0.0,False,1
+INV-26001,C1483,Jessop Lindgren Law,subscription,2026-10-15,2026-11-14,3,1410.00,USD,open,,ach,1410.0,-14,False,5640.0,Nadia Upton,,1,0,0,0,0,0,0,T880932,0.0,0.0,False,1
+INV-26004,C1079,Bridgewater Digital,subscription,2026-10-16,2026-11-15,3,4284.00,USD,open,,wire,4284.0,-15,False,17136.0,Nadia Upton,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26005,C1319,Hume Accounting,subscription,2026-10-16,2026-10-16,1,282.00,USD,payment_failed,,card,282.0,15,False,3384.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26006,C1507,Hale & Ruiz Agency,subscription,2026-10-16,2026-11-15,12,13872.00,USD,open,,ach,13872.0,-15,False,13872.0,Nadia Upton,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26007,C1507,Hale & Ruiz Agency,implementation,2026-10-16,2026-11-15,1,2500.00,USD,open,,ach,2500.0,-15,False,13872.0,Nadia Upton,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26009,C1413,Reyes Consulting,subscription,2026-10-17,2026-11-16,12,51072.00,USD,open,,check,51072.0,-16,True,51072.0,Nadia Upton,,1,0,0,0,0,0,0,T880942,1.0,1.0,False,1
+INV-26014,C1174,Ashby & Castellano Agency,subscription,2026-10-18,2026-11-17,12,21216.00,USD,open,,ach,21216.0,-17,False,21216.0,Maria Yardley,,1,0,0,0,0,0,0,T880842,0.0,0.0,False,1
+INV-26016,C1388,Lowell Design Partnership,subscription,2026-10-18,2026-11-17,3,3264.00,USD,open,,wire,3264.0,-17,False,13056.0,Nadia Upton,,1,0,0,0,0,0,0,T880869,0.0,0.0,False,1
+INV-26017,C1414,Lindqvist Strategy,subscription,2026-10-18,2026-11-17,12,22848.00,USD,open,,check,22848.0,-17,False,22848.0,Hannah Drummond,,1,0,1,0,0,0,0,T880935,1.0,0.0,False,1
+INV-26019,C1080,Birch Media,subscription,2026-10-19,2026-11-18,12,78528.00,USD,open,,check,78528.0,-18,True,78528.0,Nadia Upton,,1,0,0,0,0,0,0,T880979,1.0,0.0,False,1
+INV-26021,C1296,Mott Strategy,subscription,2026-10-19,2026-11-18,12,37344.00,USD,open,,ach,37344.0,-18,False,37344.0,Nadia Sinclair,,1,0,0,0,0,0,0,T880970,0.0,0.0,False,1
+INV-26023,C1462,Mercer & Ellery CPAs,subscription,2026-10-19,2026-11-18,12,21216.00,USD,open,,check,21216.0,-18,False,21216.0,Nadia Sinclair,,0,0,0,0,0,0,0,,1.0,0.0,True,1
+INV-26024,C1118,Petrov Design Partnership,subscription,2026-10-20,2026-11-19,3,2115.00,USD,open,,ach,2115.0,-19,False,8460.0,Nadia Sinclair,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26026,C1415,Moreau Strategy,subscription,2026-10-20,2026-11-19,12,12240.00,USD,open,,ach,12240.0,-19,False,12240.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,True,1
+INV-26029,C1407,Ambrose & Lowell Advisory,subscription,2026-10-21,2026-11-20,1,658.00,USD,open,,ach,658.0,-20,False,7896.0,Maria Yardley,,2,2,0,1,0,0,0,"T880152,T880474",0.0,0.0,False,1
+INV-26032,C1203,Moreau Legal,subscription,2026-10-23,2026-11-22,3,5916.00,USD,open,,ach,5916.0,-22,False,23664.0,Hannah Drummond,,2,1,1,0,1,1,0,"T880818,T880858",1.0,2.0,False,1
+INV-26033,C1230,Sterling Legal,subscription,2026-10-23,2026-11-22,3,4488.00,USD,open,,ach,4488.0,-22,False,17952.0,Hannah Drummond,,1,0,0,0,0,0,0,T880953,0.0,0.0,False,1
+INV-26037,C1027,Voss Accounting,subscription,2026-10-25,2026-11-24,3,4080.00,USD,open,,ach,4080.0,-24,False,16320.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26038,C1081,"Kowalczyk, Moreau & Co",subscription,2026-10-25,2026-11-24,12,44064.00,USD,open,,ach,44064.0,-24,True,44064.0,Maria Yardley,,2,1,1,0,1,0,0,"T880983,T881033",1.0,2.0,False,1
+INV-26046,C1484,Stanhope Pemberton Engineers,subscription,2026-10-25,2026-11-24,3,5916.00,USD,open,,wire,5916.0,-24,False,23664.0,Hannah Drummond,,2,0,1,1,0,0,0,"T880811,T880913",1.0,2.0,False,1
+INV-26048,C1012,Iyer Whitlock Engineers,subscription,2026-10-26,2026-11-25,1,799.00,USD,open,,ach,799.0,-25,False,9588.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26050,C1403,Clearwater Creative,subscription,2026-10-26,2026-11-25,3,5508.00,USD,open,,wire,5508.0,-25,False,22032.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26053,C1179,Greystone Engineering Group,subscription,2026-10-27,2026-11-26,3,11712.00,USD,open,,ach,11712.0,-26,True,46848.0,Nadia Sinclair,,0,0,0,0,0,0,0,,2.0,1.0,False,1
+INV-26056,C1366,Kessler Consulting,subscription,2026-10-27,2026-11-26,3,15936.00,USD,open,,wire,15936.0,-26,True,63744.0,Nadia Upton,,1,0,0,0,0,0,0,T880964,0.0,0.0,False,1
+INV-26057,C1390,Upton & Tavish Advisory,subscription,2026-10-27,2026-11-26,3,3468.00,USD,open,,ach,3468.0,-26,False,13872.0,Hannah Drummond,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26058,C1508,Yates & Prior CPAs,subscription,2026-10-27,2026-11-26,12,24480.00,USD,open,,ach,24480.0,-26,False,24480.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1
+INV-26059,C1508,Yates & Prior CPAs,implementation,2026-10-27,2026-11-26,1,2500.00,USD,open,,ach,2500.0,-26,False,24480.0,Maria Yardley,,0,0,0,0,0,0,0,,0.0,0.0,False,1

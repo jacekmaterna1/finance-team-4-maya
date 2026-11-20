@@ -1,0 +1,72 @@
+<button class="lj-launch" id="lj-launch" type="button" aria-controls="lj-chat"><span class="kicker">Talk to the team</span><span class="lj-launch-sub">Ask, instruct, change a rule</span></button>
+<section class="lj-chat" id="lj-chat" hidden data-agent="{{ chat_agent if chat_agent is defined else 'team' }}">
+  <div class="lj-head">
+    <div>
+      <div class="kicker">TALK TO THE TEAM</div>
+      <div class="lj-title">Finance agents</div>
+    </div>
+    <select id="lj-agent" class="lj-select" title="Who are you talking to?">
+      <option value="team">@team</option>
+      {% for a in agents_meta %}<option value="{{ a.slug }}">@{{ a.slug }} · {{ a.name }}</option>{% endfor %}
+    </select>
+    <button type="button" class="lj-x" id="lj-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="lj-msgs" id="lj-msgs">
+    <div class="lj-msg lj-bot"><div class="lj-who">team · answered by rules</div>Hi, we're the Ledgerline finance agents. Ask about a customer or invoice, ask for status, change a rule, or give us an instruction.
+      <div class="lj-sugg">
+        <button type="button">why is Riverside held?</button><button type="button">@cash what about Kingsway</button>
+        <button type="button">status</button><button type="button">what needs me today</button>
+        <button type="button">set writeoff_threshold to 50</button><button type="button">from now on cc Dana on anything over $40k</button>
+      </div>
+    </div>
+  </div>
+  <form class="lj-compose" id="lj-form">
+    <textarea id="lj-input" rows="2" placeholder="Ask the team... (@cash, @context, @controller, @collections)"></textarea>
+    <button class="btn btn-primary" type="submit">Send</button>
+  </form>
+</section>
+<script>
+(function () {
+  var panel = document.getElementById('lj-chat'), launch = document.getElementById('lj-launch');
+  var msgs = document.getElementById('lj-msgs'), input = document.getElementById('lj-input');
+  var sel = document.getElementById('lj-agent');
+  sel.value = panel.getAttribute('data-agent') || 'team';
+  function open() { panel.hidden = false; launch.hidden = true; input.focus(); }
+  launch.onclick = open;
+  document.getElementById('lj-close').onclick = function () { panel.hidden = true; launch.hidden = false; };
+  document.querySelectorAll('[data-chat-open]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); if (b.getAttribute('data-chat-open')) sel.value = b.getAttribute('data-chat-open'); open(); }); });
+  function el(tag, cls, text) { var x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; }
+  function add(role, who, text) { var m = el('div', 'lj-msg ' + (role === 'me' ? 'lj-me' : 'lj-bot')); m.appendChild(el('div', 'lj-who', who)); m.appendChild(el('div', 'lj-text', text)); msgs.appendChild(m); msgs.scrollTop = msgs.scrollHeight; return m; }
+  function render(res) {
+    var m = add('bot', '@' + (res.agent || 'team') + ' · answered by ' + (res.mode === 'claude' ? 'Claude' : 'rules'), res.reply);
+    (res.cards || []).forEach(function (c) {
+      var card = el('div', 'lj-card');
+      var t = el(c.link ? 'a' : 'div', 'lj-card-title', c.title); if (c.link) t.href = c.link; card.appendChild(t);
+      (c.lines || []).forEach(function (l) { card.appendChild(el('div', 'lj-card-line', l)); });
+      m.appendChild(card);
+    });
+    (res.actions || []).forEach(function (a) {
+      if (a.type !== 'apply_rule') return;
+      var b = el('button', 'btn btn-primary btn-sm lj-act', a.label); b.type = 'button';
+      b.onclick = function () { b.disabled = true; b.textContent = 'Applying...';
+        fetch('/api/rules/apply', {method: 'POST', headers: {'Content-Type': 'application/json'}, credentials: 'same-origin', body: JSON.stringify({rule: a.rule, value: a.value})})
+          .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.detail || 'failed'); return j; }); })
+          .then(function (j) { b.textContent = 'Applied'; render(j); })
+          .catch(function (e) { b.disabled = false; b.textContent = a.label; add('bot', 'error', e.message); });
+      };
+      m.appendChild(b);
+    });
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function send(text) {
+    if (!text.trim()) return;
+    add('me', 'you', text); input.value = '';
+    fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, credentials: 'same-origin', body: JSON.stringify({message: text, agent: sel.value})})
+      .then(function (r) { return r.json(); }).then(render)
+      .catch(function () { add('bot', 'error', 'The team could not answer. Are you still signed in?'); });
+  }
+  document.getElementById('lj-form').onsubmit = function (e) { e.preventDefault(); send(input.value); };
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input.value); } });
+  msgs.addEventListener('click', function (e) { if (e.target.closest('.lj-sugg button')) send(e.target.textContent); });
+})();
+</script>

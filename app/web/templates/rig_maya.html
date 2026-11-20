@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Maya · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">The team's line to the COO</div><h1>Maya</h1></div>
+<div class="card maya-strip">
+  <div><div class="kicker">Message budget</div><div class="stat-sm">{{ t.used }} of {{ t.budget }} used</div>
+    <div class="budget"><span style="width: {{ ((t.used or 0) * 100 / (t.budget or 60))|round(1) }}%"></span></div></div>
+  <div class="note">We only write to Maya to get a confirmation or intel — never status updates.</div>
+</div>
+{% if t.ok %}
+  {% for ex in t.exchanges %}
+  <section class="thread">
+    <div class="kicker thread-title">{{ ex.title }}</div>
+    {% for it in ex["items"] %}
+      {% if it.kind == 'msg' %}
+      <div class="bubble-row {{ 'right' if it.side == 'team' else 'left' }}">
+        <div class="bubble {{ 'bubble-team' if it.side == 'team' else 'bubble-maya' }}"><div class="bubble-who">{{ it.speaker }}</div>{{ it.html|safe }}</div>
+      </div>
+      {% elif it.kind == 'changes' %}
+      <div class="card changes"><div class="kicker">What we changed because of it</div>{{ it.html|safe }}</div>
+      {% else %}
+      <div class="small muted thread-meta">{{ it.html|safe }}</div>
+      {% endif %}
+    {% endfor %}
+  </section>
+  {% endfor %}
+{% else %}
+  <div class="card prose">{{ t.raw_html|safe }}</div>
+{% endif %}
+<div class="section-title"><div class="kicker">Outbox</div><h2>Pending drafts <span class="muted small">(read-only; the operator sends them from the Scaleworks chat)</span></h2></div>
+{% for d in t.drafts %}
+  <details class="card draft-card"><summary><b>{{ d.title }}</b>{% if d.kind %} <span class="pill {{ 'ok' if d.kind == 'Confirmation' else 'mid' }}">{{ d.kind }}</span>{% endif %}{% if d.purpose and not d.kind %} <span class="small muted">Purpose: {{ d.purpose }}</span>{% endif %}</summary><div class="small">{{ d.html|safe }}</div></details>
+{% else %}<p class="small muted">No pending drafts.</p>{% endfor %}
+{% endblock %}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Ledgerline · Finance Team RIG{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+</head>
+<body>
+{% if engine and engine.source == 'fake' %}<div class="banner banner-fake" title="{{ engine.error }}">FAKE DATA: the engine (app.engine.pipeline) is not loaded, so these records are a development stand-in. {{ engine.error|truncate(140) }}</div>{% endif %}
+{% set is_home = (tab is defined and tab == 'home') %}
+<header class="hero {% if not is_home %}hero-compact{% endif %}">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="kicker">LEDGERLINE · FINANCE TEAM RIG · ORDER-TO-CASH</div>
+      {% if is_home %}
+      <h1 class="hero-h1">The finance team, on one screen</h1>
+      <p class="hero-sub">Four AI agents and the people who direct them, collecting cash on Ledgerline's real records. Agents propose; Priya, Dana and the account managers decide. Every step is logged.</p>
+      {% else %}
+      <a href="/" class="hero-h1 hero-h1-sm">The finance team, on one screen</a>
+      {% endif %}
+      {% if user %}
+      <div class="stamps">
+        {% if ai_on %}<span class="stamp stamp-on">AI ON (Claude)</span>{% else %}<span class="stamp">AI OFF — pending Legal DPA</span><span class="stamp">Rules-only mode</span>{% endif %}
+        <span class="stamp">Simulated: nothing sent</span>
+        {% if dev_mode %}<span class="stamp stamp-grey" title="GOOGLE_CLIENT_ID is not set, so sign-in is off for the demo">Auth off (demo)</span>{% else %}<span class="stamp">{{ user }} · <a href="/logout">sign out</a></span>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="cockpit">
+      <div class="monogram">JM</div>
+      <div>
+        <div class="cp-name">JACEK MATERNA</div>
+        <div class="cp-role">AI OPERATOR · LEDGERLINE</div>
+        <div class="cp-stamp">Data as of 31 Oct 2026 · Build {{ clock }}</div>
+        {% if engine %}<div class="cp-stamp">Agents ran {{ engine.ran_at }} ({{ engine.seconds }}s)</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+{% if user %}
+<nav class="tabs">
+  <div class="tabs-inner">
+  {% set rig_tabs = [('/', 'Home'), ('/team', 'Team'), ('/architecture', 'Architecture'), ('/activity', 'Activity'), ('/maya', 'Maya'), ('/direct', 'Direct the team'), ('/buildlog', 'Build log'), ('/about', 'One pager')] %}
+  {% set ops_tabs = [('/today', 'Today'), ('/cash', 'Cash'), ('/collections', 'Collections'), ('/customers', 'Customers'), ('/digest', 'Digest'), ('/audit', 'Audit'), ('/rules', 'Rules')] %}
+  {% for href, label in rig_tabs %}<a href="{{ href }}" class="{% if (href == '/' and path == '/') or (href != '/' and (path == href or path.startswith(href + '/'))) or (href == '/team' and path.startswith('/agents')) %}active{% endif %}">{{ label }}</a>{% endfor %}
+  <span class="tab-sep">|</span>
+  {% for href, label in ops_tabs %}<a href="{{ href }}" class="{% if path == href or path.startswith(href + '/') %}active{% endif %}">{{ label }}</a>{% endfor %}
+  <form method="post" action="/run" class="inline tab-run"><button class="btn btn-run" title="Re-run all four agents on the data room">Run agents</button></form>
+  </div>
+</nav>
+{% endif %}
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="small muted">Agents propose; a person approves anything that touches a customer or the ledger. Every decision and every human action is in the <a href="/activity">activity feed</a> and <a href="/audit">audit trail</a>. Simulated: no email is sent and no ledger is written from this demo.</footer>
+{% if user %}{% include "_chat.html" %}{% endif %}
+<script>
+document.body.addEventListener('htmx:responseError', function (e) {
+  alert((e.detail.xhr.responseText || 'Request failed').replace(/^\{"detail":"|"\}$/g, ''));
+});
+</script>
+</body>
+</html>

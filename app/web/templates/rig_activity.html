@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Activity · Ledgerline RIG{% endblock %}
+{% block content %}
+<div class="section-title"><div class="kicker">Live feed</div><h1>Activity</h1></div>
+<p class="lead">Agent decisions, human approvals, instructions and chat, newest first. Human rows come from the append-only store; agent rows from the latest run.</p>
+<form class="filters" method="get" action="/activity">
+  <a class="chip {% if not who %}active{% endif %}" href="/activity?q={{ q|urlencode }}">All</a>
+  {% for c in chips %}<a class="chip {% if who == c %}active{% endif %}" href="/activity?who={{ c|urlencode }}&q={{ q|urlencode }}">{{ c }}</a>{% endfor %}
+  <input type="hidden" name="who" value="{{ who }}">
+  <input class="input" name="q" value="{{ q }}" placeholder="Search the feed">
+  <button class="btn btn-sm">Search</button>
+  <span class="small muted">{{ rows|length }} shown</span>
+</form>
+<div class="card list-card">
+{% for r in rows %}
+  <div class="lg-item lg-{{ r.kind }}">
+    <div class="lg-meta"><span class="rose">{{ r.who }}</span> · {{ r.kind }} · {{ r.ts }}{% if r.confidence is not none %} · confidence {{ r.confidence|pct }}{% endif %}</div>
+    <div class="lg-title">{% if r.object_type == 'invoice' %}<a href="/collections#{{ r.object_id }}">{{ r.title }}</a>{% elif r.object_type == 'payment' %}<a href="/cash#{{ r.object_id }}">{{ r.title }}</a>{% elif r.object_type == 'customer' %}<a href="/customers/{{ r.object_id }}">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</div>
+    <div class="small">{{ r.text }}</div>
+  </div>
+{% else %}<div class="empty">Nothing matches.</div>{% endfor %}
+</div>
+{% endblock %}

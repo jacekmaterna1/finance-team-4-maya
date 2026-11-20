@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Cash application · Ledgerline{% endblock %}
+{% block content %}
+<h1>Cash application</h1>
+<p class="lead">Unapplied bank receipts matched to open invoices. The agent applies only exact amount + invoice-reference matches by itself. Everything else is a proposal for you.</p>
+<div class="filters">
+  {% set tabs = [('all', 'All'), ('EXCEPTION', 'Exceptions'), ('PROPOSE', 'Proposals'), ('AUTO_APPLY', 'Auto-applied')] %}
+  {% for k, label in tabs %}<a class="pill {% if show == k %}active{% endif %}" href="/cash?show={{ k }}">{{ label }}{% if k != 'all' %} ({{ counts.get(k, 0) }}){% endif %}</a>{% endfor %}
+</div>
+<div class="list">
+  <div class="row row-pay row-head"><span>Payment</span><span>Decision</span><span>Received</span><span class="num">Amount</span><span>Payer</span><span>Matched invoices</span><span class="num">Difference</span><span>Conf.</span><span>Status</span></div>
+  {% for p in payments %}{% set open = false %}{% include "_payment.html" %}{% else %}<div class="empty">No payments in this view.</div>{% endfor %}
+</div>
+{% endblock %}

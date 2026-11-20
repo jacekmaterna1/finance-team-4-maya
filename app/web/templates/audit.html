@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, conf %}
+{% block title %}Audit trail · Ledgerline{% endblock %}
+{% block content %}
+<h1>Audit trail</h1>
+<p class="lead">Every agent decision and every human action, newest first. Append-only.</p>
+<form class="filters" method="get" action="/audit">
+  <select name="agent" class="input" onchange="this.form.submit()">
+    <option value="">All agents and people</option>
+    {% for a in agents %}<option value="{{ a }}" {% if a == agent %}selected{% endif %}>{{ a }}</option>{% endfor %}
+  </select>
+  <input class="input" name="q" value="{{ q }}" placeholder="Search id, decision or reason">
+  <button class="btn btn-sm">Filter</button>
+  <a class="btn btn-sm btn-secondary" href="/audit.csv?agent={{ agent|urlencode }}&q={{ q|urlencode }}">Download CSV</a>
+  <span class="small muted">{{ n }} rows{% if n > rows|length %}, showing {{ rows|length }} (<a href="/audit?agent={{ agent|urlencode }}&q={{ q|urlencode }}&limit=100000">all</a>){% endif %}</span>
+</form>
+<table class="tbl">
+  <thead><tr><th>When</th><th>Who</th><th>Object</th><th>Decision</th><th>Conf.</th><th>Reason</th></tr></thead>
+  <tbody>
+  {% for x in rows %}
+  <tr class="{% if x.kind == 'human' %}human{% endif %}">
+    <td class="small nowrap">{{ x.ts }}</td>
+    <td class="small">{% if x.kind == 'human' %}<b>{{ x.who }}</b>{% else %}{{ x.who }}{% endif %}</td>
+    <td class="small nowrap">{{ x.object_type }} {% if x.object_type == 'invoice' %}<a href="/collections#{{ x.object_id }}">{{ x.object_id }}</a>{% elif x.object_type == 'payment' %}<a href="/cash#{{ x.object_id }}">{{ x.object_id }}</a>{% elif x.object_type == 'customer' %}<a href="/customers/{{ x.object_id }}">{{ x.object_id }}</a>{% else %}{{ x.object_id }}{% endif %}</td>
+    <td>{{ badge(x.decision) }}</td>
+    <td>{{ conf(x.confidence) }}</td>
+    <td class="small">{{ x.reason }}</td>
+  </tr>
+  {% else %}<tr><td colspan="6" class="empty">No rows.</td></tr>{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

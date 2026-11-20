@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Morning digest · Ledgerline{% endblock %}
+{% block content %}
+<h1>Morning digest</h1>
+<p class="lead">What Priya sees in Slack before she opens the app.</p>
+{% if html %}
+<div class="slack">
+  <div class="slack-head"><span class="slack-avatar">L</span> <b>Ledgerline AR Operator</b> <span class="tag">APP</span> <span class="muted small">7:30 AM</span></div>
+  <div class="slack-body">{{ html|safe }}</div>
+</div>
+<details class="small" style="margin-top:.6rem"><summary>Raw Slack message text</summary><pre class="mono raw">{{ raw }}</pre></details>
+{% else %}
+<div class="alert">The digest could not be built{% if error %}: {{ error }}{% endif %}.</div>
+{% endif %}
+<p class="small muted">Preview only &mdash; in production this posts to Priya's Slack at 7:30 via a webhook.</p>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% macro thumb(slug) -%}
+<svg class="thumb" viewBox="0 0 64 40" aria-hidden="true">
+{% if slug == 'cash' %}
+  <rect x="4" y="8" width="24" height="24" rx="3" class="t-fill"/><rect x="36" y="8" width="24" height="24" rx="3" class="t-line"/>
+  <path d="M28 20 H36" class="t-rose"/><path d="M33 17 L36 20 L33 23" class="t-rose"/><text x="16" y="25" class="t-txt">$</text><path d="M42 20 l4 4 l8 -8" class="t-ink"/>
+{% elif slug == 'context' %}
+  <circle cx="32" cy="20" r="7" class="t-fill"/><circle cx="12" cy="10" r="4" class="t-line"/><circle cx="52" cy="10" r="4" class="t-line"/><circle cx="12" cy="31" r="4" class="t-line"/><circle cx="52" cy="31" r="4" class="t-line"/>
+  <path d="M16 12 L26 17 M48 12 L38 17 M16 29 L26 23 M48 29 L38 23" class="t-rose"/>
+{% elif slug == 'controller' %}
+  <path d="M32 4 L50 11 V21 C50 30 42 35 32 37 C22 35 14 30 14 21 V11 Z" class="t-fill"/><path d="M25 20 l5 5 l9 -10" class="t-rose" style="stroke-width:3"/>
+{% elif slug == 'collections' %}
+  <rect x="8" y="9" width="40" height="24" rx="3" class="t-line"/><path d="M8 11 L28 24 L48 11" class="t-ink"/><circle cx="50" cy="12" r="7" class="t-rosefill"/><text x="50" y="15.5" class="t-txt t-small">4</text>
+{% else %}
+  <circle cx="20" cy="15" r="6" class="t-fill"/><circle cx="44" cy="15" r="6" class="t-line"/><path d="M8 34 C10 25 30 25 32 34 M32 34 C34 25 54 25 56 34" class="t-rose"/>
+{% endif %}
+</svg>
+{%- endmacro %}

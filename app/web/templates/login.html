@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Sign in · Ledgerline AR Operator{% endblock %}
+{% block content %}
+<div class="login card">
+  <h1>Ledgerline AR Operator</h1>
+  <p>An AI order-to-cash team for Ledgerline finance: Cash Application, Account Context, Controller and Collections agents. Agents propose; people approve.</p>
+  {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+  <a class="btn btn-primary btn-lg" href="/login/google">Sign in with Google</a>
+  <p class="small muted">Access is limited to {{ domains|join(', ') }} Google Workspace accounts and a short allow-list.</p>
+</div>
+{% endblock %}

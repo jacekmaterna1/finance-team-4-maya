@@ -1,0 +1,118 @@
+invoice_id,customer_id,customer_name,type,issue_date,due_date,service_period_months,amount,currency,status,paid_date,payment_method,amt,term_start,plan,seats,price,platform_fee,contract_arr,arr_formula_ok,expected,diff,post_rewrite
+INV-25433,C1029,Northgate Creative,subscription,2026-06-04,2026-06-04,1,799.00,USD,payment_failed,,card,799.0,2025-11-04,Core,17,47,0,9588,True,799.0,0.0,True
+INV-25469,C1469,Kingsway Engineering Group,subscription,2026-06-12,2026-07-12,3,5100.00,USD,overdue,,ach,5100.0,2025-12-12,Growth,25,68,0,20400,True,5100.0,0.0,True
+INV-25470,C1477,Hollis Nair Engineers,subscription,2026-06-12,2026-06-12,1,517.00,USD,payment_failed,,card,517.0,2026-03-12,Core,11,47,0,6204,True,517.0,0.0,True
+INV-25539,C1439,Banerjee Petrov Engineers,subscription,2026-07-01,2026-07-31,3,2652.00,USD,overdue,,ach,2652.0,2026-04-01,Growth,13,68,0,10608,True,2652.0,0.0,True
+INV-25622,C1486,Studio Nakamura,subscription,2026-07-18,2026-07-18,1,517.00,USD,payment_failed,,card,517.0,2026-05-18,Core,11,47,0,6204,True,517.0,0.0,True
+INV-25662,C1254,Upton & Bell Advisory,subscription,2026-07-27,2026-08-26,12,44064.00,USD,overdue,,wire,44064.0,2026-07-27,Growth,54,68,0,44064,True,44064.0,0.0,True
+INV-25708,C1341,"Quill, Mott & Co",subscription,2026-08-09,2026-08-09,1,1632.00,USD,payment_failed,,card,1632.0,2026-05-09,Growth,24,68,0,19584,True,1632.0,0.0,True
+INV-25709,C1342,Moreau & Crane Agency,subscription,2026-08-09,2026-08-09,1,658.00,USD,payment_failed,,card,658.0,2026-05-09,Core,14,47,0,7896,True,658.0,0.0,True
+INV-25711,C1100,Oyelaran Devlin Engineers,subscription,2026-08-10,2026-09-09,3,2820.00,USD,overdue,,ach,2820.0,2026-02-10,Core,20,47,0,11280,True,2820.0,0.0,True
+INV-25712,C1261,Wexler & Hume Advisory,subscription,2026-08-10,2026-09-09,3,4080.00,USD,overdue,,wire,4080.0,2026-08-10,Growth,20,68,0,16320,True,4080.0,0.0,True
+INV-25718,C1030,Mercer & Banerjee LLP,subscription,2026-08-12,2026-09-11,3,3876.00,USD,overdue,,wire,3876.0,2025-11-12,Growth,19,68,0,15504,True,3876.0,0.0,True
+INV-25730,C1264,Westbrook Engineering Group,subscription,2026-08-14,2026-09-13,12,47904.00,USD,overdue,,ach,47904.0,2026-08-14,Enterprise,34,88,12000,47904,True,47904.0,0.0,True
+INV-25750,C1266,Thackeray Accounting,subscription,2026-08-18,2026-09-17,12,7896.00,USD,overdue,,ach,7896.0,2026-08-18,Core,14,47,0,7896,True,7896.0,0.0,True
+INV-25757,C1152,Ellery Consulting,subscription,2026-08-21,2026-09-20,12,13056.00,USD,overdue,,wire,13056.0,2026-08-21,Growth,16,68,0,13056,True,13056.0,0.0,True
+INV-25764,C1045,Castell Engineering,subscription,2026-08-23,2026-09-22,3,6324.00,USD,overdue,,ach,6324.0,2026-02-23,Growth,31,68,0,25296,True,6324.0,0.0,True
+INV-25765,C1154,Okafor & Nakamura LLP,subscription,2026-08-23,2026-09-22,12,46848.00,USD,overdue,,wire,46848.0,2026-08-23,Enterprise,33,88,12000,46848,True,46848.0,0.0,True
+INV-25769,C1492,Drummond Consulting,subscription,2026-08-24,2026-08-24,1,658.00,USD,payment_failed,,card,658.0,2026-06-24,Core,14,47,0,7896,True,658.0,0.0,True
+INV-25784,C1273,Jessop & Orwell Agency,subscription,2026-08-26,2026-09-25,12,62688.00,USD,overdue,,ach,62688.0,2026-08-26,Enterprise,48,88,12000,62688,True,62688.0,0.0,True
+INV-25787,C1073,Riverside Partners,subscription,2026-08-27,2026-09-26,12,60576.00,USD,overdue,,wire,60576.0,2026-08-27,Enterprise,46,88,12000,60576,True,60576.0,0.0,True
+INV-25793,C1255,Ashgrove Partners,subscription,2026-08-28,2026-08-28,1,1088.00,USD,payment_failed,,card,1088.0,2026-07-28,Growth,16,68,0,13056,True,1088.0,0.0,True
+INV-25803,C1375,Glover Engineering,subscription,2026-09-02,2026-09-02,1,1836.00,USD,payment_failed,,card,1836.0,2026-01-02,Growth,27,68,0,22032,True,1836.0,0.0,True
+INV-25806,C1126,Brandt & Lowell CPAs,subscription,2026-09-03,2026-10-03,3,6324.00,USD,overdue,,ach,6324.0,2026-06-03,Growth,31,68,0,25296,True,6324.0,0.0,True
+INV-25811,C1409,Wexler Media,subscription,2026-09-04,2026-10-04,1,1224.00,USD,overdue,,ach,1224.0,2026-09-04,Growth,18,68,0,14688,True,1224.0,0.0,True
+INV-25822,C1075,Brandt Ashby IT,subscription,2026-09-07,2026-10-07,12,26112.00,USD,overdue,,wire,26112.0,2026-09-07,Growth,32,68,0,26112,True,26112.0,0.0,True
+INV-25825,C1278,Kowalczyk + Stanhope Architects,subscription,2026-09-07,2026-09-07,1,705.00,USD,payment_failed,,card,705.0,2026-09-07,Core,15,47,0,8460,True,705.0,0.0,True
+INV-25834,C1161,"Delacroix, Jessop & Co",subscription,2026-09-09,2026-10-09,12,41568.00,USD,overdue,,check,41568.0,2026-09-09,Enterprise,28,88,12000,41568,True,41568.0,0.0,True
+INV-25845,C1188,"Castellano, Crane & Co",subscription,2026-09-11,2026-10-11,3,3672.00,USD,overdue,,wire,3672.0,2025-12-11,Growth,18,68,0,14688,True,3672.0,0.0,True
+INV-25848,C1455,Okafor Legal,subscription,2026-09-11,2026-10-11,12,19584.00,USD,overdue,,ach,19584.0,2026-09-11,Growth,24,68,0,19584,True,19584.0,0.0,True
+INV-25852,C1469,Kingsway Engineering Group,subscription,2026-09-12,2026-10-12,3,5100.00,USD,overdue,,ach,5100.0,2025-12-12,Growth,25,68,0,20400,True,5100.0,0.0,True
+INV-25854,C1022,Studio Marsh,subscription,2026-09-13,2026-10-13,3,1410.00,USD,overdue,,ach,1410.0,2026-09-13,Core,10,47,0,5640,True,1410.0,0.0,True
+INV-25858,C1316,Glover Strategy,subscription,2026-09-13,2026-10-13,3,9600.00,USD,overdue,,wire,9600.0,2025-12-13,Enterprise,25,88,12000,38400,True,9600.0,0.0,True
+INV-25859,C1411,Voss & Kowalczyk Agency,subscription,2026-09-13,2026-10-13,12,13056.00,USD,overdue,,ach,13056.0,2026-09-13,Growth,16,68,0,13056,True,13056.0,0.0,True
+INV-25862,C1361,Thornfield Consulting Group,subscription,2026-09-14,2026-10-14,12,39456.00,USD,overdue,,ach,39456.0,2026-09-14,Enterprise,26,88,12000,39456,True,39456.0,0.0,True
+INV-25863,C1412,Banerjee Design Partnership,subscription,2026-09-14,2026-10-14,3,5100.00,USD,overdue,,ach,5100.0,2026-09-14,Growth,25,68,0,20400,True,5100.0,0.0,True
+INV-25867,C1346,Yardley & Duarte Advisory,subscription,2026-09-15,2026-10-15,1,564.00,USD,overdue,,ach,564.0,2026-06-15,Core,12,47,0,6768,True,564.0,0.0,True
+INV-25869,C1457,Hollis & Stanhope Advisory,subscription,2026-09-15,2026-10-15,12,22848.00,USD,overdue,,wire,22848.0,2026-09-15,Growth,28,68,0,22848,True,22848.0,0.0,True
+INV-25873,C1282,Eastman & Wexler CPAs,subscription,2026-09-16,2026-10-16,12,43680.00,USD,overdue,,ach,43680.0,2026-09-16,Enterprise,30,88,12000,43680,True,43680.0,0.0,True
+INV-25881,C1217,Corbin Media,subscription,2026-09-18,2026-10-18,3,2397.00,USD,overdue,,ach,2397.0,2026-03-18,Core,17,47,0,9588,True,2397.0,0.0,True
+INV-25883,C1284,Sinclair & Vance LLP,subscription,2026-09-18,2026-10-18,12,16320.00,USD,overdue,,ach,16320.0,2026-09-18,Growth,20,68,0,16320,True,16320.0,0.0,True
+INV-25885,C1077,Riverside Consulting Group,subscription,2026-09-19,2026-10-19,12,17136.00,USD,overdue,,ach,17136.0,2026-09-19,Growth,21,68,0,17136,True,17136.0,0.0,True
+INV-25890,C1446,Oyelaran Strategy,subscription,2026-09-19,2026-10-19,3,4692.00,USD,overdue,,ach,4692.0,2026-06-19,Growth,23,68,0,18768,True,4692.0,0.0,True
+INV-25897,C1407,Ambrose & Lowell Advisory,subscription,2026-09-21,2026-10-21,1,658.00,USD,overdue,,ach,658.0,2026-08-21,Core,14,47,0,7896,True,658.0,0.0,True
+INV-25898,C1437,Harbor Engineering Group,subscription,2026-09-21,2026-10-21,3,1833.00,USD,overdue,,ach,1833.0,2026-03-21,Core,13,47,0,7332,True,1833.0,0.0,True
+INV-25902,C1063,Crane IT Partners,subscription,2026-09-24,2026-10-24,3,3060.00,USD,overdue,,ach,3060.0,2026-06-24,Growth,15,68,0,12240,True,3060.0,0.0,True
+INV-25906,C1504,Rosales Engineering,subscription,2026-09-24,2026-10-24,12,16320.00,USD,overdue,,wire,16320.0,2026-09-24,Growth,20,68,0,16320,True,16320.0,0.0,True
+INV-25907,C1504,Rosales Engineering,implementation,2026-09-24,2026-10-24,1,2500.00,USD,overdue,,wire,2500.0,2026-09-24,Growth,20,68,0,16320,True,2500.0,0.0,True
+INV-25912,C1353,Ellery Achebe Chartered Accountants,subscription,2026-09-25,2026-09-25,1,799.00,USD,payment_failed,,card,799.0,2026-07-25,Core,17,47,0,9588,True,799.0,0.0,True
+INV-25923,C1470,Abbott Design Partnership,subscription,2026-09-27,2026-10-27,3,4692.00,USD,overdue,,wire,4692.0,2025-12-27,Growth,23,68,0,18768,True,4692.0,0.0,True
+INV-25926,C1379,Ruiz & Whitfield CPAs,subscription,2026-10-01,2026-10-01,1,846.00,USD,payment_failed,,card,846.0,2026-02-01,Core,18,47,0,10152,True,846.0,0.0,True
+INV-25927,C1439,Banerjee Petrov Engineers,subscription,2026-10-01,2026-10-31,3,2652.00,USD,open,,ach,2652.0,2026-04-01,Growth,13,68,0,10608,True,2652.0,0.0,True
+INV-25928,C1454,Tan Accounting,subscription,2026-10-01,2026-10-01,1,611.00,USD,payment_failed,,card,611.0,2026-09-01,Core,13,47,0,7332,True,611.0,0.0,True
+INV-25929,C1459,Abara + Brandt Architects,subscription,2026-10-01,2026-10-31,3,5712.00,USD,open,,ach,5712.0,2026-10-01,Growth,28,68,0,22848,True,5712.0,0.0,True
+INV-25932,C1169,Ambrose & Petrov LLP,subscription,2026-10-02,2026-11-01,12,21216.00,USD,open,,wire,21216.0,2026-10-02,Growth,26,68,0,21216,True,21216.0,0.0,True
+INV-25933,C1170,Whitlock Design Partnership,subscription,2026-10-02,2026-11-01,12,31824.00,USD,open,,check,31824.0,2026-10-02,Growth,39,68,0,31824,True,31824.0,0.0,True
+INV-25935,C1350,Clearwater Consulting Group,subscription,2026-10-02,2026-11-01,3,2856.00,USD,open,,ach,2856.0,2026-07-02,Growth,14,68,0,11424,True,2856.0,0.0,True
+INV-25937,C1223,Studio Zeller,subscription,2026-10-03,2026-11-02,1,987.00,USD,open,,ach,987.0,2026-04-03,Core,21,47,0,11844,True,987.0,0.0,True
+INV-25941,C1127,Mbeki Strategy,subscription,2026-10-04,2026-11-03,1,1128.00,USD,open,,ach,1128.0,2026-06-04,Core,24,47,0,13536,True,1128.0,0.0,True
+INV-25943,C1289,Upton Strategy,subscription,2026-10-04,2026-11-03,12,19584.00,USD,open,,check,19584.0,2026-10-04,Growth,24,68,0,19584,True,19584.0,0.0,True
+INV-25944,C1399,Ambrose Strategy,subscription,2026-10-04,2026-11-03,3,2115.00,USD,open,,ach,2115.0,2026-07-04,Core,15,47,0,8460,True,2115.0,0.0,True
+INV-25945,C1409,Wexler Media,subscription,2026-10-04,2026-11-03,1,1224.00,USD,open,,ach,1224.0,2026-09-04,Growth,18,68,0,14688,True,1224.0,0.0,True
+INV-25947,C1172,Jessop Strategy,subscription,2026-10-05,2026-11-04,12,21216.00,USD,open,,ach,21216.0,2026-10-05,Growth,26,68,0,21216,True,21216.0,0.0,True
+INV-25948,C1195,Hartwell Engineering,subscription,2026-10-05,2026-11-04,3,4080.00,USD,open,,ach,4080.0,2026-01-05,Growth,20,68,0,16320,True,4080.0,0.0,True
+INV-25950,C1505,Achebe + Pemberton Architects,subscription,2026-10-05,2026-11-04,12,67968.00,USD,open,,wire,67968.0,2026-10-05,Enterprise,53,88,12000,67968,True,67968.0,0.0,True
+INV-25951,C1505,Achebe + Pemberton Architects,implementation,2026-10-05,2026-11-04,1,8000.00,USD,open,,wire,8000.0,2026-10-05,Enterprise,53,88,12000,67968,True,8000.0,0.0,True
+INV-25952,C1135,Birch Petrov Engineers,subscription,2026-10-06,2026-11-05,3,3876.00,USD,open,,wire,3876.0,2026-07-06,Growth,19,68,0,15504,True,3876.0,0.0,True
+INV-25953,C1247,Hartwell Legal,subscription,2026-10-06,2026-11-05,3,9384.00,USD,open,,ach,9384.0,2026-07-06,Growth,46,68,0,37536,True,9384.0,0.0,True
+INV-25956,C1364,Stanhope Consulting,subscription,2026-10-06,2026-11-05,12,21216.00,USD,open,,wire,21216.0,2026-10-06,Growth,26,68,0,21216,True,21216.0,0.0,True
+INV-25958,C1471,Tan & Brandt Technology,subscription,2026-10-06,2026-11-05,3,2397.00,USD,open,,ach,2397.0,2026-01-06,Core,17,47,0,9588,True,2397.0,0.0,True
+INV-25959,C1023,Oakfield Partners,subscription,2026-10-07,2026-11-06,12,31008.00,USD,open,,wire,31008.0,2026-10-07,Growth,38,68,0,31008,True,31008.0,0.0,True
+INV-25961,C1094,Clearwater Digital,subscription,2026-10-07,2026-11-06,1,2856.00,USD,open,,ach,2856.0,2026-01-07,Growth,42,68,0,34272,True,2856.0,0.0,True
+INV-25964,C1460,Lindqvist Consulting,subscription,2026-10-07,2026-11-06,12,23664.00,USD,open,,wire,23664.0,2026-10-07,Growth,29,68,0,23664,True,23664.0,0.0,True
+INV-25966,C1024,Lindqvist Design Partnership,subscription,2026-10-08,2026-11-07,12,7332.00,USD,open,,wire,7332.0,2026-10-08,Core,13,47,0,7332,True,7332.0,0.0,True
+INV-25967,C1025,Ambrose Ashby Law,subscription,2026-10-08,2026-11-07,12,10608.00,USD,open,,wire,10608.0,2026-10-08,Growth,13,68,0,10608,True,10608.0,0.0,True
+INV-25969,C1110,Bramwell Sinclair Chartered Accountants,subscription,2026-10-08,2026-10-08,1,611.00,USD,payment_failed,,card,611.0,2026-04-08,Core,13,47,0,7332,True,611.0,0.0,True
+INV-25970,C1199,Millbrook Architecture,subscription,2026-10-08,2026-11-07,3,5916.00,USD,open,,ach,5916.0,2026-01-08,Growth,29,68,0,23664,True,5916.0,0.0,True
+INV-25971,C1233,Rosales Consulting,subscription,2026-10-08,2026-11-07,1,2448.00,USD,open,,ach,2448.0,2026-05-08,Growth,36,68,0,29376,True,2448.0,0.0,True
+INV-25972,C1376,Reyes Strategy,subscription,2026-10-08,2026-11-07,1,329.00,USD,open,,ach,329.0,2026-01-08,Core,7,47,0,3948,True,329.0,0.0,True
+INV-25973,C1426,Eastman Engineering,subscription,2026-10-08,2026-10-08,3,3264.00,USD,payment_failed,,card,3264.0,2026-01-08,Growth,16,68,0,13056,True,3264.0,0.0,True
+INV-25975,C1341,"Quill, Mott & Co",subscription,2026-10-09,2026-10-09,1,1632.00,USD,payment_failed,,card,1632.0,2026-05-09,Growth,24,68,0,19584,True,1632.0,0.0,True
+INV-25979,C1463,Redfern Architecture,subscription,2026-10-10,2026-11-09,1,564.00,USD,open,,ach,564.0,2025-11-10,Core,12,47,0,6768,True,564.0,0.0,True
+INV-25981,C1473,Thackeray Consulting,subscription,2026-10-10,2026-11-09,3,2652.00,USD,open,,ach,2652.0,2026-01-10,Growth,13,68,0,10608,True,2652.0,0.0,True
+INV-25982,C1173,Calloway Brandt Engineers,subscription,2026-10-11,2026-11-10,12,9792.00,USD,open,,ach,9792.0,2026-10-11,Growth,12,68,0,9792,True,9792.0,0.0,True
+INV-25984,C1448,"Pemberton, Iyer & Co",subscription,2026-10-11,2026-11-10,3,2397.00,USD,open,,ach,2397.0,2026-07-11,Core,17,47,0,9588,True,2397.0,0.0,True
+INV-25985,C1078,"Yates, Oyelaran & Co",subscription,2026-10-12,2026-11-11,3,19368.00,USD,open,,ach,19368.0,2026-10-12,Enterprise,62,88,12000,77472,True,19368.0,0.0,True
+INV-25989,C1292,Thornfield Digital,subscription,2026-10-12,2026-11-11,12,19584.00,USD,open,,ach,19584.0,2026-10-12,Growth,24,68,0,19584,True,19584.0,0.0,True
+INV-25991,C1026,Greystone Technology Services,subscription,2026-10-13,2026-11-12,12,18768.00,USD,open,,ach,18768.0,2026-10-13,Growth,23,68,0,18768,True,18768.0,0.0,True
+INV-25994,C1293,Ashby & Wexler LLP,subscription,2026-10-13,2026-11-12,3,1692.00,USD,open,,ach,1692.0,2026-10-13,Core,12,47,0,6768,True,1692.0,0.0,True
+INV-25996,C1325,Hartwell Tan Engineers,subscription,2026-10-14,2026-11-13,3,4896.00,USD,open,,ach,4896.0,2026-01-14,Growth,24,68,0,19584,True,4896.0,0.0,True
+INV-25999,C1139,Northgate Partners,subscription,2026-10-15,2026-11-14,3,4080.00,USD,open,,wire,4080.0,2026-07-15,Growth,20,68,0,16320,True,4080.0,0.0,True
+INV-26000,C1346,Yardley & Duarte Advisory,subscription,2026-10-15,2026-11-14,1,564.00,USD,open,,ach,564.0,2026-06-15,Core,12,47,0,6768,True,564.0,0.0,True
+INV-26001,C1483,Jessop Lindgren Law,subscription,2026-10-15,2026-11-14,3,1410.00,USD,open,,ach,1410.0,2026-04-15,Core,10,47,0,5640,True,1410.0,0.0,True
+INV-26004,C1079,Bridgewater Digital,subscription,2026-10-16,2026-11-15,3,4284.00,USD,open,,wire,4284.0,2026-10-16,Growth,21,68,0,17136,True,4284.0,0.0,True
+INV-26005,C1319,Hume Accounting,subscription,2026-10-16,2026-10-16,1,282.00,USD,payment_failed,,card,282.0,2025-12-16,Core,6,47,0,3384,True,282.0,0.0,True
+INV-26006,C1507,Hale & Ruiz Agency,subscription,2026-10-16,2026-11-15,12,13872.00,USD,open,,ach,13872.0,2026-10-16,Growth,17,68,0,13872,True,13872.0,0.0,True
+INV-26007,C1507,Hale & Ruiz Agency,implementation,2026-10-16,2026-11-15,1,2500.00,USD,open,,ach,2500.0,2026-10-16,Growth,17,68,0,13872,True,2500.0,0.0,True
+INV-26009,C1413,Reyes Consulting,subscription,2026-10-17,2026-11-16,12,51072.00,USD,open,,check,51072.0,2026-10-17,Enterprise,37,88,12000,51072,True,51072.0,0.0,True
+INV-26014,C1174,Ashby & Castellano Agency,subscription,2026-10-18,2026-11-17,12,21216.00,USD,open,,ach,21216.0,2026-10-18,Growth,26,68,0,21216,True,21216.0,0.0,True
+INV-26016,C1388,Lowell Design Partnership,subscription,2026-10-18,2026-11-17,3,3264.00,USD,open,,wire,3264.0,2026-04-18,Growth,16,68,0,13056,True,3264.0,0.0,True
+INV-26017,C1414,Lindqvist Strategy,subscription,2026-10-18,2026-11-17,12,22848.00,USD,open,,check,22848.0,2026-10-18,Growth,28,68,0,22848,True,22848.0,0.0,True
+INV-26019,C1080,Birch Media,subscription,2026-10-19,2026-11-18,12,78528.00,USD,open,,check,78528.0,2026-10-19,Enterprise,63,88,12000,78528,True,78528.0,0.0,True
+INV-26021,C1296,Mott Strategy,subscription,2026-10-19,2026-11-18,12,37344.00,USD,open,,ach,37344.0,2026-10-19,Enterprise,24,88,12000,37344,True,37344.0,0.0,True
+INV-26023,C1462,Mercer & Ellery CPAs,subscription,2026-10-19,2026-11-18,12,21216.00,USD,open,,check,21216.0,2026-10-19,Growth,26,68,0,21216,True,21216.0,0.0,True
+INV-26024,C1118,Petrov Design Partnership,subscription,2026-10-20,2026-11-19,3,2115.00,USD,open,,ach,2115.0,2026-04-20,Core,15,47,0,8460,True,2115.0,0.0,True
+INV-26026,C1415,Moreau Strategy,subscription,2026-10-20,2026-11-19,12,12240.00,USD,open,,ach,12240.0,2026-10-20,Growth,15,68,0,12240,True,12240.0,0.0,True
+INV-26029,C1407,Ambrose & Lowell Advisory,subscription,2026-10-21,2026-11-20,1,658.00,USD,open,,ach,658.0,2026-08-21,Core,14,47,0,7896,True,658.0,0.0,True
+INV-26032,C1203,Moreau Legal,subscription,2026-10-23,2026-11-22,3,5916.00,USD,open,,ach,5916.0,2026-01-23,Growth,29,68,0,23664,True,5916.0,0.0,True
+INV-26033,C1230,Sterling Legal,subscription,2026-10-23,2026-11-22,3,4488.00,USD,open,,ach,4488.0,2026-04-23,Growth,22,68,0,17952,True,4488.0,0.0,True
+INV-26037,C1027,Voss Accounting,subscription,2026-10-25,2026-11-24,3,4080.00,USD,open,,ach,4080.0,2026-10-25,Growth,20,68,0,16320,True,4080.0,0.0,True
+INV-26038,C1081,"Kowalczyk, Moreau & Co",subscription,2026-10-25,2026-11-24,12,44064.00,USD,open,,ach,44064.0,2026-10-25,Growth,54,68,0,44064,True,44064.0,0.0,True
+INV-26046,C1484,Stanhope Pemberton Engineers,subscription,2026-10-25,2026-11-24,3,5916.00,USD,open,,wire,5916.0,2026-04-25,Growth,29,68,0,23664,True,5916.0,0.0,True
+INV-26048,C1012,Iyer Whitlock Engineers,subscription,2026-10-26,2026-11-25,1,799.00,USD,open,,ach,799.0,2026-04-26,Core,17,47,0,9588,True,799.0,0.0,True
+INV-26050,C1403,Clearwater Creative,subscription,2026-10-26,2026-11-25,3,5508.00,USD,open,,wire,5508.0,2026-07-26,Growth,27,68,0,22032,True,5508.0,0.0,True
+INV-26053,C1179,Greystone Engineering Group,subscription,2026-10-27,2026-11-26,3,11712.00,USD,open,,ach,11712.0,2026-10-27,Enterprise,33,88,12000,46848,True,11712.0,0.0,True
+INV-26056,C1366,Kessler Consulting,subscription,2026-10-27,2026-11-26,3,15936.00,USD,open,,wire,15936.0,2026-10-27,Enterprise,49,88,12000,63744,True,15936.0,0.0,True
+INV-26057,C1390,Upton & Tavish Advisory,subscription,2026-10-27,2026-11-26,3,3468.00,USD,open,,ach,3468.0,2026-04-27,Growth,17,68,0,13872,True,3468.0,0.0,True
+INV-26058,C1508,Yates & Prior CPAs,subscription,2026-10-27,2026-11-26,12,24480.00,USD,open,,ach,24480.0,2026-10-27,Growth,30,68,0,24480,True,24480.0,0.0,True
+INV-26059,C1508,Yates & Prior CPAs,implementation,2026-10-27,2026-11-26,1,2500.00,USD,open,,ach,2500.0,2026-10-27,Growth,30,68,0,24480,True,2500.0,0.0,True

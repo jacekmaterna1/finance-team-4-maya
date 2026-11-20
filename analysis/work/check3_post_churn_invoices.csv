@@ -1,0 +1,1 @@
+invoice_id,customer_id,customer_name,type,issue_date,due_date,service_period_months,amount,currency,status,paid_date,payment_method,amt,applied,churn

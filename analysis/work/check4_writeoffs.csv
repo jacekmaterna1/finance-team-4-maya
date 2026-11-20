@@ -1,0 +1,145 @@
+invoice_id,customer_id,customer_name,type,issue_date,due_date,service_period_months,amount,currency,status,paid_date,payment_method,amt,applied,days_to_wo,over_2k,customer_status
+INV-20070,C1098,Okafor Consulting,subscription,2022-03-18,2022-03-18,1,585.00,USD,written_off,2022-08-15,card,585.0,2022-08-15,150,False,active
+INV-20133,C1214,Harbor Consulting Group,subscription,2022-05-05,2022-05-05,1,450.00,USD,written_off,2022-10-02,card,450.0,2022-10-02,150,False,active
+INV-20234,C1214,Harbor Consulting Group,subscription,2022-07-05,2022-07-05,1,450.00,USD,written_off,2022-12-02,card,450.0,2022-12-02,150,False,active
+INV-20304,C1258,Drummond Strategy,subscription,2022-08-05,2022-08-05,3,4485.00,USD,written_off,2023-01-02,card,4485.0,2023-01-02,150,True,churned
+INV-20307,C1259,Fairbanks Legal,subscription,2022-08-06,2022-08-06,1,585.00,USD,written_off,2023-01-03,card,585.0,2023-01-03,150,False,active
+INV-20381,C1074,Millbrook Engineering Group,subscription,2022-09-03,2022-09-03,1,450.00,USD,written_off,2023-01-31,card,450.0,2023-01-31,150,False,churned
+INV-20424,C1226,Fairview Partners,subscription,2022-09-17,2022-09-17,1,720.00,USD,written_off,2023-02-14,card,720.0,2023-02-14,150,False,active
+INV-20452,C1049,Summit Consulting Group,subscription,2022-09-27,2022-09-27,1,1820.00,USD,written_off,2023-02-24,card,1820.0,2023-02-24,150,False,active
+INV-20504,C1225,Delacroix & Mercer Agency,subscription,2022-10-14,2022-10-14,1,495.00,USD,written_off,2023-03-13,card,495.0,2023-03-13,150,False,active
+INV-20569,C1214,Harbor Consulting Group,subscription,2022-11-05,2022-11-05,1,450.00,USD,written_off,2023-04-04,card,450.0,2023-04-04,150,False,active
+INV-20576,C1065,Yates Consulting,subscription,2022-11-07,2022-11-07,1,720.00,USD,written_off,2023-04-06,card,720.0,2023-04-06,150,False,active
+INV-20580,C1302,Calloway IT Partners,subscription,2022-11-07,2022-11-07,1,450.00,USD,written_off,2023-04-06,card,450.0,2023-04-06,150,False,churned
+INV-20640,C1040,Westbrook Consulting Group,subscription,2022-11-26,2022-11-26,1,630.00,USD,written_off,2023-04-25,card,630.0,2023-04-25,150,False,active
+INV-20645,C1053,Calloway Finch Chartered Accountants,subscription,2022-11-28,2022-11-28,1,450.00,USD,written_off,2023-04-27,card,450.0,2023-04-27,150,False,churned
+INV-20654,C1125,Nair & Banerjee Agency,subscription,2022-12-02,2022-12-02,1,540.00,USD,written_off,2023-05-01,card,540.0,2023-05-01,150,False,active
+INV-20677,C1303,Studio Petrov,subscription,2022-12-07,2022-12-07,1,765.00,USD,written_off,2023-05-06,card,765.0,2023-05-06,150,False,active
+INV-20758,C1074,Millbrook Engineering Group,subscription,2023-01-03,2023-01-03,1,450.00,USD,written_off,2023-06-02,card,450.0,2023-06-02,150,False,churned
+INV-20806,C1013,Nakamura Engineering,subscription,2023-01-16,2023-01-16,1,765.00,USD,written_off,2023-06-15,card,765.0,2023-06-15,150,False,active
+INV-20830,C1176,Sterling Strategy,subscription,2023-01-22,2023-01-22,1,405.00,USD,written_off,2023-06-21,card,405.0,2023-06-21,150,False,churned
+INV-20861,C1213,Bridgewater Partners,subscription,2023-02-02,2023-02-02,1,405.00,USD,written_off,2023-07-02,card,405.0,2023-07-02,150,False,churned
+INV-20866,C1104,Lakeshore Consulting Group,subscription,2023-02-04,2023-02-04,1,675.00,USD,written_off,2023-07-04,card,675.0,2023-07-04,150,False,active
+INV-20926,C1122,Zeller Legal,subscription,2023-02-18,2023-02-18,1,1040.00,USD,written_off,2023-07-18,card,1040.0,2023-07-18,150,False,active
+INV-20952,C1322,Hume & Ambrose LLP,subscription,2023-02-27,2023-02-27,1,1365.00,USD,written_off,2023-07-27,card,1365.0,2023-07-27,150,False,active
+INV-21039,C1299,Hollis & Calloway Agency,subscription,2023-03-25,2023-03-25,1,1690.00,USD,written_off,2023-08-22,card,1690.0,2023-08-22,150,False,active
+INV-21068,C1214,Harbor Consulting Group,subscription,2023-04-05,2023-04-05,1,450.00,USD,written_off,2023-09-02,card,450.0,2023-09-02,150,False,active
+INV-21075,C1278,Kowalczyk + Stanhope Architects,subscription,2023-04-07,2023-04-07,1,450.00,USD,written_off,2023-09-04,card,450.0,2023-09-04,150,False,active
+INV-21112,C1098,Okafor Consulting,subscription,2023-04-18,2023-04-18,1,585.00,USD,written_off,2023-09-15,card,585.0,2023-09-15,150,False,active
+INV-21168,C1214,Harbor Consulting Group,subscription,2023-05-05,2023-05-05,1,450.00,USD,written_off,2023-10-02,card,450.0,2023-10-02,150,False,active
+INV-21174,C1259,Fairbanks Legal,subscription,2023-05-06,2023-05-06,1,585.00,USD,written_off,2023-10-03,card,585.0,2023-10-03,150,False,active
+INV-21247,C1049,Summit Consulting Group,subscription,2023-05-27,2023-05-27,1,1820.00,USD,written_off,2023-10-24,card,1820.0,2023-10-24,150,False,active
+INV-21304,C1319,Hume Accounting,subscription,2023-06-16,2023-06-16,1,585.00,USD,written_off,2023-11-13,card,585.0,2023-11-13,150,False,active
+INV-21340,C1040,Westbrook Consulting Group,subscription,2023-06-26,2023-06-26,1,630.00,USD,written_off,2023-11-23,card,630.0,2023-11-23,150,False,active
+INV-21349,C1232,Hartwell Garrick Engineers,subscription,2023-06-28,2023-06-28,1,675.00,USD,written_off,2023-11-25,card,675.0,2023-11-25,150,False,churned
+INV-21357,C1213,Bridgewater Partners,subscription,2023-07-02,2023-07-02,1,495.00,USD,written_off,2023-11-29,card,495.0,2023-11-29,150,False,churned
+INV-21399,C1225,Delacroix & Mercer Agency,subscription,2023-07-14,2023-07-14,1,495.00,USD,written_off,2023-12-11,card,495.0,2023-12-11,150,False,active
+INV-21454,C1322,Hume & Ambrose LLP,subscription,2023-07-27,2023-07-27,1,1365.00,USD,written_off,2023-12-24,card,1365.0,2023-12-24,150,False,active
+INV-21547,C1307,Eastman + Radcliffe Architects,subscription,2023-08-21,2023-08-21,1,405.00,USD,written_off,2024-01-18,card,405.0,2024-01-18,150,False,active
+INV-21549,C1176,Sterling Strategy,subscription,2023-08-22,2023-08-22,1,405.00,USD,written_off,2024-01-19,card,405.0,2024-01-19,150,False,churned
+INV-21590,C1104,Lakeshore Consulting Group,subscription,2023-09-04,2023-09-04,1,765.00,USD,written_off,2024-02-01,card,765.0,2024-02-01,150,False,active
+INV-21597,C1259,Fairbanks Legal,subscription,2023-09-06,2023-09-06,1,585.00,USD,written_off,2024-02-03,card,585.0,2024-02-03,150,False,active
+INV-21625,C1138,Quill & Wexler CPAs,subscription,2023-09-12,2023-09-12,1,630.00,USD,written_off,2024-02-09,card,630.0,2024-02-09,150,False,churned
+INV-21680,C1363,Gallagher Legal,subscription,2023-09-25,2023-09-25,1,810.00,USD,written_off,2024-02-22,card,810.0,2024-02-22,150,False,active
+INV-21696,C1186,Greystone Partners,subscription,2023-10-02,2023-10-02,1,1495.00,USD,written_off,2024-02-29,card,1495.0,2024-02-29,150,False,active
+INV-21834,C1302,Calloway IT Partners,subscription,2023-11-07,2023-11-07,1,450.00,USD,written_off,2024-04-05,card,450.0,2024-04-05,150,False,churned
+INV-21839,C1338,Stonegate Engineering Group,subscription,2023-11-08,2023-11-08,1,845.00,USD,written_off,2024-04-06,card,845.0,2024-04-06,150,False,churned
+INV-21983,C1070,Bell Systems,subscription,2023-12-16,2023-12-16,1,585.00,USD,written_off,2024-05-14,card,585.0,2024-05-14,150,False,active
+INV-22107,C1227,Fairbanks Consulting,subscription,2024-01-18,2024-01-18,1,1040.00,USD,written_off,2024-06-16,card,1040.0,2024-06-16,150,False,active
+INV-22133,C1040,Westbrook Consulting Group,subscription,2024-01-26,2024-01-26,1,630.00,USD,written_off,2024-06-24,card,630.0,2024-06-24,150,False,active
+INV-22239,C1253,Redfern Engineering Group,subscription,2024-02-25,2024-02-25,1,1105.00,USD,written_off,2024-07-24,card,1105.0,2024-07-24,150,False,active
+INV-22265,C1375,Glover Engineering,subscription,2024-03-02,2024-03-02,1,1755.00,USD,written_off,2024-07-30,card,1755.0,2024-07-30,150,False,active
+INV-22288,C1341,"Quill, Mott & Co",subscription,2024-03-09,2024-03-09,1,1300.00,USD,written_off,2024-08-06,card,1300.0,2024-08-06,150,False,active
+INV-22312,C1070,Bell Systems,subscription,2024-03-16,2024-03-16,1,585.00,USD,written_off,2024-08-13,card,585.0,2024-08-13,150,False,active
+INV-22430,C1226,Fairview Partners,subscription,2024-04-17,2024-04-17,1,720.00,USD,written_off,2024-09-14,card,720.0,2024-09-14,150,False,active
+INV-22443,C1099,Yardley Accounting,subscription,2024-04-19,2024-04-19,1,1235.00,USD,written_off,2024-09-16,card,1235.0,2024-09-16,150,False,active
+INV-22566,C1297,Highmoor Engineering Group,subscription,2024-05-22,2024-05-22,1,1690.00,USD,written_off,2024-10-19,card,1690.0,2024-10-19,150,False,active
+INV-22589,C1232,Hartwell Garrick Engineers,subscription,2024-05-28,2024-05-28,1,675.00,USD,written_off,2024-10-25,card,675.0,2024-10-25,150,False,churned
+INV-22631,C1138,Quill & Wexler CPAs,subscription,2024-06-12,2024-06-12,1,630.00,USD,written_off,2024-11-09,card,630.0,2024-11-09,150,False,churned
+INV-22670,C1269,Oakfield Consulting Group,subscription,2024-06-22,2024-06-22,1,1105.00,USD,written_off,2024-11-19,card,1105.0,2024-11-19,150,False,churned
+INV-22712,C1134,Greystone Digital,subscription,2024-07-04,2024-07-04,3,2535.00,USD,written_off,2024-12-01,card,2535.0,2024-12-01,150,True,active
+INV-22724,C1278,Kowalczyk + Stanhope Architects,subscription,2024-07-07,2024-07-07,1,540.00,USD,written_off,2024-12-04,card,540.0,2024-12-04,150,False,active
+INV-22853,C1341,"Quill, Mott & Co",subscription,2024-08-09,2024-08-09,1,1560.00,USD,written_off,2025-01-06,card,1560.0,2025-01-06,150,False,active
+INV-22866,C1209,Greystone Consulting Group,subscription,2024-08-12,2024-08-12,1,720.00,USD,written_off,2025-01-09,card,720.0,2025-01-09,150,False,active
+INV-22874,C1263,Tavish Legal,subscription,2024-08-14,2024-08-14,3,1890.00,USD,written_off,2025-01-11,card,1890.0,2025-01-11,150,False,active
+INV-22881,C1013,Nakamura Engineering,subscription,2024-08-16,2024-08-16,1,855.00,USD,written_off,2025-01-13,card,855.0,2025-01-13,150,False,active
+INV-22890,C1365,Kessler Design Partnership,subscription,2024-08-17,2024-08-17,1,450.00,USD,written_off,2025-01-14,card,450.0,2025-01-14,150,False,churned
+INV-22931,C1322,Hume & Ambrose LLP,subscription,2024-08-27,2024-08-27,1,1040.00,USD,written_off,2025-01-24,card,1040.0,2025-01-24,150,False,active
+INV-23163,C1040,Westbrook Consulting Group,subscription,2024-10-26,2024-10-26,1,630.00,USD,written_off,2025-03-25,card,630.0,2025-03-25,150,False,active
+INV-23206,C1278,Kowalczyk + Stanhope Architects,subscription,2024-11-07,2024-11-07,1,675.00,USD,written_off,2025-04-06,card,675.0,2025-04-06,150,False,active
+INV-23228,C1138,Quill & Wexler CPAs,subscription,2024-11-12,2024-11-12,1,630.00,USD,written_off,2025-04-11,card,630.0,2025-04-11,150,False,churned
+INV-23235,C1225,Delacroix & Mercer Agency,subscription,2024-11-14,2024-11-14,1,540.00,USD,written_off,2025-04-13,card,540.0,2025-04-13,150,False,active
+INV-23240,C1347,Ashby + Hartwell Architects,subscription,2024-11-15,2024-11-15,1,1040.00,USD,written_off,2025-04-14,card,1040.0,2025-04-14,150,False,churned
+INV-23241,C1401,Farrow Yates Chartered Accountants,subscription,2024-11-15,2024-11-15,1,495.00,USD,written_off,2025-04-14,card,495.0,2025-04-14,150,False,churned
+INV-23293,C1018,Nair Delacroix Law,subscription,2024-12-02,2024-12-02,1,1040.00,USD,written_off,2025-05-01,card,1040.0,2025-05-01,150,False,active
+INV-23314,C1259,Fairbanks Legal,subscription,2024-12-06,2024-12-06,1,450.00,USD,written_off,2025-05-05,card,450.0,2025-05-05,150,False,active
+INV-23329,C1342,Moreau & Crane Agency,subscription,2024-12-09,2024-12-09,1,765.00,USD,written_off,2025-05-08,card,765.0,2025-05-08,150,False,active
+INV-23330,C1359,Ashby Voss Chartered Accountants,subscription,2024-12-09,2024-12-09,1,495.00,USD,written_off,2025-05-08,card,495.0,2025-05-08,150,False,churned
+INV-23358,C1070,Bell Systems,subscription,2024-12-16,2024-12-16,1,495.00,USD,written_off,2025-05-15,card,495.0,2025-05-15,150,False,active
+INV-23386,C1253,Redfern Engineering Group,subscription,2024-12-25,2024-12-25,1,780.00,USD,written_off,2025-05-24,card,780.0,2025-05-24,150,False,active
+INV-23398,C1274,Harbor Digital,subscription,2024-12-27,2024-12-27,1,845.00,USD,written_off,2025-05-26,card,845.0,2025-05-26,150,False,active
+INV-23399,C1322,Hume & Ambrose LLP,subscription,2024-12-27,2024-12-27,1,1040.00,USD,written_off,2025-05-26,card,1040.0,2025-05-26,150,False,active
+INV-23433,C1278,Kowalczyk + Stanhope Architects,subscription,2025-01-07,2025-01-07,1,675.00,USD,written_off,2025-06-06,card,675.0,2025-06-06,150,False,active
+INV-23438,C1110,Bramwell Sinclair Chartered Accountants,subscription,2025-01-08,2025-01-08,1,495.00,USD,written_off,2025-06-07,card,495.0,2025-06-07,150,False,active
+INV-23444,C1426,Eastman Engineering,subscription,2025-01-08,2025-01-08,3,3264.00,USD,written_off,2025-06-07,card,3264.0,2025-06-07,150,True,active
+INV-23527,C1018,Nair Delacroix Law,subscription,2025-02-02,2025-02-02,1,1040.00,USD,written_off,2025-07-02,card,1040.0,2025-07-02,150,False,active
+INV-23550,C1259,Fairbanks Legal,subscription,2025-02-06,2025-02-06,1,450.00,USD,written_off,2025-07-06,card,450.0,2025-07-06,150,False,active
+INV-23555,C1047,Duarte + Achebe Architects,subscription,2025-02-08,2025-02-08,1,405.00,USD,written_off,2025-07-08,card,405.0,2025-07-08,150,False,active
+INV-23571,C1097,Corbin Design Partnership,subscription,2025-02-12,2025-02-12,1,564.00,USD,written_off,2025-07-12,card,564.0,2025-07-12,150,False,active
+INV-23638,C1275,Oakfield Digital,subscription,2025-02-28,2025-02-28,1,855.00,USD,written_off,2025-07-28,card,855.0,2025-07-28,150,False,active
+INV-23672,C1338,Stonegate Engineering Group,subscription,2025-03-08,2025-03-08,1,1040.00,USD,written_off,2025-08-05,card,1040.0,2025-08-05,150,False,churned
+INV-23700,C1347,Ashby + Hartwell Architects,subscription,2025-03-15,2025-03-15,1,1040.00,USD,written_off,2025-08-12,card,1040.0,2025-08-12,150,False,churned
+INV-23736,C1363,Gallagher Legal,subscription,2025-03-25,2025-03-25,1,810.00,USD,written_off,2025-08-22,card,810.0,2025-08-22,150,False,active
+INV-23747,C1232,Hartwell Garrick Engineers,subscription,2025-03-28,2025-03-28,1,675.00,USD,written_off,2025-08-25,card,675.0,2025-08-25,150,False,churned
+INV-23773,C1214,Harbor Consulting Group,subscription,2025-04-05,2025-04-05,1,564.00,USD,written_off,2025-09-02,card,564.0,2025-09-02,150,False,active
+INV-23895,C1259,Fairbanks Legal,subscription,2025-05-06,2025-05-06,1,450.00,USD,written_off,2025-10-03,card,450.0,2025-10-03,150,False,active
+INV-23907,C1418,Moreau & Glover Advisory,subscription,2025-05-08,2025-05-08,3,4095.00,USD,written_off,2025-10-05,card,4095.0,2025-10-05,150,True,active
+INV-23968,C1299,Hollis & Calloway Agency,subscription,2025-05-25,2025-05-25,1,1690.00,USD,written_off,2025-10-22,card,1690.0,2025-10-22,150,False,active
+INV-23981,C1232,Hartwell Garrick Engineers,subscription,2025-05-28,2025-05-28,1,705.00,USD,written_off,2025-10-25,card,705.0,2025-10-25,150,False,churned
+INV-24010,C1278,Kowalczyk + Stanhope Architects,subscription,2025-06-07,2025-06-07,1,675.00,USD,written_off,2025-11-04,card,675.0,2025-11-04,150,False,active
+INV-24014,C1110,Bramwell Sinclair Chartered Accountants,subscription,2025-06-08,2025-06-08,1,517.00,USD,written_off,2025-11-05,card,517.0,2025-11-05,150,False,active
+INV-24028,C1209,Greystone Consulting Group,subscription,2025-06-12,2025-06-12,1,846.00,USD,written_off,2025-11-09,card,846.0,2025-11-09,150,False,active
+INV-24050,C1122,Zeller Legal,subscription,2025-06-18,2025-06-18,1,1632.00,USD,written_off,2025-11-15,card,1632.0,2025-11-15,150,False,active
+INV-24063,C1268,"Castell, Hume & Co",subscription,2025-06-20,2025-06-20,1,405.00,USD,written_off,2025-11-17,card,405.0,2025-11-17,150,False,active
+INV-24147,C1209,Greystone Consulting Group,subscription,2025-07-12,2025-07-12,1,846.00,USD,written_off,2025-12-09,card,846.0,2025-12-09,150,False,active
+INV-24158,C1070,Bell Systems,subscription,2025-07-16,2025-07-16,1,495.00,USD,written_off,2025-12-13,card,495.0,2025-12-13,150,False,active
+INV-24229,C1428,Upton Stanhope Engineers,subscription,2025-08-03,2025-08-03,3,5712.00,USD,written_off,2025-12-31,card,5712.0,2025-12-31,150,True,active
+INV-24245,C1278,Kowalczyk + Stanhope Architects,subscription,2025-08-07,2025-08-07,1,675.00,USD,written_off,2026-01-04,card,675.0,2026-01-04,150,False,active
+INV-24254,C1341,"Quill, Mott & Co",subscription,2025-08-09,2025-08-09,1,1632.00,USD,written_off,2026-01-06,card,1632.0,2026-01-06,150,False,active
+INV-24255,C1342,Moreau & Crane Agency,subscription,2025-08-09,2025-08-09,1,658.00,USD,written_off,2026-01-06,card,658.0,2026-01-06,150,False,active
+INV-24268,C1043,Marsh & Whitlock LLP,subscription,2025-08-13,2025-08-13,1,1360.00,USD,written_off,2026-01-10,card,1360.0,2026-01-10,150,False,active
+INV-24296,C1227,Fairbanks Consulting,subscription,2025-08-18,2025-08-18,1,1088.00,USD,written_off,2026-01-15,card,1088.0,2026-01-15,150,False,active
+INV-24304,C1307,Eastman + Radcliffe Architects,subscription,2025-08-21,2025-08-21,1,405.00,USD,written_off,2026-01-18,card,405.0,2026-01-18,150,False,active
+INV-24342,C1125,Nair & Banerjee Agency,subscription,2025-09-02,2025-09-02,1,611.00,USD,written_off,2026-01-30,card,611.0,2026-01-30,150,False,active
+INV-24377,C1341,"Quill, Mott & Co",subscription,2025-09-09,2025-09-09,1,1632.00,USD,written_off,2026-02-06,card,1632.0,2026-02-06,150,False,active
+INV-24387,C1097,Corbin Design Partnership,subscription,2025-09-12,2025-09-12,1,564.00,USD,written_off,2026-02-09,card,564.0,2026-02-09,150,False,active
+INV-24416,C1348,Ellery Legal,subscription,2025-09-17,2025-09-17,3,17520.00,USD,written_off,2026-02-14,card,17520.0,2026-02-14,150,True,active
+INV-24435,C1307,Eastman + Radcliffe Architects,subscription,2025-09-21,2025-09-21,1,405.00,USD,written_off,2026-02-18,card,405.0,2026-02-18,150,False,active
+INV-24442,C1287,Hollis Strategy,subscription,2025-09-24,2025-09-24,1,893.00,USD,written_off,2026-02-21,card,893.0,2026-02-21,150,False,active
+INV-24458,C1255,Ashgrove Partners,subscription,2025-09-28,2025-09-28,1,1088.00,USD,written_off,2026-02-25,card,1088.0,2026-02-25,150,False,active
+INV-24489,C1259,Fairbanks Legal,subscription,2025-10-06,2025-10-06,1,611.00,USD,written_off,2026-03-05,card,611.0,2026-03-05,150,False,active
+INV-24509,C1342,Moreau & Crane Agency,subscription,2025-10-09,2025-10-09,1,658.00,USD,written_off,2026-03-08,card,658.0,2026-03-08,150,False,active
+INV-24647,C1306,Haddad Thorne Law,subscription,2025-11-14,2025-11-14,3,2856.00,USD,written_off,2026-04-13,card,2856.0,2026-04-13,150,True,active
+INV-24666,C1122,Zeller Legal,subscription,2025-11-18,2025-11-18,1,1632.00,USD,written_off,2026-04-17,card,1632.0,2026-04-17,150,False,active
+INV-24729,C1435,Eastwick Engineering Group,subscription,2025-12-06,2025-12-06,1,752.00,USD,written_off,2026-05-05,card,752.0,2026-05-05,150,False,active
+INV-24731,C1065,Yates Consulting,subscription,2025-12-07,2025-12-07,1,940.00,USD,written_off,2026-05-06,card,940.0,2026-05-06,150,False,active
+INV-24749,C1468,Kingsway Digital,implementation,2025-12-10,2026-01-09,1,2500.00,USD,written_off,2026-05-09,card,2500.0,2026-05-09,150,True,active
+INV-24772,C1452,Abbott Consulting,subscription,2025-12-15,2025-12-15,1,1700.00,USD,written_off,2026-05-14,card,1700.0,2026-05-14,150,False,churned
+INV-24775,C1319,Hume Accounting,subscription,2025-12-16,2025-12-16,1,282.00,USD,written_off,2026-05-15,card,282.0,2026-05-15,150,False,active
+INV-24800,C1287,Hollis Strategy,subscription,2025-12-24,2025-12-24,1,893.00,USD,written_off,2026-05-23,card,893.0,2026-05-23,150,False,active
+INV-24857,C1110,Bramwell Sinclair Chartered Accountants,subscription,2026-01-08,2026-01-08,1,517.00,USD,written_off,2026-06-07,card,517.0,2026-06-07,150,False,active
+INV-24866,C1341,"Quill, Mott & Co",subscription,2026-01-09,2026-01-09,1,1632.00,USD,written_off,2026-06-08,card,1632.0,2026-06-08,150,False,active
+INV-24910,C1099,Yardley Accounting,subscription,2026-01-19,2026-01-19,1,1496.00,USD,written_off,2026-06-18,card,1496.0,2026-06-18,150,False,active
+INV-24933,C1040,Westbrook Consulting Group,subscription,2026-01-26,2026-01-26,1,658.00,USD,written_off,2026-06-25,card,658.0,2026-06-25,150,False,active
+INV-24951,C1018,Nair Delacroix Law,subscription,2026-02-02,2026-02-02,1,1088.00,USD,written_off,2026-07-02,card,1088.0,2026-07-02,150,False,active
+INV-24989,C1468,Kingsway Digital,subscription,2026-02-10,2026-02-10,1,1292.00,USD,written_off,2026-07-10,card,1292.0,2026-07-10,150,False,active
+INV-25075,C1029,Northgate Creative,subscription,2026-03-04,2026-03-04,1,799.00,USD,written_off,2026-08-01,card,799.0,2026-08-01,150,False,active
+INV-25076,C1104,Lakeshore Consulting Group,subscription,2026-03-04,2026-03-04,1,799.00,USD,written_off,2026-08-01,card,799.0,2026-08-01,150,False,active
+INV-25185,C1125,Nair & Banerjee Agency,subscription,2026-04-02,2026-04-02,1,611.00,USD,written_off,2026-08-30,card,611.0,2026-08-30,150,False,active
+INV-25224,C1468,Kingsway Digital,subscription,2026-04-10,2026-04-10,1,1292.00,USD,written_off,2026-09-07,card,1292.0,2026-09-07,150,False,active
+INV-25259,C1098,Okafor Consulting,subscription,2026-04-18,2026-04-18,1,846.00,USD,written_off,2026-09-15,card,846.0,2026-09-15,150,False,active
+INV-25261,C1141,Studio Calloway,subscription,2026-04-18,2026-04-18,3,4284.00,USD,written_off,2026-09-15,card,4284.0,2026-09-15,150,True,active
+INV-25325,C1259,Fairbanks Legal,subscription,2026-05-06,2026-05-06,1,611.00,USD,written_off,2026-10-03,card,611.0,2026-10-03,150,False,active
+INV-25361,C1225,Delacroix & Mercer Agency,subscription,2026-05-14,2026-05-14,1,799.00,USD,written_off,2026-10-11,card,799.0,2026-10-11,150,False,active
+INV-25380,C1122,Zeller Legal,subscription,2026-05-18,2026-05-18,1,1156.00,USD,written_off,2026-10-15,card,1156.0,2026-10-15,150,False,active
+INV-25398,C1487,Summit Technology Services,subscription,2026-05-24,2026-05-24,1,1632.00,USD,written_off,2026-10-21,card,1632.0,2026-10-21,150,False,active

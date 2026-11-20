@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Collections · Ledgerline{% endblock %}
+{% block content %}
+<h1>Collections</h1>
+<p class="lead">Every open invoice, after Cash Application and the Controller have had their say. Click a row to see why, the holds, and the draft.</p>
+<form class="filters" method="get" action="/collections">
+  <input class="input" name="q" value="{{ q }}" placeholder="Filter by customer or invoice">
+  <button class="btn btn-sm">Filter</button>{% if q %} <a class="small" href="/collections">clear</a>{% endif %}
+  <span class="jump small">Jump to: {% for g in groups %}<a href="#g-{{ g.action }}">{{ g.action|replace('_',' ')|lower }} ({{ g.rows|length }})</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</span>
+</form>
+{% for g in groups %}
+<section id="g-{{ g.action }}">
+  <div class="section-head">
+    <h2>{{ g.title }} <span class="muted">({{ g.rows|length }}, {{ g.total|money }})</span></h2>
+  </div>
+  <p class="small muted">{{ g.help }}</p>
+  {% if g.rows %}
+  <div class="list">
+    <div class="row row-inv row-head"><span>Invoice</span><span>Customer</span><span class="num">Amount</span><span>Due</span><span>Stage</span><span>Reason</span><span>Status</span></div>
+    {% for i in g.rows %}{% set open = false %}{% include "_invoice.html" %}{% endfor %}
+  </div>
+  {% else %}<div class="empty">None.</div>{% endif %}
+</section>
+{% endfor %}
+{% endblock %}

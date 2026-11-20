@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge %}
+{% from "_thumbs.html" import thumb %}
+{% block content %}
+<section class="kpis">
+  <div class="card kpi kpi-wide">
+    <div class="kicker">Overdue balance · headline metric</div>
+    <div class="stat">{{ m.overdue_balance|money }}</div>
+    <div class="small muted">{{ m.overdue_count }} invoices on the ledger</div>
+    {% if m.overdue_collectable is defined %}
+    <div class="split">
+      <div><span class="pill ok">Already received</span><b>{{ m.overdue_already_paid|money }}</b></div>
+      <div><span class="pill mid">Disputed</span><b>{{ m.overdue_disputed|money }}</b></div>
+      <div><span class="pill bad">Collectable</span><b>{{ m.overdue_collectable|money }}</b></div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="card kpi"><div class="kicker">Chases prevented</div><div class="stat">{{ m.chases_prevented }}</div><div class="small muted">would have gone to customers who paid or dispute</div></div>
+  <div class="card kpi"><div class="kicker">Drafts awaiting Priya</div><div class="stat">{{ live.drafts_pending }}</div><div class="small muted">of {{ m.drafts }} drafted · {{ live.human_pending }} to write personally</div></div>
+  <div class="card kpi"><div class="kicker">Card re-runs</div><div class="stat">{{ live.card_retries_pending }}</div><div class="small muted">card works again · Priya approves each</div></div>
+  <div class="card kpi {% if dana %}kpi-alert{% endif %}"><div class="kicker">Dana decisions</div><div class="stat">{{ dana|length }}</div><div class="small muted">{% for x in dana[:2] %}{{ x.i.customer_name }} {{ x.i.amount|money }}{% if not loop.last %} · {% endif %}{% else %}none today{% endfor %}</div></div>
+  <div class="card kpi kpi-veto {% if m.collections_complaints %}kpi-alert{% endif %}"><div class="kicker">Veto · complaints caused</div><div class="stat {% if not m.collections_complaints %}good{% else %}bad{% endif %}">{{ m.collections_complaints }}</div><div class="small muted">by this tool since go-live · baseline {{ m.collections_complaints_baseline if m.collections_complaints_baseline is defined else '-' }} in last 120 days</div></div>
+</section>
+
+<div class="section-title"><div class="kicker">The team</div><h2>Four agents, in the order they run</h2></div>
+<section class="console">
+  {% for a in team %}
+  <a class="card con-card" href="/agents/{{ a.slug }}">
+    {{ thumb(a.slug) }}
+    <div class="kicker">{{ a.kicker }}</div>
+    <div class="con-title">{{ a.step }}. {{ a.name }}</div>
+    <div class="con-desc">{{ a.desc }}</div>
+    <div class="con-stat"><span class="con-big">{{ a.stats.big }}</span> <span class="small muted">{{ a.stats.big_label }}</span></div>
+    <div class="con-foot small">{{ a.stats.headline }}</div>
+  </a>
+  {% endfor %}
+  <a class="card con-card con-human" href="/team">
+    {{ thumb('humans') }}
+    <div class="kicker">HUMANS IN THE LOOP</div>
+    <div class="con-title">Priya · Dana · AMs · Maya</div>
+    <div class="con-desc">People approve every send, application, card re-run and hold release. Dana owns the thresholds.</div>
+    <div class="con-stat"><span class="con-big">{{ n_items }}</span> <span class="small muted">items waiting on a person</span></div>
+    <div class="con-foot small">Direct the team &rarr;</div>
+  </a>
+</section>
+
+<div class="home-grid">
+  <section>
+    <div class="section-title"><div class="kicker">Queue</div><h2>Needs a human today <span class="muted small">({{ n_items }})</span></h2></div>
+    {% if dana %}
+    <div class="note note-bad"><b>Decisions for Dana today:</b>
+      {% for x in dana %}<div><a href="/collections#{{ x.i.invoice_id }}">{{ x.i.invoice_id }}</a> · <a href="/customers/{{ x.i.customer_id }}">{{ x.i.customer_name }}</a> · {{ x.i.amount|money2 }} — {{ x.holds[0].label }}</div>{% endfor %}
+    </div>
+    {% endif %}
+    <div class="card list-card">
+    {% for x in items %}
+      <div class="lg-item">
+        <div class="lg-meta"><span class="rose">{{ x.what }}</span> · {{ x.id }} {{ badge(x.badge) }}</div>
+        <div><b>{{ x.amount|money }}</b> · {% if x.customer_id %}<a href="/customers/{{ x.customer_id }}">{{ x.customer }}</a>{% else %}{{ x.customer }}{% endif %} — <a href="{{ x.link }}">open</a></div>
+        <div class="small muted">{{ x.reason|truncate(180) }}</div>
+      </div>
+    {% else %}<div class="empty">Nothing waiting.</div>{% endfor %}
+    {% if n_items > items|length %}<div class="small" style="padding:.6rem 1rem"><a href="/today">See all {{ n_items }} on Today &rarr;</a></div>{% endif %}
+    </div>
+  </section>
+  <aside>
+    <div class="section-title"><div class="kicker">Controller quality</div><h2>Are we holding too much?</h2></div>
+    <div class="card kpi"><div class="kicker">Hold override rate</div><div class="stat">{{ override.label }}</div><div class="small muted">{{ override.detail }}. Maya will check this in a month — over-holding is the right way to be wrong.</div></div>
+    <div class="section-title"><div class="kicker">Data-room QA</div><h2>Does the data tie out?</h2></div>
+    <a class="card con-card" href="/buildlog#analysis-discrepancies-md">
+      <div class="small"><b>AR ties to the dollar ($1,430,632)</b> · 9 of 14 disputes: invoice matches contract · 5 need an AM/tax decision (&le;$25k exposure) · 9 past card write-offs breached Dana's $2k limit</div>
+      <div class="con-foot small">Read the discrepancies &rarr;</div>
+    </a>
+    <div class="section-title"><div class="kicker">Monday</div><h2>Go-live checklist</h2></div>
+    <div class="card">
+      <ul class="checklist">{% for done, item in golive %}<li class="{{ 'done' if done }}"><span class="box">{{ '&#9745;'|safe if done else '&#9744;'|safe }}</span><span>{{ item }}</span></li>{% endfor %}</ul>
+      <div class="small muted" style="margin-top:.4rem">Maya approved rules-only for Priya on Monday. Read-only list.</div>
+    </div>
+    <div class="section-title"><div class="kicker">COO line</div><h2>Latest from Maya</h2></div>
+    {% if maya %}
+    <div class="card maya-card">
+      <div class="kicker">{{ maya.title }}</div>
+      <div class="bubble bubble-maya small">{{ maya.html|safe }}</div>
+      {% if maya.changes %}<details><summary>What we changed because of it</summary><div class="small">{{ maya.changes|safe }}</div></details>{% endif %}
+      <a class="small" href="/maya">Open the Maya thread &rarr;</a>
+    </div>
+    {% else %}<div class="card">No exchanges logged yet.</div>{% endif %}
+    <div class="note small" style="margin-top:1rem">Talk to the agents with the <a href="#" data-chat-open="">Talk to the team</a> button, or give them standing instructions in <a href="/direct">Direct the team</a>.</div>
+  </aside>
+</div>
+{% endblock %}

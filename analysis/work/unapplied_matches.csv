@@ -1,0 +1,9 @@
+payment_id,received_date,amount,method,payer_name,memo,candidate_invoice,customer_id,customer_name,inv_status,due_date,dpd,inv_amount,top50,how,n_candidates
+PAY-65750,2026-10-17,62688.0,ach,Jessop & Orwell Agency,Jessop payment,INV-25784,C1273,Jessop & Orwell Agency,overdue,2026-09-25,36,62688.0,True,payer name + unique exact amount,1
+PAY-65766,2026-10-19,6324.0,ach,BRANDT & LOWELL CPAS,Ledgerline subscription,INV-25806,C1126,Brandt & Lowell CPAs,overdue,2026-10-03,28,6324.0,False,payer name + unique exact amount,1
+PAY-65796,2026-10-27,8000.0,wire,ACHEBE + PEMBERTON ARCHITECTS,,INV-25951,C1505,Achebe + Pemberton Architects,open,2026-11-04,-4,8000.0,True,payer name + unique exact amount,1
+PAY-65805,2026-10-29,5100.0,ach,Kingsway Engineering Group,,INV-25469,C1469,Kingsway Engineering Group,overdue,2026-07-12,111,5100.0,False,"payer name + exact amount, AMBIGUOUS (several open invoices same amount)",2
+PAY-65805,2026-10-29,5100.0,ach,Kingsway Engineering Group,,INV-25852,C1469,Kingsway Engineering Group,overdue,2026-10-12,19,5100.0,False,"payer name + exact amount, AMBIGUOUS (several open invoices same amount)",2
+PAY-65806,2026-10-30,3672.0,wire,"Castellano, Crane & Co",INV-25845,INV-25845,C1188,"Castellano, Crane & Co",overdue,2026-10-11,20,3672.0,False,memo invoice ref + amount + payer,1
+PAY-65807,2026-10-30,987.0,ach,Studio Zeller,Invoice 25937,INV-25937,C1223,Studio Zeller,open,2026-11-02,-2,987.0,False,memo invoice ref + amount + payer,1
+PAY-65808,2026-10-31,564.0,ach,YARDLEY & DUARTE ADVISORY,inv25867 Yardley,INV-25867,C1346,Yardley & Duarte Advisory,overdue,2026-10-15,16,564.0,False,memo invoice ref + amount + payer,1
