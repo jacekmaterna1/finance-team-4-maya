@@ -45,7 +45,7 @@
 <nav class="tabs">
   <div class="tabs-inner">
   {% macro is_on(href) -%}{{ 'active' if (href == '/' and path == '/') or (href != '/' and (path == href or path.startswith(href + '/'))) or (href == '/team' and path.startswith('/agents')) else '' }}{%- endmacro %}
-  {% set main_tabs = [('/about', 'One pager'), ('/cash', 'Cash'), ('/', 'Overview'), ('/maya', 'Maya'), ('/docs', 'Documentation'), ('/demo', 'Demo'), ('/buildlog', 'Your working')] %}
+  {% set main_tabs = [('/', 'Overview'), ('/about', 'One pager'), ('/cash', 'Cash'), ('/maya', 'Maya'), ('/docs', 'Documentation'), ('/demo', 'Demo'), ('/buildlog', 'Your working')] %}
   {% set more_groups = [('Operate', [('/today', 'Today'), ('/collections', 'Collections'), ('/customers', 'Customers'), ('/digest', 'Digest'), ('/rules', 'Rules')]), ('The team', [('/team', 'Team'), ('/architecture', 'Architecture'), ('/activity', 'Activity'), ('/direct', 'Direct the team'), ('/audit', 'Audit')])] %}
   {% set ns = namespace(more_on=false) %}
   {% for g, items in more_groups %}{% for href, label in items %}{% if is_on(href) %}{% set ns.more_on = true %}{% endif %}{% endfor %}{% endfor %}
